@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Chat"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:id="@+id/main_chat_List"/>
+    <item
+        android:title="Profile"
+        android:icon="@drawable/muslim"
+        android:id="@+id/main_chat_group_list"/>
+    <item
+        android:title="Contact"
+        android:icon="@drawable/ic_perm_contact_calendar_black_24dp"
+        android:id="@+id/main_contact_List"/>
+    <item
+        android:title="Live"
+        android:icon="@drawable/ic_live_tv_black_24dp"
+        android:id="@+id/main_live_list"/>
+
+
+</menu>

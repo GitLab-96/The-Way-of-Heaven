@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_alignParentStart="true"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentLeft="true">
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="250dp"
+               android:src="@drawable/book11"
+               android:id="@+id/loginImage"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentTop="true"
+               android:layout_alignParentLeft="true"
+               android:scaleType="fitCenter"/>
+
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/loginImage"
+               android:id="@+id/loginEmail"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentLeft="true"
+               android:hint="Email........."
+               android:inputType="textEmailAddress"
+               android:background="@drawable/bounarydesign"
+               android:padding="10dp"
+               android:drawableStart="@drawable/ic_email_black_24dp"
+               android:drawableLeft="@drawable/ic_email_black_24dp"
+               android:layout_marginTop="5dp"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginBottom="5dp"/>
+
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/loginEmail"
+               android:id="@+id/loginPassword"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentLeft="true"
+               android:hint="Password........."
+               android:inputType="textPassword"
+               android:background="@drawable/bounarydesign"
+               android:padding="10dp"
+               android:drawableStart="@drawable/ic_lock_outline_black_24dp"
+               android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+               android:layout_margin="10dp"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="5dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginLeft="10dp"/>
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/loginPassword"
+               android:id="@+id/forgetPasswordLink"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentLeft="true"
+               android:text="Forget Password ?"
+               android:textAlignment="textEnd"
+               android:padding="10dp"
+               android:textColor="#000"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="5dp"
+               android:gravity="end" />
+
+
+
+           <Button
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/login_buttn"
+               android:layout_below="@id/forgetPasswordLink"
+               android:padding="4dp"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="5dp"
+               android:text="Login"
+               android:textAllCaps="false"
+               android:textSize="24dp"
+               android:textColor="#000"
+               android:background="@drawable/bounarydesign"/>
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/login_buttn"
+               android:id="@+id/need_new_account"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentLeft="true"
+               android:text="Need New Account ?"
+               android:textAlignment="center"
+               android:padding="10dp"
+               android:textStyle="bold"
+               android:textColor="#000"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="5dp"
+               android:gravity="center" />
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/need_new_account"
+               android:id="@+id/login_using"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentLeft="true"
+               android:text="or Login using your"
+               android:textAlignment="center"
+               android:padding="10dp"
+               android:textStyle="bold"
+               android:textColor="#000"
+               android:layout_margin="10dp"
+               android:gravity="center" />
+
+
+           <Button
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/phone_login_buttn"
+               android:layout_below="@id/login_using"
+               android:padding="4dp"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="5dp"
+               android:text="Phone"
+               android:textAllCaps="false"
+               android:textSize="24dp"
+               android:textColor="#000"
+               android:background="@drawable/bounarydesign"/>
+
+
+
+
+       </RelativeLayout>
+
+
+
+
+   </ScrollView>
+
+</RelativeLayout>

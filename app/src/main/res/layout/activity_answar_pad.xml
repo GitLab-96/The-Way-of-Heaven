@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#EC9999"
+    android:layout_height="match_parent"
+    tools:context=".Question.AnswarPad">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/answerPadtoolBar"
+        android:layout_height="wrap_content">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="#fff"
+          android:orientation="horizontal">
+
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:padding="10dp"
+              android:src="@drawable/ic_chevron_left_black_24dp"/>
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:padding="10dp"
+              android:text="প্রশ্ন করুন"/>
+
+      </LinearLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:layout_below="@+id/answerPadtoolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textAlignment="textStart"
+        android:hint="Please write here...."
+        android:gravity="start" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true">
+
+
+        <ImageView
+            android:id="@+id/attachImage"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_attach_file_black_24dp"/>
+        <ImageView
+            android:id="@+id/attachRecord"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_record_voice_over_black_24dp"/>
+
+        <ImageView
+            android:id="@+id/sendButtn"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="250dp"
+            android:src="@drawable/ic_send_black_24dp"/>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

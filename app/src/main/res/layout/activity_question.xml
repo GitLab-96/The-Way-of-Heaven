@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7B4B4"
+    android:orientation="vertical"
+    tools:context=".Question.QuestionActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBarLayout">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#C9D3BE"
+            android:id="@+id/mainToolbar">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:weightSum="10"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/book11"/>
+
+                <SearchView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:background="#ffffff"
+                    android:id="@+id/searchView"/>
+
+                 </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/main_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorHeight="4dp"
+                android:background="#D272E2"
+                app:tabIndicatorColor="#F00707"
+                app:tabTextColor="#5E05F3"
+                app:tabSelectedTextColor="#05F5DC"
+                android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            </com.google.android.material.tabs.TabLayout>
+
+        </HorizontalScrollView>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appBarLayout"
+        android:background="@drawable/bounarydesign"
+        android:layout_margin="10dp"
+        android:id="@+id/sendQ"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/sendPad"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:weightSum="10">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:padding="10dp"
+                android:id="@+id/typeMassage"
+                android:layout_weight="9"
+                android:layout_margin="5dp"
+                android:hint="Please write to know......." />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:id="@+id/sendIV"
+                android:src="@drawable/ic_send_black_24dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="60dp"
+            android:gravity="right"
+            android:paddingBottom="5dp"
+            android:textColor="#000000"
+            android:text="Your Adderss will be hidden"/>
+
+    </LinearLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_below="@id/sendQ"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_tab_Pager">
+
+    </androidx.viewpager.widget.ViewPager>
+
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/floatingActionBtn"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="65dp"
+    android:src="@drawable/masanger"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:background="#FF4081"
+            app:itemIconTint="#000000"
+            app:itemTextColor="#000000"
+            app:menu="@menu/bottom_menu"
+            tools:ignore="Rt1Hardcoded">
+
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

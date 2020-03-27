@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/set_profile_image"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/book11"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:civ_border_width="5dp"
+        android:layout_marginTop="45dp"
+        app:civ_border_color="#070707"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/set_user_name"
+        android:layout_below="@id/set_profile_image"
+        android:inputType="textMultiLine"
+        android:hint="User Name"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:drawableStart="@drawable/ic_account_box_black_24dp"
+        android:drawableLeft="@drawable/ic_account_box_black_24dp"
+        android:textColor="#3F51B5"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:padding="6dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/set_user_statuse"
+        android:layout_below="@id/set_user_name"
+        android:inputType="textMultiLine"
+        android:hint="User Email"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:drawableStart="@drawable/ic_email_black_24dp"
+        android:drawableLeft="@drawable/ic_email_black_24dp"
+        android:textColor="#3F51B5"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:padding="6dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/set_user_phone_number"
+        android:layout_below="@id/set_user_statuse"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:drawableStart="@drawable/ic_phone_iphone_black_24dp"
+        android:drawableLeft="@drawable/ic_phone_iphone_black_24dp"
+        android:hint="Phone Number"
+        android:textStyle="bold"
+        android:inputType="number"
+        android:layout_margin="10dp"
+        android:padding="6dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/set_user_phone_number"
+        android:weightSum="2"
+        android:id="@+id/gender_name"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/set_user_gender"
+            android:textAlignment="center"
+            android:textColor="#3F51B5"
+            android:hint="Gender"
+            android:inputType="text"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_edit_black_24dp"
+            android:drawableLeft="@drawable/ic_edit_black_24dp"
+            android:layout_margin="10dp"
+            android:padding="6dp"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/set_user_date_of_birth"
+            android:textAlignment="center"
+            android:drawableStart="@drawable/ic_perm_contact_calendar_black_24dp"
+            android:drawableLeft="@drawable/ic_perm_contact_calendar_black_24dp"
+            android:textColor="#3F51B5"
+            android:inputType="date"
+            android:hint="Date of Birth"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:padding="6dp"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/update_settings_buttn"
+        android:layout_below="@id/gender_name"
+        android:text="Update"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textAllCaps="false"
+        android:padding="6dp"/>
+
+</RelativeLayout>

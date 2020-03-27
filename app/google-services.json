@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "669103655511",
+    "firebase_url": "https://the-way-of-heaven.firebaseio.com",
+    "project_id": "the-way-of-heaven",
+    "storage_bucket": "the-way-of-heaven.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669103655511:android:f54a284c8ce2d54b29b112",
+        "android_client_info": {
+          "package_name": "com.example.soundtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "669103655511-94l9m0ea47i28ikpct0bmdo4ht8b9an8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.soundtest",
+            "certificate_hash": "fe86a793c376bca7a562b4ddf335100f79452d3b"
+          }
+        },
+        {
+          "client_id": "669103655511-k0tdk9bt0qcej9iirvg3auf9hq9anm2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPP-brbCZA-1JLNpwbwqL7TmITzz56Czc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "669103655511-k0tdk9bt0qcej9iirvg3auf9hq9anm2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Question.AnswarPad"></activity>
+        <activity android:name=".GroupChatActivity"></activity>
+        <activity android:name=".Question.LiveActivity" />
+        <activity android:name=".Question.GroupsActivity" />
+        <activity android:name=".Question.AnswarPad" />
         <activity android:name=".Question.ProfileActivity" />
         <activity android:name=".Question.SettingsActivity" />
         <activity android:name=".MainActivity" />

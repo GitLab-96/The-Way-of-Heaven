@@ -16,22 +16,22 @@ public class TeastAccessAdapter extends FragmentPagerAdapter {
         switch (position){
 
             case 0:
-                ChatFragment chatFragment = new ChatFragment();
-                return  chatFragment;
-
-            case 1:
-                GroupFragment groupFragment = new GroupFragment();
-                return  groupFragment;
-
-            case 2:
-                LiveFragment liveFragment = new LiveFragment();
-                return  liveFragment;
-            case 3:
-                ContactFragment contactFragment = new ContactFragment();
-                return  contactFragment;
-            case 4:
                 RojaFragment rojaFragment = new RojaFragment();
                 return  rojaFragment;
+
+            case 1:
+                RojaFragment chatFragment = new RojaFragment();
+                return  chatFragment;
+
+            case 2:
+                RojaFragment liveFragment = new RojaFragment();
+                return  liveFragment;
+            case 3:
+                RojaFragment contactFragment = new RojaFragment();
+                return  contactFragment;
+            case 4:
+                RojaFragment cont = new RojaFragment();
+                return  cont;
             case 5:
                 HajjFragmant hajjFragmant = new HajjFragmant();
                 return  hajjFragmant;

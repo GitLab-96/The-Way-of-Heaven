@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.soundtest.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +27,7 @@ public class ProfileActivity extends AppCompatActivity {
     private String currentUserID;
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
+    private BottomNavigationView navigationView;
 
 
     @Override
@@ -35,6 +38,7 @@ public class ProfileActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         currentUserID= mAuth.getCurrentUser().getUid();
         init();
+        BottomNavigationItemSelect();
 
         RetreveData();
 
@@ -45,6 +49,48 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+
+
+    }
+
+    private void BottomNavigationItemSelect() {
+
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                switch (menuItem.getItemId()){
+                    case  R.id.main_profile:
+
+                        break;
+
+                    case R.id.all_answer_list:
+
+                        startActivity(new Intent(ProfileActivity.this,QuestionActivity.class));
+
+                        break;
+
+                    case R.id.main_groups_List:
+                        SendUserToGeoupActivity();
+                        break;
+
+                    case R.id.main_live_list:
+                        SendUserToLiveActivity();
+
+
+                }
+                return false;
+            }
+        });
+    }
+
+    private void SendUserToLiveActivity() {
+        startActivity(new Intent(ProfileActivity.this, LiveActivity.class));
+
+    }
+
+    private void SendUserToGeoupActivity() {
+        startActivity(new Intent(ProfileActivity.this, GroupsActivity.class));
 
     }
 
@@ -87,7 +133,7 @@ public class ProfileActivity extends AppCompatActivity {
         userPhone = findViewById(R.id.get_user_phone_number);
         userGender= findViewById(R.id.gender);
         userDOB = findViewById(R.id.dateOfBirth);
-
+        navigationView=findViewById(R.id.bottom_nev);
 
     }
 

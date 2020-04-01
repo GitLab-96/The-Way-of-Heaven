@@ -1,29 +1,34 @@
 package com.example.soundtest.Question;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.soundtest.LoginActivity;
 import com.example.soundtest.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class QuestionActivity extends AppCompatActivity {
 
@@ -36,6 +41,8 @@ public class QuestionActivity extends AppCompatActivity {
     private EditText typeMassage;
     private BottomNavigationView navigationView;
     private FloatingActionButton fab;
+    private DatabaseReference RootRef;
+
 
 
     @Override
@@ -52,13 +59,14 @@ public class QuestionActivity extends AppCompatActivity {
         myTabLayout = findViewById(R.id.main_tabs);
         myTabLayout.setupWithViewPager(myviewPager );
         mAuth = FirebaseAuth.getInstance();
+        mAuth=FirebaseAuth.getInstance();
+        RootRef= FirebaseDatabase.getInstance().getReference();
 
 
         init();
         SendQuestionToAnswerPad();
         BottomNavigationItemSelect();
         typeMassage();
-
         floatingBtn();
 
 
@@ -98,13 +106,22 @@ public class QuestionActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 switch (menuItem.getItemId()){
-                    case  R.id.main_chat_group_list:
+                    case  R.id.main_profile:
                         startActivity(new Intent(QuestionActivity.this, ProfileActivity.class));
                         break;
 
-                    case R.id.main_chat_List:
-                        startActivity(new Intent(QuestionActivity.this,AnswarPad.class));
+                    case R.id.all_answer_list:
+
                         break;
+
+                    case R.id.main_groups_List:
+                        SendUserToGeoupActivity();
+                        break;
+
+                    case R.id.main_live_list:
+                        SendUserToLiveActivity();
+
+
                 }
                 return false;
             }
@@ -112,12 +129,26 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
+    private void SendUserToLiveActivity() {
+
+        startActivity(new Intent(QuestionActivity.this, LiveActivity.class));
+    }
+
+    private void SendUserToGeoupActivity() {
+        startActivity(new Intent(QuestionActivity.this, GroupsActivity.class));
+
+    }
+
+
     private void SendQuestionToAnswerPad() {
 
         sendPadLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(QuestionActivity.this,AnswarPad.class));
+
+                startActivity(new Intent(QuestionActivity.this, AnswarPad.class));
+
+
             }
         });
     }
@@ -137,13 +168,16 @@ public class QuestionActivity extends AppCompatActivity {
             case R.id.main_find_friends_option:
                 Toast.makeText(this, "Find Your Friend", Toast.LENGTH_SHORT).show();
                 break;
+
             case R.id.main_create_group_option:
-                Toast.makeText(this, "Create Your Group", Toast.LENGTH_SHORT).show();
+                RequestNewGroup();
                 break;
+
             case R.id.main_setting_option:
                 Toast.makeText(this, "Your Setting Option", Toast.LENGTH_SHORT).show();
                 SendUserToSettingsActivity();
                 break;
+
             case R.id.main_logout_option:
                 mAuth.signOut();
                 SendUserToLoginActivity();
@@ -153,6 +187,66 @@ public class QuestionActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void RequestNewGroup() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(QuestionActivity.this,R.style.AlertDialog);
+        builder.setTitle("Enter Group Name");
+
+        final EditText groupnameField = new EditText(QuestionActivity.this);
+        groupnameField.setHint("e.g Coding Cafe");
+        builder.setView(groupnameField);
+
+        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                String groupName = groupnameField.getText().toString();
+
+                if (TextUtils.isEmpty(groupName)){
+
+                    Toast.makeText(QuestionActivity.this, "Please write Group Name", Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+
+                    CreateNewGroup(groupName);
+
+                }
+
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+               dialog.cancel();
+
+            }
+        });
+
+        builder.show();
+
+
+    }
+
+    private void CreateNewGroup(final String groupName) {
+
+        RootRef.child("Groups").child(groupName).setValue("").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                
+                if (task.isSuccessful()){
+                    Toast.makeText(QuestionActivity.this, groupName +"is Created Successfully.....", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+
+
     }
 
     private void SendUserToLoginActivity() {

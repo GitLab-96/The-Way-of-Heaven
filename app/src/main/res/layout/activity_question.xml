@@ -144,9 +144,8 @@
             android:layout_alignParentBottom="true"
             android:background="#FF4081"
             app:itemIconTint="#000000"
-            app:itemTextColor="#000000"
-            app:menu="@menu/bottom_menu"
-            tools:ignore="Rt1Hardcoded">
+            app:itemTextColor="#ffffff"
+            app:menu="@menu/bottom_menu">
 
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>

@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9C27B0"
-    tools:context=".Question.LiveActivity">
+    tools:context=".Question.CourseActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -56,5 +55,6 @@
 
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 
 </RelativeLayout>

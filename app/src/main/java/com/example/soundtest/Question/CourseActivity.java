@@ -11,22 +11,25 @@ import com.example.soundtest.BlogActivity;
 import com.example.soundtest.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class LiveActivity extends AppCompatActivity {
+public class CourseActivity extends AppCompatActivity {
+
     private BottomNavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_live);
+        setContentView(R.layout.activity_course);
 
         init();
-
         BottomNavigationItemSelect();
+
+
     }
 
     private void init() {
-        navigationView=findViewById(R.id.bottom_nev);
+        navigationView = findViewById(R.id.bottom_nev);
     }
+
 
     private void BottomNavigationItemSelect() {
 
@@ -37,9 +40,8 @@ public class LiveActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()){
 
                     case  R.id.main_profile:
-
-                       SendUserToProfileActivity();
-                       break;
+                        SendUserToProfileActivity();
+                        break;
 
                     case R.id.main_groups_List:
                         SendUserToGeoupActivity();
@@ -47,49 +49,53 @@ public class LiveActivity extends AppCompatActivity {
 
                     case R.id.all_course_list:
 
-                       SendUsertoCourseActivity();
+                        SendUsertoCourseActivity();
                         break;
 
+
                     case R.id.main_live_list:
-                       SendUserToLiveActivity();
+                        SendUserToLiveActivity();
                         break;
 
                     case R.id.main_blog_list:
                         SendUserToBlogActivity();
                         break;
+
+
+
                 }
                 return false;
             }
         });
     }
 
-
     private void SendUserToProfileActivity() {
-        startActivity(new Intent(LiveActivity.this, ProfileActivity.class));
+        startActivity(new Intent(CourseActivity.this, ProfileActivity.class));
 
     }
 
     private void SendUserToGeoupActivity() {
-        startActivity(new Intent(LiveActivity.this, GroupsActivity.class));
+        startActivity(new Intent(CourseActivity.this, GroupsActivity.class));
 
     }
 
     private void SendUserToLiveActivity() {
-        startActivity(new Intent(LiveActivity.this, LiveActivity.class));
+        startActivity(new Intent(CourseActivity.this, LiveActivity.class));
 
     }
 
     private void SendUserToBlogActivity() {
 
-        startActivity(new Intent(LiveActivity.this, BlogActivity.class));
+        startActivity(new Intent(CourseActivity.this, BlogActivity.class));
 
     }
 
     private void SendUsertoCourseActivity() {
 
-        startActivity(new Intent(LiveActivity.this, CourseActivity.class));
+        startActivity(new Intent(CourseActivity.this, CourseActivity.class));
 
 
 
     }
+
 }

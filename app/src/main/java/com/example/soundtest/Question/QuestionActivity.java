@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.soundtest.BlogActivity;
 import com.example.soundtest.LoginActivity;
 import com.example.soundtest.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -106,26 +107,49 @@ public class QuestionActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 switch (menuItem.getItemId()){
+
                     case  R.id.main_profile:
-                        startActivity(new Intent(QuestionActivity.this, ProfileActivity.class));
-                        break;
-
-                    case R.id.all_answer_list:
-
-                        break;
+                        SendUserToProfileActivity();
+                           break;
 
                     case R.id.main_groups_List:
                         SendUserToGeoupActivity();
                         break;
 
+                    case R.id.all_course_list:
+                        SendUsertoCourseActivity();
+                        break;
+
+
                     case R.id.main_live_list:
                         SendUserToLiveActivity();
+                        break;
 
-
+                    case R.id.main_blog_list:
+                        SendUserToBlogActivity();
+                        break;
                 }
                 return false;
             }
         });
+    }
+
+    private void SendUserToProfileActivity() {
+        startActivity(new Intent(QuestionActivity.this, ProfileActivity.class));
+
+    }
+
+    private void SendUserToBlogActivity() {
+
+        startActivity(new Intent(QuestionActivity.this, BlogActivity.class));
+
+    }
+
+    private void SendUsertoCourseActivity() {
+
+        startActivity(new Intent(QuestionActivity.this, CourseActivity.class));
+
+
 
     }
 

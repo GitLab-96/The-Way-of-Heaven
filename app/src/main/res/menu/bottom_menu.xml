@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:title="All Answer"
-        android:icon="@drawable/ic_question_answer_black_24dp"
-        android:id="@+id/all_answer_list"/>
+
     <item
         android:title="Profile"
         android:icon="@drawable/muslim"
         android:id="@+id/main_profile"/>
+
     <item
         android:title="Groups"
         android:icon="@drawable/ic_group_black_24dp"
         android:id="@+id/main_groups_List"/>
+
+    <item
+        android:title="Live Class"
+        android:icon="@drawable/courseadd"
+        android:id="@+id/all_course_list"/>
+
     <item
         android:title="Live"
         android:icon="@drawable/ic_live_tv_black_24dp"
         android:id="@+id/main_live_list"/>
+
+    <item
+        android:title="Blogs"
+        android:icon="@drawable/ic_public_black_24dp"
+        android:id="@+id/main_blog_list"/>
+
+
+
 
 
 </menu>

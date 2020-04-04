@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.soundtest.BlogActivity;
 import com.example.soundtest.GroupChatActivity;
 import com.example.soundtest.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -107,22 +108,28 @@ GroupRef.addValueEventListener(new ValueEventListener() {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 switch (menuItem.getItemId()){
+
                     case  R.id.main_profile:
-                        startActivity(new Intent(GroupsActivity.this, ProfileActivity.class));
-                        break;
-
-                    case R.id.all_answer_list:
-
-                        startActivity(new Intent(GroupsActivity.this, QuestionActivity.class));
-
-                        break;
+                    SendUserToProfileActivity();
+                    break;
 
                     case R.id.main_groups_List:
-
+                    SendUserToGeoupActivity();
                         break;
 
+                    case R.id.all_course_list:
+
+                      SendUsertoCourseActivity();
+                        break;
+
+
                     case R.id.main_live_list:
-                        startActivity(new Intent(GroupsActivity.this, LiveActivity.class));
+                      SendUserToLiveActivity();
+                        break;
+
+                    case R.id.main_blog_list:
+                        SendUserToBlogActivity();
+                        break;
 
 
 
@@ -131,4 +138,34 @@ GroupRef.addValueEventListener(new ValueEventListener() {
             }
         });
     }
+
+    private void SendUserToProfileActivity() {
+        startActivity(new Intent(GroupsActivity.this, ProfileActivity.class));
+
+    }
+
+    private void SendUserToGeoupActivity() {
+        startActivity(new Intent(GroupsActivity.this, GroupsActivity.class));
+
+    }
+
+    private void SendUserToLiveActivity() {
+        startActivity(new Intent(GroupsActivity.this, LiveActivity.class));
+
+    }
+
+    private void SendUserToBlogActivity() {
+
+        startActivity(new Intent(GroupsActivity.this, BlogActivity.class));
+
+    }
+
+    private void SendUsertoCourseActivity() {
+
+        startActivity(new Intent(GroupsActivity.this, CourseActivity.class));
+
+
+
+    }
+
 }

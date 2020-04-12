@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.soundtest.BlogActivity;
 import com.example.soundtest.LoginActivity;
 import com.example.soundtest.R;
 import com.google.android.gms.tasks.OnCompleteListener;

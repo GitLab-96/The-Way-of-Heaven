@@ -1,8 +1,7 @@
-package com.example.soundtest;
+package com.example.soundtest.Question;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,10 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.soundtest.Question.CourseActivity;
-import com.example.soundtest.Question.GroupsActivity;
-import com.example.soundtest.Question.LiveActivity;
-import com.example.soundtest.Question.ProfileActivity;
+import com.example.soundtest.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BlogActivity extends AppCompatActivity {

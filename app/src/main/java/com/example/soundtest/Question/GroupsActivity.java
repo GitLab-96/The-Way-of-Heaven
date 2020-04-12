@@ -11,8 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.soundtest.BlogActivity;
-import com.example.soundtest.GroupChatActivity;
 import com.example.soundtest.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;

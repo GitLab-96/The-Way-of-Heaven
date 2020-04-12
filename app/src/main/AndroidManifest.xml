@@ -14,9 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PhoneLoginActivity"></activity>
-        <activity android:name=".BlogActivity" />
+        <activity android:name=".Question.BlogActivity" />
         <activity android:name=".Question.CourseActivity" />
-        <activity android:name=".GroupChatActivity" />
+        <activity android:name=".Question.GroupChatActivity" />
         <activity android:name=".Question.LiveActivity" />
         <activity android:name=".Question.GroupsActivity" />
         <activity android:name=".Question.AnswarPad" />

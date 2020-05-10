@@ -89,8 +89,6 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
-
-
     private void typeMassage() {
      typeMassage.setOnClickListener(new View.OnClickListener() {
          @Override
@@ -190,6 +188,7 @@ public class QuestionActivity extends AppCompatActivity {
 
             case R.id.main_find_friends_option:
                 Toast.makeText(this, "Find Your Friend", Toast.LENGTH_SHORT).show();
+                SendUserToFindFriendActivity();
                 break;
 
             case R.id.main_create_group_option:
@@ -210,6 +209,11 @@ public class QuestionActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void SendUserToFindFriendActivity() {
+        startActivity(new Intent(QuestionActivity.this, FindFriendActivity.class));
+
     }
 
     private void RequestNewGroup() {

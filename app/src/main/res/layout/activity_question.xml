@@ -145,7 +145,8 @@
             android:background="#FF4081"
             app:itemIconTint="#000000"
             app:itemTextColor="#ffffff"
-            app:menu="@menu/bottom_menu">
+            app:menu="@menu/bottom_menu"
+            tools:ignore="RtlHardcoded">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 

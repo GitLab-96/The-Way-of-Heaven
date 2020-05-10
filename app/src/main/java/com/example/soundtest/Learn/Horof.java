@@ -30,7 +30,7 @@ public class Horof extends AppCompatActivity {
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     int pausecurrentpossition;
     MediaPlayer horofmedia;
-    ImageSwitcher imageSwitcher;
+    ImageSwitcher imageSwitcher,juktoImageSwitcher;
     TextSwitcher textSwitcher;
     private int currenthorof=0;
 
@@ -65,6 +65,37 @@ public class Horof extends AppCompatActivity {
             R.drawable.hha,
             R.drawable.hamjah,
             R.drawable.ya,
+    };
+    int[] juktoHorof = {
+            R.drawable.juktoalif,
+            R.drawable.juktobaa,
+            R.drawable.juktotaa,
+            R.drawable.juktosaa,
+            R.drawable.juktojeem,
+            R.drawable.juktohaaa,
+            R.drawable.juktokhaa,
+            R.drawable.juktodaal,
+            R.drawable.juktojaal,
+            R.drawable.juktora,
+            R.drawable.juktojhaa,
+            R.drawable.juktoseen,
+            R.drawable.juktosheen,
+            R.drawable.juktosoad,
+            R.drawable.juktodowad,
+            R.drawable.juktotowa,
+            R.drawable.juktojowa,
+            R.drawable.juktoain,
+            R.drawable.juktogain,
+            R.drawable.juktofaa,
+            R.drawable.juktokof,
+            R.drawable.juktokaff,
+            R.drawable.juktolaam,
+            R.drawable.juktomeem,
+            R.drawable.juktonun,
+            R.drawable.juktowao,
+            R.drawable.juktohaa,
+            R.drawable.juktohamjah,
+            R.drawable.juktoeya,
     };
 
     int position = -1;
@@ -135,6 +166,17 @@ public class Horof extends AppCompatActivity {
             }
         });
 
+        juktoImageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+            @Override
+            public View makeView() {
+
+                ImageView imageView = new ImageView(getApplicationContext());
+                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+
+                return imageView;
+            }
+        });
+
     }
 
     @Override
@@ -181,6 +223,7 @@ public class Horof extends AppCompatActivity {
 
                     position = position+1;
                     imageSwitcher.setBackgroundResource(horof[position]);
+                    juktoImageSwitcher.setBackgroundResource(juktoHorof[position]);
                     textSwitcher.setText(makhraz[position]);
                     try {
                         horofmedia = MediaPlayer.create(Horof.this,horofSound[currenthorof]);
@@ -201,6 +244,7 @@ public class Horof extends AppCompatActivity {
                     position = position-1;
                     textSwitcher.setText(makhraz[position]);
                     imageSwitcher.setBackgroundResource(horof[position]);
+                    juktoImageSwitcher.setBackgroundResource(juktoHorof[position]);
 
                     try {
                         MediaPlayer.create(Horof.this,horofSound[currenthorof]);
@@ -232,5 +276,6 @@ public class Horof extends AppCompatActivity {
         imageSwitcher = findViewById(R.id.imageSwither);
         textSwitcher = findViewById(R.id.textSwitcher);
         userVoiceConvert = findViewById(R.id.userVoiceText);
+        juktoImageSwitcher = findViewById(R.id.juktoImageSwither);
     }
 }

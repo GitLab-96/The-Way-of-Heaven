@@ -28,30 +28,18 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
-               android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:padding="50dp"
-                android:layout_marginRight="30dp"
-                android:background="@drawable/ic_skip_previous_black_24dp"
-                android:id="@+id/previousBtn"/>
+
 
             <ImageSwitcher
                 android:id="@+id/imageSwither"
-                android:layout_width="200dp"
-                android:layout_height="150dp"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:background="#000"
                 android:layout_marginTop="20dp"
                 android:scaleX=".8"
                 android:scaleY=".8"/>
 
-            <Button
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="30dp"
-                android:background="@drawable/ic_skip_next_black_24dp"
-                android:id="@+id/nextBtn"/>
 
         </LinearLayout>
 
@@ -59,7 +47,7 @@
         <TextSwitcher
             android:id="@+id/textSwitcher"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:gravity="center"
             android:background="#C2BBBB"
             android:layout_margin="5dp"
@@ -99,10 +87,14 @@
         android:paddingTop="10dp"
         android:orientation="horizontal">
 
-        <ImageView
+        <ImageSwitcher
+            android:id="@+id/juktoImageSwither"
             android:layout_width="380dp"
             android:layout_height="180dp"
-            android:src="@drawable/soundfrequency" />
+            android:layout_gravity="center"
+            android:background="#000"
+            android:scaleX=".8"
+            android:scaleY=".8"/>
 
         <View
             android:layout_width="15dp"
@@ -133,6 +125,14 @@
         android:orientation="horizontal">
 
         <Button
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:padding="50dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/ic_skip_previous_black_24dp"
+            android:id="@+id/previousBtn"/>
+
+        <Button
             android:id="@+id/pauseBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -154,6 +154,13 @@
             android:layout_height="50dp"
             android:layout_margin="10dp"
             android:background="@drawable/ic_stop_black_24dp" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/ic_skip_next_black_24dp"
+            android:id="@+id/nextBtn"/>
 
 
     </LinearLayout>

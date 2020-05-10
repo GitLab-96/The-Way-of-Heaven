@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="সূচিপত্র"
+        android:padding="5dp"
         android:textColor="#000"
         android:textSize="30sp"
         android:background="#E6D5D5"

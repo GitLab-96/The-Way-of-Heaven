@@ -179,28 +179,13 @@
                 android:text="কুরআন শিক্ষা"/>
 
         </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/link10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_below="@id/link9">
-
-            <Button
-                android:id="@+id/link10Btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="কুরআন শিক্ষা"/>
-
-        </androidx.cardview.widget.CardView>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nev"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/link10"
+        android:layout_below="@+id/link9"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
@@ -209,7 +194,8 @@
         app:itemIconTint="#000000"
         app:itemTextColor="#000000"
         app:menu="@menu/bottom_menu"
-        tools:ignore="Rt1Hardcoded">
+        tools:ignore="Rt1Hardcoded"
+    >
 
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>

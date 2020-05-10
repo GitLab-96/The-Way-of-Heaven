@@ -163,7 +163,6 @@ public class BlogActivity extends AppCompatActivity {
         link7Bttn    =  findViewById(R.id.link7Btn);
         link8Bttn    =  findViewById(R.id.link8Btn);
         link9Bttn    =  findViewById(R.id.link9Btn);
-        link10Bttn    =  findViewById(R.id.link10Btn);
 
     }
 

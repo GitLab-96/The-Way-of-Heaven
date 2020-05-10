@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PhoneLoginActivity"></activity>
+        <activity android:name=".Question.FindFriendActivity"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".PhoneLoginActivity" />
         <activity android:name=".Question.BlogActivity" />
         <activity android:name=".Question.CourseActivity" />
         <activity android:name=".Question.GroupChatActivity" />

@@ -3,6 +3,7 @@
 
     <item
         android:title="Profile"
+        android:checkable="true"
         android:icon="@drawable/muslim"
         android:id="@+id/main_profile"/>
 

@@ -36,7 +36,7 @@ public class Horof extends AppCompatActivity {
     private Handler handler;
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     int pausecurrentpossition;
-    MediaPlayer horofmedia;
+    MediaPlayer horofmedia,goodToast,badToast;
     ImageSwitcher imageSwitcher,juktoImageSwitcher;
     TextSwitcher textSwitchermakhraz,textSwitcherHoroh;
     private int currenthorof=0;
@@ -184,6 +184,8 @@ public class Horof extends AppCompatActivity {
         init();
         buttonclick();
         horofmedia = MediaPlayer.create(Horof.this,horofSound[currenthorof]);
+        goodToast = MediaPlayer.create(Horof.this,R.raw.masha_allah2);
+        badToast = MediaPlayer.create(Horof.this,R.raw.try_again);
 
         horofmedia.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -378,10 +380,14 @@ if (horofmedia.isPlaying()){
                 if (sentanceOnee.equals(sentenceTwoo) ) {
 
                     Toast.makeText(Horof.this, "Equal", Toast.LENGTH_SHORT).show();
+                    goodToast.start();
+
+
                 }
                 else {
 
                     Toast.makeText(Horof.this, "NotEqual", Toast.LENGTH_SHORT).show();
+               badToast.start();
                 }
             }
         });

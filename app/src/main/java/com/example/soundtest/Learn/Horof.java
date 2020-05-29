@@ -7,15 +7,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import com.example.soundtest.R;
@@ -25,13 +29,16 @@ import java.util.Locale;
 
 public class Horof extends AppCompatActivity {
 
-    private Button previousBtn,nextBtn,playBtn,pauseBtn,stopBtn,micBtn;
+    private ImageButton previousBtn,nextBtn,playBtn,micBtn,compareBttn;
     private TextView userVoiceConvert;
+    private SeekBar seekBar;
+    private Runnable runnable;
+    private Handler handler;
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     int pausecurrentpossition;
     MediaPlayer horofmedia;
     ImageSwitcher imageSwitcher,juktoImageSwitcher;
-    TextSwitcher textSwitcher;
+    TextSwitcher textSwitchermakhraz,textSwitcherHoroh;
     private int currenthorof=0;
 
 
@@ -101,7 +108,7 @@ public class Horof extends AppCompatActivity {
     int position = -1;
 
     String[] makhraz = {
-            "হলকের শুরু হইতে উচ্চারিত হয়। ",
+            "হলকের শুরু হইতে উচ্চারিত হয়।",
             "দুই ঠোঁট হইতে উচ্চারিত হয়। ",
             "জিহ্বার আগা সামনে উপরের দুই দাঁতের গোঁড়ার সাথে লাগাইয়া। ",
             "জিহ্বার আগা সামনে উপরে দুই দাঁতের আগার সাথে লাগাইয়া। ",
@@ -132,6 +139,38 @@ public class Horof extends AppCompatActivity {
             "জিহ্বার মধ্যখান হইতে উচ্চারিত হয়।",
     };
 
+    String[] presetpronunciation = {
+            "الف",
+            "باء",
+            "تاء",
+            "ثاء",
+            "جيم",
+            "حاء",
+            "خاء",
+            "دال",
+            "ذال",
+            "راء",
+            "زاء",
+            "سين",
+            "شين",
+            "صاد",
+            "ضاد",
+            "طاء",
+            "ظاء",
+            "عين",
+            "غين",
+            "فاء",
+            "قاف",
+            "كاف",
+            "لام",
+            "ميم",
+            "نون",
+            "واو",
+            "هاء",
+            "همزة",
+            "ياء",
+    };
+
     int [] horofSound={R.raw.alif,R.raw.ba,R.raw.ta,R.raw.sa,R.raw.jeem,R.raw.ha,R.raw.kha,
             R.raw.dal,R.raw.jal,R.raw.ro,R.raw.jha,R.raw.seen,R.raw.sheen,R.raw.swad,R.raw.doad,
             R.raw.toa,R.raw.jowa,R.raw.ain,R.raw.gain,R.raw.faa,R.raw.kof,R.raw.kaf,R.raw.laam,
@@ -144,8 +183,51 @@ public class Horof extends AppCompatActivity {
 
         init();
         buttonclick();
+        horofmedia = MediaPlayer.create(Horof.this,horofSound[currenthorof]);
 
-        textSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+        horofmedia.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+
+                seekBar.setMax(horofmedia.getDuration());
+                horofmedia.start();
+                ChangeSeekbar();
+            }
+        });
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                if (fromUser){
+
+                    horofmedia.seekTo(progress);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        textSwitchermakhraz.setFactory(new ViewSwitcher.ViewFactory() {
+            @Override
+            public View makeView() {
+                TextView textView = new TextView(getApplicationContext());
+                textView.setTextSize(20);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
+            }
+        });
+
+        textSwitcherHoroh.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
                 TextView textView = new TextView(getApplicationContext());
@@ -176,6 +258,24 @@ public class Horof extends AppCompatActivity {
                 return imageView;
             }
         });
+
+    }
+
+    private void ChangeSeekbar() {
+
+seekBar.setProgress(horofmedia.getCurrentPosition());
+
+if (horofmedia.isPlaying()){
+
+    runnable = new Runnable() {
+        @Override
+        public void run() {
+            ChangeSeekbar();
+        }
+    };
+
+    handler.postDelayed(runnable,1000);
+}
 
     }
 
@@ -214,17 +314,17 @@ public class Horof extends AppCompatActivity {
             }
         });
 
-
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if((position<horof.length-1)&& (position<makhraz.length-1)){
+                 if((position<horof.length-1)&& (position<makhraz.length-1)){
 
                     position = position+1;
                     imageSwitcher.setBackgroundResource(horof[position]);
                     juktoImageSwitcher.setBackgroundResource(juktoHorof[position]);
-                    textSwitcher.setText(makhraz[position]);
+                    textSwitchermakhraz.setText(makhraz[position]);
+                    textSwitcherHoroh.setText(presetpronunciation[position]);
                     try {
                         horofmedia = MediaPlayer.create(Horof.this,horofSound[currenthorof]);
                         currenthorof++;
@@ -232,17 +332,23 @@ public class Horof extends AppCompatActivity {
                     }catch (Exception e){
 
                     }
+
                 }
+
+
             }
+
         });
 
         previousBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(position>0){
 
                     position = position-1;
-                    textSwitcher.setText(makhraz[position]);
+                    textSwitchermakhraz.setText(makhraz[position]);
+                    textSwitcherHoroh.setText(presetpronunciation[position]);
                     imageSwitcher.setBackgroundResource(horof[position]);
                     juktoImageSwitcher.setBackgroundResource(juktoHorof[position]);
 
@@ -261,21 +367,52 @@ public class Horof extends AppCompatActivity {
             }
         });
 
+        compareBttn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView sentanceOne = (TextView) textSwitcherHoroh.getCurrentView();
+
+                String sentanceOnee = sentanceOne.getText().toString();
+                String sentenceTwoo = userVoiceConvert.getText().toString();
+
+                if (sentanceOnee.equals(sentenceTwoo) ) {
+
+                    Toast.makeText(Horof.this, "Equal", Toast.LENGTH_SHORT).show();
+                }
+                else {
+
+                    Toast.makeText(Horof.this, "NotEqual", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        playBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (horofmedia == null){
+                    horofmedia = MediaPlayer.create(Horof.this,horofSound[currenthorof]);
+
+                }
+                horofmedia.start();
+            }
+        });
 
     }
-
 
     private void init() {
 
         previousBtn = findViewById(R.id.previousBtn);
         nextBtn = findViewById(R.id.nextBtn);
         playBtn = findViewById(R.id.playBtn);
-        pauseBtn = findViewById(R.id.pauseBtn);
-        stopBtn = findViewById(R.id.stopBtn);
         micBtn = findViewById(R.id.micBtn);
         imageSwitcher = findViewById(R.id.imageSwither);
-        textSwitcher = findViewById(R.id.textSwitcher);
+        textSwitchermakhraz = findViewById(R.id.textSwitcherMakhraz);
+        textSwitcherHoroh = findViewById(R.id.textSwitcherhorofPronunciation);
         userVoiceConvert = findViewById(R.id.userVoiceText);
         juktoImageSwitcher = findViewById(R.id.juktoImageSwither);
+        compareBttn = findViewById(R.id.compareBtn);
+        handler = new Handler();
+        seekBar = findViewById(R.id.outSeekBar);
     }
 }

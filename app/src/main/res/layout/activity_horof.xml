@@ -43,16 +43,28 @@
 
         </LinearLayout>
 
-
         <TextSwitcher
-            android:id="@+id/textSwitcher"
+            android:id="@+id/textSwitcherhorofPronunciation"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="30dp"
             android:gravity="center"
             android:background="#C2BBBB"
-            android:layout_margin="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp"
             android:padding="5dp"
-            android:textSize="25dp" />
+            android:textSize="30dp" />
+
+        <TextSwitcher
+            android:id="@+id/textSwitcherMakhraz"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:background="#C2BBBB"
+            android:layout_marginBottom="2dp"
+            android:padding="5dp"
+            android:textSize="30dp" />
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -107,11 +119,12 @@
 
 
 
-    <View
+    <androidx.appcompat.widget.AppCompatSeekBar
         android:layout_width="match_parent"
-        android:background="#000000"
+        android:background="#FFFFFF"
         android:layout_margin="5dp"
-        android:layout_height="10dp"/>
+        android:layout_height="10dp"
+        android:id="@+id/outSeekBar"/>
     <View
         android:layout_width="match_parent"
         android:background="#052DF5"
@@ -124,7 +137,7 @@
         android:layout_margin="10dp"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:padding="50dp"
@@ -132,30 +145,20 @@
             android:background="@drawable/ic_skip_previous_black_24dp"
             android:id="@+id/previousBtn"/>
 
-        <Button
-            android:id="@+id/pauseBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/ic_pause_circle_outline_black_24dp" />
 
 
 
-        <Button
-       android:layout_width="50dp"
-       android:layout_height="50dp"
+
+        <ImageButton
+       android:layout_width="100dp"
+       android:layout_height="80dp"
        android:id="@+id/playBtn"
        android:layout_margin="10dp"
-       android:background="@drawable/ic_play_circle_outline_black_24dp"/>
+       android:background="@drawable/ic_repeat_one_black_24dp"/>
 
-        <Button
-            android:id="@+id/stopBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/ic_stop_black_24dp" />
 
-        <Button
+
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:layout_marginLeft="30dp"
@@ -165,11 +168,29 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/micBtn"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@drawable/ic_mic_none_black_24dp"
-        android:layout_gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/micBtn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/ic_mic_none_black_24dp"
+            android:layout_gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/compareBtn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/ic_compare_arrows_black_24dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
 
 </LinearLayout>

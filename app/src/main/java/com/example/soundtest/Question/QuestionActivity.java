@@ -43,8 +43,6 @@ public class QuestionActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private DatabaseReference RootRef;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

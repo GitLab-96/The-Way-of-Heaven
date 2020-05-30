@@ -265,18 +265,18 @@ public class Horof extends AppCompatActivity {
 
     private void ChangeSeekbar() {
 
-seekBar.setProgress(horofmedia.getCurrentPosition());
+        seekBar.setProgress(horofmedia.getCurrentPosition());
 
-if (horofmedia.isPlaying()){
+            if (horofmedia.isPlaying()){
 
-    runnable = new Runnable() {
+              runnable = new Runnable() {
         @Override
         public void run() {
             ChangeSeekbar();
         }
     };
 
-    handler.postDelayed(runnable,1000);
+              handler.postDelayed(runnable,1000);
 }
 
     }
@@ -333,10 +333,11 @@ if (horofmedia.isPlaying()){
                         horofmedia.start();
                     }catch (Exception e){
 
+
                     }
 
                 }
-
+       ChangeSeekbar();
 
             }
 
@@ -381,7 +382,6 @@ if (horofmedia.isPlaying()){
 
                     Toast.makeText(Horof.this, "Equal", Toast.LENGTH_SHORT).show();
                     goodToast.start();
-
 
                 }
                 else {

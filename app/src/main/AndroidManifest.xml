@@ -13,8 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Question.FindFriendActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".Learn.MaddActivity"></activity>
+        <activity android:name=".Learn.OwajibActivity" />
+        <activity android:name=".Learn.KolkolahActivity" />
+        <activity android:name=".Learn.HorkotActivity" />
+        <activity
+            android:name=".Question.FindFriendActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".PhoneLoginActivity" />
         <activity android:name=".Question.BlogActivity" />
         <activity android:name=".Question.CourseActivity" />

@@ -6,15 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="5dp"
-    android:background="#E6DC90"
-    tools:context=".Learn.Horof">
-
+    tools:context=".Learn.HorkotActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="তমীয হরফ"
+        android:text="হরকত"
         android:textSize="30sp"
         android:gravity="center"
         android:textColor="#000000"/>
@@ -22,10 +19,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
-        android:text="তমীযের হরফ ১২ টি ।"/>
+        android:text="এক যবর(ﹷ), এক যের (ﹻ), এক পেশ (ﹹ) কে হরকত বলে।"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:text=" হরকতের উচ্চারণ তাড়াতাড়ি করিয়া পরিতে হয়।"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,7 +45,7 @@
 
 
             <ImageSwitcher
-                android:id="@+id/tomijimageSwither1"
+                android:id="@+id/horkotimageSwither"
                 android:layout_width="450dp"
                 android:layout_height="250dp"
                 android:layout_gravity="center"
@@ -76,13 +83,13 @@
         android:layout_height="250dp"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
-        android:weightSum="2"
+        android:weightSum="3"
         android:orientation="horizontal">
 
         <ImageSwitcher
-            android:id="@+id/tomijimageSwither2_0"
+            android:id="@+id/horkotimageSwither2_0"
             android:layout_width="0dp"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:background="#000"
             android:layout_weight="1"
@@ -91,9 +98,20 @@
         </ImageSwitcher>
 
         <ImageSwitcher
-            android:id="@+id/tomijimageSwither2_1"
+            android:id="@+id/horkotimageSwither2_1"
             android:layout_width="0dp"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+        <ImageSwitcher
+            android:id="@+id/horkotimageSwither2_2"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:background="#000"
             android:layout_weight="1"
@@ -121,8 +139,8 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:padding="50dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/ic_skip_previous_black_24dp"
@@ -140,8 +158,8 @@
 
 
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="30dp"
             android:background="@drawable/ic_skip_next_black_24dp"
             android:id="@+id/tomijnextBtn"/>
@@ -149,6 +167,5 @@
 
 
     </LinearLayout>
-
 
 </LinearLayout>

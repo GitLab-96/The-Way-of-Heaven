@@ -13,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Learn.MaddActivity"></activity>
+        <activity android:name=".Learn.SuraActivity"></activity>
+        <activity android:name=".Learn.AllahActivity" />
+        <activity android:name=".Learn.Ra_Pur_Barik_Activity" />
+        <activity android:name=".Learn.GunnahActivity" />
+        <activity android:name=".Learn.MaddActivity" />
         <activity android:name=".Learn.OwajibActivity" />
         <activity android:name=".Learn.KolkolahActivity" />
         <activity android:name=".Learn.HorkotActivity" />

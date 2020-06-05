@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.example.soundtest.R;
 
 public class LearnActivity extends AppCompatActivity {
-    private TextView arabicHorof,tomijHorof,horkot,kolkolah,wajib,madd;
+    private TextView arabicHorof,tomijHorof,horkot,kolkolah,wajib,madd,gunnah,raPurBarik,allahPurBarik,surah;
 
 
 
@@ -20,16 +20,17 @@ public class LearnActivity extends AppCompatActivity {
         setContentView(R.layout.activity_learn);
 
         init();
-
         SendUserLearActivityToHorofActivity();
         SendUserLearActivityToTomijHorofActivity();
         SendUserLearnActivityToHorkotActivity();
         SendUserLearnActivityToKolkolahActivity();
         SendUserLearnActivityToOwajibActivity();
         SendUserLearnActivityToMaddActivity();
-
+        SendUserLearnActivityToGunnaActivity();
+        SendUserLearnActivityToRaPurBarikActivity();
+        SendUserLearnActivityToAllahPurBarikActivity();
+        SendUserLearnActivityToSurahActivityActivity();
     }
-
 
 
 
@@ -41,7 +42,54 @@ public class LearnActivity extends AppCompatActivity {
         kolkolah = findViewById(R.id.kolkola);
         wajib = findViewById(R.id.wajibGunnah);
         madd = findViewById(R.id.madd);
+        gunnah = findViewById(R.id.gunnah);
+        raPurBarik = findViewById(R.id.roErNiyom);
+        allahPurBarik = findViewById(R.id.allahPorarNiyom);
+        surah = findViewById(R.id.Surah);
     }
+
+    private void SendUserLearnActivityToSurahActivityActivity() {
+
+        surah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LearnActivity.this, SuraActivity.class));
+            }
+        });
+
+    }
+
+    private void SendUserLearnActivityToAllahPurBarikActivity() {
+
+        allahPurBarik.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LearnActivity.this,AllahActivity.class));
+            }
+        });
+
+    }
+    private void SendUserLearnActivityToRaPurBarikActivity() {
+
+        raPurBarik.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LearnActivity.this, Ra_Pur_Barik_Activity.class));
+            }
+        });
+    }
+    private void SendUserLearnActivityToGunnaActivity() {
+
+        gunnah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(LearnActivity.this, GunnahActivity.class));
+            }
+        });
+    }
+
+
 
 
     private void SendUserLearnActivityToMaddActivity() {

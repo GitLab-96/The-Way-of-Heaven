@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Learn.AllahActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="আল্লাহ শব্দ পড়ার নিয়ম"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"/>
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBarLayout">
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/allah_main_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D272E2"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            app:tabIndicatorColor="#F00707"
+            app:tabIndicatorHeight="4dp"
+            app:tabSelectedTextColor="#05F5DC"
+            app:tabTextColor="#5E05F3"></com.google.android.material.tabs.TabLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/allahViewPager"/>
+
+
+
+
+
+
+
+
+</LinearLayout>

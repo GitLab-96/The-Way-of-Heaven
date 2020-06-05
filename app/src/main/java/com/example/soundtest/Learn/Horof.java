@@ -367,6 +367,7 @@ public class Horof extends AppCompatActivity {
 
 
                 }
+                ChangeSeekbar();
             }
         });
 
@@ -401,6 +402,8 @@ public class Horof extends AppCompatActivity {
 
                 }
                 horofmedia.start();
+
+                ChangeSeekbar();
             }
         });
 

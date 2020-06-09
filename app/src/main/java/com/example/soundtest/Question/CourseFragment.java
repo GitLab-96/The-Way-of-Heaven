@@ -11,14 +11,13 @@ import android.view.ViewGroup;
 
 import com.example.soundtest.R;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class GhushFragment extends Fragment {
+public class CourseFragment extends Fragment {
 
 
-    public GhushFragment() {
+    public CourseFragment() {
         // Required empty public constructor
     }
 
@@ -27,7 +26,7 @@ public class GhushFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ghush, container, false);
+        return inflater.inflate(R.layout.fragment_course, container, false);
     }
 
 }

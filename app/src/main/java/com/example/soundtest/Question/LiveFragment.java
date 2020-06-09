@@ -11,14 +11,13 @@ import android.view.ViewGroup;
 
 import com.example.soundtest.R;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HajjFragmant extends Fragment {
+public class LiveFragment extends Fragment {
 
 
-    public HajjFragmant() {
+    public LiveFragment() {
         // Required empty public constructor
     }
 
@@ -27,7 +26,7 @@ public class HajjFragmant extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_hajj_fragmant, container, false);
+        return inflater.inflate(R.layout.fragment_live, container, false);
     }
 
 }

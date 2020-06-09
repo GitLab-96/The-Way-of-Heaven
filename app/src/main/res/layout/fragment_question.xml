@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Question.QuestionFragment">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appBarLayout">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/question_main_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#D272E2"
+                android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                app:tabIndicatorColor="#F00707"
+                app:tabIndicatorHeight="4dp"
+                app:tabSelectedTextColor="#05F5DC"
+                app:tabTextColor="#5E05F3">
+            </com.google.android.material.tabs.TabLayout>
+
+            </HorizontalScrollView>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="8"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_weight="7"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@drawable/bounarydesign"
+        android:layout_margin="10dp"
+        android:hint="প্রশ্ন করতে এখানে লিখুন"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:src="@drawable/ic_send_black_24dp"
+        android:layout_height="60dp"/>
+
+</LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/questionViewPager"/>
+
+</LinearLayout>

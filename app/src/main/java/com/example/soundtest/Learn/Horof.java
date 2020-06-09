@@ -332,8 +332,6 @@ public class Horof extends AppCompatActivity {
                         currenthorof++;
                         horofmedia.start();
                     }catch (Exception e){
-
-
                     }
 
                 }
@@ -356,9 +354,9 @@ public class Horof extends AppCompatActivity {
                     juktoImageSwitcher.setBackgroundResource(juktoHorof[position]);
 
                     try {
-                        MediaPlayer.create(Horof.this,horofSound[currenthorof]);
 
                         currenthorof--;
+                        MediaPlayer.create(Horof.this,horofSound[currenthorof]);
                         horofmedia.start();
                     }catch (Exception e){
 

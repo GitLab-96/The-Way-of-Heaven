@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#C05353"
+    android:background="#7EC2C7D8"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Salah.SalahActivity">
@@ -12,7 +12,7 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:gravity="center"
-        android:background="#0625F0"
+        android:background="#7EC2C7D8"
         android:layout_height="wrap_content">
 
         <ImageView

@@ -11,14 +11,13 @@ import android.view.ViewGroup;
 
 import com.example.soundtest.R;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ZakatFragment extends Fragment {
+public class BlogFragment extends Fragment {
 
 
-    public ZakatFragment() {
+    public BlogFragment() {
         // Required empty public constructor
     }
 
@@ -27,7 +26,7 @@ public class ZakatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_zakat, container, false);
+        return inflater.inflate(R.layout.fragment_blog, container, false);
     }
 
 }

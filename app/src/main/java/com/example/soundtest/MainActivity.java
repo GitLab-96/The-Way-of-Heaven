@@ -8,10 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.example.soundtest.Learn.LearnActivity;
-import com.example.soundtest.Question.QuestionActivity;
+import com.example.soundtest.Question.HomeQuestionActivity;
 import com.example.soundtest.Question.SettingsActivity;
 import com.example.soundtest.Read.Read;
 import com.example.soundtest.Salah.SalahActivity;
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         questionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, QuestionActivity.class));
+                startActivity(new Intent(MainActivity.this, HomeQuestionActivity.class));
             }
         });
     }
@@ -117,10 +116,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if ((dataSnapshot.child("name").exists())){
 
-                    Toast.makeText(MainActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
                 }else {
                     SendUserToSettingsActivity();
-                    Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+
                 }
 
             }

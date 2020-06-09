@@ -14,10 +14,10 @@ import com.example.soundtest.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RojaFragment extends Fragment {
+public class ApnarProsnoFragment extends Fragment {
 
 
-    public RojaFragment() {
+    public ApnarProsnoFragment() {
         // Required empty public constructor
     }
 
@@ -26,7 +26,7 @@ public class RojaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_roja, container, false);
+        return inflater.inflate(R.layout.fragment_apnar_prosno, container, false);
     }
 
 }

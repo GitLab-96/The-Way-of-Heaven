@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3F51B5"
+    android:background="#7EC2C7D8"
     android:orientation="vertical"
     tools:context=".Salah.GirlsFragment">
 
@@ -81,7 +81,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center"
-        android:background="#1FCC1B"
         android:orientation="horizontal">
 
         <ImageButton

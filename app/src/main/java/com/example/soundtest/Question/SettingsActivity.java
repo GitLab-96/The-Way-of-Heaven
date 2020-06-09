@@ -17,7 +17,6 @@ import android.widget.Toast;
 import com.example.soundtest.MainActivity;
 import com.example.soundtest.R;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -29,11 +28,11 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.HashMap;
-import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SettingsActivity extends AppCompatActivity {
+
     private Button updateAccountButtn;
     private EditText userName,userStatuse,phoneNumber,gender,DoB;
     private CircleImageView userProfileImage;
@@ -41,11 +40,11 @@ public class SettingsActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
     private StorageReference UserProfileImageRef;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
         init();
         mAuth=FirebaseAuth.getInstance();
         currentUserID= mAuth.getCurrentUser().getUid();
@@ -70,9 +69,7 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivityForResult(intent,0);
             }
         });
-
     }
-
 
     private void init() {
 
@@ -91,12 +88,12 @@ public class SettingsActivity extends AppCompatActivity {
 
         if (requestCode==0 && resultCode ==RESULT_OK && data !=null){
 
-                 Uri ImageUri = data.getData();
+            Uri ImageUri = data.getData();
 
-                 CropImage.activity()
-                         .setGuidelines(CropImageView.Guidelines.ON)
-                         .setAspectRatio(1,1)
-                         .start(this);
+            CropImage.activity()
+                    .setGuidelines(CropImageView.Guidelines.ON)
+                    .setAspectRatio(1,1)
+                    .start(this);
 
 
 
@@ -115,7 +112,7 @@ public class SettingsActivity extends AppCompatActivity {
                 filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                        
+
                         if (task.isSuccessful()){
                             Toast.makeText(SettingsActivity.this, "Profile Image Uploaded Successfully", Toast.LENGTH_SHORT).show();
                         }
@@ -150,7 +147,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
         else {
 
-            HashMap<String,String>profileMap=new HashMap<>();
+            HashMap<String,String> profileMap=new HashMap<>();
             profileMap.put("uID",currentUserID);
             profileMap.put("name",setUserName);
             profileMap.put("status",setStatus);
@@ -159,19 +156,19 @@ public class SettingsActivity extends AppCompatActivity {
             profileMap.put("Date of Birth",setdate);
             RootRef.child("Users").child(currentUserID).setValue(profileMap)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
 
-                    if (task.isSuccessful()){
-                        SendUserToMainActivity();
-                        Toast.makeText(SettingsActivity.this, "ProfileUpdated Successfully", Toast.LENGTH_SHORT).show();
-                    }
-                    else{
-                        String massage=task.getException().toString();
-                        Toast.makeText(SettingsActivity.this, "Error:"+massage, Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
+                            if (task.isSuccessful()){
+                                SendUserToMainActivity();
+                                Toast.makeText(SettingsActivity.this, "ProfileUpdated Successfully", Toast.LENGTH_SHORT).show();
+                            }
+                            else{
+                                String massage=task.getException().toString();
+                                Toast.makeText(SettingsActivity.this, "Error:"+massage, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
         }
 
     }

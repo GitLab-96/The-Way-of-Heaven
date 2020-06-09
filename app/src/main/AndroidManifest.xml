@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Learn.SuraActivity"></activity>
+        <activity android:name=".Question.SettingsActivity"></activity>
+        <activity android:name=".Question.HomeQuestionActivity" />
+        <activity android:name=".Learn.SuraActivity" />
         <activity android:name=".Learn.AllahActivity" />
         <activity android:name=".Learn.Ra_Pur_Barik_Activity" />
         <activity android:name=".Learn.GunnahActivity" />
@@ -21,22 +23,10 @@
         <activity android:name=".Learn.OwajibActivity" />
         <activity android:name=".Learn.KolkolahActivity" />
         <activity android:name=".Learn.HorkotActivity" />
-        <activity
-            android:name=".Question.FindFriendActivity"
-            android:parentActivityName=".MainActivity" />
         <activity android:name=".PhoneLoginActivity" />
-        <activity android:name=".Question.BlogActivity" />
-        <activity android:name=".Question.CourseActivity" />
-        <activity android:name=".Question.GroupChatActivity" />
-        <activity android:name=".Question.LiveActivity" />
-        <activity android:name=".Question.GroupsActivity" />
-        <activity android:name=".Question.AnswarPad" />
-        <activity android:name=".Question.ProfileActivity" />
-        <activity android:name=".Question.SettingsActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".Question.QuestionActivity" />
         <activity android:name=".Salah.SalahActivity" />
         <activity android:name=".Read.Read" />
         <activity android:name=".Learn.TomijHorof" />

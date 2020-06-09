@@ -5,7 +5,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
-import com.example.soundtest.Question.TeastAccessAdapter;
 import com.example.soundtest.R;
 import com.google.android.material.tabs.TabLayout;
 

@@ -45,7 +45,7 @@
 
 
             <ImageSwitcher
-                android:id="@+id/horkotimageSwither"
+                android:id="@+id/topImageSwitcher"
                 android:layout_width="450dp"
                 android:layout_height="250dp"
                 android:layout_gravity="center"
@@ -87,7 +87,7 @@
         android:orientation="horizontal">
 
         <ImageSwitcher
-            android:id="@+id/horkotimageSwither2_0"
+            android:id="@+id/leftImageSwitcher"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
@@ -98,7 +98,7 @@
         </ImageSwitcher>
 
         <ImageSwitcher
-            android:id="@+id/horkotimageSwither2_1"
+            android:id="@+id/midleImageSwitcher"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
@@ -109,7 +109,7 @@
         </ImageSwitcher>
 
         <ImageSwitcher
-            android:id="@+id/horkotimageSwither2_2"
+            android:id="@+id/rightImageSwitcher"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
@@ -144,14 +144,14 @@
             android:padding="50dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/ic_skip_previous_black_24dp"
-            android:id="@+id/tomijpreviousBtn"/>
+            android:id="@+id/previousBtn"/>
 
 
 
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:id="@+id/tomijRepeatBtn"
+            android:id="@+id/replayBtn"
             android:layout_margin="10dp"
             android:background="@drawable/ic_repeat_one_black_24dp"/>
 

@@ -49,6 +49,10 @@ public class HomeQuestionActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         RootRef= FirebaseDatabase.getInstance().getReference();
 
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.homeQuestionFramLayout,new QuestionFragment());
+        ft.commit();
+
 
     }
 
@@ -130,6 +134,7 @@ public class HomeQuestionActivity extends AppCompatActivity {
 
             case R.id.main_contact_us_option:
 
+                startActivity(new Intent(HomeQuestionActivity.this,AboutActivity.class));
                 break;
 
             case R.id.main_logout_option:

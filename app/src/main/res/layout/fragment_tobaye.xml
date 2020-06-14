@@ -1,16 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Learn.TobayeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:text="মদ্দে তবায়ি"
         android:gravity="center"
-        android:textSize="40sp"
-        android:text="Tobaye" />
+        android:textStyle="bold"
+        android:textSize="25dp"/>
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="> যবর এর বাম পাশে খালি আলিফ ()"
+      android:layout_marginLeft="5dp"
+      android:textStyle="bold"
+      android:textSize="22sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="> যের এর বাম পাশে যজম ওয়ালা ইয়া ()"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:textSize="22sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="> পেশ এর বাম পাশে যজম ওয়ালা ওয়াও ()"
+        android:textStyle="bold"
+        android:textSize="22sp"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+    android:text="> হরফে খাঁড়া যবর(),খাঁড়া যের(),উল্টা পেশ ()"
+    android:textStyle="bold"
+    android:textSize="22sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="হইলে এক আলিফ টানিয়া পড়িতে হয়।"
+        android:textStyle="bold"
+        android:textSize="25sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#999292"
+        android:layout_marginTop="5dp"/>
+  <ImageSwitcher
+      android:id="@+id/tobayeimageSwitherTop"
+      android:layout_width="450dp"
+      android:layout_height="200dp"
+      android:layout_gravity="center"
+      android:background="#000"
+      android:scaleX=".8"
+      android:scaleY=".8" />
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="3"
+      android:orientation="horizontal">
 
-</FrameLayout>
+    <ImageSwitcher
+        android:id="@+id/tobayeimageSwitherLeft"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:background="#000"
+        android:layout_weight="1"
+        android:scaleX=".8"
+        android:scaleY=".8">
+    </ImageSwitcher>
+
+    <ImageSwitcher
+        android:id="@+id/tobayeimageSwitherMiddle"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:background="#000"
+        android:layout_weight="1"
+        android:scaleX=".8"
+        android:scaleY=".8">
+    </ImageSwitcher>
+
+    <ImageSwitcher
+        android:id="@+id/tobayeimageSwitherRight"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:background="#000"
+        android:layout_weight="1"
+        android:scaleX=".8"
+        android:scaleY=".8">
+    </ImageSwitcher>
+
+
+  </LinearLayout>
+  <View
+      android:layout_width="match_parent"
+      android:background="#052DF5"
+      android:layout_height="10dp"/>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:layout_margin="20dp"
+      android:orientation="horizontal">
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="50dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/ic_skip_previous_black_24dp"
+        android:id="@+id/tobayePreviousBtn"/>
+
+
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/tobayeRepeatBtn"
+        android:layout_margin="10dp"
+        android:background="@drawable/ic_repeat_one_black_24dp"/>
+
+
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/ic_skip_next_black_24dp"
+        android:id="@+id/tobayeNextBtn"/>
+
+
+
+  </LinearLayout>
+</LinearLayout>

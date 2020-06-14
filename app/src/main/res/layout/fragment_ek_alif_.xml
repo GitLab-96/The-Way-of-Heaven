@@ -20,10 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabIndicatorHeight="4dp"
-            android:background="#DF9EEC"
             app:tabIndicatorColor="#F00707"
             app:tabTextColor="#5E05F3"
-            app:tabSelectedTextColor="#05F5DC"
+            app:tabSelectedTextColor="#CC07EE"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
         </com.google.android.material.tabs.TabLayout>
 

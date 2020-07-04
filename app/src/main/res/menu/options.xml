@@ -4,7 +4,7 @@
 
 
 
-    <item android:title="Settings"
+    <item android:title="User Info"
         android:id="@+id/main_setting_option"
         app:showAsAction="never"/>
 

@@ -1,20 +1,25 @@
 package com.example.soundtest.Question;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.soundtest.R;
+import com.example.soundtest.Read.Read;
+import com.example.soundtest.Salah.BoysFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -27,13 +32,14 @@ import com.google.firebase.database.ValueEventListener;
  * A simple {@link Fragment} subclass.
  */
 public class ProfileFragment extends Fragment {
-    private Button upDateBttn;
-    private TextView userName,userEmail,userPhone,userGender,userDOB;
+    private TextView userName,userPhone,userEmail;
+    private ImageView alemList;
     private ImageView userImage;
     private String currentUserID;
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
-    private BottomNavigationView navigationView;
+    Activity context;
+
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -43,42 +49,33 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+        context = getActivity();
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         mAuth=FirebaseAuth.getInstance();
         currentUserID= mAuth.getCurrentUser().getUid();
-        upDateBttn = view.findViewById(R.id.update_settings_buttn);
         userName = view.findViewById(R.id.get_user_name);
-        userEmail = view.findViewById(R.id.get_user_statuse);
         userPhone = view.findViewById(R.id.get_user_phone_number);
-        userGender= view.findViewById(R.id.gender);
-        userDOB = view.findViewById(R.id.dateOfBirth);
+        userEmail = view.findViewById(R.id.get_user_email);
+        userImage = view.findViewById(R.id.get_profile_image);
+        alemList = view.findViewById(R.id.alemList);
 
-
-        RetreveData();
-
-        upDateBttn.setOnClickListener(new View.OnClickListener() {
+        alemList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SendUserToSettingsActivity();
+
+             Intent intent = new Intent(context, AlemList.class);
+             startActivity(intent);
             }
         });
 
-
-
+        RetreveData();
 
 
       return view;
-    }
-
-
-
-
-
-    private void SendUserToSettingsActivity() {
-        startActivity(new Intent(getContext(), SettingsActivity.class));
-
     }
 
     private void RetreveData() {
@@ -89,16 +86,13 @@ public class ProfileFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 String retreveUsername = dataSnapshot.child("name").getValue().toString();
-                String retreveUserstatus = dataSnapshot.child("status").getValue().toString();
-                String retreveUserDoB = dataSnapshot.child("Date of Birth").getValue().toString();
-                String retreveUserGender = dataSnapshot.child("Gender").getValue().toString();
-                String retreveUserPhone = dataSnapshot.child("Phone No").getValue().toString();
+                String retreveUserPhone = dataSnapshot.child("phoneNo").getValue().toString();
+                String retreveUserEmail = dataSnapshot.child("email").getValue().toString();
 
                 userName.setText(retreveUsername);
-                userEmail.setText(retreveUserstatus);
                 userPhone.setText(retreveUserPhone);
-                userGender.setText(retreveUserGender);
-                userDOB.setText(retreveUserDoB);
+                userEmail.setText(retreveUserEmail);
+
             }
 
             @Override
@@ -107,11 +101,4 @@ public class ProfileFragment extends Fragment {
             }
         });
     }
-
-    private void init() {
-
-
-    }
-
-
 }

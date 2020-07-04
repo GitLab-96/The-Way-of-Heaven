@@ -1,114 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0AAF96"
+    android:orientation="vertical"
+    android:background="#7EE0E2EB"
     tools:context=".Question.ProfileFragment">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/get_profile_image"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/book11"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        app:civ_border_width="5dp"
-        android:layout_marginTop="85dp"
-        app:civ_border_color="#070707"/>
-
-    <TextView
-        android:id="@+id/get_user_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/get_profile_image"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:hint="UserName"
-        android:background="#fff"
-        android:layout_margin="10dp"
-        android:padding="6dp"
-        android:textAlignment="center"
-        android:textColor="#3F51B5"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/get_user_statuse"
-        android:layout_below="@id/get_user_name"
-        android:textAlignment="center"
-        android:textColor="#3F51B5"
-        android:hint="User Email"
-        android:background="#fff"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_margin="10dp"
-        android:padding="6dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/get_user_phone_number"
-        android:layout_below="@id/get_user_statuse"
-        android:textAlignment="center"
-        android:textColor="#3F51B5"
-        android:hint="Phone Number"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:background="#fff"
-        android:layout_margin="10dp"
-        android:padding="6dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/get_user_phone_number"
-        android:weightSum="2"
-        android:id="@+id/gender_name"
-        android:orientation="horizontal">
+        android:background="#7E8492C7"
+        android:orientation="vertical"
+      >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/get_profile_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/book11"
+                app:civ_border_width="5dp"
+                android:layout_margin="10dp"
+                app:civ_border_color="#070707"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/bounarydesign"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:text="Your ID"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12345"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="#B192E9"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your Progress"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@drawable/bounarydesign"
+                    android:layout_margin="10dp"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:id="@+id/get_user_name"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Gender"
-            android:textSize="20sp"
-            android:layout_margin="10dp"
-            android:textColor="#3F51B5"
-            android:background="#fff"
-            android:textAlignment="center"
-            android:id="@+id/gender"/>
-
+            android:text="MD Masihur Rahman"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#0C0C0C"
+            android:textSize="25sp"
+            />
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/get_user_phone_number"
+            android:padding="5dp"
+            android:textColor="#020202"
+            android:text="Phone Number "
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/get_user_email"
+            android:padding="5dp"
+            android:textColor="#020202"
+            android:text="shukhernahor90@gmail.com "
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Date Of Birth"
-            android:textAlignment="center"
-            android:textColor="#3F51B5"
-            android:layout_margin="10dp"
-            android:textSize="20sp"
-            android:background="#fff"
-            android:id="@+id/dateOfBirth"/>
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/bounarydesign"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:src="@drawable/book11"
+               />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:text="প্রশ্নের উত্তর"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bounarydesign"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:src="@drawable/book11"
+              />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:text="অনুত্তরিত প্রশ্ন"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"/>
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/bounarydesign"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/alemList"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:src="@drawable/book11"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:text="আলেম অনুসরণ"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3" />
+
+
+
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 
-    <Button
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/update_settings_buttn"
-        android:layout_below="@id/gender_name"
-        android:text="Update"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:textColor="#3F51B5"
-        android:textStyle="bold"
-        android:layout_margin="20dp"
-        android:textAllCaps="false"
-        android:padding="6dp"/>
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/book11"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="সংরক্ষিত পরামর্শ" />
 
 
-</RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/book11"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="সংরক্ষিত প্রশ্ন" />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

@@ -42,6 +42,7 @@
 
 
     <EditText
+        android:id="@+id/typeQuestionET"
         android:layout_width="0dp"
         android:layout_weight="7"
         android:layout_height="wrap_content"
@@ -51,6 +52,7 @@
         android:hint="প্রশ্ন করতে এখানে লিখুন"/>
 
     <ImageView
+        android:id="@+id/sendQuestionBttn"
         android:layout_width="80dp"
         android:src="@drawable/ic_send_black_24dp"
         android:layout_height="60dp"/>

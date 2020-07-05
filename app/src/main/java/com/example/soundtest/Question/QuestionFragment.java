@@ -73,7 +73,7 @@ public class QuestionFragment extends Fragment {
 
 
                     String key = questionRef.push().getKey();
-                    TypeQuestionClass typeQuestionClass = new TypeQuestionClass(setUserQuestion,setUserAnswer);
+                    TypeQuestionClass typeQuestionClass = new TypeQuestionClass(setUserQuestion,setUserAnswer,key);
 
                     questionRef.child(key).setValue(typeQuestionClass);
 

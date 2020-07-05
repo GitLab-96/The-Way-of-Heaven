@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<Question> questions;
+    ArrayList<TypeQuestionClass> questions;
 
-    public MyAdapter(Context c ,ArrayList<Question> p){
+    public MyAdapter(Context c ,ArrayList<TypeQuestionClass> p){
 
         context = c;
         questions = p;

@@ -1,16 +1,10 @@
 package com.example.soundtest.Question;
 
+import android.widget.ImageView;
+
 public class TypeQuestionClass {
-
     private String typeQuestion;
-
-
-    public TypeQuestionClass(String typeQuestion) {
-        this.typeQuestion = typeQuestion;
-    }
-
-    public TypeQuestionClass() {
-    }
+    private String typeAnswer;
 
     public String getTypeQuestion() {
         return typeQuestion;
@@ -18,5 +12,21 @@ public class TypeQuestionClass {
 
     public void setTypeQuestion(String typeQuestion) {
         this.typeQuestion = typeQuestion;
+    }
+
+    public String getTypeAnswer() {
+        return typeAnswer;
+    }
+
+    public void setTypeAnswer(String typeAnswer) {
+        this.typeAnswer = typeAnswer;
+    }
+
+    public TypeQuestionClass(String typeQuestion, String typeAnswer) {
+        this.typeQuestion = typeQuestion;
+        this.typeAnswer = typeAnswer;
+    }
+
+    public TypeQuestionClass() {
     }
 }

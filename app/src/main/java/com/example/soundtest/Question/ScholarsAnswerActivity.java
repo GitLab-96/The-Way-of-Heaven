@@ -6,7 +6,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,9 +26,11 @@ import java.util.ArrayList;
 
 public class ScholarsAnswerActivity extends AppCompatActivity {
 
+    private EditText typeAnswerET;
+    private ImageView sendAnswerButtn;
     DatabaseReference reference;
     RecyclerView recyclerView;
-    ArrayList<Question> list;
+    ArrayList<TypeQuestionClass> list;
     MyAdapter adapter;
 
     @Override
@@ -32,17 +38,21 @@ public class ScholarsAnswerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scholars_answer);
 
+
+        typeAnswerET = findViewById(R.id.typeAnswerET);
+        sendAnswerButtn = findViewById(R.id.sendAnswernBttn);
         recyclerView = findViewById(R.id.myRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        list = new ArrayList<Question>();
+        list = new ArrayList<TypeQuestionClass>();
 
         reference = FirebaseDatabase.getInstance().getReference().child("Question");
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
 
-                    Question p = dataSnapshot1.getValue(Question.class);
+                    TypeQuestionClass p = dataSnapshot1.getValue(TypeQuestionClass.class);
                     list.add(p);
                 }
                 adapter = new MyAdapter(ScholarsAnswerActivity.this,list);
@@ -55,6 +65,5 @@ public class ScholarsAnswerActivity extends AppCompatActivity {
                 Toast.makeText(ScholarsAnswerActivity.this, "Opps......", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }

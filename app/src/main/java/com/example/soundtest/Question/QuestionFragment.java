@@ -33,7 +33,6 @@ public class QuestionFragment extends Fragment {
     private ViewPager quetionviewPager;
     private QuestionAccessAdapter questionAccessAdapter;
     private String currentUserID;
-
     public FirebaseAuth mAuth;
     private DatabaseReference questionRef;
 
@@ -63,6 +62,7 @@ public class QuestionFragment extends Fragment {
             public void onClick(View v) {
                 String setUserQuestion = typeQusetionET.getText().toString();
 
+                String setUserAnswer = typeQusetionET.getText().toString();
 
                 if (TextUtils.isEmpty(setUserQuestion)) {
 
@@ -73,7 +73,7 @@ public class QuestionFragment extends Fragment {
 
 
                     String key = questionRef.push().getKey();
-                    TypeQuestionClass typeQuestionClass = new TypeQuestionClass(setUserQuestion);
+                    TypeQuestionClass typeQuestionClass = new TypeQuestionClass(setUserQuestion,setUserAnswer);
 
                     questionRef.child(key).setValue(typeQuestionClass);
 

@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.soundtest.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +29,7 @@ import java.util.ArrayList;
 public class ScholarsAnswerActivity extends AppCompatActivity {
 
     private EditText typeAnswerET;
+    private String answer;
     private ImageView sendAnswerButtn;
     DatabaseReference reference;
     RecyclerView recyclerView;
@@ -63,6 +66,29 @@ public class ScholarsAnswerActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 Toast.makeText(ScholarsAnswerActivity.this, "Opps......", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        sendAnswerButtn .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                answer = typeAnswerET.getText().toString();
+                FirebaseDatabase.getInstance().getReference().child("Question").child("key").child("typeAnswer").setValue(answer)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                                if(task.isSuccessful()){
+                                    Toast.makeText(ScholarsAnswerActivity.this, "Thank you for your answer.", Toast.LENGTH_SHORT).show();
+                                }
+
+                                else{
+                                    Toast.makeText(ScholarsAnswerActivity.this, "Error: "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
             }
         });
     }

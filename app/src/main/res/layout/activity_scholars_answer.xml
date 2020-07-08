@@ -5,12 +5,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Question.ScholarsAnswerActivity">
 
-<androidx.recyclerview.widget.RecyclerView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/myRecycler"/>
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBarLayout">
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/Scholars_main_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorHeight="4dp"
+            app:tabIndicatorColor="#F00707"
+            app:tabTextColor="#5E05F3"
+            app:tabSelectedTextColor="#CC07EE"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        </com.google.android.material.tabs.TabLayout>
+
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scholarsViewPager"/>
+
 
 
 

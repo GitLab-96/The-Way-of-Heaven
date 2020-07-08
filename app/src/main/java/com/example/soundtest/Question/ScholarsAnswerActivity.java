@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,9 +16,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.soundtest.Learn.Ek_Alif_Access_Adapter;
 import com.example.soundtest.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,41 +31,29 @@ import java.util.ArrayList;
 
 public class ScholarsAnswerActivity extends AppCompatActivity {
 
-    DatabaseReference reference;
-    RecyclerView recyclerView;
-    ArrayList<TypeQuestionClass> list;
-    MyAdapter adapter;
+
+    private TabLayout scholars_TabLayout;
+    private ViewPager scholars_viewPager;
+    private ScholarsAccessAdapter scholars_AccessAdapter;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scholars_answer);
 
-        
-        recyclerView = findViewById(R.id.myRecycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        list = new ArrayList<TypeQuestionClass>();
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Question");
+        scholars_TabLayout = findViewById(R.id.Scholars_main_tabs);
+        scholars_viewPager = findViewById(R.id.scholarsViewPager);
+        scholars_AccessAdapter = new ScholarsAccessAdapter(getSupportFragmentManager());
+        scholars_viewPager.setAdapter(scholars_AccessAdapter);
+        scholars_TabLayout.setupWithViewPager(scholars_viewPager);
 
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
 
-                    TypeQuestionClass p = dataSnapshot1.getValue(TypeQuestionClass.class);
-                    list.add(p);
-                }
-                adapter = new MyAdapter(ScholarsAnswerActivity.this,list);
-                recyclerView.setAdapter(adapter);
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                Toast.makeText(ScholarsAnswerActivity.this, "Opps......", Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 }

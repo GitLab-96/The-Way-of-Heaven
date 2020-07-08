@@ -25,17 +25,14 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ApnarProsnoFragment extends Fragment {
+public class ScholarsAnswerFragment extends Fragment {
 
     DatabaseReference reference;
-    RecyclerView apnar_proshno_recyclerView;
+    RecyclerView recyclerView;
     ArrayList<TypeQuestionClass> list;
-    ApnarProshnoAdapter apnarProshnoAdapter;
-
-
-
-    public ApnarProsnoFragment() {
-
+    MyAdapter adapter;
+    public ScholarsAnswerFragment() {
+        // Required empty public constructor
     }
 
 
@@ -43,11 +40,14 @@ public class ApnarProsnoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_apnar_prosno, container, false);
+        View view =  inflater.inflate(R.layout.fragment_scholars_answer, container, false);
 
-        apnar_proshno_recyclerView = view.findViewById(R.id.apnarProshnoRecylerView);
-        apnar_proshno_recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+        recyclerView = view.findViewById(R.id.myRecycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         list = new ArrayList<TypeQuestionClass>();
+
         reference = FirebaseDatabase.getInstance().getReference().child("Question");
 
         reference.addValueEventListener(new ValueEventListener() {
@@ -58,8 +58,8 @@ public class ApnarProsnoFragment extends Fragment {
                     TypeQuestionClass p = dataSnapshot1.getValue(TypeQuestionClass.class);
                     list.add(p);
                 }
-                apnarProshnoAdapter = new ApnarProshnoAdapter(getContext(),list);
-                apnar_proshno_recyclerView.setAdapter(apnarProshnoAdapter);
+                adapter = new MyAdapter(getContext(),list);
+                recyclerView.setAdapter(adapter);
             }
 
             @Override
@@ -68,9 +68,6 @@ public class ApnarProsnoFragment extends Fragment {
                 Toast.makeText(getContext(), "Opps......", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
 
     return view;
     }

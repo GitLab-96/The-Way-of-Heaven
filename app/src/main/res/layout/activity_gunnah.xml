@@ -41,20 +41,32 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:textSize="15sp"
-        android:gravity="center"
-        android:text="নুনে সাকিন যজম ওয়ালা নুন কে বলে।"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:textSize="15sp"
-        android:gravity="center"
-        android:text="তানভিন দুই জবর (), দুই যের (),দুই পেশ () কে বলে।"/>
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
+            android:text="নুনে সাকিন যজম ওয়ালা নুন ( ﻥٛ ) কে বলে।"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
+            android:text="তানভিন দুই জবর ( ﹱ ), দুই যের ( ﹴ ),দুই পেশ ( ࣨ ) কে বলে।"/>
+
+
+
+    </LinearLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"

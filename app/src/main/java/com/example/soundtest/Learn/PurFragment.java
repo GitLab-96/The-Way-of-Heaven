@@ -91,6 +91,7 @@ public class PurFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                topSwitcher_roPur.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -100,6 +101,7 @@ public class PurFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                rightSwitcher_roPur.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -108,6 +110,7 @@ public class PurFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                middleSwitcher_roPur.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -116,6 +119,7 @@ public class PurFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                leftSwitcher_roPur.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });

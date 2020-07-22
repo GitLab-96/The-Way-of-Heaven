@@ -97,6 +97,7 @@ public class TobayeFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                topSwitchertobaye.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -106,6 +107,7 @@ public class TobayeFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                rightSwitchertobaye.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -114,6 +116,7 @@ public class TobayeFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                middleSwitchertobaye.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -122,6 +125,7 @@ public class TobayeFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                leftSwitchertobaye.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });

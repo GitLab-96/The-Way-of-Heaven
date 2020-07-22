@@ -387,6 +387,7 @@ public class HorkotActivity extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                topSwitcher.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -396,6 +397,7 @@ public class HorkotActivity extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                rightSwitcher.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -404,6 +406,7 @@ public class HorkotActivity extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                middleSwitcher.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -412,6 +415,7 @@ public class HorkotActivity extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                leftSwitcher.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });

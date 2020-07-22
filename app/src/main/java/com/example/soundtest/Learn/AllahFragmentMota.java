@@ -56,7 +56,6 @@ public class AllahFragmentMota extends Fragment {
             R.drawable.book11,
             R.drawable.kolallohu,
             R.drawable.kolallohu,
-
             R.drawable.book11,
             R.drawable.uridullohu,
             R.drawable.uridullohu,
@@ -105,6 +104,7 @@ public class AllahFragmentMota extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                topSwitchermota.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -114,6 +114,7 @@ public class AllahFragmentMota extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                rightSwitchermota.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -122,6 +123,7 @@ public class AllahFragmentMota extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                middleSwitchermota.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -130,6 +132,7 @@ public class AllahFragmentMota extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                leftSwitchermota.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });

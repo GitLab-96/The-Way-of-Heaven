@@ -13,175 +13,42 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="হরফ"
+        android:text="আরবি হরফ ২৯ টি"
+        android:padding="5dp"
         android:textSize="30sp"
+        android:background="#fff"
         android:gravity="center"
         android:textColor="#000000"/>
-    <LinearLayout
+
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <LinearLayout
+        android:id="@+id/appBarLayout">
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/horof_main_tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+            app:tabIndicatorHeight="4dp"
+            android:background="#ECE6EE"
+            app:tabIndicatorColor="#F00707"
+            app:tabTextColor="#5E05F3"
+            app:tabSelectedTextColor="#05F5DC"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        </com.google.android.material.tabs.TabLayout>
 
 
 
-            <ImageSwitcher
-                android:id="@+id/imageSwither"
-                android:layout_width="350dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:background="#000"
-                android:layout_marginTop="20dp"
-                android:scaleX=".8"
-                android:scaleY=".8"/>
 
+    </com.google.android.material.appbar.AppBarLayout>
 
-        </LinearLayout>
-
-        <TextSwitcher
-            android:id="@+id/textSwitcherhorofPronunciation"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:gravity="center"
-            android:background="#C2BBBB"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:padding="5dp"
-            android:textSize="30dp" />
-
-        <TextSwitcher
-            android:id="@+id/textSwitcherMakhraz"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:gravity="center"
-            android:background="#C2BBBB"
-            android:layout_marginBottom="2dp"
-            android:padding="5dp"
-            android:textSize="30dp" />
-
-
-    </LinearLayout>
-    <LinearLayout
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="8"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#9FD589"
-            android:layout_weight="7"
-            android:layout_marginLeft="5dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:id="@+id/userVoiceText"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_weight="1"
-            android:text="80%"
-            android:gravity="right"
-            android:textColor="#000000"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
-
-        <ImageSwitcher
-            android:id="@+id/juktoImageSwither"
-            android:layout_width="380dp"
-            android:layout_height="180dp"
-            android:layout_gravity="center"
-            android:background="#000"
-            android:scaleX=".8"
-            android:scaleY=".8"/>
-
-        <View
-            android:layout_width="15dp"
-            android:layout_height="match_parent"
-            android:background="#062CF5"/>
-
-    </LinearLayout>
-    <androidx.appcompat.widget.AppCompatSeekBar
-        android:layout_width="match_parent"
-        android:background="#FFFFFF"
-        android:layout_margin="5dp"
-        android:layout_height="10dp"
-        android:id="@+id/outSeekBar"/>
-    <View
-        android:layout_width="match_parent"
-        android:background="#052DF5"
-        android:layout_margin="5dp"
-        android:layout_height="10dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:padding="50dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/ic_skip_previous_black_24dp"
-            android:id="@+id/previousBtn"/>
+        android:layout_height="match_parent"
+        android:id="@+id/horofViewPager"/>
 
 
-
-
-
-        <ImageButton
-       android:layout_width="100dp"
-       android:layout_height="80dp"
-       android:id="@+id/playBtn"
-       android:layout_margin="10dp"
-       android:background="@drawable/ic_repeat_one_black_24dp"/>
-
-
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="30dp"
-            android:background="@drawable/ic_skip_next_black_24dp"
-            android:id="@+id/nextBtn"/>
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/micBtn"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/ic_mic_none_black_24dp"
-            android:layout_gravity="center"/>
-
-        <ImageButton
-            android:id="@+id/compareBtn"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="25dp"
-            android:background="@drawable/ic_compare_arrows_black_24dp"
-            android:layout_gravity="center"/>
-    </LinearLayout>
 
 
 

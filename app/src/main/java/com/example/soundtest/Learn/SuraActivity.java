@@ -147,7 +147,7 @@ public class SuraActivity extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-
+                suraImageSwitcher.setBackgroundResource(R.drawable.bismillah);
                 return imageView;
             }
         });
@@ -157,7 +157,7 @@ public class SuraActivity extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-
+                uccharonImageSwitcher.setBackgroundResource(R.drawable.bismillahbanglauccharon);
                 return imageView;
             }
         });
@@ -167,7 +167,7 @@ public class SuraActivity extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-
+                orthoImageSwitcher.setBackgroundResource(R.drawable.bismillahbanglaortho);
                 return imageView;
             }
         });

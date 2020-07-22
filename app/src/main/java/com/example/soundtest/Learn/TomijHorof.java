@@ -122,6 +122,7 @@ public class TomijHorof extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                tomijImageSwitcherOne.setBackgroundResource(R.drawable.tmijhha_ha);
                 return imageView;
             }
         });
@@ -130,6 +131,7 @@ public class TomijHorof extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                tomijImageSwitcherTwoZero.setBackgroundResource(R.drawable.ha);
                 return imageView;
             }
         });
@@ -138,6 +140,7 @@ public class TomijHorof extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                tomijImageSwitcherTwoOne.setBackgroundResource(R.drawable.hha);
                 return imageView;
             }
         });

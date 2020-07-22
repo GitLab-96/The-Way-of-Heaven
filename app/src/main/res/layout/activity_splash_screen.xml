@@ -43,20 +43,21 @@
             android:textStyle="italic"
             android:textSize="50dp" />
 
+        <ProgressBar
+            android:id="@+id/progressBarID"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="300dp"
+            android:progressBackgroundTint="#000000"
+            android:progressTint="#02b3b9">
+
+
+        </ProgressBar>
+
     </LinearLayout>
 
-
-
-
-    <ProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:id="@+id/progressBarID"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:progressBackgroundTint="#000000"
-        android:progressTint="#02b3b9"/>
 
 </LinearLayout>

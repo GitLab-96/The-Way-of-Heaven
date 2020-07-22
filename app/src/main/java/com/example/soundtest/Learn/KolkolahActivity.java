@@ -160,6 +160,7 @@ public class KolkolahActivity extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                topSwitcherkolkolah.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -169,6 +170,7 @@ public class KolkolahActivity extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                rightSwitcherkolkolah.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -177,6 +179,7 @@ public class KolkolahActivity extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                middleSwitcherkolkolah.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -185,6 +188,7 @@ public class KolkolahActivity extends AppCompatActivity {
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                leftSwitcherkolkolah.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });

@@ -115,6 +115,7 @@ public class IqlabFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                topSwitcheriqlab.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -124,6 +125,7 @@ public class IqlabFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                rightSwitcheriqlab.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -132,6 +134,7 @@ public class IqlabFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                middleSwitcheriqlab.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });
@@ -140,6 +143,7 @@ public class IqlabFragment extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                leftSwitcheriqlab.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });

@@ -19,6 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
+        android:padding="10dp"
         android:text="হরকতের বামে নুনে বা মীমে তাশদীদ হইলে গুন্নাহ করিয়া পড়িতে হয়।"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -115,7 +117,7 @@
             android:layout_height="100dp"
             android:layout_marginLeft="30dp"
             android:background="@drawable/ic_skip_next_black_24dp"
-            android:id="@+id/owajibnextBtn"/>
+            android:id="@+id/owajibNextBtn"/>
 
 
 

@@ -27,6 +27,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,7 +37,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileFragment extends Fragment {
     private TextView userName,userPhone,userEmail;
     private ImageView alemList;
-    private ImageView userImage;
+    private CircleImageView userImage;
     private String currentUserID;
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
@@ -85,13 +88,18 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                String retreveUsername = dataSnapshot.child("name").getValue().toString();
-                String retreveUserPhone = dataSnapshot.child("phoneNo").getValue().toString();
-                String retreveUserEmail = dataSnapshot.child("email").getValue().toString();
 
-                userName.setText(retreveUsername);
-                userPhone.setText(retreveUserPhone);
-                userEmail.setText(retreveUserEmail);
+                if (dataSnapshot.exists()){
+                    String imageDb = dataSnapshot.child("image").getValue().toString();
+                    String retreveUsername = dataSnapshot.child("name").getValue().toString();
+                    String retreveUserPhone = dataSnapshot.child("phoneNo").getValue().toString();
+                    String retreveUserEmail = dataSnapshot.child("email").getValue().toString();
+
+                    userName.setText(retreveUsername);
+                    userPhone.setText(retreveUserPhone);
+                    userEmail.setText(retreveUserEmail);
+                    Picasso.get().load(imageDb).placeholder(R.drawable.book11).into(userImage);
+                }
 
             }
 

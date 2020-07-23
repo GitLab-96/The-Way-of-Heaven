@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.soundtest.MainActivity;
 import com.example.soundtest.R;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -61,7 +62,7 @@ public class SettingsActivity extends AppCompatActivity {
     public FirebaseAuth mAuth;
     public DatabaseReference RootRef;
     public Uri uri;
-    private String dounloadLink;
+    private String downloadUrl;
     public StorageReference storageReference;
 
     DatePickerDialog.OnDateSetListener onDateSetListener,onDateSetListener1;
@@ -77,7 +78,7 @@ public class SettingsActivity extends AppCompatActivity {
         currentUserID= mAuth.getCurrentUser().getUid();
         RootRef= FirebaseDatabase.getInstance().getReference();
 
-        storageReference = FirebaseStorage.getInstance().getReference();
+        storageReference = FirebaseStorage.getInstance().getReference().child("Profile Image");
 
         updateName.setVisibility(updateName.INVISIBLE);
         updateEmail.setVisibility(updateEmail.INVISIBLE);
@@ -156,14 +157,16 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void UpdateSettings() {
-        String setUserName = updateName.getText().toString();
-        String setUserEmail = updateEmail.getText().toString();
-        String setphoneNo = updatePhoneNo.getText().toString();
-        String setGender = updateGender.getSelectedItem().toString();
-        String setActivationdate = updateActivationDate.getText().toString();
-        String setDateOfBirth = updateDOB.getText().toString();
-        String setReligion = update_raligion.getText().toString();
-        String setNationality = update_nationality.getText().toString();
+
+
+        final String setUserName = updateName.getText().toString();
+        final String setUserEmail = updateEmail.getText().toString();
+        final String setphoneNo = updatePhoneNo.getText().toString();
+        final String setGender = updateGender.getSelectedItem().toString();
+        final String setActivationdate = updateActivationDate.getText().toString();
+        final String setDateOfBirth = updateDOB.getText().toString();
+        final String setReligion = update_raligion.getText().toString();
+        final String setNationality = update_nationality.getText().toString();
 
 
         if (TextUtils.isEmpty(setUserName)) {
@@ -178,9 +181,52 @@ public class SettingsActivity extends AppCompatActivity {
         else {
 
 
-            SettingDataClass settingDataClass = new SettingDataClass(setUserName,setUserEmail,setphoneNo,setGender,setReligion,setNationality,setDateOfBirth,setActivationdate);
+            final  StorageReference filePath = storageReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            final  UploadTask uploadTask = filePath.putFile(uri);
 
-            RootRef.setValue(settingDataClass);
+            uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()){
+                        throw task.getException();
+                    }
+                    downloadUrl = filePath.getDownloadUrl().toString();
+                    return filePath.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+
+                    if (task.isSuccessful()){
+                        downloadUrl = task.getResult().toString();
+                        HashMap<String,Object> profileMap = new HashMap<>();
+                        profileMap.put("uid",FirebaseAuth.getInstance().getCurrentUser().getUid());
+                        profileMap.put("name",setUserName);
+                        profileMap.put("email",setUserEmail);
+                        profileMap.put("phoneNo",setphoneNo);
+                        profileMap.put("gander",setGender);
+                        profileMap.put("activationDate",setActivationdate);
+                        profileMap.put("DOB",setDateOfBirth);
+                        profileMap.put("religion",setReligion);
+                        profileMap.put("nationality",setNationality);
+                        profileMap.put("image",downloadUrl);
+
+                        RootRef.updateChildren(profileMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()){
+                                    Intent intent = new Intent(SettingsActivity.this,MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                    Toast.makeText(SettingsActivity.this, "Profile Setting has been uploaded", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+
+
+                }
+            });
 
 
         }
@@ -188,36 +234,43 @@ public class SettingsActivity extends AppCompatActivity {
 
      private void RetreveData() {
 
-        RootRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
-        RootRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                String retreveUsername = (String) dataSnapshot.child("name").getValue();
-                String retreveUseremail = (String) dataSnapshot.child("email").getValue();
-                String retreveUserPhone = (String) dataSnapshot.child("phoneNo").getValue();
-                String retreveUserReligion = (String) dataSnapshot.child("religion").getValue();
-                String retreveUserNationality = (String) dataSnapshot.child("nationality").getValue();
-                String retreveUserActivationDate = (String) dataSnapshot.child("aplicationDate").getValue();
-                String retreveUserDoB = (String) dataSnapshot.child("dob").getValue();
-                String retreveUserGender = (String) dataSnapshot.child("gander").getValue();
+         RootRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
+         RootRef.addValueEventListener(new ValueEventListener() {
+                     @Override
+                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                         if (dataSnapshot.exists()){
 
-                setName.setText(retreveUsername);
-                setEmail.setText(retreveUseremail);
-                setPhoneNo.setText(retreveUserPhone);
-                set_raligion.setText(retreveUserReligion);
-                set_nationality.setText(retreveUserNationality);
-                setactivationTV.setText(retreveUserActivationDate);
-                setGander.setText(retreveUserGender);
-                setDOB.setText(retreveUserDoB);
-            }
+                             String imageDb = dataSnapshot.child("image").getValue().toString();
+                             String retreveUsername = (String) dataSnapshot.child("name").getValue();
+                             String retreveUseremail = (String) dataSnapshot.child("email").getValue();
+                             String retreveUserPhone = (String) dataSnapshot.child("phoneNo").getValue();
+                             String retreveUserReligion = (String) dataSnapshot.child("religion").getValue();
+                             String retreveUserNationality = (String) dataSnapshot.child("nationality").getValue();
+                             String retreveUserActivationDate = (String) dataSnapshot.child("activationDate").getValue();
+                             String retreveUserDoB = (String) dataSnapshot.child("DOB").getValue();
+                             String retreveUserGender = (String) dataSnapshot.child("gander").getValue();
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                             setName.setText(retreveUsername);
+                             setEmail.setText(retreveUseremail);
+                             setPhoneNo.setText(retreveUserPhone);
+                             set_raligion.setText(retreveUserReligion);
+                             set_nationality.setText(retreveUserNationality);
+                             setactivationTV.setText(retreveUserActivationDate);
+                             setGander.setText(retreveUserGender);
+                             setDOB.setText(retreveUserDoB);
 
-            }
-        });
+                             Picasso.get().load(imageDb).placeholder(R.drawable.book11).into(userProfileImage);
 
+
+                         }
+                     }
+
+                     @Override
+                     public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                     }
+                 });
 
 
     }

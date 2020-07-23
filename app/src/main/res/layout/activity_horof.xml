@@ -34,7 +34,7 @@
             android:background="#ECE6EE"
             app:tabIndicatorColor="#F00707"
             app:tabTextColor="#5E05F3"
-            app:tabSelectedTextColor="#05F5DC"
+            app:tabSelectedTextColor="#D20AF3"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
         </com.google.android.material.tabs.TabLayout>
 

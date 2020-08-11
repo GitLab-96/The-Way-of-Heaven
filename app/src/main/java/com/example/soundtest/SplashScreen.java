@@ -3,14 +3,19 @@ package com.example.soundtest;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class SplashScreen extends AppCompatActivity {
     private ProgressBar progressBar;
     private int progress;
+
+    TextView textView1,textView2;
+    Typeface typeface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,12 @@ public class SplashScreen extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash_screen);
 
+        textView1 = findViewById(R.id.welcome);
+        textView2 = findViewById(R.id.way);
+        typeface = Typeface.createFromAsset(getAssets(),"alexbrush_regular.ttf");
+
+        textView1.setTypeface(typeface);
+        textView2.setTypeface(typeface);
 
         progressBar = findViewById(R.id.progressBarID);
 

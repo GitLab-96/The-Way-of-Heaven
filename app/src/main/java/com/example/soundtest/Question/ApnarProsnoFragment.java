@@ -34,6 +34,7 @@ public class ApnarProsnoFragment extends Fragment {
 
 
 
+
     public ApnarProsnoFragment() {
 
     }
@@ -68,7 +69,6 @@ public class ApnarProsnoFragment extends Fragment {
                 Toast.makeText(getContext(), "Opps......", Toast.LENGTH_SHORT).show();
             }
         });
-
 
 
 

@@ -47,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/mainToolbar"
+        android:layout_above="@id/question_home_bottom_nev"
         android:id="@+id/homeQuestionFramLayout"/>
 
 

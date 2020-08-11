@@ -7,6 +7,16 @@
     android:orientation="vertical"
     tools:context=".Question.LiveFragment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Live Session"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:background="#46F04D"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

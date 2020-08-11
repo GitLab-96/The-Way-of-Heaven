@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -71,20 +72,22 @@ public class HomeQuestionActivity extends AppCompatActivity {
                         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.homeQuestionFramLayout,new QuestionFragment());
                         ft.commit();
+                        mtoolbar.setVisibility(View.VISIBLE);
                         break;
 
                     case R.id.main_profile_List:
                         FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
                         ft1.replace(R.id.homeQuestionFramLayout,new ProfileFragment());
-                        ft1.commit();
 
+                        ft1.commit();
+                        mtoolbar.setVisibility(View.GONE);
                         break;
 
                     case R.id.all_course_list:
                         FragmentTransaction ft2 = getSupportFragmentManager().beginTransaction();
                         ft2.replace(R.id.homeQuestionFramLayout,new CourseFragment());
                         ft2.commit();
-
+                        mtoolbar.setVisibility(View.GONE);
                         break;
 
 
@@ -93,6 +96,7 @@ public class HomeQuestionActivity extends AppCompatActivity {
                         FragmentTransaction ft3 = getSupportFragmentManager().beginTransaction();
                         ft3.replace(R.id.homeQuestionFramLayout,new LiveFragment());
                         ft3.commit();
+                        mtoolbar.setVisibility(View.GONE);
                         break;
 
                     case R.id.main_blog_list:
@@ -100,6 +104,7 @@ public class HomeQuestionActivity extends AppCompatActivity {
                         FragmentTransaction ft4 = getSupportFragmentManager().beginTransaction();
                         ft4.replace(R.id.homeQuestionFramLayout,new BlogFragment());
                         ft4.commit();
+                        mtoolbar.setVisibility(View.GONE);
                         break;
                 }
                 return false;

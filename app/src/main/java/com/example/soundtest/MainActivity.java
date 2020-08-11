@@ -5,9 +5,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.soundtest.Learn.LearnActivity;
 import com.example.soundtest.Question.HomeQuestionActivity;
@@ -23,6 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
+    TextView textView;
+    Typeface typeface;
      private  ImageButton learnBtn,readBtn,salahBtn,questionBtn;
      private FirebaseUser currentUser;
      private FirebaseAuth mAuth;
@@ -36,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
         RootRef= FirebaseDatabase.getInstance().getReference();
+
+        textView = findViewById(R.id.the_way);
+        typeface = Typeface.createFromAsset(getAssets(),"alexbrush_regular.ttf");
+
+        textView.setTypeface(typeface);
 
         SendUserMainActivityToSalahActivity();
         SendUserMainActivityToReadActivity();

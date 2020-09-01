@@ -376,6 +376,51 @@ public class HorkotLearn extends Fragment {
             R.drawable.book11,
             R.drawable.eyapesh,
     };
+    String[] HorkotSpacificationjobor = {
+            " আলিফ যবর 'আ'",
+            " আলিফ যবর 'আ'",
+            " আলিফ যবর 'আ'",
+            " বা যবর 'বা'",
+            " বা যবর 'বা'",
+            " বা যবর 'বা''",
+            " তা যবর 'তা'",
+            " তা যবর 'তা'",
+            " তা যবর 'তা'",
+            " ছা যবর 'ছা'",
+            " ছা যবর 'ছা'",
+            " ছা যবর 'ছা'",
+    };
+    String[] HorkotSpacificationjer = {
+
+            "",
+            " আলিফ যের 'ই'",
+            " আলিফ যের 'ই'",
+            "",
+            " বা যের 'বি'",
+            " বা যের 'বি'",
+            "",
+            " তা যের 'তি'",
+            " তা যের 'তি'",
+            "",
+            " ছা যের 'ছি'",
+            " ছা যের 'ছি'",
+
+    };
+    String[] HorkotSpacificationpesh = {
+
+            "",
+            "",
+            " আলিফ পেশ 'উ'",
+            "",
+            "",
+            " বা পেশ 'বু'",
+            "",
+            "",
+            " তা পেশ 'তু'",
+            "",
+            "",
+            " ছা পেশ 'ছু'",
+    };
     int [] horkotSound={R.raw.alifjobor,R.raw.alifjer,R.raw.alifpesh,R.raw.bajobor,R.raw.bajer,R.raw.bapesh,R.raw.tajobor,
             R.raw.tajobor,R.raw.tapesh,R.raw.sajobor,R.raw.sajer,R.raw.sapesh};
 
@@ -407,10 +452,10 @@ public class HorkotLearn extends Fragment {
             @Override
             public View makeView() {
                 TextView textView = new TextView(getContext());
-                textView.setTextSize(20);
-                textView.setTextColor(getResources().getColor(R.color.colorAccent));
-                textView.setGravity(Gravity.START);
-                textView.setText("Jobor Spacification ");
+                textView.setTextSize(25);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                textView.setText(" আলিফ যবর 'আ'");
                 return textView;
             }
         });
@@ -418,10 +463,10 @@ public class HorkotLearn extends Fragment {
             @Override
             public View makeView() {
                 TextView textView = new TextView(getContext());
-                textView.setTextSize(20);
-                textView.setTextColor(getResources().getColor(R.color.colorAccent));
-                textView.setGravity(Gravity.START);
-                textView.setText("Jer Spacification");
+                textView.setTextSize(25);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                textView.setText("আলিফ যের 'ই'");
                 return textView;
             }
         });
@@ -429,10 +474,10 @@ public class HorkotLearn extends Fragment {
             @Override
             public View makeView() {
                 TextView textView = new TextView(getContext());
-                textView.setTextSize(20);
-                textView.setTextColor(getResources().getColor(R.color.colorAccent));
-                textView.setGravity(Gravity.START);
-                textView.setText("Pesh Spacification");
+                textView.setTextSize(25);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                textView.setText("আলিফ পেশ 'উ'");
                 return textView;
             }
         });
@@ -442,7 +487,7 @@ public class HorkotLearn extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                topSwitcher.setBackgroundResource(R.drawable.book11);
+                topSwitcher.setBackgroundResource(R.drawable.alifjobor);
                 return imageView;
             }
         });
@@ -452,7 +497,7 @@ public class HorkotLearn extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                rightSwitcher.setBackgroundResource(R.drawable.book11);
+                rightSwitcher.setBackgroundResource(R.drawable.alifjobor);
                 return imageView;
             }
         });
@@ -461,7 +506,7 @@ public class HorkotLearn extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                middleSwitcher.setBackgroundResource(R.drawable.book11);
+                middleSwitcher.setBackgroundResource(R.drawable.alifjer);
                 return imageView;
             }
         });
@@ -470,7 +515,7 @@ public class HorkotLearn extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                leftSwitcher.setBackgroundResource(R.drawable.book11);
+                leftSwitcher.setBackgroundResource(R.drawable.alifpesh);
                 return imageView;
             }
         });
@@ -486,6 +531,10 @@ public class HorkotLearn extends Fragment {
                     rightSwitcher.setBackgroundResource(horkotRightImage[position]);
                     middleSwitcher.setBackgroundResource(horkotMidleImage[position]);
                     leftSwitcher.setBackgroundResource(horkotLeftImage[position]);
+
+                    jobortextSwitcher.setText(HorkotSpacificationjobor[position]);
+                    jertextSwitcher.setText(HorkotSpacificationjer[position]);
+                    peshtextSwitcher.setText(HorkotSpacificationpesh[position]);
 
                     try {
                         horkotMedia = MediaPlayer.create(getContext(),horkotSound[currenthorkot]);
@@ -512,6 +561,10 @@ public class HorkotLearn extends Fragment {
                     rightSwitcher.setBackgroundResource(horkotRightImage[position]);
                     middleSwitcher.setBackgroundResource(horkotMidleImage[position]);
                     leftSwitcher.setBackgroundResource(horkotLeftImage[position]);
+
+                    jobortextSwitcher.setText(HorkotSpacificationjobor[position]);
+                    jertextSwitcher.setText(HorkotSpacificationjer[position]);
+                    peshtextSwitcher.setText(HorkotSpacificationpesh[position]);
 
                     try {
 

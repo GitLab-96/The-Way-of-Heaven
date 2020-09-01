@@ -133,8 +133,16 @@ public class HomeQuestionActivity extends AppCompatActivity {
                 break;
 
             case R.id.main_share_app_option:
-                Toast.makeText(this, "Find Your Friend", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
 
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+
+                String subject = "App Sharing Practice";
+                String body = "I am Sumon";
+                intent.putExtra(Intent.EXTRA_SUBJECT,subject);
+                intent.putExtra(Intent.EXTRA_TEXT,body);
+                startActivity(Intent.createChooser(intent,"share with"));
                 break;
 
             case R.id.main_contact_us_option:

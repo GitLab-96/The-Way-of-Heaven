@@ -6,166 +6,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@color/defoultColor"
     tools:context=".Learn.HorkotActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="হরকত"
+        android:padding="5dp"
         android:textSize="30sp"
+        android:background="#ffffff"
         android:gravity="center"
         android:textColor="#000000"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:text="এক যবর(ﹷ), এক যের (ﹻ), এক পেশ (ﹹ) কে হরকত বলে।"/>
 
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_margin="10dp"
-        android:text=" হরকতের উচ্চারণ তাড়াতাড়ি করিয়া পরিতে হয়।"/>
+        android:id="@+id/appBarLayout">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <LinearLayout
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/horof_main_tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+            app:tabIndicatorHeight="4dp"
+            android:background="#ECE6EE"
+            app:tabIndicatorColor="#F00707"
+            app:tabTextColor="#5E05F3"
+            app:tabSelectedTextColor="#D20AF3"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        </com.google.android.material.tabs.TabLayout>
 
 
-            <ImageSwitcher
-                android:id="@+id/topImageSwitcher"
-                android:layout_width="450dp"
-                android:layout_height="250dp"
-                android:layout_gravity="center"
-                android:background="#000"
-                android:scaleX=".8"
-                android:scaleY=".8"/>
 
 
-        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-
-        <TextSwitcher
-            android:id="@+id/textSwitcher1st"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="#C2BBBB"
-            android:layout_margin="5dp"
-            android:padding="5dp"
-            android:textSize="25dp" />
-
-        <TextSwitcher
-            android:id="@+id/textSwitcher2nd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="#C2BBBB"
-            android:layout_margin="5dp"
-            android:padding="5dp"
-            android:textSize="25dp" />
-
-    </LinearLayout>
-    <LinearLayout
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:weightSum="3"
-        android:orientation="horizontal">
-
-        <ImageSwitcher
-            android:id="@+id/leftImageSwitcher"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:background="#000"
-            android:layout_weight="1"
-            android:scaleX=".8"
-            android:scaleY=".8">
-        </ImageSwitcher>
-
-        <ImageSwitcher
-            android:id="@+id/midleImageSwitcher"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:background="#000"
-            android:layout_weight="1"
-            android:scaleX=".8"
-            android:scaleY=".8">
-        </ImageSwitcher>
-
-        <ImageSwitcher
-            android:id="@+id/rightImageSwitcher"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:background="#000"
-            android:layout_weight="1"
-            android:scaleX=".8"
-            android:scaleY=".8">
-        </ImageSwitcher>
-
-
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:background="#000000"
-        android:layout_margin="5dp"
-        android:layout_height="10dp"/>
-    <View
-        android:layout_width="match_parent"
-        android:background="#052DF5"
-        android:layout_margin="5dp"
-        android:layout_height="10dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_margin="20dp"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:padding="50dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/ic_skip_previous_black_24dp"
-            android:id="@+id/previousBtn"/>
-
-
-
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/replayBtn"
-            android:layout_margin="10dp"
-            android:background="@drawable/ic_repeat_one_black_24dp"/>
-
-
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="30dp"
-            android:background="@drawable/ic_skip_next_black_24dp"
-            android:id="@+id/tomijnextBtn"/>
-
-
-
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/horofViewPager"/>
 
 </LinearLayout>

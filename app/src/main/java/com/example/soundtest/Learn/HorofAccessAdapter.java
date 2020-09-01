@@ -36,20 +36,20 @@ public class HorofAccessAdapter extends FragmentPagerAdapter {
 
     @Nullable
     @Override
-    public CharSequence getPageTitle(int position)
-    {
-        switch (position){
+        public CharSequence getPageTitle(int position)
+        {
+            switch (position){
 
-            case 0:
+                case 0:
 
-                return  "হরফ";
+                    return  "হরফ";
 
-            case 1:
+                case 1:
 
-                return "পরিক্ষা";
+                    return "পরিক্ষা";
 
-            default:
-                return null;
-        }
+                default:
+                    return null;
+            }
     }
 }

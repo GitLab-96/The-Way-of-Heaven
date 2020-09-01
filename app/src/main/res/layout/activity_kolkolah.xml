@@ -10,15 +10,21 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="কলকলা"
-        android:textSize="30sp"
+        android:layout_height="0dp"
         android:gravity="center"
-        android:textColor="#000000"/>
+        android:text="কলকলা"
+        android:layout_weight="1"
+        android:textColor="#000000"
+        android:textSize="30sp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="2"
+    android:padding="5dp"
+    android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="কলকলা হরফ ৫ টি। "
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -37,21 +43,26 @@
         android:layout_marginTop="10dp"
         android:text=" এই পাঁচ হরফে যজম হইলে কলকলা করিয়া পরিতে হয়।"/>
 
+</LinearLayout>
+
+
     <ImageSwitcher
         android:id="@+id/kolkolaimageSwitherTop"
         android:layout_width="450dp"
-        android:layout_height="250dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:background="#000"
+        android:layout_weight="4"
         android:scaleX=".8"
         android:scaleY=".8" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="0dp"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:weightSum="3"
+        android:layout_weight="4"
         android:orientation="horizontal">
 
         <ImageSwitcher
@@ -89,51 +100,66 @@
 
 
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:background="#000000"
-        android:layout_margin="5dp"
-        android:layout_height="10dp"/>
-    <View
-        android:layout_width="match_parent"
-        android:background="#052DF5"
-        android:layout_margin="5dp"
-        android:layout_height="10dp"/>
+
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_margin="20dp"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:weightSum="4"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:background="#000000"
+            android:layout_margin="5dp"
+            android:layout_weight=".5"
+            android:layout_height="0dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:background="#052DF5"
+            android:layout_margin="5dp"
+            android:layout_weight=".5"
+            android:layout_height="0dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:weightSum="3"
+            android:layout_margin="20dp"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:padding="50dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/ic_skip_previous_black_24dp"
-            android:id="@+id/kolkolapreviousBtn"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ic_skip_previous_black_24dp"
+                android:id="@+id/kolkolapreviousBtn"/>
 
 
 
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/kolkolaRepeatBtn"
-            android:layout_margin="10dp"
-            android:background="@drawable/ic_repeat_one_black_24dp"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/kolkolaRepeatBtn"
+
+                android:background="@drawable/ic_repeat_one_black_24dp"/>
 
 
 
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="30dp"
-            android:background="@drawable/ic_skip_next_black_24dp"
-            android:id="@+id/kolkolaNextBtn"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ic_skip_next_black_24dp"
+                android:id="@+id/kolkolaNextBtn"/>
 
 
+
+        </LinearLayout>
 
     </LinearLayout>
+
 
 </LinearLayout>

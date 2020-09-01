@@ -43,7 +43,7 @@ public class HorofLearn extends Fragment {
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     int pausecurrentpossition;
     MediaPlayer horofmedia,goodToast,badToast;
-    ImageSwitcher imageSwitcher,juktoImageSwitcher;
+    ImageSwitcher imageSwitcher,juktoImageSwitcherright,juktoImageSwitchermiddle,juktoImageSwitcherleft;
     TextSwitcher textSwitchermakhraz,textSwitcherHoroh;
     private int currenthorof=0;
 
@@ -79,36 +79,98 @@ public class HorofLearn extends Fragment {
             R.drawable.hamjah,
             R.drawable.ya,
     };
-    int[] juktoHorof = {
-            R.drawable.juktoalif,
-            R.drawable.juktobaa,
-            R.drawable.juktotaa,
-            R.drawable.juktosaa,
-            R.drawable.juktojeem,
-            R.drawable.juktohaaa,
-            R.drawable.juktokhaa,
-            R.drawable.juktodaal,
-            R.drawable.juktojaal,
-            R.drawable.juktora,
-            R.drawable.juktojhaa,
-            R.drawable.juktoseen,
-            R.drawable.juktosheen,
-            R.drawable.juktosoad,
-            R.drawable.juktodowad,
-            R.drawable.juktotowa,
-            R.drawable.juktojowa,
-            R.drawable.juktoain,
-            R.drawable.juktogain,
-            R.drawable.juktofaa,
-            R.drawable.juktokof,
-            R.drawable.juktokaff,
-            R.drawable.juktolaam,
-            R.drawable.juktomeem,
-            R.drawable.juktonun,
-            R.drawable.juktowao,
-            R.drawable.juktohaa,
+    int[] juktoHorofleft = {
+            R.drawable.juktoalifend,
+            R.drawable.juktobaaend,
+            R.drawable.juktotaaend,
+            R.drawable.juktosaaend,
+            R.drawable.juktojeemend,
+            R.drawable.juktohaaend,
+            R.drawable.juktokhaaend,
+            R.drawable.juktodalend,
+            R.drawable.juktojalend,
+            R.drawable.juktoraend,
+            R.drawable.juktojhaend,
+            R.drawable.juktoseenend,
+            R.drawable.juktoshenend,
+            R.drawable.juktosowadend,
+            R.drawable.juktodowadend,
+            R.drawable.juktotowaend,
+            R.drawable.juktojowaend,
+            R.drawable.juktoainend,
+            R.drawable.juktogainend,
+            R.drawable.juktofaaend,
+            R.drawable.juktokofend,
+            R.drawable.juktokafend,
+            R.drawable.juktolamend,
+            R.drawable.juktomeemend,
+            R.drawable.juktonunend,
+            R.drawable.juktoowaoend,
+            R.drawable.juktohaaend,
             R.drawable.juktohamjah,
-            R.drawable.juktoeya,
+            R.drawable.juktoeyaend,
+    };
+    int[] juktoHorofmiddle = {
+            R.drawable.juktoalifmiddle,
+            R.drawable.juktobaamiddle,
+            R.drawable.juktotaamiddle,
+            R.drawable.juktosaamiddle,
+            R.drawable.juktojeemmiddle,
+            R.drawable.juktohaamiddle,
+            R.drawable.juktokhaamiddle,
+            R.drawable.juktodalmiddle,
+            R.drawable.juktojalmiddle,
+            R.drawable.juktoramiddl,
+            R.drawable.juktojhamiddle,
+            R.drawable.juktoseenmiddle,
+            R.drawable.juktoshenmiddle,
+            R.drawable.juktosowadmiddle,
+            R.drawable.juktodowadmiddle,
+            R.drawable.juktotowamiddle,
+            R.drawable.juktojowamiddle,
+            R.drawable.juktoainmiddle,
+            R.drawable.juktogainmiddle,
+            R.drawable.juktofaamiddle,
+            R.drawable.juktokofmiddle,
+            R.drawable.juktokafmiddle,
+            R.drawable.juktolammiddle,
+            R.drawable.juktomeemmiddle,
+            R.drawable.juktonunmiddle,
+            R.drawable.juktoowao,
+            R.drawable.juktohamiddle,
+            R.drawable.juktohamjah,
+            R.drawable.juktoeyamiddle,
+    };
+    int[] juktoHorofright = {
+            R.drawable.juktoalifstart,
+            R.drawable.juktobaastart,
+            R.drawable.juktotaastart,
+            R.drawable.juktosaastart,
+            R.drawable.juktojeemstart,
+            R.drawable.juktohaastart,
+            R.drawable.juktokhaastart,
+            R.drawable.juktodalmiddle,
+            R.drawable.juktojalstart,
+            R.drawable.juktorastart,
+            R.drawable.juktojhastart,
+            R.drawable.juktoseenstart,
+            R.drawable.juktoshenstart,
+            R.drawable.juktosowadstart,
+            R.drawable.juktodowadstart,
+            R.drawable.juktotowastart,
+            R.drawable.juktojowastart,
+            R.drawable.juktoainstart,
+            R.drawable.juktogainstart,
+            R.drawable.juktofaastart,
+            R.drawable.juktokofstart,
+            R.drawable.juktokafstart,
+            R.drawable.juktolamstart,
+            R.drawable.juktomeemstart,
+            R.drawable.juktonunstart,
+            R.drawable.juktoowao,
+            R.drawable.juktohaastart,
+            R.drawable.juktohamjah,
+            R.drawable.juktoeyastart,
     };
 
     int position = -1;
@@ -203,7 +265,9 @@ public class HorofLearn extends Fragment {
         textSwitchermakhraz = view.findViewById(R.id.textSwitcherMakhraz);
         textSwitcherHoroh = view.findViewById(R.id.textSwitcherhorofPronunciation);
         userVoiceConvert = view.findViewById(R.id.userVoiceText);
-        juktoImageSwitcher = view.findViewById(R.id.juktoImageSwither);
+        juktoImageSwitcherleft = view.findViewById(R.id.juktoImageSwitherleft);
+        juktoImageSwitchermiddle = view.findViewById(R.id.juktoImageSwithermiddle);
+        juktoImageSwitcherright = view.findViewById(R.id.juktoImageSwitherright);
         compareBttn = view.findViewById(R.id.compareBtn);
         handler = new Handler();
         seekBar = view.findViewById(R.id.outSeekBar);
@@ -250,7 +314,7 @@ public class HorofLearn extends Fragment {
             public View makeView() {
                 TextView textView = new TextView(getContext());
                 textView.setTextSize(20);
-                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
                 textView.setGravity(Gravity.CENTER);
                 return textView;
             }
@@ -261,7 +325,7 @@ public class HorofLearn extends Fragment {
             public View makeView() {
                 TextView textView = new TextView(getContext());
                 textView.setTextSize(20);
-                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
                 textView.setGravity(Gravity.CENTER);
                 return textView;
             }
@@ -272,19 +336,38 @@ public class HorofLearn extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-
                 imageSwitcher.setBackgroundResource(R.drawable.alif);
                 return imageView;
             }
         });
 
-        juktoImageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+        juktoImageSwitcherleft.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
 
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                juktoImageSwitcher.setBackgroundResource(R.drawable.juktoalif);
+                juktoImageSwitcherleft.setBackgroundResource(R.drawable.juktoalifend);
+                return imageView;
+            }
+        });
+        juktoImageSwitchermiddle.setFactory(new ViewSwitcher.ViewFactory() {
+            @Override
+            public View makeView() {
+
+                ImageView imageView = new ImageView(getContext());
+                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                juktoImageSwitcherleft.setBackgroundResource(R.drawable.juktoalifmiddle);
+                return imageView;
+            }
+        });
+        juktoImageSwitcherright.setFactory(new ViewSwitcher.ViewFactory() {
+            @Override
+            public View makeView() {
+
+                ImageView imageView = new ImageView(getContext());
+                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
+                juktoImageSwitcherleft.setBackgroundResource(R.drawable.juktoalifstart);
                 return imageView;
             }
         });
@@ -353,7 +436,9 @@ public class HorofLearn extends Fragment {
 
                     position = position+1;
                     imageSwitcher.setBackgroundResource(horof[position]);
-                    juktoImageSwitcher.setBackgroundResource(juktoHorof[position]);
+                    juktoImageSwitcherleft.setBackgroundResource(juktoHorofleft[position]);
+                    juktoImageSwitchermiddle.setBackgroundResource(juktoHorofmiddle[position]);
+                    juktoImageSwitcherright.setBackgroundResource(juktoHorofright[position]);
                     textSwitchermakhraz.setText(makhraz[position]);
                     textSwitcherHoroh.setText(presetpronunciation[position]);
                     try {
@@ -380,7 +465,9 @@ public class HorofLearn extends Fragment {
                     textSwitchermakhraz.setText(makhraz[position]);
                     textSwitcherHoroh.setText(presetpronunciation[position]);
                     imageSwitcher.setBackgroundResource(horof[position]);
-                    juktoImageSwitcher.setBackgroundResource(juktoHorof[position]);
+                    juktoImageSwitcherleft.setBackgroundResource(juktoHorofleft[position]);
+                    juktoImageSwitchermiddle.setBackgroundResource(juktoHorofmiddle[position]);
+                    juktoImageSwitcherright.setBackgroundResource(juktoHorofright[position]);
 
                     try {
 
@@ -408,13 +495,11 @@ public class HorofLearn extends Fragment {
 
                 if (sentanceOnee.equals(sentenceTwoo) ) {
 
-                    Toast.makeText(getContext(), "Equal", Toast.LENGTH_SHORT).show();
                     goodToast.start();
 
                 }
                 else {
 
-                    Toast.makeText(getContext(), "NotEqual", Toast.LENGTH_SHORT).show();
                     badToast.start();
                 }
             }

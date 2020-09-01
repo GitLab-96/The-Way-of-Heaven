@@ -1,210 +1,339 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7EC2C7D8"
+    android:background="@color/defoultColor"
     android:padding="5dp"
     tools:context=".Learn.LearnActivity">
 
     <TextView
+        android:id="@+id/shuciTV"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:gravity="center"
-        android:text="সূচিপত্র"
-        android:padding="5dp"
-        android:textColor="#000"
-        android:textSize="30sp"
-        android:background="#ffffff"
-        android:textAlignment="center"
+        android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        />
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="সূচিপত্র"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="30sp" />
+
 
     <LinearLayout
+        android:id="@+id/rowOne"
+        android:layout_below="@id/shuciTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:weightSum="3"
+        android:layout_weight="2"
         android:layout_margin="3dp"
         android:gravity="center"
         android:orientation="horizontal">
 
-
-        <TextView
-            android:id="@+id/arabicHorof"
-            android:layout_width="0dp"
+        <RelativeLayout
             android:layout_weight="1"
-            android:layout_height="100dp"
-            android:text="২৯ হরফ"
-            android:background="#ffffff"
-            android:gravity="center"
-            android:layout_margin="5dp"
-            android:textColor="#000"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/tomijHorof"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="100dp"
-            android:background="#ffffff"
-            android:text="তমীয হরফ"
-            android:layout_margin="5dp"
-            android:gravity="center"
-            android:textColor="#000"
-            android:textSize="25sp" />
+            >
+            <TextView
+                android:id="@+id/arabicHorof"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:text="২৯ হরফ"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/horkot"
-            android:layout_width="0dp"
+
+        </RelativeLayout>
+        <RelativeLayout
             android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_height="100dp"
-            android:text="হরকত"
-            android:background="#ffffff"
-            android:gravity="center"
-            android:layout_margin="5dp"
-            android:textColor="#000"
-            android:textSize="25sp" />
+            >
+
+
+            <TextView
+                android:id="@+id/tomijHorof"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:text="তমীয হরফ"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/arabicTomijHoroflock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/lock"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            >
+            <TextView
+                android:id="@+id/horkot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="হরকত"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/arabicHorkotlock"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:src="@drawable/lock"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/rowTwo"
+        android:layout_below="@id/rowOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_margin="3dp"
+        android:weightSum="3"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/kolkola"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="কলকলা"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:background="#ffffff"
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/kolkolahlock"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/lock"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/wajibGunnah"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="ওয়াজিব গুন্নাহ"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:textColor="#000"
+                android:textSize="25sp" />
+            <ImageView
+                android:id="@+id/wajiblock"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/lock"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/madd"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="মাদ্দ "
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_margin="5dp"
+                android:textColor="#000"
+                android:textSize="25sp" />
+            <ImageView
+                android:id="@+id/maddlock"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/lock"/>
+
+        </RelativeLayout>
+
+
+
+
 
 
     </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/rowThree"
+        android:layout_below="@id/rowTwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:layout_margin="3dp"
         android:weightSum="3"
+        android:layout_weight="2"
         android:gravity="center"
+        android:layout_margin="3dp"
         android:orientation="horizontal">
 
-
-        <TextView
-            android:id="@+id/kolkola"
-            android:layout_width="0dp"
+        <RelativeLayout
             android:layout_weight="1"
-            android:layout_height="100dp"
-            android:text="কলকলা"
-            android:gravity="center"
-            android:layout_margin="5dp"
-            android:background="#ffffff"
-            android:textColor="#000"
-            android:textSize="25sp" />
-
-
-        <TextView
-            android:id="@+id/wajibGunnah"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/gunnah"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="গুন্নাহ"
+                android:background="#ffffff"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="25sp" />
+            <ImageView
+                android:id="@+id/gunnahlock"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/lock"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_weight="1"
-            android:layout_height="100dp"
-            android:text="ওয়াজিব গুন্নাহ"
-            android:background="#ffffff"
-            android:gravity="center"
-            android:layout_margin="5dp"
-            android:textColor="#000"
-            android:textSize="25sp" />
-
-
-        <TextView
-            android:id="@+id/madd"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/roErNiyom"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:padding="3dp"
+                android:text="'রা' এর পুর / বারিক"
+                android:layout_margin="5dp"
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/rolock"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/lock"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:layout_weight="1"
-            android:layout_height="100dp"
-            android:text="মাদ্দ "
-            android:gravity="center"
-            android:background="#ffffff"
-            android:layout_margin="5dp"
-            android:textColor="#000"
-            android:textSize="25sp" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/allahPorarNiyom"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="'আল্লাহ' শব্দ পড়ার নিয়ম"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:textColor="#000"
+                android:layout_margin="5dp"
+                android:textSize="25sp" />
+
+
+            <ImageView
+                android:id="@+id/allah"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/lock"/>
+
+        </RelativeLayout>
+
 
 
 
 
     </LinearLayout>
 
-
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/rowFour"
+        android:layout_weight="1"
+        android:layout_below="@id/rowThree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:weightSum="3"
-
-        android:gravity="center"
-        android:layout_margin="3dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/gunnah"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="100dp"
-            android:text="গুন্নাহ"
-            android:background="#ffffff"
-            android:layout_margin="5dp"
-            android:gravity="center"
-            android:textColor="#000"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/roErNiyom"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="100dp"
-            android:gravity="center"
-            android:background="#ffffff"
-            android:padding="3dp"
-            android:text="'রা' এর পুর / বারিক"
-            android:layout_margin="5dp"
-            android:textColor="#000"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/allahPorarNiyom"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="100dp"
-            android:text="'আল্লাহ' শব্দ পড়ার নিয়ম"
-            android:gravity="center"
-            android:background="#ffffff"
-            android:textColor="#000"
-            android:layout_margin="5dp"
-            android:textSize="25sp" />
-
-
-
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_margin="3dp"
-        android:orientation="horizontal">
+        >
 
         <TextView
             android:id="@+id/Surah"
-            android:layout_width="0dp"
-            android:layout_weight="6"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
+            android:padding="30dp"
+            android:layout_weight="2"
+            android:layout_margin="3dp"
             android:background="#ffffff"
             android:text=" সূরা ফীল থেকে নাস পর্যন্ত"
             android:textColor="#000"
             android:textSize="25sp" />
 
-    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/suraLock"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/lock"/>
+
+
+    </RelativeLayout>
+
+
+
 
     <ImageView
+        android:layout_below="@id/rowFour"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
         android:layout_margin="10dp"
         android:src="@drawable/book11"/>
 
 
-</LinearLayout>
+</RelativeLayout>

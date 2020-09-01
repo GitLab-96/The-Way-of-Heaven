@@ -4,15 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.Sampler;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.soundtest.R;
 
 public class LearnActivity extends AppCompatActivity {
     private TextView arabicHorof,tomijHorof,horkot,kolkolah,wajib,madd,gunnah,raPurBarik,allahPurBarik,surah;
+    private ImageView arabicHorofLock,tomijHorofLock,horkotLock,kolkolahLock,wajibLock,maddLock,gunnahLock,raPurBarikLock,allahPurBarikLock,surahLock;
 
-
+    int mark=18;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,15 @@ public class LearnActivity extends AppCompatActivity {
         SendUserLearnActivityToRaPurBarikActivity();
         SendUserLearnActivityToAllahPurBarikActivity();
         SendUserLearnActivityToSurahActivityActivity();
+
+
+
+
+        if (mark>15){
+
+            tomijHorofLock.setVisibility(View.INVISIBLE);
+        }
+
     }
 
 
@@ -46,6 +58,15 @@ public class LearnActivity extends AppCompatActivity {
         raPurBarik = findViewById(R.id.roErNiyom);
         allahPurBarik = findViewById(R.id.allahPorarNiyom);
         surah = findViewById(R.id.Surah);
+        tomijHorofLock = findViewById(R.id.arabicTomijHoroflock);
+        horkotLock = findViewById(R.id.arabicHorkotlock);
+        kolkolahLock = findViewById(R.id.kolkolahlock);
+        wajibLock = findViewById(R.id.wajiblock);
+        maddLock = findViewById(R.id.maddlock);
+        gunnahLock = findViewById(R.id.gunnahlock);
+        raPurBarikLock = findViewById(R.id.rolock);
+        allahPurBarikLock = findViewById(R.id.allah);
+        surahLock = findViewById(R.id.suraLock);
     }
 
     private void SendUserLearnActivityToSurahActivityActivity() {
@@ -140,7 +161,12 @@ public class LearnActivity extends AppCompatActivity {
         tomijHorof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LearnActivity.this, TomijHorof.class));
+
+                if (mark>15){
+
+                    startActivity(new Intent(LearnActivity.this, TomijHorof.class));
+                }
+
             }
         });
 

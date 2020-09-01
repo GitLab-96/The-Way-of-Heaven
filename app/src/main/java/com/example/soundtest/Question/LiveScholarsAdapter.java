@@ -79,7 +79,7 @@ public class LiveScholarsAdapter extends RecyclerView.Adapter<LiveScholarsAdapte
             live_type = itemView.findViewById(R.id.getType);
             live_id = itemView.findViewById(R.id.getID);
 
-
+ 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

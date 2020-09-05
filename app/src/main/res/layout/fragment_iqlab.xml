@@ -4,14 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:weightSum="18"
+    android:background="@color/defoultColor"
     android:orientation="vertical"
     tools:context=".Learn.IqlabFragment">
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_margin="10dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
+            android:text="নুনে সাকিন যজম ওয়ালা নুন ( ﻥٛ ) কে বলে।"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
+            android:text="তানভিন দুই জবর ( ﹱ ), দুই যের ( ﹴ ),দুই পেশ ( ࣨ ) কে বলে।"/>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="2"
         android:orientation="vertical">
 
         <TextView
@@ -19,13 +49,14 @@
             android:layout_height="wrap_content"
             android:text="ইকলাবের হরফ একটি  ب । "
             android:padding="5dp"
+            android:gravity="center"
+            android:textSize="20sp"
             android:layout_marginLeft="23dp"
             android:textColor="#000"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
             android:text="নুনে সাকিন বা তানভিন এর বামে ب আসিলে ঐ নুনে সাকিন বা তানভিকে মিম দ্বারা পরিবর্তন করিয়া পড়িতে হয় । "
             android:textColor="#000"
             />
@@ -39,16 +70,50 @@
         android:layout_marginTop="5dp"/>
     <ImageSwitcher
         android:id="@+id/iqlabimageSwitherTop"
-        android:layout_width="450dp"
-        android:layout_height="200dp"
+        android:layout_width="400dp"
+        android:layout_weight="5.4"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:background="#000"
         android:scaleX=".8"
         android:scaleY=".8" />
+    <TextSwitcher
+        android:id="@+id/textSwitcherPronunciationIqlab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone"
+        android:padding="5dp"
+        android:textSize="30dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:weightSum="8"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_weight="8"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:hint="Please Insert your Voice"
+            android:id="@+id/userVoiceTextIqlab"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:weightSum="3"
+        android:layout_weight="4"
         android:orientation="horizontal">
 
         <ImageSwitcher
@@ -86,14 +151,18 @@
 
 
     </LinearLayout>
-    <View
+    <androidx.appcompat.widget.AppCompatSeekBar
         android:layout_width="match_parent"
-        android:background="#052DF5"
-        android:layout_height="10dp"/>
+        android:background="#FFFFFF"
+        android:layout_margin="5dp"
+        android:layout_height="0dp"
+        android:layout_weight=".3"
+        android:id="@+id/InSeekBar"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:gravity="center"
+        android:layout_weight="2"
         android:layout_margin="20dp"
         android:orientation="horizontal">
 
@@ -125,6 +194,38 @@
 
 
 
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:layout_width="match_parent"
+        android:background="#FFFFFF"
+        android:layout_margin="5dp"
+        android:layout_height="0dp"
+        android:layout_weight=".3"
+        android:id="@+id/outSeekBar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="2"
+        android:gravity="center_horizontal"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/micBtnIqlab"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/ic_mic_none_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/compareBtnIqlab"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/ic_compare_arrows_black_24dp" />
     </LinearLayout>
 
 

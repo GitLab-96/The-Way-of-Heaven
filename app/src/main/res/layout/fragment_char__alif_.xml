@@ -5,30 +5,210 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:weightSum="8"
+    android:background="@color/defoultColor"
     tools:context=".Learn.Char_Alif_Fragment">
 
-    <com.google.android.material.appbar.AppBarLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/appBarLayout">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/char_Alif_main_tabs"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorHeight="4dp"
-            android:background="#DF9EEC"
-            app:tabIndicatorColor="#F00707"
-            app:tabTextColor="#5E05F3"
-            app:tabSelectedTextColor="#05F5DC"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
-        </com.google.android.material.tabs.TabLayout>
+            android:text="মাদ্দ মানে টানিয়া পড়া।"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#000000"/>
 
-    </com.google.android.material.appbar.AppBarLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text=">  মদ্দের হরফের উপর মোটা চিহ্ন থাকিলে চার আলিফ টানিয়া পড়িতে হয়। ।"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/blackColor"
+            android:textSize="15sp"/>
 
-    <androidx.viewpager.widget.ViewPager
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/charAlifViewPager"/>
+        android:layout_height="0dp"
+        android:layout_weight="2.4"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#999292"
+            android:layout_marginTop="5dp"/>
+        <ImageSwitcher
+            android:id="@+id/charAlifImageSwitherTop"
+            android:layout_width="400dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:scaleX=".8"
+            android:scaleY=".8" />
+
+    </LinearLayout>
+    <TextSwitcher
+        android:id="@+id/textSwitcherCharAlifmoddPronunciation"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp"
+        android:textSize="30dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="8"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_weight="8"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:hint="Please Insert your Voice"
+            android:id="@+id/userVoiceTextCharalif"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="3"
+        android:layout_weight="2.2"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <ImageSwitcher
+            android:id="@+id/charAlifImageSwitherLeft"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+        <ImageSwitcher
+            android:id="@+id/charAlifImageSwitherMiddle"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+        <ImageSwitcher
+            android:id="@+id/charAlifImageSwitherRight"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/InputSeekBar"
+        android:layout_width="match_parent"
+        android:layout_weight=".2"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="50dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/ic_skip_previous_black_24dp"
+            android:id="@+id/charAlifIPreviousBtn"/>
+
+
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/charAlifIRepeatBtn"
+            android:layout_margin="10dp"
+            android:background="@drawable/ic_repeat_one_black_24dp"/>
+
+
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/ic_skip_next_black_24dp"
+            android:id="@+id/charAlifINextBtn"/>
+
+
+
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/outputSeekBar"
+        android:layout_width="match_parent"
+        android:layout_weight=".2"
+        android:layout_height="0dp"
+
+        android:layout_margin="5dp"
+        android:background="#FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/micBtnCharAlifModd"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/ic_mic_none_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/compareBtnCharAlifModd"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/ic_compare_arrows_black_24dp" />
+    </LinearLayout>
+
+
+
 </LinearLayout>

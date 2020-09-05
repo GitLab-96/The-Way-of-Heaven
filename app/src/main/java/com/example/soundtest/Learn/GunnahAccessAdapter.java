@@ -23,6 +23,9 @@ public class GunnahAccessAdapter extends FragmentPagerAdapter {
                 MIme_Sakin_Fragment mIme_sakin_fragment = new MIme_Sakin_Fragment();
                 return mIme_sakin_fragment;
 
+            case 2:
+               GunnahExam  gunnahExam = new GunnahExam();
+                return gunnahExam;
             default:
                 return null;
         }
@@ -32,7 +35,7 @@ public class GunnahAccessAdapter extends FragmentPagerAdapter {
     public int getCount() {
 
 
-        return 2;
+        return 3;
     }
 
     @Nullable
@@ -48,6 +51,10 @@ public class GunnahAccessAdapter extends FragmentPagerAdapter {
             case 1:
 
                 return  "মিমে সাকিন";
+
+            case 2:
+
+                return  "পরিক্ষা";
 
             default:
                 return null;

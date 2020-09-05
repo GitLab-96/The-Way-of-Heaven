@@ -4,33 +4,218 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:weightSum="8"
+    android:background="@color/defoultColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Learn.Tin_Alif_Fragment">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/appBarLayot">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/Tin_Alif_main_tabs"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorHeight="4dp"
-            android:background="#DF9EEC"
-            app:tabIndicatorColor="#F00707"
-            app:tabTextColor="#5E05F3">
-        </com.google.android.material.tabs.TabLayout>
+            android:text="মাদ্দ মানে টানিয়া পড়া।"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#000000"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text=">  মদ্দের হরফের উপর চিকন চিহ্ন থাকিলে তিন আলিফ টানিয়া পড়িতে হয়। ।"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/blackColor"
+            android:textSize="15sp"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:padding="5dp"
+            android:text=">  মদ্দের হরহের বামের হরফে ওয়াকফ হইলে তিন আলিফ টানিয়া পড়িতে হয় । "
+            android:textColor="@color/blackColor"
+            android:textSize="15sp" />
 
+    </LinearLayout>
 
-    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.4"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#999292"
+            android:layout_marginTop="5dp"/>
+        <ImageSwitcher
+            android:id="@+id/tinAlifImageSwitherTop"
+            android:layout_width="400dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:scaleX=".8"
+            android:scaleY=".8" />
 
-    <androidx.viewpager.widget.ViewPager
+    </LinearLayout>
+    <TextSwitcher
+        android:id="@+id/textSwitcherTinAlifmoddPronunciation"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp"
+        android:textSize="30dp" />
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tinAlifViewPager"/>
+        android:weightSum="8"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_weight="8"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:hint="Please Insert your Voice"
+            android:id="@+id/userVoiceTextTinalif"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="3"
+        android:layout_weight="1.2"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <ImageSwitcher
+            android:id="@+id/tinAlifImageSwitherLeft"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+        <ImageSwitcher
+            android:id="@+id/tinAlifImageSwitherMiddle"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+        <ImageSwitcher
+            android:id="@+id/tinAlifImageSwitherRight"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/InputSeekBar"
+        android:layout_width="match_parent"
+        android:layout_weight=".2"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="50dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/ic_skip_previous_black_24dp"
+            android:id="@+id/tinAlifIPreviousBtn"/>
+
+
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/tinAlifIRepeatBtn"
+            android:layout_margin="10dp"
+            android:background="@drawable/ic_repeat_one_black_24dp"/>
+
+
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/ic_skip_next_black_24dp"
+            android:id="@+id/tinAlifINextBtn"/>
+
+
+
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/outputSeekBar"
+        android:layout_width="match_parent"
+        android:layout_weight=".2"
+        android:layout_height="0dp"
+
+        android:layout_margin="5dp"
+        android:background="#FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/micBtnTinAlifModd"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/ic_mic_none_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/compareBtnTinAlifModd"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/ic_compare_arrows_black_24dp" />
+    </LinearLayout>
+
+
 
 </LinearLayout>

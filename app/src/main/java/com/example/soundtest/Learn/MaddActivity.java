@@ -9,10 +9,10 @@ import com.example.soundtest.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class MaddActivity extends AppCompatActivity {
-
     private TabLayout maddTabLayout;
     private ViewPager maddviewPager;
-    private MaddAccessAdapter maddAccessAdapter;
+    private MaddExamAccesAdapter maddExamAccesAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +21,8 @@ public class MaddActivity extends AppCompatActivity {
 
         maddTabLayout = findViewById(R.id.madd_main_tabs);
         maddviewPager = findViewById(R.id.maddViewPager);
-        maddAccessAdapter = new MaddAccessAdapter(getSupportFragmentManager());
-        maddviewPager.setAdapter(maddAccessAdapter);
+        maddExamAccesAdapter = new MaddExamAccesAdapter(getSupportFragmentManager());
+        maddviewPager.setAdapter(maddExamAccesAdapter);
         maddTabLayout.setupWithViewPager(maddviewPager);
 
 

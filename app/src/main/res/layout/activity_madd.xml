@@ -6,21 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@color/defoultColor"
     tools:context=".Learn.MaddActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="মাদ্দ"
+        android:padding="5dp"
         android:textSize="30sp"
-        android:gravity="center"
-        android:textColor="#000000"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="মাদ্দ মানে টানিয়া পড়া।"
-        android:textSize="25sp"
+        android:background="#ffffff"
         android:gravity="center"
         android:textColor="#000000"/>
 
@@ -30,17 +26,17 @@
         android:id="@+id/appBarLayout">
 
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/madd_main_tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:tabIndicatorHeight="4dp"
-                android:background="#D272E2"
-                app:tabIndicatorColor="#F00707"
-                app:tabTextColor="#5E05F3"
-                app:tabSelectedTextColor="#05F5DC"
-                android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
-            </com.google.android.material.tabs.TabLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/madd_main_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorHeight="4dp"
+            android:background="#ECE6EE"
+            app:tabIndicatorColor="#F00707"
+            app:tabTextColor="#5E05F3"
+            app:tabSelectedTextColor="#D20AF3"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        </com.google.android.material.tabs.TabLayout>
 
 
 
@@ -51,4 +47,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/maddViewPager"/>
+
+
 </LinearLayout>

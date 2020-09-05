@@ -6,124 +6,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@color/defoultColor"
     tools:context=".Learn.OwajibActivity">
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ওয়াজিব গুননাহ"
+        android:text="ওয়াজিব গুন্নাহ"
+        android:padding="5dp"
         android:textSize="30sp"
+        android:background="#ffffff"
         android:gravity="center"
         android:textColor="#000000"/>
-    <TextView
+
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
-        android:padding="10dp"
-        android:text="হরকতের বামে নুনে বা মীমে তাশদীদ হইলে গুন্নাহ করিয়া পড়িতে হয়।"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:id="@+id/appBarLayout">
 
-    <ImageSwitcher
-        android:id="@+id/owajibimageSwither"
-        android:layout_width="450dp"
-        android:layout_height="250dp"
-        android:layout_gravity="center"
-        android:background="#000"
-        android:scaleX=".8"
-        android:scaleY=".8"/>
-    <LinearLayout
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/wajib_main_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorHeight="4dp"
+            android:background="#ECE6EE"
+            app:tabIndicatorColor="#F00707"
+            app:tabTextColor="#5E05F3"
+            app:tabSelectedTextColor="#D20AF3"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        </com.google.android.material.tabs.TabLayout>
+
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:weightSum="3"
-        android:orientation="horizontal">
-
-        <ImageSwitcher
-            android:id="@+id/owajibimageSwither2_0"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:background="#000"
-            android:layout_weight="1"
-            android:scaleX=".8"
-            android:scaleY=".8">
-        </ImageSwitcher>
-
-        <ImageSwitcher
-            android:id="@+id/owajibimageSwither2_1"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:background="#000"
-            android:layout_weight="1"
-            android:scaleX=".8"
-            android:scaleY=".8">
-        </ImageSwitcher>
-
-        <ImageSwitcher
-            android:id="@+id/owajibimageSwither2_2"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:background="#000"
-            android:layout_weight="1"
-            android:scaleX=".8"
-            android:scaleY=".8">
-        </ImageSwitcher>
-
-
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:background="#000000"
-        android:layout_margin="5dp"
-        android:layout_height="10dp"/>
-    <View
-        android:layout_width="match_parent"
-        android:background="#052DF5"
-        android:layout_margin="5dp"
-        android:layout_height="10dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_margin="20dp"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:padding="50dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/ic_skip_previous_black_24dp"
-            android:id="@+id/owajibpreviousBtn"/>
-
-
-
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/owajibRepeatBtn"
-            android:layout_margin="10dp"
-            android:background="@drawable/ic_repeat_one_black_24dp"/>
-
-
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="30dp"
-            android:background="@drawable/ic_skip_next_black_24dp"
-            android:id="@+id/owajibNextBtn"/>
-
-
-
-    </LinearLayout>
-
-
-
+        android:layout_height="match_parent"
+        android:id="@+id/wajibViewPager"/>
 
 </LinearLayout>

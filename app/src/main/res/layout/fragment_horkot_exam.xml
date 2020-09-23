@@ -50,7 +50,7 @@
             android:textColor="#000"/>
 
         <TextView
-            android:id="@+id/your_marks"
+            android:id="@+id/your_marks_horkot"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

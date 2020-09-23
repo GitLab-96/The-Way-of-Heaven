@@ -1,14 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/defoultColor"
+    android:weightSum="14"
     tools:context=".Learn.BarikFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:layout_weight="3.5"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text=" () এর নীচে যের থাকিলে ঐ () কে চিকন করিয়া পড়িতে হয় ।"
+            android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="() সাকিন এর ডানে  যের  থাকিলে ঐ () কে চিকন করিয়া পড়িতে হয় ।"
+            android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#999292"
+        android:layout_marginTop="5dp"/>
+    <ImageSwitcher
+        android:id="@+id/roBarikimageSwitherTop"
+        android:layout_width="450dp"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:layout_gravity="center"
+        android:background="#000"
+        android:scaleX=".8"
+        android:scaleY=".8" />
+    <TextSwitcher
+        android:id="@+id/textSwitcherBarikPronunciation"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp"
+        android:textSize="30dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="8"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_weight="8"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:hint="Please Insert your Voice"
+            android:id="@+id/userVoiceTextBarik"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="3"
+        android:layout_weight="2.5"
+        android:orientation="horizontal">
+
+        <ImageSwitcher
+            android:id="@+id/roBarikimageSwitherLeft"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+        <ImageSwitcher
+            android:id="@+id/roBarikimageSwitherMiddle"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+        <ImageSwitcher
+            android:id="@+id/roBarikimageSwitherRight"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/OutputSeekBarBarik"
+        android:layout_width="match_parent"
+        android:layout_weight=".5"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:layout_weight="1.5"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="50dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/ic_skip_previous_black_24dp"
+            android:id="@+id/roBarikPreviousBtn"/>
+
+
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/roBarikRepeatBtn"
+            android:layout_margin="10dp"
+            android:background="@drawable/ic_repeat_one_black_24dp"/>
+
+
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/ic_skip_next_black_24dp"
+            android:id="@+id/roBarikNextBtn"/>
+
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/InputSeekBarBarik"
+        android:layout_width="match_parent"
+        android:layout_weight=".5"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="1.5"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/micBtnBarik"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/ic_mic_none_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/compareBtnBarik"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/ic_compare_arrows_black_24dp" />
+    </LinearLayout>
+
+</LinearLayout>

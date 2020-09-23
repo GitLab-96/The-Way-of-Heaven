@@ -42,11 +42,11 @@ public class HorofLearn extends Fragment {
     private Handler handler;
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     int pausecurrentpossition;
-    MediaPlayer horofmedia,goodToast,badToast;
+
     ImageSwitcher imageSwitcher,juktoImageSwitcherright,juktoImageSwitchermiddle,juktoImageSwitcherleft;
     TextSwitcher textSwitchermakhraz,textSwitcherHoroh;
     private int currenthorof=0;
-
+    MediaPlayer horofmedia,goodToast,badToast;
 
     int[] horof = {
             R.drawable.alif,
@@ -514,8 +514,6 @@ public class HorofLearn extends Fragment {
 
                 }
                 horofmedia.start();
-
-                ChangeSeekbar();
             }
         });
 

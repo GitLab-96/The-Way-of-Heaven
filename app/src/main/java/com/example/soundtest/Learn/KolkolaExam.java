@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
@@ -26,6 +27,12 @@ import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import com.example.soundtest.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -36,7 +43,7 @@ import static android.app.Activity.RESULT_OK;
  */
 public class KolkolaExam extends Fragment {
     private ImageButton examNextBtn,examMicBtn;
-    private static TextView your_marks;
+    private static TextView your_marks_kolkola;
     private TextView MCQ;
     private TextView oral;
     private ImageSwitcher imageSwitcherOralQuestion;
@@ -105,6 +112,9 @@ public class KolkolaExam extends Fragment {
             "صمد",
     };
 
+    public FirebaseAuth mAuth;
+    public DatabaseReference RootRef;
+    private String currentUserID;
 
     public KolkolaExam() {
         // Required empty public constructor
@@ -124,7 +134,7 @@ public class KolkolaExam extends Fragment {
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
-        your_marks = view.findViewById(R.id.your_marks);
+        your_marks_kolkola = view.findViewById(R.id.your_marks_kolkola);
         MCQ = view.findViewById(R.id.multiplechoicetest);
         oral = view.findViewById(R.id.oralexam);
         typeface = Typeface.createFromAsset(getActivity().getAssets(),"alexbrush_regular.ttf");
@@ -150,11 +160,34 @@ public class KolkolaExam extends Fragment {
         goodToast = MediaPlayer.create(getContext(),R.raw.masha_allah2);
         badToast = MediaPlayer.create(getContext(),R.raw.try_again);
 
+        mAuth=FirebaseAuth.getInstance();
+        currentUserID= mAuth.getCurrentUser().getUid();
+        RootRef= FirebaseDatabase.getInstance().getReference("Marks");
+
 
         RadioButtonClick();
         SwitcherTask();
 
         ButtonClick();
+
+        RootRef = FirebaseDatabase.getInstance().getReference().child("Marks").child(currentUserID).child("Marks");
+        RootRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+
+                    String retreveHorofMarks = (String) dataSnapshot.child("KolkolaExam").getValue();
+
+                    your_marks_kolkola.setText(retreveHorofMarks);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
 
 
@@ -169,6 +202,21 @@ public class KolkolaExam extends Fragment {
         examNextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                RootRef.child(currentUserID).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                        RootRef.child("KolkolaExam").setValue(your_marks_kolkola.getText().toString());
+                        Toast.makeText(getContext(), "Marks Added", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
 
 
                 if((position<multipleQuestion.length-1)){
@@ -186,26 +234,26 @@ public class KolkolaExam extends Fragment {
                     if (SelectTV.equals(mcq_answer) && sentanceOnee.equals(sentenceTwoo)) {
 
                         current_marks = current_marks+2;
-                        your_marks.setText(""+current_marks);
+                        your_marks_kolkola.setText(""+current_marks);
                         goodToast.start();
 
                     }
                     else if (SelectTV.equals(mcq_answer)){
 
                         current_marks = current_marks+1;
-                        your_marks.setText(""+current_marks);
+                        your_marks_kolkola.setText(""+current_marks);
                         goodToast.start();
                     }
                     else if (sentanceOnee.equals(sentenceTwoo)){
 
                         current_marks = current_marks+1;
-                        your_marks.setText(""+current_marks);
+                        your_marks_kolkola.setText(""+current_marks);
                         goodToast.start();
                     }
                     else {
                         if (current_marks>0){
                             current_marks = current_marks-1;
-                            your_marks.setText(""+current_marks);
+                            your_marks_kolkola.setText(""+current_marks);
                             badToast.start();
                         }
                     }

@@ -1,14 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/defoultColor"
+    android:weightSum="14"
     tools:context=".Learn.AllahFragmentChikon">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text=">  আল্লাহ শব্দের লাম ( ) এর তাশদীদের ডানে যবর অথবা পেশ থাকিলে ঐ আল্লাহ শব্দের লামকে মোটা করিয়া পড়িতে হয়।"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000000"
+        android:padding="10dp"
+        android:textSize="22sp"/>
 
-</FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#999292"
+        android:layout_marginTop="5dp"/>
+    <ImageSwitcher
+        android:id="@+id/chikonimageSwitherTop"
+        android:layout_width="400dp"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:layout_gravity="center"
+        android:background="#000"
+        android:scaleX=".8"
+        android:scaleY=".8" />
+    <TextSwitcher
+        android:id="@+id/chikontextSwitcherAllahPronunciation"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:visibility="gone"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp"
+        android:textSize="30dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="8"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_weight="8"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:hint="Please Insert your Voice"
+            android:id="@+id/chikonuserVoiceTextAllah"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="3"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <ImageSwitcher
+            android:id="@+id/chikonimageSwitherLeft"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+        <ImageSwitcher
+            android:id="@+id/chikonimageSwitherMiddle"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+        <ImageSwitcher
+            android:id="@+id/chikonimageSwitherRight"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="#000"
+            android:layout_weight="1"
+            android:scaleX=".8"
+            android:scaleY=".8">
+        </ImageSwitcher>
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/OutPutSeekBar"
+        android:layout_width="match_parent"
+        android:layout_weight=".5"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="2"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="50dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/ic_skip_previous_black_24dp"
+            android:id="@+id/chikonPreviousBtn"/>
+
+
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/chikonRepeatBtn"
+            android:layout_margin="10dp"
+            android:background="@drawable/ic_repeat_one_black_24dp"/>
+
+
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/ic_skip_next_black_24dp"
+            android:id="@+id/chikonNextBtn"/>
+
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/InputSeekBar"
+        android:layout_width="match_parent"
+        android:layout_weight=".5"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/chikonmicBtnAllah"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/ic_mic_none_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/chikoncompareBtnAllah"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/ic_compare_arrows_black_24dp" />
+    </LinearLayout>
+</LinearLayout>

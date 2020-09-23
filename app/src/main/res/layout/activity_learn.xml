@@ -53,6 +53,13 @@
                 android:textColor="#000"
                 android:textSize="25sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="CM"
+                android:id="@+id/marksHorof"/>
+
 
         </RelativeLayout>
         <RelativeLayout
@@ -77,7 +84,15 @@
                 android:id="@+id/arabicTomijHoroflock"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+
                 android:src="@drawable/lock"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="CM"
+                android:id="@+id/marksTomij"/>
 
         </RelativeLayout>
 
@@ -103,6 +118,13 @@
                 android:layout_weight="1"
                 android:layout_height="100dp"
                 android:src="@drawable/lock"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CM"
+                android:padding="10dp"
+                android:id="@+id/marksHorkot"/>
 
         </RelativeLayout>
 
@@ -144,6 +166,13 @@
                 android:layout_height="100dp"
                 android:src="@drawable/lock"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="CM"
+                android:id="@+id/marksKolkola"/>
+
         </RelativeLayout>
 
 
@@ -167,6 +196,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:src="@drawable/lock"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="CM"
+                android:id="@+id/marksWajib"/>
 
         </RelativeLayout>
 
@@ -190,6 +225,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:src="@drawable/lock"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="CM"
+                android:id="@+id/marksMadd"/>
 
         </RelativeLayout>
 
@@ -233,6 +274,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:src="@drawable/lock"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="CM"
+                android:id="@+id/marksGunnah"/>
 
         </RelativeLayout>
 
@@ -258,6 +305,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:src="@drawable/lock"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="CM"
+                android:id="@+id/marksRo"/>
 
         </RelativeLayout>
 
@@ -284,6 +337,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:src="@drawable/lock"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="CM"
+                android:id="@+id/marksAlloh"/>
 
         </RelativeLayout>
 
@@ -320,6 +380,13 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:src="@drawable/lock"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="CM"
+            android:id="@+id/marksFiil"/>
 
 
     </RelativeLayout>

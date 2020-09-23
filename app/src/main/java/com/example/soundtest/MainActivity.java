@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.soundtest.Learn.LearnActivity;
 import com.example.soundtest.Question.HomeQuestionActivity;
@@ -29,8 +30,14 @@ public class MainActivity extends AppCompatActivity {
     Typeface typeface;
      private  ImageButton learnBtn,readBtn,salahBtn,questionBtn;
      private FirebaseUser currentUser;
+
      private FirebaseAuth mAuth;
      private DatabaseReference RootRef;
+
+
+
+
+    public DatabaseReference RootRefMarks;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
         RootRef= FirebaseDatabase.getInstance().getReference();
+
+
 
         textView = findViewById(R.id.the_way);
         typeface = Typeface.createFromAsset(getAssets(),"alexbrush_regular.ttf");
@@ -51,7 +60,12 @@ public class MainActivity extends AppCompatActivity {
         SendUserMainActivityToLearnActivity();
         SendUserMainActivityToQuestionActivity();
 
+
+
+
     }
+
+
 
     private void init() {
 
@@ -67,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         questionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(MainActivity.this, HomeQuestionActivity.class));
             }
         });
@@ -77,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
         learnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 startActivity(new Intent(MainActivity.this, LearnActivity.class));
             }
         });

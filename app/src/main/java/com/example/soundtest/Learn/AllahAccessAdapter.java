@@ -21,6 +21,9 @@ public class AllahAccessAdapter extends FragmentPagerAdapter {
             case 1:
                 AllahFragmentChikon allahFragmentChikon = new AllahFragmentChikon();
                 return allahFragmentChikon;
+            case 2:
+                AllahExam allahExam = new AllahExam();
+                return allahExam;
 
             default:
                 return null;
@@ -29,7 +32,7 @@ public class AllahAccessAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     @Nullable
@@ -45,6 +48,10 @@ public class AllahAccessAdapter extends FragmentPagerAdapter {
             case 1:
 
                 return "চিকন";
+
+            case 2:
+
+                return "পরিক্ষা";
 
             default:
                 return null;

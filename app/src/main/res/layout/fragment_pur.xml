@@ -5,21 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/defoultColor"
+    android:weightSum="14"
     tools:context=".Learn.PurFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:padding="10dp"
+        android:layout_weight="3.5"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="() এর উপর যবর অথবা পেশ থাকিলে ঐ () কে মোটা করিয়া পড়িতে হয়।"
+
+            android:text=" () এর উপর যবর অথবা পেশ থাকিলে ঐ () কে মোটা করিয়া পড়িতে হয়।"
             android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
             android:textColor="#000000"
-            android:textStyle="bold"
             android:textSize="18sp"/>
 
         <TextView
@@ -28,7 +31,6 @@
             android:text="() সাকিন এর ডানে যবর অথবা পেশ থাকিলে ঐ () কে মোটা করিয়া পড়িতে হয়।"
             android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
             android:textColor="#000000"
-            android:textStyle="bold"
             android:textSize="18sp"/>
         <TextView
             android:layout_width="match_parent"
@@ -36,7 +38,6 @@
             android:text="() সাকিন এর বামে মোটা হরফ থাকিলে ঐ () কে মোটা করিয়া পড়িতে হয়।"
             android:drawableLeft="@drawable/ic_subdirectory_arrow_right_black_24dp"
             android:textColor="#000000"
-            android:textStyle="bold"
             android:textSize="18sp"/>
 
     </LinearLayout>
@@ -50,15 +51,48 @@
     <ImageSwitcher
         android:id="@+id/roMotaimageSwitherTop"
         android:layout_width="450dp"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
+        android:layout_weight="4"
         android:layout_gravity="center"
         android:background="#000"
         android:scaleX=".8"
         android:scaleY=".8" />
+    <TextSwitcher
+        android:id="@+id/textSwitcherPurPronunciation"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp"
+        android:textSize="30dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:weightSum="8"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_weight="8"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:hint="Please Insert your Voice"
+            android:id="@+id/userVoiceTextPur"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:weightSum="3"
+        android:layout_weight="2.5"
         android:orientation="horizontal">
 
         <ImageSwitcher
@@ -96,15 +130,19 @@
 
 
     </LinearLayout>
-    <View
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/OutputSeekBar"
         android:layout_width="match_parent"
-        android:background="#052DF5"
-        android:layout_height="10dp"/>
+        android:layout_weight=".5"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:gravity="center"
         android:layout_margin="20dp"
+        android:layout_weight="1.5"
         android:orientation="horizontal">
 
         <ImageButton
@@ -135,6 +173,38 @@
 
 
 
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/InputSeekBar"
+        android:layout_width="match_parent"
+        android:layout_weight=".5"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="1.5"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/micBtnPur"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/ic_mic_none_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/compareBtnPur"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/ic_compare_arrows_black_24dp" />
     </LinearLayout>
 
 </LinearLayout>

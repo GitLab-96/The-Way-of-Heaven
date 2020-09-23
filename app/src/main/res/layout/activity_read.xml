@@ -1,15 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Read.Read">
 
-    <com.github.barteksc.pdfviewer.PDFView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/readToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#000000">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/book11"
+                android:id="@+id/toolBarRead"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_apps_black_24dp"
+                android:visibility="invisible"
+                android:id="@+id/toolBarList"/>
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/readQuranPDF"/>
+        android:layout_below="@+id/readToolbar"
+        android:id="@+id/framLayout"/>
 
-</LinearLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

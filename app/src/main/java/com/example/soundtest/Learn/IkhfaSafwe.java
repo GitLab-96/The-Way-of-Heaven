@@ -43,117 +43,39 @@ public class IkhfaSafwe extends Fragment {
     int position  = -1;
 
     int[] idgamTopImage = {
-            R.drawable.jannatintajri,
-            R.drawable.unsa,
-            R.drawable.minjuen,
-
-            R.drawable.mindunillahi,
-            R.drawable.naronjata,
-            R.drawable.unjhila,
-
-            R.drawable.minsijjilin,
-            R.drawable.minsharri,
-            R.drawable.ansolatihim,
-
-            R.drawable.andoife,
-            R.drawable.mantogo,
-            R.drawable.yanjuruna,
-
-            R.drawable.yatimanfawa,
-            R.drawable.farrotminkoswarah,
-            R.drawable.kiromankatibina,
+            R.drawable.fabassirhumbiajain,
+            R.drawable.innarobbahumbihim,
+            R.drawable.tarmihimbihijaroh,
     };
 
 
     int[] idgamRightImage = {
-            R.drawable.jannatintajri,
-            R.drawable.jannatintajri,
-            R.drawable.jannatintajri,
-
-            R.drawable.mindunillahi,
-            R.drawable.mindunillahi,
-            R.drawable.mindunillahi,
-
-            R.drawable.minsijjilin,
-            R.drawable.minsijjilin,
-            R.drawable.minsijjilin,
-
-            R.drawable.andoife,
-            R.drawable.andoife,
-            R.drawable.andoife,
-
-            R.drawable.yatimanfawa,
-            R.drawable.yatimanfawa,
-            R.drawable.yatimanfawa,
+            R.drawable.fabassirhumbiajain,
+            R.drawable.fabassirhumbiajain,
+            R.drawable.fabassirhumbiajain,
 
     };
     int[] idgamMidleImage = {
             R.drawable.book11,
-            R.drawable.unsa,
-            R.drawable.unsa,
+            R.drawable.innarobbahumbihim,
+            R.drawable.innarobbahumbihim,
 
-            R.drawable.book11,
-            R.drawable.naronjata,
-            R.drawable.naronjata,
-
-            R.drawable.book11,
-            R.drawable.minsharri,
-            R.drawable.minsharri,
-
-            R.drawable.book11,
-            R.drawable.mantogo,
-            R.drawable.mantogo,
-
-            R.drawable.book11,
-            R.drawable.farrotminkoswarah,
-            R.drawable.farrotminkoswarah,
 
     };
     int[] idgamLeftImage = {
             R.drawable.book11,
             R.drawable.book11,
-            R.drawable.minjuen,
+            R.drawable.tarmihimbihijaroh,
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.unjhila,
-
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.ansolatihim,
-
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.yanjuruna,
-
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.kiromankatibina,
     };
 
     String[] presetpronunciation = {
-            "جنات تجري",
-            "انثى",
-            "من جوع",
-            "من دون الله",
-            "نارا ذات",
-            "انزله",
-
-            "من سجيل",
-            "من شر",
-            "عن صلاتهم",
-            "عن ضيف",
-            "من طغى",
-            "ينظرون",
-
-            "يتيما فاوى",
-            "فررت من قسورہ",
-            "كراما كاتبين",
+            "فبشرهم بعذاب",
+            "ان ربهم بهم",
+            "ترميهم  بحجارة",
     };
 
-    int [] idgamsound={R.raw.jannatintazri,R.raw.unsa,R.raw.minjuin,R.raw.mindunillahi,
-            R.raw.naronjata,R.raw.unjila,R.raw.minsijjilin,R.raw.minnsharri,R.raw.amminsolatihim,
-            R.raw.annjoifi,R.raw.mantogo,R.raw.yanjuruna,R.raw.yatimanfaawa,R.raw.farrotminkoswarah,R.raw.kiromankatibina,
+    int [] idgamsound={R.raw.fabassirhumbiajabin,R.raw.innarobbahumbihim,R.raw.tarmihimbihijarotin,
     };
 
     public IkhfaSafwe() {

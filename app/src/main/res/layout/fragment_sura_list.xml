@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@color/defoultColor"
+    tools:context=".Read.SuraList">
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/listQuranPDF"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:visibility="gone"
+
+        />
+
+
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/listScrolView">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="সূরা ফাতেহা"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:id="@+id/suraFateha"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+
+        android:text="সূরা বাকারা"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:id="@+id/suraBakara"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল ইম্রান"
+        android:id="@+id/suraImran"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা নিসা"
+        android:id="@+id/suraNisa"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা মায়েদা"
+        android:id="@+id/suraMayeda"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+    android:text="সূরা আল আনআম"
+    android:id="@+id/suraAnam"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল আ'রফ"
+        android:id="@+id/suraArof"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+    android:text="সূরা আল আনফাল"
+    android:id="@+id/suraAnfal"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল তাওবা"
+        android:id="@+id/suraTaoba"/>
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+    android:text="সূরা ইউনুস"
+    android:id="@+id/suraUnus"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা হুদ"
+        android:id="@+id/suraHud"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা ইউসুফ"
+        android:id="@+id/suraUsuf"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আর র'দ"
+        android:id="@+id/suraRod"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা ইব্রাহীম"
+        android:id="@+id/suraIbrahim"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল হিজ্র"
+        android:id="@+id/suraHijr"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আন নাহল"
+        android:id="@+id/suraNahl"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা বনি ইস্রাইল"
+        android:id="@+id/suraIsrail"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল কাহাফ"
+        android:id="@+id/surakahaf"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা মারিয়াম"
+        android:id="@+id/suramariam"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা তোহা"
+        android:id="@+id/suratoha"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আম্বিয়া"
+        android:id="@+id/suraambia"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা হজ্জ"
+        android:id="@+id/surahajj"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    style="@style/Widget.AppCompat.Button"
+    android:background="@drawable/bounarydesign"
+    android:text="সূরা মু'মিনুন"
+    android:id="@+id/suramuminun"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    style="@style/Widget.AppCompat.Button"
+    android:background="@drawable/bounarydesign"
+    android:text="সূরা আন-নুর"
+    android:id="@+id/suranur"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    style="@style/Widget.AppCompat.Button"
+    android:background="@drawable/bounarydesign"
+    android:text="সূরা আল-ফুরকন"
+    android:id="@+id/surafurkon"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    style="@style/Widget.AppCompat.Button"
+    android:background="@drawable/bounarydesign"
+    android:text="সূরা আশ-শুআ'র"
+    android:id="@+id/surashuaro"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    style="@style/Widget.AppCompat.Button"
+    android:background="@drawable/bounarydesign"
+    android:text="সূরা  আন-নাম্ল"
+    android:id="@+id/suranaml"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    style="@style/Widget.AppCompat.Button"
+    android:background="@drawable/bounarydesign"
+    android:text="সূরা আল কসাস"
+    android:id="@+id/surakosas"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-আঙ্কাবুত"
+        android:id="@+id/suraankabut"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আর-রুম"
+        android:id="@+id/surarum"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা লুক্মান"
+        android:id="@+id/suralukman"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আস-সাজদাহ"
+        android:id="@+id/surasajdah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-আহযাব"
+        android:id="@+id/suraahjab"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা সাবা"
+        android:id="@+id/surasaba"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা ফাতির"
+        android:id="@+id/surafatir"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা ইয়াসিন"
+        android:id="@+id/surayasin"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আস-সফফাত"
+        android:id="@+id/surasoffat"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আস-সোওয়াদ"
+        android:id="@+id/surasowad"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আয-যুমার"
+        android:id="@+id/surajhumar"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-মু'মিন"
+        android:id="@+id/suramumin"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা মা-মীম সাজদাহ"
+        android:id="@+id/surahamimsajdah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আশ-শুরা"
+        android:id="@+id/surashura"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আয-যুখ্রুফ"
+        android:id="@+id/surajukhruf"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আদ-দুখন"
+        android:id="@+id/suradukhon"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-জাসিয়া"
+        android:id="@+id/surajasiah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-আহকফ"
+        android:id="@+id/suraahkof"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা মুহাম্মাদ"
+        android:id="@+id/suramuhammad"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-ফাতহ"
+        android:id="@+id/surafath"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-হুজ্রত"
+        android:id="@+id/surahujrot"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা কফ"
+        android:id="@+id/surakoff"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আয-যারিয়াত"
+        android:id="@+id/surajariat"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আত-তুর"
+        android:id="@+id/suratur"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আন-নাজম"
+        android:id="@+id/suranajm"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-কমার"
+        android:id="@+id/surakomar"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আর-রহমান"
+        android:id="@+id/surarohman"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-ওয়াকিয়াহ"
+        android:id="@+id/surawakiyah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-হাদিদ"
+        android:id="@+id/surahadid"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-মুজাদালাহ"
+        android:id="@+id/suramujadalah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-হাশর"
+        android:id="@+id/surahashr"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-মুমতাহিনা"
+        android:id="@+id/suramumtahinah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আস-সফ"
+        android:id="@+id/surasoff"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-জুমুয়াহ"
+        android:id="@+id/surajumuah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল মুনাফিকুন"
+        android:id="@+id/suramunafikun"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আত-তাগবুন"
+        android:id="@+id/suratagobun"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ত-তলাক"
+        android:id="@+id/suratolam"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ত-তাহ্রিম"
+        android:id="@+id/suratahrim"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-মুল্ক"
+        android:id="@+id/suramulk"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-কলাম"
+        android:id="@+id/surakolam"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-হাক্কহ"
+        android:id="@+id/surahakkoh"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-মাআরিজ"
+        android:id="@+id/suramarij"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা নুহ"
+        android:id="@+id/suranuh"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-জিন"
+        android:id="@+id/surajin"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-মুযযহাম্মিল"
+        android:id="@+id/suramujjhammil"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-মুদ্দাসসির"
+        android:id="@+id/suramuddhassir"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-কিয়ামাহ"
+        android:id="@+id/surakiamah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আদ-দাহর"
+        android:id="@+id/suradahor"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-মুরসালাত"
+        android:id="@+id/suramursalat"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আন-নাবা"
+        android:id="@+id/suranaba"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আন-নাজিয়াত"
+        android:id="@+id/suranajiat"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আবাসা"
+        android:id="@+id/suraabasa"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আত-তাকবির"
+        android:id="@+id/suratakbir"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-ইনফিতর"
+        android:id="@+id/surainfitor"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-মুতফফিফফিন"
+        android:id="@+id/suramutoffifin"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-ইনশিকক"
+        android:id="@+id/surainshikok"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-বুরুজ"
+        android:id="@+id/suraburuj"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আত-তরিক"
+        android:id="@+id/suratorik"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-আ'লা"
+        android:id="@+id/suraala"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-গশিয়াহ"
+        android:id="@+id/suragoshiat"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-ফাজ্রি"
+        android:id="@+id/surafajri"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-বালাদ"
+        android:id="@+id/surabalad"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আশ-শামস"
+        android:id="@+id/surashams"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-লাইলি"
+        android:id="@+id/suralaili"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আদ-দুহা"
+        android:id="@+id/suraduha"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আলাম্নাশ্রহ"
+        android:id="@+id/suraalamnashroh"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আাত-তিন"
+        android:id="@+id/suratin"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-আলাক"
+        android:id="@+id/suraalak"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-কদ্র"
+        android:id="@+id/surakodr"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-বাইয়েনাহ"
+        android:id="@+id/surabaiyenah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আয-যালযালাহ"
+        android:id="@+id/surajiljalah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-আদিয়াত"
+        android:id="@+id/suraadiat"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-করিয়াহ"
+        android:id="@+id/surakoriah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আত-তাকাসুর"
+        android:id="@+id/suratakasur"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-আস্র"
+        android:id="@+id/suraasor"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-হুমাজাহ"
+        android:id="@+id/surahumajah"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-ফিল"
+        android:id="@+id/surafil"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-কুরাইশ"
+        android:id="@+id/surakuraish"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-মাউন"
+        android:id="@+id/suramaun"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-কাউসার"
+        android:id="@+id/surakausr"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-কাফিরুন"
+        android:id="@+id/surakafirun"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আন-নাস্র"
+        android:id="@+id/suranasr"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আল-লাহাবি"
+        android:id="@+id/suralahab"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা ইখলাস"
+        android:id="@+id/suraikhlas"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আ্ল-ফালাক"
+        android:id="@+id/surafalak"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/bounarydesign"
+        android:text="সূরা আন-নাস"
+        android:id="@+id/suranas"/>
+
+
+
+
+
+</LinearLayout>
+
+</ScrollView>
+
+</RelativeLayout>

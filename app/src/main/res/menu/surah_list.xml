@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="সূরা ফাতিহা"
+        android:id="@+id/fateha_learn"/>
+
+    <item
+        android:title="সূরা ফিল"
+        android:id="@+id/feel_learn"/>
+
+    <item
+        android:title="সূরা কুরাইশ"
+        android:id="@+id/quraish_learn"/>
+
+    <item
+        android:title="সূরা মাউন"
+        android:id="@+id/maun_learn"/>
+
+    <item
+        android:title="সূরা কাওসার"
+        android:id="@+id/kaosar_learn"/>
+    <item
+        android:title="সূরা কাফিরুন"
+        android:id="@+id/kafirun_learn"/>
+    <item
+        android:title="সূরা নাসর"
+        android:id="@+id/nasr_learn"/>
+    <item
+        android:title="সূরা লাহাব"
+        android:id="@+id/lahab_learn"/>
+    <item
+        android:title="সূরা ইখলাস"
+        android:id="@+id/ikhlas_learn"/>
+    <item
+        android:title="সূরা ফালাক"
+        android:id="@+id/falaq_learn"/>
+    <item
+        android:title="সূরা নাস"
+        android:id="@+id/nas_learn"/>
+</menu>

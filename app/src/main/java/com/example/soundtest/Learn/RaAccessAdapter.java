@@ -23,6 +23,10 @@ public class RaAccessAdapter extends FragmentPagerAdapter {
             BarikFragment barikFragment = new BarikFragment();
             return barikFragment;
 
+        case 2:
+            RaFragmentExam raFragmentExam = new RaFragmentExam();
+            return raFragmentExam;
+
 
         default:
             return null;
@@ -31,7 +35,7 @@ public class RaAccessAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     @Nullable
@@ -47,6 +51,10 @@ public class RaAccessAdapter extends FragmentPagerAdapter {
             case 1:
 
                 return  "বারিক";
+
+            case 2:
+
+                return  "পরিক্ষা";
 
             default:
                 return null;

@@ -6,10 +6,12 @@ import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 
+import android.provider.DocumentsContract;
 import android.speech.RecognizerIntent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -26,6 +28,14 @@ import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import com.example.soundtest.R;
+import com.example.soundtest.RegisterActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,7 +46,7 @@ import static android.app.Activity.RESULT_OK;
  */
 public class TomijHorofExam extends Fragment {
     private ImageButton examNextBtn,examMicBtn;
-    private static TextView your_marks;
+    private  TextView your_markstomij;
     private TextView MCQ;
     private TextView oral;
     private ImageSwitcher imageSwitcherOralQuestion;
@@ -46,6 +56,8 @@ public class TomijHorofExam extends Fragment {
     private RadioButton option1,option2,option3,option4,option5,option6,option7,option8,option9,option10;
     private TextView userVoiceConvert;
     MediaPlayer goodToast,badToast;
+
+
 
     TextView textView1;
 
@@ -106,7 +118,9 @@ public class TomijHorofExam extends Fragment {
             "িহবার আগা সামনের নিচের দুই দাঁতের আগা",
     };
 
-
+    public FirebaseAuth mAuth;
+    public DatabaseReference RootRef;
+    private String currentUserID;
 
     public TomijHorofExam() {
         // Required empty public constructor
@@ -124,7 +138,7 @@ public class TomijHorofExam extends Fragment {
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
-        your_marks = view.findViewById(R.id.your_marks);
+        your_markstomij = view.findViewById(R.id.your_marksTomij);
         MCQ = view.findViewById(R.id.multiplechoicetest);
         oral = view.findViewById(R.id.oralexam);
         typeface = Typeface.createFromAsset(getActivity().getAssets(),"alexbrush_regular.ttf");
@@ -151,21 +165,67 @@ public class TomijHorofExam extends Fragment {
         badToast = MediaPlayer.create(getContext(),R.raw.try_again);
 
 
+        mAuth=FirebaseAuth.getInstance();
+        currentUserID= mAuth.getCurrentUser().getUid();
+        RootRef= FirebaseDatabase.getInstance().getReference("Marks");
+
+
+
         RadioButtonClick();
         SwitcherTask();
 
+
+
         ButtonClick();
+
+        RootRef = FirebaseDatabase.getInstance().getReference().child("Marks").child(currentUserID).child("Marks");
+        RootRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+
+                    String retreveTomijMarks = (String) dataSnapshot.child("TomijExam").getValue();
+
+                    your_markstomij.setText(retreveTomijMarks);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
 
 
 
         return view;
     }
 
+
     private void ButtonClick() {
 
         examNextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                RootRef.child(currentUserID).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                        RootRef.child("TomijExam").setValue(your_markstomij.getText().toString());
+                        Toast.makeText(getContext(), "Marks Added", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
 
 
                 if((position<multipleQuestion.length-1)){
@@ -183,26 +243,26 @@ public class TomijHorofExam extends Fragment {
                     if (SelectTV.equals(mcq_answer) && sentanceOnee.equals(sentenceTwoo)) {
 
                         current_marks = current_marks+2;
-                        your_marks.setText(""+current_marks);
+                        your_markstomij.setText(""+current_marks);
                         goodToast.start();
 
                     }
                     else if (SelectTV.equals(mcq_answer)){
 
                         current_marks = current_marks+1;
-                        your_marks.setText(""+current_marks);
+                        your_markstomij.setText(""+current_marks);
                         goodToast.start();
                     }
                     else if (sentanceOnee.equals(sentenceTwoo)){
 
                         current_marks = current_marks+1;
-                        your_marks.setText(""+current_marks);
+                        your_markstomij.setText(""+current_marks);
                         goodToast.start();
                     }
                     else {
                         if (current_marks>0){
                             current_marks = current_marks-1;
-                            your_marks.setText(""+current_marks);
+                            your_markstomij.setText(""+current_marks);
                             badToast.start();
                         }
                     }

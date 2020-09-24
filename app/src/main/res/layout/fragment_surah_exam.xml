@@ -51,7 +51,7 @@
             android:textColor="#000"/>
 
         <TextView
-            android:id="@+id/your_marks_horof"
+            android:id="@+id/your_marks_sura"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -114,7 +114,7 @@
                     android:id="@+id/option1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" ২৯ টি।"
+                    android:text="সাত টি ।"
                     android:padding="10dp"
                     android:checked="false"/>
 
@@ -123,14 +123,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text=" ১৪ টি।"/>
+                    android:text="মক্কায়"/>
                 <RadioButton
 
                     android:id="@+id/option3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text=" ১৫ টি।"/>
+                    android:text="তিনি তাদের উপরে প্রেরণ করেছিলেন ঝাঁকে ঝাঁকে পাখি"/>
 
 
                 <RadioButton
@@ -138,12 +138,12 @@
                     android:padding="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="৭ টি।"/>
+                    android:text="সূরা ফীল"/>
                 <RadioButton
                     android:id="@+id/option5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" হলকের শুরু ।"
+                    android:text="সূরা ইখলাস"
                     android:padding="10dp"
                     />
 
@@ -154,33 +154,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="জিহ্বার গোঁড়া"/>
+                    android:text="সুপেয় পানির ঝর্না"/>
                 <RadioButton
                     android:id="@+id/option7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="তিনটি ।"/>
+                    android:text="গলায় খেজুরের রশি পরিয়ে রাখা"/>
 
                 <RadioButton
                     android:id="@+id/option8"
                     android:padding="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="১৭ টি।"/>
+                    android:text="সূরা মাউন"/>
                 <RadioButton
                     android:id="@+id/option9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="উচ্চারণের স্থান"/>
+                    android:text="সূরা ফাতেহা"/>
 
                 <RadioButton
                     android:id="@+id/option10"
                     android:padding="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ফরয"/>
+                    android:text="উম্মুল কুরআন"/>
             </RadioGroup>
         </ScrollView>
 

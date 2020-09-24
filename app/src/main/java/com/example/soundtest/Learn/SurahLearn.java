@@ -79,6 +79,8 @@ public class SurahLearn extends Fragment {
 
     };
 
+
+
     int[] fatehauccharon = {
             R.drawable.bismillahbanglauccharon,
             R.drawable.alhamdulillahbanglauccharon,

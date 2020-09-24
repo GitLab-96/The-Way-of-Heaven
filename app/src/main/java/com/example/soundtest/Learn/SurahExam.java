@@ -43,7 +43,7 @@ import static android.app.Activity.RESULT_OK;
  */
 public class SurahExam extends Fragment {
     private ImageButton examNextBtn,examMicBtn;
-    private static TextView your_marks_horof;
+    private static TextView your_marks_sura;
     private TextView MCQ;
     private TextView oral;
     private ImageSwitcher imageSwitcherOralQuestion;
@@ -63,16 +63,16 @@ public class SurahExam extends Fragment {
 
 
     String[] multipleQuestion = {
-            "আরবি হরফ কয়টি ?",
-            "নুক্তা ওয়ালা হরফ কয়টি ? ",
-            "নুক্তা ছাড়া হরফ কয়টি ? ",
-            "মোটা হরফ কয়টি ?",
-            "  ع এর মাখ্রাজ কোনটি ?",
-            " ك এর মাখ্রাজ কোনটি ?",
-            "মুখের খালি জায়গা হইতে কয়টি হরফ উচ্চারিত হয় ?",
-            "মাখ্রাজ কয়টি ?",
-            "মাখ্রাজ অর্থ কি ?",
-            "তাজভিদ অনুযায়ী কুরআন পড়া কি ?",
+            "সূরা ফাতেহা এ কতটি আয়াত রয়েছে ?",
+            "সূরা ফীল কথায় অবতীর্ণ হয়েছে ? ",
+            "। وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ অর্থ কি ? ",
+            "হস্তি বাহিনি সম্পরকে আল্লাহ কোন সুরায় বলেছেন ?",
+            "আল্লাহ তা'লার একত্ববাদের সূরা কোনটি ?",
+            "কাওসার কি ?",
+            "আবু লাহাবের শাস্তি কিরূপ ?",
+            "কোন সুরায় আল্লাহ এতীমদের ব্যাপারে সতর্ক করেছেন ?",
+            "কুরান মাজিদের সর্ব প্রথম সূরা কোনটি ?",
+            "সূরা ফাতেহার অপর নাম কি ?",
     };
     int[] horof = {
             R.drawable.seen,
@@ -100,16 +100,16 @@ public class SurahExam extends Fragment {
             "نون",
     };
     String[] presetMultipleAnswer = {
-            " ২৯ টি।",
-            " ১৪ টি।",
-            " ১৫ টি।",
-            "৭ টি।",
-            " হলকের শুরু ।",
-            "জিহ্বার গোঁড়া",
-            "তিনটি ।",
-            "১৭ টি।",
-            "উচ্চারণের স্থান",
-            "ফরয",
+            "সাত টি ।",
+            "মক্কায়",
+            "তিনি তাদের উপরে প্রেরণ করেছিলেন ঝাঁকে ঝাঁকে পাখি",
+            "সূরা ফীল",
+            "সূরা ইখলাস",
+            "সুপেয় পানির ঝর্না",
+            "গলায় খেজুরের রশি পরিয়ে রাখা",
+            "সূরা মাউন",
+            "সূরা ফাতেহা",
+            "উম্মুল কুরআন",
     };
 
     public FirebaseAuth mAuth;
@@ -134,7 +134,7 @@ public class SurahExam extends Fragment {
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
-        your_marks_horof = view.findViewById(R.id.your_marks_horof);
+        your_marks_sura = view.findViewById(R.id.your_marks_sura);
         MCQ = view.findViewById(R.id.multiplechoicetest);
         oral = view.findViewById(R.id.oralexam);
         typeface = Typeface.createFromAsset(getActivity().getAssets(),"alexbrush_regular.ttf");
@@ -175,9 +175,9 @@ public class SurahExam extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
 
-                    String retreveHorofMarks = (String) dataSnapshot.child("HorofExam").getValue();
+                    String retreveSuraMarks = (String) dataSnapshot.child("SuraExam").getValue();
 
-                    your_marks_horof.setText(retreveHorofMarks);
+                    your_marks_sura.setText(retreveSuraMarks);
                 }
             }
 
@@ -205,7 +205,7 @@ public class SurahExam extends Fragment {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
-                        RootRef.child("HorofExam").setValue(your_marks_horof.getText().toString());
+                        RootRef.child("SuraExam").setValue(your_marks_sura.getText().toString());
                         Toast.makeText(getContext(), "Marks Added", Toast.LENGTH_SHORT).show();
                     }
 
@@ -230,26 +230,26 @@ public class SurahExam extends Fragment {
                     if (SelectTV.equals(mcq_answer) && sentanceOnee.equals(sentenceTwoo)) {
 
                         current_marks = current_marks+2;
-                        your_marks_horof.setText(""+current_marks);
+                        your_marks_sura.setText(""+current_marks);
                         goodToast.start();
 
                     }
                     else if (SelectTV.equals(mcq_answer)){
 
                         current_marks = current_marks+1;
-                        your_marks_horof.setText(""+current_marks);
+                        your_marks_sura.setText(""+current_marks);
                         goodToast.start();
                     }
                     else if (sentanceOnee.equals(sentenceTwoo)){
 
                         current_marks = current_marks+1;
-                        your_marks_horof.setText(""+current_marks);
+                        your_marks_sura.setText(""+current_marks);
                         goodToast.start();
                     }
                     else {
                         if (current_marks>0){
                             current_marks = current_marks-1;
-                            your_marks_horof.setText(""+current_marks);
+                            your_marks_sura.setText(""+current_marks);
                             badToast.start();
                         }
                     }

@@ -24,12 +24,13 @@ public class LearnActivity extends AppCompatActivity  {
     private ImageView arabicHorofLock,tomijHorofLock,horkotLock,kolkolahLock,wajibLock,maddLock,gunnahLock,raPurBarikLock,allahPurBarikLock,surahLock;
 
 
-    TextView horofMarksTV,tomijMarksTV,horkotMarksTV,kolkolaMarksTV,wajibMarksTV,maddMarksTV,gunnahMarksTV,roMarksTV,allahMarksTV;
+    TextView horofMarksTV,tomijMarksTV,horkotMarksTV,kolkolaMarksTV,wajibMarksTV,maddMarksTV,gunnahMarksTV,roMarksTV,allahMarksTV,suraMarksTV;
     int marksHoroh,markTomij,marksHorkot,marksKolkola,marksWajib,marksMadd,marksGunnah,marksRo,marksAllah;
 
     public FirebaseAuth mAuth;
     public DatabaseReference RootRef;
     private String currentUserID;
+
 
 
     @Override
@@ -73,6 +74,7 @@ public class LearnActivity extends AppCompatActivity  {
                     String retreveGunnahMarks = (String) dataSnapshot.child("GunnahExam").getValue();
                     String retreveRohMarks = (String) dataSnapshot.child("RoExam").getValue();
                     String retreveAllahMarks = (String) dataSnapshot.child("AllahExam").getValue();
+                    String retreveSuraMarks = (String) dataSnapshot.child("SuraExam").getValue();
 
 
                     horofMarksTV.setText(retreveHorohMarks);
@@ -83,7 +85,8 @@ public class LearnActivity extends AppCompatActivity  {
                     maddMarksTV.setText(retreveMaddMarks);
                     gunnahMarksTV.setText(retreveGunnahMarks);
                     roMarksTV.setText(retreveRohMarks);
-                   allahMarksTV.setText(retreveAllahMarks);
+                    allahMarksTV.setText(retreveAllahMarks);
+                    suraMarksTV.setText(retreveSuraMarks);
 
 
                     marksHoroh = Integer.parseInt(retreveHorohMarks);
@@ -95,6 +98,7 @@ public class LearnActivity extends AppCompatActivity  {
                     marksGunnah = Integer.parseInt(retreveGunnahMarks);
                     marksRo = Integer.parseInt(retreveRohMarks);
                     marksAllah = Integer.parseInt(retreveAllahMarks);
+
 
                     if (marksHoroh>5){
 
@@ -127,6 +131,7 @@ public class LearnActivity extends AppCompatActivity  {
                     if (marksAllah>5){
                         surahLock.setVisibility(View.INVISIBLE);
                     }
+
 
 
                 }
@@ -183,6 +188,7 @@ public class LearnActivity extends AppCompatActivity  {
         gunnahMarksTV = findViewById(R.id.marksGunnah);
         roMarksTV = findViewById(R.id.marksRo);
         allahMarksTV = findViewById(R.id.marksAlloh);
+        suraMarksTV = findViewById(R.id.marksSura);
 
     }
 

@@ -60,12 +60,15 @@ public class SettingsActivity extends AppCompatActivity {
     private CircleImageView userProfileImage;
     private String currentUserID;
     public FirebaseAuth mAuth;
-    public DatabaseReference RootRef;
+    public DatabaseReference RootRef,RootRefMarks;
     public Uri uri;
     private String downloadUrl;
     public StorageReference storageReference;
 
     DatePickerDialog.OnDateSetListener onDateSetListener,onDateSetListener1;
+
+
+
 
 
 
@@ -77,6 +80,8 @@ public class SettingsActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         currentUserID= mAuth.getCurrentUser().getUid();
         RootRef= FirebaseDatabase.getInstance().getReference();
+
+        RootRefMarks= FirebaseDatabase.getInstance().getReference("Marks");
 
         storageReference = FirebaseStorage.getInstance().getReference().child("Profile Image");
 
@@ -113,6 +118,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 UpdateSettings();
                 updateName.setVisibility(updateName.INVISIBLE);
                 updateEmail.setVisibility(updateEmail.INVISIBLE);
@@ -135,6 +141,31 @@ public class SettingsActivity extends AppCompatActivity {
                 updateButtn.setVisibility(updateButtn.VISIBLE);
                 setactivationTV.setVisibility(setactivationTV.VISIBLE);
 
+                RootRefMarks = FirebaseDatabase.getInstance().getReference().child("Marks").child(currentUserID).child("Marks");
+                RootRefMarks.child(currentUserID).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                        RootRefMarks.child("HorofExam").setValue("0");
+                        RootRefMarks.child("TomijExam").setValue("0");
+                        RootRefMarks.child("HorkotExam").setValue("0");
+                        RootRefMarks.child("KolkolaExam").setValue("0");
+                        RootRefMarks.child("WajibExam").setValue("0");
+                        RootRefMarks.child("MaddExam").setValue("0");
+                        RootRefMarks.child("GunnahExam").setValue("0");
+                        RootRefMarks.child("RoExam").setValue("0");
+                        RootRefMarks.child("AllahExam").setValue("0");
+                        RootRefMarks.child("SuraExam").setValue("0");
+
+                        Toast.makeText(SettingsActivity.this, "Marks Added", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
 
             }
         });

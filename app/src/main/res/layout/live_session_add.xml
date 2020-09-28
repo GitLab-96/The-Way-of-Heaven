@@ -1,48 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@drawable/bounarydesign"
-    android:padding="20dp"
+    android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:layout_height="wrap_content">
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:padding="20dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Live Information"
         android:layout_margin="5dp"
-        android:padding="10dp"
+        android:background="#fff"
         android:gravity="center"
-        android:textSize="30sp"
-        android:background="#fff"/>
-
+        android:padding="10dp"
+        android:text="Live Information"
+        android:textColor="@color/blackColor"
+        android:textSize="30sp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@drawable/bounarydesign"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2"
+        android:layout_weight="1"
         android:layout_margin="10dp"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_weight=".5">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date : "
-                />
+                android:textColor="@color/blackColor" />
+
             <TextView
+                android:id="@+id/liveDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="Date"
-                android:id="@+id/liveDate"
-                />
+                android:hint="Date"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Day : "
+                android:textColor="@color/blackColor" />
+
+            <EditText
+                android:id="@+id/liveDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Day"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Time : "
+                android:textColor="@color/blackColor" />
+
+            <TextView
+                android:id="@+id/StartTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Start Time"
+                android:textAlignment="center" />
         </LinearLayout>
 
         <LinearLayout
@@ -54,18 +111,25 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Time : "
-                />
+                android:text="End Time : "
+                android:textColor="@color/blackColor" />
+
             <TextView
+                android:id="@+id/EndTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:hint="Live Time"
-                android:id="@+id/liveTime"
-                />
+                android:hint="End  Time"
+                android:textAlignment="center" />
         </LinearLayout>
 
     </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,14 +137,16 @@
         app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/liveTitle"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:hint="Title"
+            android:textColor="@color/blackColor"
             android:inputType="text"
-            android:id="@+id/liveTitle"
             android:textAlignment="center" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -88,14 +154,17 @@
         app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/liveScholarsName"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:hint="Scholars Name"
+            android:textColor="@color/blackColor"
             android:inputType="text"
-            android:id="@+id/liveScholarsName"
             android:textAlignment="center" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -103,28 +172,30 @@
         app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/liveSubject"
             android:layout_width="match_parent"
             android:layout_height="36dp"
-            android:inputType="text"
-            android:hint="S.Title"
-            android:id="@+id/scholarsTitle"
-            android:textAlignment="center" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:errorEnabled="true">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
+            android:textColor="@color/blackColor"
             android:hint="Subject"
             android:inputType="text"
-            android:id="@+id/liveSubject"
             android:textAlignment="center" />
 
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/scholarsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="S.Title"
+            android:textColor="@color/blackColor"
+            android:inputType="text"
+            android:textAlignment="center" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -137,27 +208,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:text="Type : "/>
+            android:text="Type : "
+            android:textColor="@color/blackColor"
+            android:textSize="18dp" />
 
         <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/typeSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:id="@+id/typeSpinner"/>
+            android:textAlignment="center" />
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/confirmLiveButtn"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/bounarydesign"
-        android:text="Confirm Live"
-        android:textAllCaps="false"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:id="@+id/confirmLiveButtn"/>
-
+        android:background="@drawable/bounarydesign"
+        android:text="Confirm Live"
+        android:textAllCaps="false" />
 
 
 </LinearLayout>

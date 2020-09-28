@@ -41,7 +41,8 @@ public class CourseScholerAdapter extends RecyclerView.Adapter<CourseScholerAdap
 
 
         holder.course_title.setText(courseClasses.get(position).getTitle());
-        holder.cours_time.setText(courseClasses.get(position).getCourseTime());
+        holder.cours_start_time.setText(courseClasses.get(position).getCourseTime());
+        holder.cours_end_time.setText(courseClasses.get(position).getCourseTime());
         holder.cours_date.setText(courseClasses.get(position).getCourseDate());
         holder.cours_lecturer.setText(courseClasses.get(position).getSchplarName());
         holder.cours_type.setText(courseClasses.get(position).getCoursetType());
@@ -54,17 +55,17 @@ public class CourseScholerAdapter extends RecyclerView.Adapter<CourseScholerAdap
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView course_title,cours_id,cours_time,cours_date,cours_lecturer,cours_type;
+        TextView course_title,cours_id,cours_start_time,cours_end_time,cours_date,cours_lecturer,cours_type;
 
         public MyViewHolder(@NonNull final View itemView) {
             super(itemView);
 
             course_title = itemView.findViewById(R.id.getTitle);
-            cours_time = itemView.findViewById(R.id.getTime);
+            cours_start_time = itemView.findViewById(R.id.getStartTime);
             cours_date = itemView.findViewById(R.id.getDate);
             cours_lecturer = itemView.findViewById(R.id.getLacturerName);
             cours_type = itemView.findViewById(R.id.getType);
-            cours_id = itemView.findViewById(R.id.getID);
+            cours_end_time = itemView.findViewById(R.id.getEndTime);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -110,6 +110,33 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+
+        RootRefMarks = FirebaseDatabase.getInstance().getReference().child("Marks").child(currentUserID).child("Marks");
+        RootRefMarks.child(currentUserID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                RootRefMarks.child("HorofExam").setValue("0");
+                RootRefMarks.child("TomijExam").setValue("0");
+                RootRefMarks.child("HorkotExam").setValue("0");
+                RootRefMarks.child("KolkolaExam").setValue("0");
+                RootRefMarks.child("WajibExam").setValue("0");
+                RootRefMarks.child("MaddExam").setValue("0");
+                RootRefMarks.child("GunnahExam").setValue("0");
+                RootRefMarks.child("RoExam").setValue("0");
+                RootRefMarks.child("AllahExam").setValue("0");
+                RootRefMarks.child("SuraExam").setValue("0");
+
+                Toast.makeText(SettingsActivity.this, "Marks Added", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
 
@@ -141,31 +168,7 @@ public class SettingsActivity extends AppCompatActivity {
                 updateButtn.setVisibility(updateButtn.VISIBLE);
                 setactivationTV.setVisibility(setactivationTV.VISIBLE);
 
-                RootRefMarks = FirebaseDatabase.getInstance().getReference().child("Marks").child(currentUserID).child("Marks");
-                RootRefMarks.child(currentUserID).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-
-                        RootRefMarks.child("HorofExam").setValue("0");
-                        RootRefMarks.child("TomijExam").setValue("0");
-                        RootRefMarks.child("HorkotExam").setValue("0");
-                        RootRefMarks.child("KolkolaExam").setValue("0");
-                        RootRefMarks.child("WajibExam").setValue("0");
-                        RootRefMarks.child("MaddExam").setValue("0");
-                        RootRefMarks.child("GunnahExam").setValue("0");
-                        RootRefMarks.child("RoExam").setValue("0");
-                        RootRefMarks.child("AllahExam").setValue("0");
-                        RootRefMarks.child("SuraExam").setValue("0");
-
-                        Toast.makeText(SettingsActivity.this, "Marks Added", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
 
             }
         });

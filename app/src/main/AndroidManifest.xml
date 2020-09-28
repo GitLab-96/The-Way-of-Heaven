@@ -13,13 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Question.LiveChatAcctivity"></activity>
+        <activity android:name=".Question.CallingLive"></activity>
         <activity android:name=".Question.ScholarsAnswerActivity" />
         <activity android:name=".Question.AlemList" />
         <activity android:name=".Question.AboutActivity" />
         <activity android:name=".Question.SettingsActivity" />
         <activity android:name=".Question.HomeQuestionActivity" />
-        <activity android:name=".Learn.SuraActivity"/>
+        <activity android:name=".Learn.SuraActivity" />
         <activity android:name=".Learn.AllahActivity" />
         <activity android:name=".Learn.Ra_Pur_Barik_Activity" />
         <activity android:name=".Learn.GunnahActivity" />

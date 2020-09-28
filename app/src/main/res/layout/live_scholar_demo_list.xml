@@ -16,23 +16,25 @@
             android:background="#E1DCE9"
             android:padding="5dp"
             android:orientation="horizontal"
-            android:weightSum="3">
+            android:weightSum="2">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2">
+                android:layout_weight="1">
 
 
                 <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:text="Title : "/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="     Set Title  "
+                    android:text="Set Title"
+                    android:gravity="center"
                     android:id="@+id/getTitle"/>
 
             </LinearLayout>
@@ -47,13 +49,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ID : "/>
+                    android:textStyle="bold"
+                    android:text="Date : "/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="     Set ID  "
-                    android:id="@+id/getID"/>
+                    android:gravity="center"
+                    android:text="Set Date"
+                    android:id="@+id/getDate"/>
 
             </LinearLayout>
 
@@ -66,27 +70,7 @@
          android:background="#D4C7F3"
          android:padding="5dp"
          android:layout_marginTop="5dp"
-        android:weightSum="3">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Time : "/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="     Set Time  "
-                android:id="@+id/getTime"/>
-
-        </LinearLayout>
-
+        android:weightSum="2">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -97,13 +81,37 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date : "/>
+                android:textStyle="bold"
+                android:text="Start Time : "/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Time  "
+                android:gravity="center"
+                android:id="@+id/getStartTime"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="     Set Date  "
-                android:id="@+id/getDate"/>
+                android:textStyle="bold"
+                android:text="Ending Time: "/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint=" End time "
+                android:id="@+id/getEndTime"/>
+
+
 
         </LinearLayout>
 
@@ -116,24 +124,26 @@
         android:background="#C6AFEE"
         android:padding="5dp"
         android:layout_marginTop="5dp"
-        android:weightSum="3">
+        android:weightSum="2">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2">
+            android:layout_weight="1">
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="Lec.Name : "/>
+                android:text="Lec.Name :"
+                android:textStyle="bold"
+                android:textSize="18sp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="     Set Name  "
+                android:hint="Set Name"
+                android:gravity="center"
                 android:textSize="18sp"
                 android:id="@+id/getLacturerName"/>
 
@@ -149,12 +159,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:text="Type : "/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Multiple Way "
+                android:hint="Multiple Way "
+                android:gravity="center"
                 android:id="@+id/getType"/>
 
         </LinearLayout>

@@ -27,12 +27,14 @@ import android.widget.Toast;
 
 import com.example.soundtest.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -41,14 +43,16 @@ import java.util.Calendar;
  */
 public class ScholarsLiveFragment extends Fragment {
 
-    private TextView liveDate,liveTime;
+    private TextView liveDate,liveStartTime,liveEndingTime,LiveDay;
     private EditText liveTitle,liveScholarName,scholarTitle,liveSubject;
     private Spinner liveTypeSpinner;
     private Button confirmLiveBttn;
     private FloatingActionButton liveSessionAddBttn;
     DatePickerDialog.OnDateSetListener onDateSetListener;
-    public DatabaseReference RootRef;
 
+    public DatabaseReference RootRefLiveInUser,RootefLive;
+    private String currentUserID;
+    public FirebaseAuth mAuth;
 
     DatabaseReference reference;
     RecyclerView recyclerView;
@@ -66,19 +70,24 @@ public class ScholarsLiveFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_scholars_live, container, false);
 
-        RootRef= FirebaseDatabase.getInstance().getReference("Live");
-        liveSessionAddBttn = view.findViewById(R.id.add_live_session);
+        mAuth= FirebaseAuth.getInstance();
+        currentUserID= mAuth.getCurrentUser().getUid();
+        RootRefLiveInUser = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
+        RootefLive = FirebaseDatabase.getInstance().getReference().child("Live");
 
+
+        liveSessionAddBttn = view.findViewById(R.id.add_live_session);
         recyclerView = view.findViewById(R.id.scholersLiveRecylerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         live_list = new ArrayList<ScholarsLiveClass>();
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Live");
+        reference = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
 
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.child("Live").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+
 
                     ScholarsLiveClass p = dataSnapshot1.getValue(ScholarsLiveClass.class);
                     live_list.add(p);
@@ -120,7 +129,10 @@ public class ScholarsLiveFragment extends Fragment {
                 View mView = getLayoutInflater().inflate(R.layout.live_session_add,null);
 
                 liveDate = mView.findViewById(R.id.liveDate);
-                liveTime = mView.findViewById(R.id.liveTime);
+                liveStartTime = mView.findViewById(R.id.StartTime);
+                liveEndingTime = mView.findViewById(R.id.EndTime);
+                LiveDay = mView.findViewById(R.id.liveDay);
+
                 liveTitle = mView.findViewById(R.id.liveTitle);
                 liveScholarName = mView.findViewById(R.id.liveScholarsName);
                 scholarTitle = mView.findViewById(R.id.scholarsTitle);
@@ -129,11 +141,9 @@ public class ScholarsLiveFragment extends Fragment {
                 confirmLiveBttn = mView.findViewById(R.id.confirmLiveButtn);
 
                 TypeSpinner();
-                LiveTime();
+                LiveStartTime();
+                LiveEndTime();
                 LiveDate();
-
-
-
                 mBuilder.setView(mView);
                 final AlertDialog dialog = mBuilder.create();
                 dialog.show();
@@ -141,13 +151,13 @@ public class ScholarsLiveFragment extends Fragment {
                 confirmLiveBttn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
-
                         String setLiveTitle = liveTitle.getText().toString();
                         String setLiveScholarsName = liveScholarName.getText().toString();
                         String setScholarTitle = scholarTitle.getText().toString();
                         String setLiveType = liveTypeSpinner.getSelectedItem().toString();
-                        String setLiveTime = liveTime.getText().toString();
+                        String setLiveStartTime = liveStartTime.getText().toString();
+                        String setLiveEndTime = liveEndingTime.getText().toString();
+                        String setLiveDay = LiveDay.getText().toString();
                         String setLiveDate = liveDate.getText().toString();
                         String setLiveSubject = liveSubject.getText().toString();
 
@@ -165,9 +175,12 @@ public class ScholarsLiveFragment extends Fragment {
                         else {
 
 
-                            String key = RootRef.push().getKey();
-                            ScholarsLiveClass scholarsLiveClass = new ScholarsLiveClass(setLiveTitle,setLiveScholarsName,setScholarTitle,setLiveType,setLiveTime,setLiveDate,setLiveSubject);
-                            RootRef.child(key).setValue(scholarsLiveClass);
+                            String key = RootRefLiveInUser.push().getKey();
+
+                            ScholarsLiveClass scholarsLiveClass = new ScholarsLiveClass(setLiveTitle,setLiveScholarsName,setScholarTitle,setLiveType,setLiveStartTime,setLiveEndTime,setLiveDay,setLiveDate,setLiveSubject);
+                            RootRefLiveInUser.child("Live").child(key).setValue(scholarsLiveClass);
+
+                            RootefLive.child(key).setValue(scholarsLiveClass);
 
                             Toast.makeText(getContext(), "Your Live Session Created..", Toast.LENGTH_SHORT).show();
 
@@ -215,9 +228,9 @@ public class ScholarsLiveFragment extends Fragment {
 
     }
 
-    private void LiveTime() {
+    private void LiveStartTime() {
 
-        liveTime.setOnClickListener(new View.OnClickListener() {
+        liveStartTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Calendar calendar = Calendar.getInstance();
@@ -228,7 +241,30 @@ public class ScholarsLiveFragment extends Fragment {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                        liveTime.setText(hourOfDay + ":" + minute);
+                        liveStartTime.setText(hourOfDay + ":" + minute);
+                    }
+                }, hour, minute, true);
+                timePickerDialog.setTitle("Choose Time");
+                timePickerDialog.show();
+                ;
+            }
+        });
+
+    }
+    private void LiveEndTime() {
+
+        liveEndingTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar calendar = Calendar.getInstance();
+                int hour = calendar.get(Calendar.HOUR_OF_DAY);
+                int minute = calendar.get(Calendar.MINUTE);
+                TimePickerDialog timePickerDialog;
+                timePickerDialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                        liveEndingTime.setText(hourOfDay + ":" + minute);
                     }
                 }, hour, minute, true);
                 timePickerDialog.setTitle("Choose Time");

@@ -5,7 +5,9 @@ public class ScholarsLiveClass {
     private String schplarName;
     private String scholarTitle;
     private String livetType;
-    private String liveTime;
+    private String liveStartTime;
+    private String liveEndTime;
+    private String liveDay;
     private String liveDate;
     private String liveSubject;
 
@@ -41,12 +43,28 @@ public class ScholarsLiveClass {
         this.livetType = livetType;
     }
 
-    public String getLiveTime() {
-        return liveTime;
+    public String getLiveStartTime() {
+        return liveStartTime;
     }
 
-    public void setLiveTime(String liveTime) {
-        this.liveTime = liveTime;
+    public void setLiveStartTime(String liveStartTime) {
+        this.liveStartTime = liveStartTime;
+    }
+
+    public String getLiveEndTime() {
+        return liveEndTime;
+    }
+
+    public void setLiveEndTime(String liveEndTime) {
+        this.liveEndTime = liveEndTime;
+    }
+
+    public String getLiveDay() {
+        return liveDay;
+    }
+
+    public void setLiveDay(String liveDay) {
+        this.liveDay = liveDay;
     }
 
     public String getLiveDate() {
@@ -65,16 +83,21 @@ public class ScholarsLiveClass {
         this.liveSubject = liveSubject;
     }
 
-    public ScholarsLiveClass(String title, String schplarName, String scholarTitle, String livetType, String liveTime, String liveDate, String liveSubject) {
+    public ScholarsLiveClass(String title, String schplarName, String scholarTitle, String livetType, String liveStartTime, String liveEndTime, String liveDay, String liveDate, String liveSubject) {
         this.title = title;
         this.schplarName = schplarName;
         this.scholarTitle = scholarTitle;
         this.livetType = livetType;
-        this.liveTime = liveTime;
+        this.liveStartTime = liveStartTime;
+        this.liveEndTime = liveEndTime;
+        this.liveDay = liveDay;
         this.liveDate = liveDate;
         this.liveSubject = liveSubject;
     }
 
     public ScholarsLiveClass() {
+    }
+
+    public class ScholerLiveViewHolder {
     }
 }

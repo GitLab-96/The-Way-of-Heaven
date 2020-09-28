@@ -115,7 +115,7 @@ public class ScholarsCourseFragment extends Fragment {
                 View mView = getLayoutInflater().inflate(R.layout.live_session_add,null);
 
                 courseDate = mView.findViewById(R.id.liveDate);
-                courseTime = mView.findViewById(R.id.liveTime);
+                courseTime = mView.findViewById(R.id.StartTime);
                 courseTitle = mView.findViewById(R.id.liveTitle);
                 courseScholarName = mView.findViewById(R.id.liveScholarsName);
                 scholarTitle = mView.findViewById(R.id.scholarsTitle);

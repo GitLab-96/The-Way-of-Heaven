@@ -14,20 +14,24 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.soundtest.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-public class LiveScholarsAdapter extends RecyclerView.Adapter<LiveScholarsAdapter.MyViewHolder> {
 
+public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<ScholarsLiveClass> liveClasses;
-    private OnItemClickListener listener;
+
     DatabaseReference databaseReference;
 
-    public LiveScholarsAdapter(Context c ,ArrayList<ScholarsLiveClass> p){
+    public LiveAdapter(Context c ,ArrayList<ScholarsLiveClass> p){
 
         context = c;
         liveClasses = p;
@@ -35,15 +39,17 @@ public class LiveScholarsAdapter extends RecyclerView.Adapter<LiveScholarsAdapte
 
     @NonNull
     @Override
-    public LiveScholarsAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+    public LiveAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.live_scholar_demo_list,parent,false);
-        return new MyViewHolder(view);
+        return new LiveAdapter.MyViewHolder(view);
     }
 
+
+
     @Override
-    public void onBindViewHolder(@NonNull LiveScholarsAdapter.MyViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull LiveAdapter.MyViewHolder holder, int i) {
 
 
         holder.live_title.setText(liveClasses.get(i).getTitle());
@@ -60,7 +66,7 @@ public class LiveScholarsAdapter extends RecyclerView.Adapter<LiveScholarsAdapte
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView live_title,live_start_time,live_end_time,live_date,live_lecturer,live_type;
 
@@ -74,8 +80,7 @@ public class LiveScholarsAdapter extends RecyclerView.Adapter<LiveScholarsAdapte
             live_lecturer = itemView.findViewById(R.id.getLacturerName);
             live_type = itemView.findViewById(R.id.getType);
 
-            itemView.setOnClickListener(this);
-            itemView.setOnCreateContextMenuListener(this);
+
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -83,10 +88,13 @@ public class LiveScholarsAdapter extends RecyclerView.Adapter<LiveScholarsAdapte
                 public void onClick(View v) {
 
                     int position_number = getAdapterPosition();
+
                     String LiveTitle = live_title.getText().toString();
                     String LiveScholarsName = live_lecturer.getText().toString();
                     String LiveStartTime = live_start_time.getText().toString();
                     String LiveEndtTime = live_end_time.getText().toString();
+
+
 
 
 
@@ -98,91 +106,23 @@ public class LiveScholarsAdapter extends RecyclerView.Adapter<LiveScholarsAdapte
                     intent.putExtra("StartTime",LiveStartTime);
                     intent.putExtra("EndTime",LiveEndtTime);
 
+
+
+
+
+
                     v.getContext().startActivity(intent);
 
                     Toast.makeText(context, "position"+getAdapterPosition(), Toast.LENGTH_SHORT).show();
                 }
             });
 
-
         }
-
-
-        @Override
-        public void onClick(View v) {
-
-            if (listener!=null)
-            {
-                int position = getAdapterPosition();
-
-                if (position!=RecyclerView.NO_POSITION) {
-
-
-                    listener.onItemClick(position);
-                }
-            }
-
-
-        }
-
-
-        @Override
-        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-
-            menu.setHeaderTitle("Choose an action");
-            MenuItem doAnyTask = menu.add(Menu.NONE,1,1,"Update");
-            MenuItem delete = menu.add(Menu.NONE,2,2,"Delete");
-
-            doAnyTask.setOnMenuItemClickListener(this);
-            delete.setOnMenuItemClickListener(this);
-
-        }
-
-        @Override
-        public boolean onMenuItemClick(MenuItem item) {
-
-            if (listener!=null)
-            {
-                int position = getAdapterPosition();
-
-                if (position!=RecyclerView.NO_POSITION)
-                {
-                    switch (item.getItemId())
-                    {
-                        case 1:
-
-                            listener.onDoAnytask(position);
-                            return true;
-
-                        case 2:
-
-                            listener.onDelete(position);
-                            return true;
-
-                    }
-                }
-            }
-
-            return false;
-        }
-
-    }
-
-
-    public interface OnItemClickListener extends AdapterView.OnItemClickListener {
-        void onItemClick(int position);
-        void onDoAnytask(int position);
-        void onDelete(int position);
-
-        @Override
-        void onItemClick(AdapterView<?> parent, View view, int position, long id);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener listener){
-        this.listener  =  listener;
     }
 
 
 
-}
+    }
+
+
 

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.renderscript.Sampler;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.soundtest.R;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -69,6 +71,10 @@ public class ScholarsLiveFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_scholars_live, container, false);
+        liveSessionAddBttn = view.findViewById(R.id.add_live_session);
+        recyclerView = view.findViewById(R.id.scholersLiveRecylerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         mAuth= FirebaseAuth.getInstance();
         currentUserID= mAuth.getCurrentUser().getUid();
@@ -76,47 +82,202 @@ public class ScholarsLiveFragment extends Fragment {
         RootefLive = FirebaseDatabase.getInstance().getReference().child("Live");
 
 
-        liveSessionAddBttn = view.findViewById(R.id.add_live_session);
-        recyclerView = view.findViewById(R.id.scholersLiveRecylerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        live_list = new ArrayList<ScholarsLiveClass>();
+
+
+        live_list = new ArrayList<>();
 
         reference = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
 
         reference.child("Live").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                live_list.clear();
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
 
-
                     ScholarsLiveClass p = dataSnapshot1.getValue(ScholarsLiveClass.class);
+                    p.setKey(dataSnapshot1.getKey());
                     live_list.add(p);
                 }
                 adapter = new LiveScholarsAdapter(getContext(),live_list);
                 recyclerView.setAdapter(adapter);
+
+                adapter.setOnItemClickListener(new LiveScholarsAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(int position) {
+
+                        String text = live_list.get(position).getSchplarName();
+                        Toast.makeText(getContext(), text+" is Selected"+position, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onDoAnytask(int position) {
+
+
+                        ScholarsLiveClass selectedItem = live_list.get(position);
+                        final  String key1 = selectedItem.getKey();
+
+
+
+                        DatabaseReference retreveRef = FirebaseDatabase.getInstance().getReference().child("Live");
+                        retreveRef.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                if (dataSnapshot.exists()){
+
+                                    String retreveDate = (String) dataSnapshot.child(key1).child("liveDate").getValue();
+                                    String retreveDay = (String) dataSnapshot.child(key1).child("liveDay").getValue();
+                                    String retreveStartTime= (String) dataSnapshot.child(key1).child("liveStartTime").getValue();
+                                    String retreveEndTime = (String) dataSnapshot.child(key1).child("liveEndTime").getValue();
+                                    String retreveTitle = (String) dataSnapshot.child(key1).child("title").getValue();
+                                    String retreveName = (String) dataSnapshot.child(key1).child("schplarName").getValue();
+                                    String retreveSubject = (String) dataSnapshot.child(key1).child("liveSubject").getValue();
+                                    String retreveScholerTitle = (String) dataSnapshot.child(key1).child("scholarTitle").getValue();
+
+                                    liveDate.setText(retreveDate);
+                                    LiveDay.setText(retreveDay);
+                                    liveStartTime.setText(retreveStartTime);
+                                    liveEndingTime.setText(retreveEndTime);
+                                    liveTitle.setText(retreveTitle);
+                                    liveScholarName.setText(retreveName);
+                                    liveSubject.setText(retreveSubject);
+                                    scholarTitle.setText(retreveScholerTitle);
+
+
+                                }else {
+
+                                    Toast.makeText(getContext(), "Opps.....", Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                Toast.makeText(getContext(), "Opps....."+databaseError, Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
+                        View mView = getLayoutInflater().inflate(R.layout.live_session_add,null);
+
+                        liveDate = mView.findViewById(R.id.liveDate);
+                        liveStartTime = mView.findViewById(R.id.StartTime);
+                        liveEndingTime = mView.findViewById(R.id.EndTime);
+                        LiveDay = mView.findViewById(R.id.liveDay);
+
+                        liveTitle = mView.findViewById(R.id.liveTitle);
+                        liveScholarName = mView.findViewById(R.id.liveScholarsName);
+                        scholarTitle = mView.findViewById(R.id.scholarsTitle);
+                        liveSubject = mView.findViewById(R.id.liveSubject);
+                        liveTypeSpinner = mView.findViewById(R.id.typeSpinner);
+                        confirmLiveBttn = mView.findViewById(R.id.confirmLiveButtn);
+
+
+                        TypeSpinner();
+                        LiveStartTime();
+                        LiveEndTime();
+                        LiveDate();
+                        mBuilder.setView(mView);
+                        final AlertDialog dialog = mBuilder.create();
+                        dialog.show();
+
+                        confirmLiveBttn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                String setLiveTitle = liveTitle.getText().toString();
+                                String setLiveScholarsName = liveScholarName.getText().toString();
+                                String setScholarTitle = scholarTitle.getText().toString();
+                                String setLiveType = liveTypeSpinner.getSelectedItem().toString();
+                                String setLiveStartTime = liveStartTime.getText().toString();
+                                String setLiveEndTime = liveEndingTime.getText().toString();
+                                String setLiveDay = LiveDay.getText().toString();
+                                String setLiveDate = liveDate.getText().toString();
+                                String setLiveSubject = liveSubject.getText().toString();
+
+
+
+
+
+                                ScholarsLiveClass scholarsLiveClass = new ScholarsLiveClass(setLiveTitle,setLiveScholarsName,setScholarTitle,setLiveType,setLiveStartTime,setLiveEndTime,setLiveDay,setLiveDate,setLiveSubject);
+
+                                RootRefLiveInUser.child("Live").child(key1).setValue(scholarsLiveClass);
+
+                                RootefLive.child(key1).setValue(scholarsLiveClass);
+
+                                Toast.makeText(getContext(), "Your Live Session Created..", Toast.LENGTH_SHORT).show();
+
+                                dialog.dismiss();
+
+                            }
+
+                        });
+                        Toast.makeText(getContext(), "Update Your Live Info..", Toast.LENGTH_SHORT).show();
+
+
+                    }
+
+                    @Override
+                    public void onDelete(int position) {
+
+                        ScholarsLiveClass selectedItem = live_list.get(position);
+                        final  String key = selectedItem.getKey();
+
+                        DatabaseReference ItemRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID).child("Live");
+
+                        DatabaseReference liveItemRef = FirebaseDatabase.getInstance().getReference().child("Live");
+
+                        liveItemRef.child(key).removeValue();
+
+
+                        ItemRef.child(key).removeValue();
+
+
+                    }
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    }
+                });
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                Toast.makeText(getContext(), "Opps......", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Opps......"+databaseError, Toast.LENGTH_SHORT).show();
             }
-
-
-
-
 
         });
 
 
         AddLiveSession();
 
-
-
-
-
         return view;
     }
+
+
 
     private void AddLiveSession() {
 

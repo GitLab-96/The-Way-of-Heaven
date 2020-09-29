@@ -48,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Date"
+                android:textColor="@color/blackColor"
                 android:textAlignment="center" />
 
         </LinearLayout>
@@ -99,6 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Start Time"
+                android:textColor="@color/blackColor"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -119,6 +121,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="End  Time"
+                android:textColor="@color/blackColor"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -198,6 +201,12 @@
             android:textAlignment="center" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please Select Type :"
+        android:textColor="#E97E7E"
+        android:textAlignment="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -222,10 +231,10 @@
 
     <Button
         android:id="@+id/confirmLiveButtn"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
+        android:padding="10dp"
         android:background="@drawable/bounarydesign"
         android:text="Confirm Live"
         android:textAllCaps="false" />

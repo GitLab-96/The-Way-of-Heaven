@@ -1,5 +1,7 @@
 package com.example.soundtest.Question;
 
+import com.google.firebase.database.Exclude;
+
 public class ScholarsLiveClass {
     private String title;
     private String schplarName;
@@ -10,6 +12,19 @@ public class ScholarsLiveClass {
     private String liveDay;
     private String liveDate;
     private String liveSubject;
+
+    private String key;
+
+    @Exclude
+    public String getKey(){
+        return key;
+    }
+
+    @Exclude
+    public void setKey(String key){
+
+        this.key = key;
+    }
 
     public String getTitle() {
         return title;

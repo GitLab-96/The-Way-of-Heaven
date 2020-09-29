@@ -29,7 +29,7 @@ public class LiveFragment extends Fragment {
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<ScholarsLiveClass> live_list;
-    LiveScholarsAdapter adapter;
+    LiveAdapter adapter;
 
     public LiveFragment() {
         // Required empty public constructor
@@ -51,12 +51,13 @@ public class LiveFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
 
                     ScholarsLiveClass p = dataSnapshot1.getValue(ScholarsLiveClass.class);
                     live_list.add(p);
                 }
-                adapter = new LiveScholarsAdapter(getContext(),live_list);
+                adapter = new LiveAdapter(getContext(),live_list);
                 recyclerView.setAdapter(adapter);
             }
 

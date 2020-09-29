@@ -52,13 +52,20 @@ public class CallingLive extends AppCompatActivity {
         String live_end_time = intent.getStringExtra("EndTime");
 
 
-        String convertInt = String.valueOf(position);
 
+
+        String convertInt = String.valueOf(position);
         positionTV.setText(convertInt);
         liveTitleTV.setText(title);
         scholerNameTV.setText(scholer_name);
         liveStartTimeTV.setText(live_start_time);
         liveEndTimeTV.setText(live_end_time);
+
+
+
+
+
+
         RootRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

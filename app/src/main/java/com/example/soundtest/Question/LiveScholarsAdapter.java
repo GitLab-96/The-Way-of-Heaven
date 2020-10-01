@@ -89,14 +89,14 @@ public class LiveScholarsAdapter extends RecyclerView.Adapter<LiveScholarsAdapte
                     String LiveEndtTime = live_end_time.getText().toString();
 
 
+                    Intent intent = new Intent(v.getContext(),ScholerCallingLive.class);
 
+                    intent.putExtra("live_title",LiveTitle);
+                    intent.putExtra("live_scholer",LiveScholarsName);
+                    intent.putExtra("live_start_time",LiveStartTime);
+                    intent.putExtra("live_end_time",LiveEndtTime );
+                    intent.putExtra("live_position",position_number);
 
-                    Intent intent = new Intent(v.getContext(),CallingLive.class);
-                    intent.putExtra("Position",position_number);
-                    intent.putExtra("Title",LiveTitle);
-                    intent.putExtra("ScholersName",LiveScholarsName);
-                    intent.putExtra("StartTime",LiveStartTime);
-                    intent.putExtra("EndTime",LiveEndtTime);
 
                     v.getContext().startActivity(intent);
 

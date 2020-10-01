@@ -29,7 +29,9 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyViewHolder> 
     Context context;
     ArrayList<ScholarsLiveClass> liveClasses;
 
-    DatabaseReference databaseReference;
+    private DatabaseReference databaseReference ;
+
+
 
     public LiveAdapter(Context c ,ArrayList<ScholarsLiveClass> p){
 
@@ -88,28 +90,18 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyViewHolder> 
                 public void onClick(View v) {
 
                     int position_number = getAdapterPosition();
-
                     String LiveTitle = live_title.getText().toString();
                     String LiveScholarsName = live_lecturer.getText().toString();
                     String LiveStartTime = live_start_time.getText().toString();
                     String LiveEndtTime = live_end_time.getText().toString();
 
-
-
-
-
-
                     Intent intent = new Intent(v.getContext(),CallingLive.class);
-                    intent.putExtra("Position",position_number);
-                    intent.putExtra("Title",LiveTitle);
-                    intent.putExtra("ScholersName",LiveScholarsName);
-                    intent.putExtra("StartTime",LiveStartTime);
-                    intent.putExtra("EndTime",LiveEndtTime);
 
-
-
-
-
+                    intent.putExtra("live_title",LiveTitle);
+                    intent.putExtra("live_scholer",LiveScholarsName);
+                    intent.putExtra("live_start_time",LiveStartTime);
+                    intent.putExtra("live_end_time",LiveEndtTime );
+                    intent.putExtra("live_position",position_number);
 
                     v.getContext().startActivity(intent);
 

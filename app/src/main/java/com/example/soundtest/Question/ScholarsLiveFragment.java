@@ -82,8 +82,6 @@ public class ScholarsLiveFragment extends Fragment {
         RootefLive = FirebaseDatabase.getInstance().getReference().child("Live");
 
 
-
-
         live_list = new ArrayList<>();
 
         reference = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
@@ -109,6 +107,7 @@ public class ScholarsLiveFragment extends Fragment {
                         String text = live_list.get(position).getSchplarName();
                         Toast.makeText(getContext(), text+" is Selected"+position, Toast.LENGTH_SHORT).show();
                     }
+
 
                     @Override
                     public void onDoAnytask(int position) {
@@ -206,6 +205,7 @@ public class ScholarsLiveFragment extends Fragment {
                             @Override
                             public void onClick(View v) {
 
+
                                 String setLiveTitle = liveTitle.getText().toString();
                                 String setLiveScholarsName = liveScholarName.getText().toString();
                                 String setScholarTitle = scholarTitle.getText().toString();
@@ -215,6 +215,7 @@ public class ScholarsLiveFragment extends Fragment {
                                 String setLiveDay = LiveDay.getText().toString();
                                 String setLiveDate = liveDate.getText().toString();
                                 String setLiveSubject = liveSubject.getText().toString();
+
 
 
 

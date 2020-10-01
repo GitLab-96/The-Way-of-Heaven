@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/defoultColor"
-    tools:context=".Question.CallingLive">
+    tools:context=".Question.ScholerCallingLive">
 
     <TextView
         android:layout_width="match_parent"
@@ -17,12 +17,12 @@
         android:textColor="#000000"
         android:textSize="40sp"
         android:hint="Live Title"
-        android:id="@+id/liveTitle"/>
+        android:id="@+id/scholerliveTitle"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/liveTitle"
+        android:layout_below="@id/scholerliveTitle"
         android:gravity="center"
         android:textSize="25sp"
         android:textColor="#000000"
@@ -31,7 +31,7 @@
 
 
     <LinearLayout
-        android:id="@+id/timeLayout"
+        android:id="@+id/scholertimeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/scholersName"
@@ -63,7 +63,7 @@
                 android:textSize="20sp"
                 android:hint="12:00"
                 android:textColor="#000000"
-                android:id="@+id/startTime"/>
+                android:id="@+id/scholerstartTime"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
                 android:paddingRight="30dp"
                 android:textSize="20sp"
                 android:text="To"
-               />
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
                 android:textSize="20sp"
                 android:textColor="#000000"
                 android:hint="2:00"
-                android:id="@+id/endingTime"/>
+                android:id="@+id/scholerendingTime"/>
         </LinearLayout>
 
 
@@ -92,13 +92,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:layout_below="@id/timeLayout"
+        android:layout_below="@id/scholertimeLayout"
         android:src="@drawable/book11"
         android:layout_marginTop="5dp"
-        android:id="@+id/scholersImage"/>
+        android:id="@+id/scholersImageIV"/>
 
     <TextView
-        android:id="@+id/positionNumber"
+        android:id="@+id/scholerpositionNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -114,17 +114,16 @@
         android:id="@+id/ButtonLayout">
 
         <Button
-            android:id="@+id/joinButtn"
+            android:id="@+id/scholerstartButtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_margin="20dp"
             android:padding="20dp"
             android:textAllCaps="false"
-            android:text="Join"
+            android:text="Start"
             android:background="@drawable/bounarydesign"
             />
-
 
     </RelativeLayout>
 

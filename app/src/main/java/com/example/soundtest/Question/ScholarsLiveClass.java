@@ -12,6 +12,7 @@ public class ScholarsLiveClass {
     private String liveDay;
     private String liveDate;
     private String liveSubject;
+    private String Url;
 
     private String key;
 
@@ -21,9 +22,10 @@ public class ScholarsLiveClass {
     }
 
     @Exclude
-    public void setKey(String key){
+    public String setKey(String key){
 
         this.key = key;
+        return key;
     }
 
     public String getTitle() {

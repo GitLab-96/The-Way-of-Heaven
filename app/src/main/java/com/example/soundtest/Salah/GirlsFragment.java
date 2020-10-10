@@ -310,6 +310,7 @@ public class GirlsFragment extends Fragment {
                     masalaTypeTextSwitcher.setText(masalahType[position]);
 
                     try {
+                        horofmedia.stop();
                         horofmedia = MediaPlayer.create(getContext(),horofSound[currenthorof]);
                         currenthorof++;
                         horofmedia.start();
@@ -335,6 +336,7 @@ public class GirlsFragment extends Fragment {
 
                     try {
 
+                        horofmedia.stop();
                         currenthorof--;
                         MediaPlayer.create(getContext(),horofSound[currenthorof]);
                         horofmedia.start();

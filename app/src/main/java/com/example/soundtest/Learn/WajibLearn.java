@@ -301,6 +301,7 @@ public class WajibLearn extends Fragment {
                     textSwitcherWajib.setText(presetpronunciationwajib[position]);
 
                     try {
+                        OwajibMedia.stop();
                         OwajibMedia = MediaPlayer.create(getContext(), Owajibsound[currenthorkot]);
                         currenthorkot++;
                         OwajibMedia.start();

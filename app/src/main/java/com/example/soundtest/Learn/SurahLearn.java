@@ -350,6 +350,7 @@ public class SurahLearn extends Fragment {
                                 textSwitcherFatehaTYPING.setText(fatehapronunciation[position_array]);
 
                                 try {
+                                    fatehamedia.stop();
                                     fatehamedia = MediaPlayer.create(getContext(),fatehamp3[currentayat]);
                                     currentayat++;
                                     fatehamedia.start();
@@ -391,6 +392,8 @@ public class SurahLearn extends Fragment {
                                 textSwitcherFatehaTYPING.setText(fatehapronunciation[position_array]);
 
                                 try {
+
+                                    fatehamedia.stop();
                                     MediaPlayer.create(getContext(),fatehamp3[currentayat]);
 
                                     currentayat--;
@@ -422,6 +425,7 @@ public class SurahLearn extends Fragment {
                                 textSwitcherFatehaTYPING.setText(feelpronunciation[position_array]);
 
                                 try {
+                                    feelmedia.stop();
                                     feelmedia = MediaPlayer.create(getContext(),feelamp3[currentayat]);
                                     currentayat++;
                                     feelmedia.start();
@@ -463,6 +467,7 @@ public class SurahLearn extends Fragment {
                                 textSwitcherFatehaTYPING.setText(feelpronunciation[position_array]);
 
                                 try {
+                                    feelmedia.stop();
                                     MediaPlayer.create(getContext(),feelamp3[currentayat]);
 
                                     currentayat--;
@@ -495,6 +500,7 @@ public class SurahLearn extends Fragment {
                                 textSwitcherFatehaTYPING.setText(feelpronunciation[position_array]);
 
                                 try {
+                                    feelmedia.stop();
                                     feelmedia = MediaPlayer.create(getContext(),feelamp3[currentayat]);
                                     currentayat++;
                                     feelmedia.start();
@@ -567,6 +573,7 @@ public class SurahLearn extends Fragment {
                                 textSwitcherFatehaTYPING.setText(feelpronunciation[position_array]);
 
                                 try {
+                                    feelmedia.stop();
                                     feelmedia = MediaPlayer.create(getContext(),feelamp3[currentayat]);
                                     currentayat++;
                                     feelmedia.start();
@@ -640,6 +647,7 @@ public class SurahLearn extends Fragment {
                                 textSwitcherFatehaTYPING.setText(feelpronunciation[position_array]);
 
                                 try {
+                                    feelmedia.stop();
                                     feelmedia = MediaPlayer.create(getContext(),feelamp3[currentayat]);
                                     currentayat++;
                                     feelmedia.start();

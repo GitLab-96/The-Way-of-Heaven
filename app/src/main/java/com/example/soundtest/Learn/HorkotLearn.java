@@ -537,6 +537,7 @@ public class HorkotLearn extends Fragment {
                     peshtextSwitcher.setText(HorkotSpacificationpesh[position]);
 
                     try {
+                        horkotMedia.stop();
                         horkotMedia = MediaPlayer.create(getContext(),horkotSound[currenthorkot]);
                         currenthorkot++;
                         horkotMedia.start();
@@ -567,7 +568,7 @@ public class HorkotLearn extends Fragment {
                     peshtextSwitcher.setText(HorkotSpacificationpesh[position]);
 
                     try {
-
+                        horkotMedia.stop();
                         currenthorkot--;
                         MediaPlayer.create(getContext(),horkotSound[currenthorkot]);
                         horkotMedia.start();

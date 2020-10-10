@@ -211,6 +211,7 @@ public class BarikFragment extends Fragment {
                     textSwitcherBarik.setText(presetpronunciationBarik[position]);
 
                     try {
+                        roBarikMedia.stop();
                         roBarikMedia = MediaPlayer.create(getContext(),roBariksound[currenthorkot]);
                         currenthorkot++;
                         roBarikMedia.start();
@@ -237,7 +238,7 @@ public class BarikFragment extends Fragment {
                     leftSwitcher_roBarik.setBackgroundResource(roBarikLeftImage[position]);
                     textSwitcherBarik.setText(presetpronunciationBarik[position]);
                     try {
-
+                        roBarikMedia.stop();
                         currenthorkot--;
                         MediaPlayer.create(getContext(),roBariksound[currenthorkot]);
                         roBarikMedia.start();

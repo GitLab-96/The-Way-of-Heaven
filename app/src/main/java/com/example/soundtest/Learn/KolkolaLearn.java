@@ -313,6 +313,7 @@ public class KolkolaLearn extends Fragment {
                     kolkolawordpronunciationTS.setText(presetpronunciation[position]);
 
                     try {
+                        kolkolaMedia.stop();
                         kolkolaMedia = MediaPlayer.create(getContext(),kolkolasound[currenthorkot]);
                         currenthorkot++;
                         kolkolaMedia.start();
@@ -340,7 +341,7 @@ public class KolkolaLearn extends Fragment {
                     kolkolawordpronunciationTS.setText(presetpronunciation[position]);
 
                     try {
-
+                        kolkolaMedia.stop();
                         currenthorkot--;
                         MediaPlayer.create(getContext(),kolkolasound[currenthorkot]);
                         kolkolaMedia.start();

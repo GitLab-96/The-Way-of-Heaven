@@ -238,6 +238,7 @@ public class IqlabFragment extends Fragment {
                     leftSwitcheriqlab.setBackgroundResource(iqlabLeftImage[position]);
                     textSwitcherIqlabPronunciation.setText(presetpronunciation[position]);
                     try {
+                        iqlabMedia.stop();
                         iqlabMedia = MediaPlayer.create(getContext(),iqlabsound[currenthorkot]);
                         currenthorkot++;
                         iqlabMedia.start();
@@ -265,7 +266,7 @@ public class IqlabFragment extends Fragment {
                     textSwitcherIqlabPronunciation.setText(presetpronunciation[position]);
 
                     try {
-
+                        iqlabMedia.stop();
                         currenthorkot--;
                         MediaPlayer.create(getContext(),iqlabsound[currenthorkot]);
                         iqlabMedia.start();

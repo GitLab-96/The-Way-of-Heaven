@@ -202,6 +202,7 @@ public class AllahFragmentChikon extends Fragment {
                     textSwitcherPur.setText(presetpronunciation[position]);
 
                     try {
+                        motaMedia.stop();
                         motaMedia = MediaPlayer.create(getContext(),motasound[currenthorkot]);
                         currenthorkot++;
                         motaMedia.start();
@@ -228,7 +229,7 @@ public class AllahFragmentChikon extends Fragment {
                     leftSwitchermota.setBackgroundResource(motaLeftImage[position]);
 
                     try {
-
+                        motaMedia.stop();
                         currenthorkot--;
                         MediaPlayer.create(getContext(),motasound[currenthorkot]);
                         motaMedia.start();

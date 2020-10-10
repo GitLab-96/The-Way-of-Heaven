@@ -245,6 +245,7 @@ public class Ek_alif_Fragment extends Fragment {
                     textSwitcherEkAlifModd.setText(presetpronunciationModd[position]);
 
                     try {
+                        tobayeMedia.stop();
                         tobayeMedia = MediaPlayer.create(getContext(),tobayesound[currenthorkot]);
                         currenthorkot++;
                         tobayeMedia.start();
@@ -273,7 +274,7 @@ public class Ek_alif_Fragment extends Fragment {
                     textSwitcherEkAlifModd.setText(presetpronunciationModd[position]);
 
                     try {
-
+                        tobayeMedia.stop();
                         currenthorkot--;
                         MediaPlayer.create(getContext(),tobayesound[currenthorkot]);
                         tobayeMedia.start();

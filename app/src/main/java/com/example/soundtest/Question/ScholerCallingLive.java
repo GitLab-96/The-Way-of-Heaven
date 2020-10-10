@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -23,6 +24,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ScholerCallingLive extends AppCompatActivity {
 
@@ -32,19 +35,72 @@ public class ScholerCallingLive extends AppCompatActivity {
 
     private String currentUserID;
     public FirebaseAuth mAuth;
-    public DatabaseReference RootRef;
+    public DatabaseReference RootRef,StartRef;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scholer_calling_live);
-        init();
-
 
         mAuth= FirebaseAuth.getInstance();
         currentUserID= mAuth.getCurrentUser().getUid();
-        RootRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
+        RootRef = FirebaseDatabase.getInstance().getReference();
+
+        init();
+        DataIntent();
+
+
+
+        start_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                    final DatabaseReference reference = firebaseDatabase.getReference().child("Users");
+                    reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists()) {
+
+
+                                for(DataSnapshot d : dataSnapshot.getChildren()) {
+
+                                        HashMap<String, Object> result = new HashMap<>();
+                                        result.put("Live Start", "0");
+
+                                        reference.child(String.valueOf(d.getKey())).updateChildren(result);
+
+
+                                }
+
+                                reference.child(currentUserID).child("Live Start").removeValue();
+
+
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+
+
+
+
+
+                Intent scholerintent = new Intent(ScholerCallingLive.this,LiveVidioActivity.class);
+
+                startActivity(scholerintent);
+            }
+        });
+
+
+
+    }
+
+    private void DataIntent() {
 
         Intent intent = getIntent();
 
@@ -68,7 +124,7 @@ public class ScholerCallingLive extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                String imageDb = dataSnapshot.child("image").getValue().toString();
+                String imageDb = dataSnapshot.child("Users").child(currentUserID).child("image").getValue().toString();
                 Picasso.get().load(imageDb).placeholder(R.drawable.book11).into(scholerIV);
 
 
@@ -79,6 +135,7 @@ public class ScholerCallingLive extends AppCompatActivity {
 
             }
         });
+
 
 
     }

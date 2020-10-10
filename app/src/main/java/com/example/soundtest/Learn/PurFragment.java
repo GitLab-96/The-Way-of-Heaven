@@ -217,6 +217,7 @@ public class PurFragment extends Fragment {
                     textSwitcherPur.setText(presetpronunciation[position]);
 
                     try {
+                        roPurMedia.stop();
                         roPurMedia = MediaPlayer.create(getContext(),roPursound[currenthorkot]);
                         currenthorkot++;
                         roPurMedia.start();
@@ -243,7 +244,7 @@ public class PurFragment extends Fragment {
                     leftSwitcher_roPur.setBackgroundResource(roPurLeftImage[position]);
                     textSwitcherPur.setText(presetpronunciation[position]);
                     try {
-
+                        roPurMedia.stop();
                         currenthorkot--;
                         MediaPlayer.create(getContext(),roPursound[currenthorkot]);
                         roPurMedia.start();

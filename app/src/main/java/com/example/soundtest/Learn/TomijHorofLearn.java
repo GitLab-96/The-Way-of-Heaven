@@ -392,6 +392,7 @@ public class TomijHorofLearn extends Fragment {
                     pronunciationTS.setText(pronunciation[position]);
 
                     try {
+                        tomijhorofmedia.stop();
                         tomijhorofmedia = MediaPlayer.create(getContext(),tomijhorofSound[currenthorof]);
                         currenthorof++;
                         tomijhorofmedia.start();

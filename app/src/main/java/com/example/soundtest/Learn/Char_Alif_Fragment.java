@@ -230,6 +230,7 @@ public class Char_Alif_Fragment extends Fragment {
                     textSwitcherCharAlifModd.setText(presetpronunciationModd[position]);
 
                     try {
+                        CharAlifMedia.stop();
                         CharAlifMedia = MediaPlayer.create(getContext(),charAlifsound[currenthorkot]);
                         currenthorkot++;
                         CharAlifMedia.start();
@@ -257,7 +258,7 @@ public class Char_Alif_Fragment extends Fragment {
 
                     textSwitcherCharAlifModd.setText(presetpronunciationModd[position]);
                     try {
-
+                        CharAlifMedia.stop();
                         currenthorkot--;
                         MediaPlayer.create(getContext(),charAlifsound[currenthorkot]);
                         CharAlifMedia.start();

@@ -229,6 +229,7 @@ public class IjhareKhas extends Fragment {
                     leftSwitcheridgam.setBackgroundResource(idgamLeftImage[position]);
                     textSwitcherIdgamPronunciation.setText(presetpronunciation[position]);
                     try {
+                        idgamMedia.stop();
                         idgamMedia = MediaPlayer.create(getContext(),idgamsound[currenthorkot]);
                         currenthorkot++;
                         idgamMedia.start();
@@ -256,7 +257,7 @@ public class IjhareKhas extends Fragment {
                     textSwitcherIdgamPronunciation.setText(presetpronunciation[position]);
 
                     try {
-
+                        idgamMedia.stop();
                         currenthorkot--;
                         MediaPlayer.create(getContext(),idgamsound[currenthorkot]);
                         idgamMedia.start();

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,26 +29,66 @@ public class CallingLive extends AppCompatActivity {
     private String currentUserID;
     public FirebaseAuth mAuth;
     public DatabaseReference RootRef;
+    MediaPlayer ringingMedia;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calling_live);
+        init();
+        ringingMedia = MediaPlayer.create(CallingLive.this,R.raw.ringing);
+
+        mAuth= FirebaseAuth.getInstance();
+        currentUserID= mAuth.getCurrentUser().getUid();
+        RootRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
+        DataIntent();
+
+        RootRef.child("Live Start").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.exists()){
+                    ringingMedia.start();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                Toast.makeText(CallingLive.this, "Error : "+databaseError, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        liveJoinButtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(CallingLive.this,LiveVidioActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+    }
+
+    private void init() {
+
         positionTV = findViewById(R.id.positionNumber);
         liveTitleTV = findViewById(R.id.liveTitle);
         scholerNameTV = findViewById(R.id.scholersName);
         liveStartTimeTV = findViewById(R.id.startTime);
         liveEndTimeTV = findViewById(R.id.endingTime);
         liveJoinButtn = findViewById(R.id.joinButtn);
-
         scholer_IV = findViewById(R.id.scholersImage);
 
-        mAuth= FirebaseAuth.getInstance();
-        currentUserID= mAuth.getCurrentUser().getUid();
-        RootRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
+    }
 
-//
+    private void DataIntent() {
+
         Intent callingintent = getIntent();
         int position = callingintent.getIntExtra("live_position",0);
         String convertInt = String.valueOf(position);
@@ -79,8 +120,6 @@ public class CallingLive extends AppCompatActivity {
 
             }
         });
-
-
     }
 
 }

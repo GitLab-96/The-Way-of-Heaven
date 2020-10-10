@@ -275,6 +275,7 @@ public class HorofLearn extends Fragment {
 
         buttonclick();
         horofmedia = MediaPlayer.create(getContext(),horofSound[currenthorof]);
+
         goodToast = MediaPlayer.create(getContext(),R.raw.masha_allah2);
         badToast = MediaPlayer.create(getContext(),R.raw.try_again);
 
@@ -442,6 +443,7 @@ public class HorofLearn extends Fragment {
                     textSwitchermakhraz.setText(makhraz[position]);
                     textSwitcherHoroh.setText(presetpronunciation[position]);
                     try {
+                        horofmedia.stop();
                         horofmedia = MediaPlayer.create(getContext(),horofSound[currenthorof]);
                         currenthorof++;
                         horofmedia.start();
@@ -470,7 +472,7 @@ public class HorofLearn extends Fragment {
                     juktoImageSwitcherright.setBackgroundResource(juktoHorofright[position]);
 
                     try {
-
+                        horofmedia.stop();
                         currenthorof--;
                         MediaPlayer.create(getContext(),horofSound[currenthorof]);
                         horofmedia.start();

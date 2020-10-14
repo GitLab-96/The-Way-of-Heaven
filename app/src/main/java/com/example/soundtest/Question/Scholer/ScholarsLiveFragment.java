@@ -1,4 +1,4 @@
-package com.example.soundtest.Question;
+package com.example.soundtest.Question.Scholer;
 
 
 import android.app.AlertDialog;
@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.renderscript.Sampler;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +26,6 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.soundtest.R;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -36,7 +34,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -71,6 +68,8 @@ public class ScholarsLiveFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_scholars_live, container, false);
+
+
         liveSessionAddBttn = view.findViewById(R.id.add_live_session);
         recyclerView = view.findViewById(R.id.scholersLiveRecylerView);
         recyclerView.setHasFixedSize(true);

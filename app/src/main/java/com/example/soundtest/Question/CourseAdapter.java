@@ -12,54 +12,50 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.soundtest.Question.Scholer.ScholarsLiveClass;
+import com.example.soundtest.Question.Scholer.ScholersCourseClass;
 import com.example.soundtest.R;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
-public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyViewHolder> {
+public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<ScholarsLiveClass> liveClasses;
-
+    ArrayList<ScholersCourseClass> courseClasses;
     private DatabaseReference databaseReference ;
 
-
-
-    public LiveAdapter(Context c ,ArrayList<ScholarsLiveClass> p){
+    public CourseAdapter(Context c ,ArrayList<ScholersCourseClass> p){
 
         context = c;
-        liveClasses = p;
+        courseClasses = p;
     }
 
     @NonNull
     @Override
-    public LiveAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+    public CourseAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.live_scholar_demo_list,parent,false);
-        return new LiveAdapter.MyViewHolder(view);
+        return new CourseAdapter.MyViewHolder(view);
     }
 
 
-
     @Override
-    public void onBindViewHolder(@NonNull LiveAdapter.MyViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull CourseAdapter.MyViewHolder holder, int i) {
 
 
-        holder.live_title.setText(liveClasses.get(i).getTitle());
-        holder.live_start_time.setText(liveClasses.get(i).getLiveStartTime());
-        holder.live_end_time.setText(liveClasses.get(i).getLiveEndTime());
-        holder.live_date.setText(liveClasses.get(i).getLiveDate());
-        holder.live_lecturer.setText(liveClasses.get(i).getSchplarName());
-        holder.live_type.setText(liveClasses.get(i).getLivetType());
+        holder.live_title.setText(courseClasses.get(i).getTitle());
+        holder.live_start_time.setText(courseClasses.get(i).getCourseStartTime());
+        holder.live_end_time.setText(courseClasses.get(i).getCourseEndTime());
+        holder.live_date.setText(courseClasses.get(i).getCourseDate());
+        holder.live_lecturer.setText(courseClasses.get(i).getSchplarName());
+        holder.live_type.setText(courseClasses.get(i).getCoursetType());
     }
 
     @Override
     public int getItemCount() {
-        return liveClasses.size();
+        return courseClasses.size();
     }
-
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -88,7 +84,7 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyViewHolder> 
                     String LiveStartTime = live_start_time.getText().toString();
                     String LiveEndtTime = live_end_time.getText().toString();
 
-                    Intent intent = new Intent(v.getContext(),CallingLive.class);
+                    Intent intent = new Intent(v.getContext(),CallingCourse.class);
 
                     intent.putExtra("live_title",LiveTitle);
                     intent.putExtra("live_scholer",LiveScholarsName);
@@ -105,9 +101,4 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyViewHolder> 
         }
     }
 
-
-
-    }
-
-
-
+}

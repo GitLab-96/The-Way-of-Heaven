@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.soundtest.Question.Scholer.ScholarsAnswerActivity;
 import com.example.soundtest.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -15,8 +16,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
 
 public class LiveVidioActivity extends AppCompatActivity {
 
@@ -125,7 +124,7 @@ public class LiveVidioActivity extends AppCompatActivity {
 
 
 
-                Intent intent = new Intent(LiveVidioActivity.this,ScholarsAnswerActivity.class);
+                Intent intent = new Intent(LiveVidioActivity.this, ScholarsAnswerActivity.class);
                 startActivity(intent);
 
             }

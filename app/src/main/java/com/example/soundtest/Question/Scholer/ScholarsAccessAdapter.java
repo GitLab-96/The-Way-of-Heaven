@@ -1,4 +1,4 @@
-package com.example.soundtest.Question;
+package com.example.soundtest.Question.Scholer;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;

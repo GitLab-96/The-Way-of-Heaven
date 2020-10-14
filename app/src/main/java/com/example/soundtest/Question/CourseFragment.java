@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.soundtest.Question.Scholer.CourseScholerAdapter;
+import com.example.soundtest.Question.Scholer.ScholersCourseClass;
 import com.example.soundtest.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +32,7 @@ public class CourseFragment extends Fragment {
     DatabaseReference reference;
     RecyclerView recyclerView;
     ArrayList<ScholersCourseClass> course_list;
-    CourseScholerAdapter adapter;
+    CourseAdapter adapter;
 
     public CourseFragment() {
         // Required empty public constructor
@@ -57,7 +59,7 @@ public class CourseFragment extends Fragment {
                     ScholersCourseClass p = dataSnapshot1.getValue(ScholersCourseClass.class);
                     course_list.add(p);
                 }
-                adapter = new CourseScholerAdapter(getContext(),course_list);
+                adapter = new CourseAdapter(getContext(),course_list);
                 recyclerView.setAdapter(adapter);
             }
 

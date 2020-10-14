@@ -1,4 +1,4 @@
-package com.example.soundtest.Question;
+package com.example.soundtest.Question.Scholer;
 
 import com.google.firebase.database.Exclude;
 

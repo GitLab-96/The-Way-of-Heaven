@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp"
     android:background="@drawable/bounarydesign"
-    tools:context=".Question.ScholarsCourseFragment">
+    tools:context=".Question.Scholer.ScholarsCourseFragment">
 
     <TextView
         android:id="@+id/scholers_live_session"

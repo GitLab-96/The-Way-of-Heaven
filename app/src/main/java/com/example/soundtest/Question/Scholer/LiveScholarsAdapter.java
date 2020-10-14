@@ -1,4 +1,4 @@
-package com.example.soundtest.Question;
+package com.example.soundtest.Question.Scholer;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,9 +14,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.soundtest.R;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 public class LiveScholarsAdapter extends RecyclerView.Adapter<LiveScholarsAdapter.MyViewHolder> {
@@ -89,7 +89,7 @@ public class LiveScholarsAdapter extends RecyclerView.Adapter<LiveScholarsAdapte
                     String LiveEndtTime = live_end_time.getText().toString();
 
 
-                    Intent intent = new Intent(v.getContext(),ScholerCallingLive.class);
+                    Intent intent = new Intent(v.getContext(), ScholerCallingLive.class);
 
                     intent.putExtra("live_title",LiveTitle);
                     intent.putExtra("live_scholer",LiveScholarsName);

@@ -47,7 +47,13 @@ public class ScholarsAnswerFragment extends Fragment {
 
 
         recyclerView = view.findViewById(R.id.myRecycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+       // recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(layoutManager);
+
         list = new ArrayList<TypeQuestionClass>();
 
         reference = FirebaseDatabase.getInstance().getReference().child("Question");

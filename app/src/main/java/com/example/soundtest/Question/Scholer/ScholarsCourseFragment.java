@@ -80,7 +80,12 @@ public class ScholarsCourseFragment extends Fragment {
         courseSessionAddBttn = view.findViewById(R.id.add_course_session);
         recyclerView = view.findViewById(R.id.scholersCourseRecylerView);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+      //  recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(layoutManager);
 
         mAuth= FirebaseAuth.getInstance();
         currentUserID= mAuth.getCurrentUser().getUid();

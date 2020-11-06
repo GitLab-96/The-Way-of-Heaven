@@ -44,8 +44,14 @@ public class LiveFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_live, container, false);
 
         recyclerView = view.findViewById(R.id.liveRecylerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        live_list = new ArrayList<ScholarsLiveClass>();
+       // recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(layoutManager);
+
+         live_list = new ArrayList<ScholarsLiveClass>();
 
         reference = FirebaseDatabase.getInstance().getReference().child("Live");
 

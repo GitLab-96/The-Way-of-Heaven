@@ -47,9 +47,17 @@ public class ApnarProsnoFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_apnar_prosno, container, false);
 
         apnar_proshno_recyclerView = view.findViewById(R.id.apnarProshnoRecylerView);
-        apnar_proshno_recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        list = new ArrayList<TypeQuestionClass>();
+       // apnar_proshno_recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        apnar_proshno_recyclerView.setLayoutManager(layoutManager);
+
+         list = new ArrayList<TypeQuestionClass>();
         reference = FirebaseDatabase.getInstance().getReference().child("Question");
+
+
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override

@@ -23,9 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class CallingCourse extends AppCompatActivity {
-    public TextView positionTV,liveTitleTV,scholerNameTV,liveStartTimeTV,liveEndTimeTV;
+    public TextView liveTitleTV,scholerNameTV,liveStartTimeTV,liveEndTimeTV;
     public Button liveJoinButtn;
-    public ImageView scholer_IV;
     private String currentUserID;
     public FirebaseAuth mAuth;
     public DatabaseReference RootRef;
@@ -42,7 +41,7 @@ public class CallingCourse extends AppCompatActivity {
         RootRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
         DataIntent();
 
-        RootRef.child("Live Start").addListenerForSingleValueEvent(new ValueEventListener() {
+        RootRef.child("Course Start").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -75,48 +74,28 @@ public class CallingCourse extends AppCompatActivity {
 
     private void init() {
 
-        positionTV = findViewById(R.id.positionNumber);
         liveTitleTV = findViewById(R.id.liveTitle);
         scholerNameTV = findViewById(R.id.scholersName);
         liveStartTimeTV = findViewById(R.id.startTime);
         liveEndTimeTV = findViewById(R.id.endingTime);
         liveJoinButtn = findViewById(R.id.joinButtn);
-        scholer_IV = findViewById(R.id.scholersImage);
 
     }
     private void DataIntent() {
 
         Intent callingintent = getIntent();
-        int position = callingintent.getIntExtra("live_position",0);
-        String convertInt = String.valueOf(position);
         String title = callingintent.getStringExtra("live_title");
         String scholer_name = callingintent.getStringExtra("live_scholer");
         String start_time = callingintent.getStringExtra("live_start_time");
         String end_time = callingintent.getStringExtra("live_end_time");
 
 
-        positionTV.setText(convertInt);
         liveTitleTV.setText(title);
         scholerNameTV.setText(scholer_name);
         liveStartTimeTV.setText(start_time);
         liveEndTimeTV.setText(end_time);
 
 
-        RootRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-
-                String imageDb = dataSnapshot.child("image").getValue().toString();
-                Picasso.get().load(imageDb).placeholder(R.drawable.book11).into(scholer_IV);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
 
     private void openDialog() {

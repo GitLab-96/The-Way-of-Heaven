@@ -1,6 +1,7 @@
 package com.example.soundtest.Question.Scholer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -85,6 +86,28 @@ public class CourseScholerAdapter extends RecyclerView.Adapter<CourseScholerAdap
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    int position_number = getAdapterPosition();
+                    String LiveTitle = course_title.getText().toString();
+                    String LiveScholarsName = cours_lecturer.getText().toString();
+                    String LiveStartTime = cours_start_time.getText().toString();
+                    String LiveEndtTime = cours_end_time.getText().toString();
+
+
+                    Intent intent = new Intent(v.getContext(), ScholerCallingCourse.class);
+
+                    intent.putExtra("live_title",LiveTitle);
+                    intent.putExtra("live_scholer",LiveScholarsName);
+                    intent.putExtra("live_start_time",LiveStartTime);
+                    intent.putExtra("live_end_time",LiveEndtTime );
+                    intent.putExtra("live_position",position_number);
+
+
+                    v.getContext().startActivity(intent);
+
+                    Toast.makeText(context, "position"+getAdapterPosition(), Toast.LENGTH_SHORT).show();
+
+
 
 
                     Toast.makeText(itemView.getContext(), "position"+getAdapterPosition(), Toast.LENGTH_SHORT).show();

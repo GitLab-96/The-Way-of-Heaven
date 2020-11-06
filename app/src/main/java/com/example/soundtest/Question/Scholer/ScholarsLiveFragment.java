@@ -71,9 +71,14 @@ public class ScholarsLiveFragment extends Fragment {
 
 
         liveSessionAddBttn = view.findViewById(R.id.add_live_session);
+
         recyclerView = view.findViewById(R.id.scholersLiveRecylerView);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+       // recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(layoutManager);
 
         mAuth= FirebaseAuth.getInstance();
         currentUserID= mAuth.getCurrentUser().getUid();

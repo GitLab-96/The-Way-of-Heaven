@@ -57,6 +57,10 @@ public class QuestionFragment extends Fragment {
         mAuth=FirebaseAuth.getInstance();
         currentUserID= mAuth.getCurrentUser().getUid();
 
+
+
+
+
         sendQuestionBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

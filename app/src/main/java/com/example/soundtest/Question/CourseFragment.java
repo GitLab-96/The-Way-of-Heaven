@@ -45,9 +45,17 @@ public class CourseFragment extends Fragment {
         // Inflate the layout for this fragment
          View view=  inflater.inflate(R.layout.fragment_course, container, false);
 
+
         recyclerView = view.findViewById(R.id.courseRecylerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        course_list = new ArrayList<ScholersCourseClass>();
+      //  recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(layoutManager);
+
+         course_list = new ArrayList<ScholersCourseClass>();
 
         reference = FirebaseDatabase.getInstance().getReference().child("Course");
 

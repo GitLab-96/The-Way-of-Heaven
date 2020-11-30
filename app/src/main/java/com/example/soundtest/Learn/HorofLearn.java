@@ -437,6 +437,8 @@ public class HorofLearn extends Fragment {
 
                     position = position+1;
                     imageSwitcher.setBackgroundResource(horof[position]);
+
+
                     juktoImageSwitcherleft.setBackgroundResource(juktoHorofleft[position]);
                     juktoImageSwitchermiddle.setBackgroundResource(juktoHorofmiddle[position]);
                     juktoImageSwitcherright.setBackgroundResource(juktoHorofright[position]);

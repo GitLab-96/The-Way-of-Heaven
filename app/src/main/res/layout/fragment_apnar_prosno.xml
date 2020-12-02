@@ -8,6 +8,8 @@
     tools:context=".Question.ApnarProsnoFragment">
 
   <androidx.recyclerview.widget.RecyclerView
+      android:dividerHeight="2dp"
+      android:divider="#F30A59"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:id="@+id/apnarProshnoRecylerView"/>

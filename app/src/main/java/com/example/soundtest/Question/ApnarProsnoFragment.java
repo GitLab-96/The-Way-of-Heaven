@@ -62,10 +62,27 @@ public class ApnarProsnoFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                list.clear();
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
 
+                    String answer = dataSnapshot1.child("typeAnswer").getValue(String.class);
+
                     TypeQuestionClass p = dataSnapshot1.getValue(TypeQuestionClass.class);
-                    list.add(p);
+
+
+
+             
+
+                        list.add(p);
+
+
+
+
+
+
+
+
                 }
                 apnarProshnoAdapter = new ApnarProshnoAdapter(getContext(),list);
                 apnar_proshno_recyclerView.setAdapter(apnarProshnoAdapter);
@@ -82,5 +99,7 @@ public class ApnarProsnoFragment extends Fragment {
 
     return view;
     }
+
+
 
 }

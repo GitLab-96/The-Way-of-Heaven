@@ -66,7 +66,7 @@ public class QuestionFragment extends Fragment {
             public void onClick(View v) {
                 String setUserQuestion = typeQusetionET.getText().toString();
 
-                String setUserAnswer = typeQusetionET.getText().toString();
+                String setUserAnswer = "";
 
                 if (TextUtils.isEmpty(setUserQuestion)) {
 

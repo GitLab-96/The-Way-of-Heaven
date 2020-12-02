@@ -35,6 +35,8 @@ public class ApnarProshnoAdapter extends RecyclerView.Adapter<ApnarProshnoAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ApnarProshnoAdapter.MyViewHolder holder, int position) {
+
+
         holder.user_question.setText(questions.get(position).getTypeQuestion());
         holder.user_answer.setText(questions.get(position).getTypeAnswer());
     }

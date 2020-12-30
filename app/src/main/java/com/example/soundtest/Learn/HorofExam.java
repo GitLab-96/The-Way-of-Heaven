@@ -4,10 +4,12 @@ package com.example.soundtest.Learn;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 
@@ -47,7 +49,7 @@ public class HorofExam extends Fragment {
     private static TextView your_marks_horof;
     private TextView MCQ;
     private TextView oral;
-    private  ImageSwitcher imageSwitcherOralQuestion;
+    private  TextSwitcher textSwitcherOralQuestionhorof;
     private TextSwitcher textSwitchermultipleExam,textSwitcherPronunciation,answerTextSwitcher;
     private Typeface typeface;
     private RadioGroup radioGroup;
@@ -75,18 +77,17 @@ public class HorofExam extends Fragment {
             "মাখ্রাজ অর্থ কি ?",
             "তাজভিদ অনুযায়ী কুরআন পড়া কি ?",
     };
-    int[] horof = {
-            R.drawable.seen,
-            R.drawable.ba,
-            R.drawable.zim,
-            R.drawable.alif,
-            R.drawable.ain,
-            R.drawable.laaam,
-            R.drawable.kaf,
-            R.drawable.dal,
-            R.drawable.sheen,
-            R.drawable.nun,
-
+    String[] horof = {
+            "س",
+            "ب",
+            "ج",
+            "ا",
+            "ع",
+            "ل",
+            "ك",
+            "د",
+            "ش",
+            "ن",
     };
     String[] presetpronunciation = {
             "سين",
@@ -130,7 +131,7 @@ public class HorofExam extends Fragment {
 
         examNextBtn = view.findViewById(R.id.examNextBttn);
         examMicBtn = view.findViewById(R.id.examMicBtn);
-        imageSwitcherOralQuestion = view.findViewById(R.id.imageSwitcherOralQuestion);
+        textSwitcherOralQuestionhorof = view.findViewById(R.id.textSwitcherOralQuestionhorof);
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
@@ -255,7 +256,7 @@ public class HorofExam extends Fragment {
                     textSwitchermultipleExam.setText(multipleQuestion[position]);
                     answerTextSwitcher.setText(presetMultipleAnswer[position]);
                     textSwitcherPronunciation.setText(presetpronunciation[position]);
-                    imageSwitcherOralQuestion.setBackgroundResource(horof[position]);
+                    textSwitcherOralQuestionhorof.setText(horof[position]);
                 }
             }
         });
@@ -280,13 +281,16 @@ public class HorofExam extends Fragment {
 
     private void SwitcherTask() {
 
-        imageSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
+        textSwitcherOralQuestionhorof.setFactory(new ViewSwitcher.ViewFactory() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.seen);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                textView.setText("س");
+                return textView;
             }
         });
 

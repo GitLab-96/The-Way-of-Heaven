@@ -32,8 +32,8 @@ import static android.app.Activity.RESULT_OK;
  */
 public class TomijHorofLearn extends Fragment {
 
-    private ImageSwitcher tomijImageSwitcher,tomijImageSwitcherleft,tomijImageSwitcherright;
-    private TextSwitcher tomijTextSwitcherOne,tomijTextSwitcherTwo,pronunciationTS;
+    private ImageSwitcher tomijImageSwitcher;
+    private TextSwitcher tomijTextSwitcherOne,tomijTextSwitcherTwo,pronunciationTS,tomijTextSwitcherleft,tomijTextSwitcherright;
     private ImageButton tomijpreviousBttn,tomijnextBttn,tomijrepeatButtn,compareBtn,micButtn;
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     MediaPlayer tomijhorofmedia,goodToast,badToast;
@@ -155,56 +155,64 @@ public class TomijHorofLearn extends Fragment {
             R.drawable.tomijkof_kaf,
             R.drawable.tomijkof_kaf,
     };
-    int[] tomijhorofTwoZero = {
-            R.drawable.book11,
-            R.drawable.ha,
-            R.drawable.ha,
 
-            R.drawable.book11,
-            R.drawable.toa,
-            R.drawable.toa,
 
-            R.drawable.book11,
-            R.drawable.jowa,
-            R.drawable.jowa,
+    String[] tomijhorofTwoZero = {
 
-            R.drawable.book11,
-            R.drawable.soad,
-            R.drawable.soad,
 
-            R.drawable.book11,
-            R.drawable.ja,
-            R.drawable.ja,
+            "",
+            "ح",
+            "ح",
 
-            R.drawable.book11,
-            R.drawable.kof,
-            R.drawable.kof,
+            "",
+            "ط",
+            "ط",
+
+            "",
+            "ظ",
+            "ظ",
+
+            "",
+            "ص",
+            "ص",
+
+            "",
+            "ز",
+            "ز",
+
+            "",
+            "ق",
+            "ق",
+
     };
 
-    int[] tomijhorofTwoOne = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.hha,
+    String[] tomijhorofTwoOne = {
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.taa,
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.jal,
+            "",
+            "",
+            "ه",
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.seen,
+            "",
+            "",
+            "ت",
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.zim,
+            "",
+            "",
+            "ذ",
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.kaf,
+            "",
+            "",
+            "س",
+
+            "",
+            "",
+            "ج",
+
+            "",
+            "",
+            "ك",
+
     };
 
 
@@ -228,8 +236,8 @@ public class TomijHorofLearn extends Fragment {
 
 
         tomijImageSwitcher = view.findViewById(R.id.TomijimageSwither);
-        tomijImageSwitcherleft = view.findViewById(R.id.tomijImageSwitherleft);
-        tomijImageSwitcherright = view.findViewById(R.id.tomijImageSwitherright);
+        tomijTextSwitcherleft = view.findViewById(R.id.tomijTextSwitherleft);
+        tomijTextSwitcherright = view.findViewById(R.id.tomijTextSwitherright);
 
         tomijTextSwitcherOne = view.findViewById(R.id.tomijtextSwitcherMakhrajOne);
         tomijTextSwitcherTwo = view.findViewById(R.id.tomijtextSwitcherMakhrajTwo);
@@ -292,23 +300,25 @@ public class TomijHorofLearn extends Fragment {
         });
 
 
-        tomijImageSwitcherleft.setFactory(new ViewSwitcher.ViewFactory() {
+        tomijTextSwitcherleft.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                tomijImageSwitcherleft.setBackgroundResource(R.drawable.ha);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
-        tomijImageSwitcherright.setFactory(new ViewSwitcher.ViewFactory() {
+        tomijTextSwitcherright.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                tomijImageSwitcherright.setBackgroundResource(R.drawable.hha);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
@@ -384,8 +394,8 @@ public class TomijHorofLearn extends Fragment {
 
                     position = position+1;
                     tomijImageSwitcher.setBackgroundResource(tomijhorof[position]);
-                    tomijImageSwitcherleft.setBackgroundResource(tomijhorofTwoZero[position]);
-                    tomijImageSwitcherright.setBackgroundResource(tomijhorofTwoOne[position]);
+                    tomijTextSwitcherleft.setText(tomijhorofTwoZero[position]);
+                    tomijTextSwitcherright.setText(tomijhorofTwoOne[position]);
 
                     tomijTextSwitcherOne.setText(makhrazTwoZero[position]);
                     tomijTextSwitcherTwo.setText(makhrazTwoOne[position]);
@@ -413,8 +423,8 @@ public class TomijHorofLearn extends Fragment {
                     tomijTextSwitcherOne.setText(makhrazTwoZero[position]);
                     tomijTextSwitcherTwo.setText(makhrazTwoOne[position]);
                     tomijImageSwitcher.setBackgroundResource(tomijhorof[position]);
-                    tomijImageSwitcherleft.setBackgroundResource(tomijhorofTwoZero[position]);
-                    tomijImageSwitcherright.setBackgroundResource(tomijhorofTwoOne[position]);
+                    tomijTextSwitcherleft.setText(tomijhorofTwoZero[position]);
+                    tomijTextSwitcherright.setText(tomijhorofTwoOne[position]);
                     try {
                         MediaPlayer.create(getContext(),tomijhorofSound[currenthorof]);
 

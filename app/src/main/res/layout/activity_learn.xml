@@ -40,40 +40,55 @@
         <RelativeLayout
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:layout_marginRight="@dimen/_5sdp"
             android:layout_height="100dp"
             >
-            <TextView
-                android:id="@+id/arabicHorof"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#ffffff"
-                android:text="২৯ হরফ"
-                android:layout_margin="5dp"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="25sp" />
+                app:cardCornerRadius="@dimen/_5sdp"
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="CM"
-                android:id="@+id/marksHorof"/>
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/arabicHorof"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="২৯ হরফ"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/book11"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:text="CM"
+                    android:id="@+id/marksHorof"/>
+
+            </androidx.cardview.widget.CardView>
+
 
 
         </RelativeLayout>
         <RelativeLayout
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:layout_marginRight="@dimen/_5sdp"
             android:layout_height="100dp"
             >
 
-
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_height="match_parent">
             <TextView
                 android:id="@+id/tomijHorof"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#ffffff"
+                android:background="@drawable/book11"
                 android:text="তমীয হরফ"
                 android:layout_margin="5dp"
                 android:gravity="center"
@@ -84,7 +99,6 @@
                 android:id="@+id/arabicTomijHoroflock"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:src="@drawable/lock"/>
 
             <TextView
@@ -94,6 +108,8 @@
                 android:text="CM"
                 android:id="@+id/marksTomij"/>
 
+            </androidx.cardview.widget.CardView>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -101,12 +117,17 @@
             android:layout_width="0dp"
             android:layout_height="100dp"
             >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_height="match_parent">
             <TextView
                 android:id="@+id/horkot"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="হরকত"
-                android:background="#ffffff"
+                android:background="@drawable/book11"
                 android:gravity="center"
                 android:layout_margin="5dp"
                 android:textColor="#000"
@@ -125,6 +146,7 @@
                 android:text="CM"
                 android:padding="10dp"
                 android:id="@+id/marksHorkot"/>
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
@@ -147,8 +169,14 @@
         <RelativeLayout
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:layout_marginRight="@dimen/_5sdp"
             android:layout_height="wrap_content"
             >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/kolkola"
                 android:layout_width="match_parent"
@@ -156,7 +184,7 @@
                 android:text="কলকলা"
                 android:gravity="center"
                 android:layout_margin="5dp"
-                android:background="#ffffff"
+                android:background="@drawable/book11"
                 android:textColor="#000"
                 android:textSize="25sp" />
 
@@ -173,20 +201,27 @@
                 android:text="CM"
                 android:id="@+id/marksKolkola"/>
 
+            </androidx.cardview.widget.CardView>
+
         </RelativeLayout>
 
 
         <RelativeLayout
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:layout_marginRight="@dimen/_5sdp"
             android:layout_height="wrap_content"
             >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/wajibGunnah"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="ওয়াজিব গুন্নাহ"
-                android:background="#ffffff"
+                android:background="@drawable/book11"
                 android:gravity="center"
                 android:layout_margin="5dp"
                 android:textColor="#000"
@@ -203,6 +238,8 @@
                 android:text="CM"
                 android:id="@+id/marksWajib"/>
 
+            </androidx.cardview.widget.CardView>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -210,13 +247,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/madd"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="মাদ্দ "
                 android:gravity="center"
-                android:background="#ffffff"
+                android:background="@drawable/book11"
                 android:layout_margin="5dp"
                 android:textColor="#000"
                 android:textSize="25sp" />
@@ -231,6 +272,7 @@
                 android:padding="10dp"
                 android:text="CM"
                 android:id="@+id/marksMadd"/>
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
@@ -257,14 +299,19 @@
         <RelativeLayout
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:layout_marginRight="@dimen/_5sdp"
             android:layout_height="wrap_content"
             >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/gunnah"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="গুন্নাহ"
-                android:background="#ffffff"
+                android:background="@drawable/book11"
                 android:layout_margin="5dp"
                 android:gravity="center"
                 android:textColor="#000"
@@ -280,20 +327,26 @@
                 android:padding="10dp"
                 android:text="CM"
                 android:id="@+id/marksGunnah"/>
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:layout_marginRight="@dimen/_5sdp"
             android:layout_height="wrap_content"
             >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/roErNiyom"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:gravity="center"
-                android:background="#ffffff"
+                android:background="@drawable/book11"
                 android:padding="3dp"
                 android:text="'রা' এর পুর / বারিক"
                 android:layout_margin="5dp"
@@ -311,6 +364,7 @@
                 android:padding="10dp"
                 android:text="CM"
                 android:id="@+id/marksRo"/>
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
@@ -320,13 +374,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/allahPorarNiyom"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="'আল্লাহ' শব্দ পড়ার নিয়ম"
                 android:gravity="center"
-                android:background="#ffffff"
+                android:background="@drawable/book11"
                 android:textColor="#000"
                 android:layout_margin="5dp"
                 android:textSize="25sp" />
@@ -344,6 +402,7 @@
                 android:padding="10dp"
                 android:text="CM"
                 android:id="@+id/marksAlloh"/>
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 
@@ -358,8 +417,12 @@
         android:layout_weight="1"
         android:layout_below="@id/rowThree"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_100sdp"
         >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/Surah"
@@ -369,7 +432,7 @@
             android:padding="30dp"
             android:layout_weight="2"
             android:layout_margin="3dp"
-            android:background="#ffffff"
+            android:background="@drawable/book11"
             android:text=" সূরা ফীল থেকে নাস পর্যন্ত"
             android:textColor="#000"
             android:textSize="25sp" />
@@ -388,6 +451,7 @@
             android:text="CM"
             android:id="@+id/marksSura"/>
 
+        </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 

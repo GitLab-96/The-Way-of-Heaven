@@ -42,7 +42,7 @@ public class PurFragment extends Fragment {
 
     int[] roPurTopImage = {
 
-            R.drawable.amara,
+          //  R.drawable.amara,
             R.drawable.rusulun,
             R.drawable.garkan,
             R.drawable.quranan,
@@ -54,9 +54,9 @@ public class PurFragment extends Fragment {
 
     int[] roPurRightImage = {
 
-            R.drawable.amara,
-            R.drawable.amara,
-            R.drawable.amara,
+//            R.drawable.amara,
+//            R.drawable.amara,
+//            R.drawable.amara,
             R.drawable.quranan,
 
 

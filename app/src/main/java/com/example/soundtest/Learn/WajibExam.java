@@ -47,7 +47,7 @@ public class WajibExam extends Fragment {
     private static TextView your_marks_wajib;
     private TextView MCQ;
     private TextView oral;
-    private ImageSwitcher imageSwitcherOralQuestion;
+    private TextSwitcher textSwitcherOralQuestion;
     private TextSwitcher textSwitchermultipleExam,textSwitcherPronunciation,answerTextSwitcher;
     private Typeface typeface;
     private RadioGroup radioGroup;
@@ -87,18 +87,17 @@ public class WajibExam extends Fragment {
             "গুনাহ হয়",
             "ওয়াজিব",
     };
-    int[] horof = {
-            R.drawable.innakum,
-            R.drawable.falamma,
-            R.drawable.wajannatin,
-            R.drawable.innama,
-            R.drawable.fehinna,
-            R.drawable.mujjhammilu,
-            R.drawable.walamma,
-            R.drawable.amma,
-            R.drawable.summa,
-            R.drawable.jahannama,
-
+    String[] horof = {
+            "اِنَّكُمْ",
+            "فَلَمَّا",
+            "وَجَنّــَاتٍ",
+            "اِنَّمَا",
+            "فِيْهِنَّ",
+            "مُزَّمِّلُ",
+            "وَلَمَّا",
+            "عَمَّ",
+            "ثُمَّ",
+            "جَهَنَّمَ",
     };
     String[] presetpronunciation = {
             "انكم",
@@ -130,7 +129,7 @@ public class WajibExam extends Fragment {
 
         examNextBtn = view.findViewById(R.id.examNextBttn);
         examMicBtn = view.findViewById(R.id.examMicBtn);
-        imageSwitcherOralQuestion = view.findViewById(R.id.imageSwitcherOralQuestion);
+        textSwitcherOralQuestion = view.findViewById(R.id.textSwitcherOralQuestionTS);
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
@@ -254,7 +253,7 @@ public class WajibExam extends Fragment {
                     textSwitchermultipleExam.setText(multipleQuestion[position]);
                     answerTextSwitcher.setText(presetMultipleAnswer[position]);
                     textSwitcherPronunciation.setText(presetpronunciation[position]);
-                    imageSwitcherOralQuestion.setBackgroundResource(horof[position]);
+                    textSwitcherOralQuestion.setText(horof[position]);
                 }
             }
         });
@@ -279,13 +278,15 @@ public class WajibExam extends Fragment {
 
     private void SwitcherTask() {
 
-        imageSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
+        textSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.seen);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(80);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.CENTER);
+                textView.setText("اِنَّكُمْ");
+                return textView;
             }
         });
 

@@ -10,11 +10,14 @@ import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.DoubleBounce;
+
 public class SplashScreen extends AppCompatActivity {
     private ProgressBar progressBar;
     private int progress;
 
-    TextView textView1,textView2;
+    TextView welcomeTV,theWayTV,splafHeaven;
     Typeface typeface;
 
     @Override
@@ -25,14 +28,17 @@ public class SplashScreen extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash_screen);
 
-        textView1 = findViewById(R.id.welcome);
-        textView2 = findViewById(R.id.way);
+        welcomeTV = findViewById(R.id.welcome);
+        theWayTV = findViewById(R.id.way);
+        splafHeaven = findViewById(R.id.splashHeaven);
         typeface = Typeface.createFromAsset(getAssets(),"alexbrush_regular.ttf");
 
-        textView1.setTypeface(typeface);
-        textView2.setTypeface(typeface);
+        welcomeTV.setTypeface(typeface);
+        theWayTV.setTypeface(typeface);
+        splafHeaven.setTypeface(typeface);
 
-        progressBar = findViewById(R.id.progressBarID);
+
+
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -43,6 +49,15 @@ public class SplashScreen extends AppCompatActivity {
         });
 
         thread.start();
+
+
+
+        progressBar = (ProgressBar)findViewById(R.id.spin_kit);
+        Sprite doubleBounce = new DoubleBounce();
+        progressBar.setIndeterminateDrawable(doubleBounce);
+
+
+
     }
 
     private void startApp() {

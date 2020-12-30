@@ -33,7 +33,7 @@ import static android.app.Activity.RESULT_OK;
 public class KolkolaLearn extends Fragment {
 
 
-    private ImageSwitcher topSwitcherkolkolah,leftSwitcherkolkolah,rightSwitcherkolkolah,middleSwitcherkolkolah;
+    private TextSwitcher topSwitcherkolkolah,leftSwitcherkolkolah,rightSwitcherkolkolah,middleSwitcherkolkolah;
     private TextSwitcher kolkolawordpronunciationTS;
     private ImageButton previousBtn,replayBtn,nextBtn,micBtn,compareBttn;
     TextView userVoiceText;
@@ -42,117 +42,133 @@ public class KolkolaLearn extends Fragment {
     int position  = -1;
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
 
-    int[] kolkolaTopImage = {
-            R.drawable.akkkolkola,
-            R.drawable.akkkolkola,
-            R.drawable.akkkolkola,
-            R.drawable.akkkolkola,
+    String[] kolkolaTopImage = {
 
-            R.drawable.attkolkolah,
-            R.drawable.attkolkolah,
-            R.drawable.attkolkolah,
-            R.drawable.attkolkolah,
 
-            R.drawable.abbkolkolah,
-            R.drawable.abbkolkolah,
-            R.drawable.abbkolkolah,
-            R.drawable.abbkolkolah,
+            "اَقْ",
+            "اَقْ",
+            "اِقْ",
+            "اِقْ",
+            "اُقْ",
+            "اُقْ",
 
-            R.drawable.ajjkolkolah,
-            R.drawable.ajjkolkolah,
-            R.drawable.ajjkolkolah,
-            R.drawable.ajjkolkolah,
 
-            R.drawable.addkolkolah,
-            R.drawable.addkolkolah,
-            R.drawable.addkolkolah,
-            R.drawable.addkolkolah,
+            "بَطْ",
+            "بَطْ",
+            "بِطْ",
+            "بِطْ",
+            "نُطْ",
+            "نُطْ",
 
-    };
 
-    int[] kolkolaRightImage = {
-            R.drawable.book11,
-            R.drawable.falakkkolkolkolah,
-            R.drawable.falakkkolkolkolah,
-            R.drawable.falakkkolkolkolah,
+            "حَبْ",
+            "حَبْ",
+            "اِبْ",
+            "اِبْ",
+            "اُبْ",
+            "اُبْ",
 
-            R.drawable.book11,
-            R.drawable.nuttfakolkolah,
-            R.drawable.nuttfakolkolah,
-            R.drawable.nuttfakolkolah,
+            "اَجْ",
+            "اَجْ",
+            "اِجْ",
+            "اِجْ",
+            "اُجْ",
+            "اُجْ",
 
-            R.drawable.book11,
-            R.drawable.hablunkolkolah,
-            R.drawable.hablunkolkolah,
-            R.drawable.hablunkolkolah,
-
-            R.drawable.book11,
-            R.drawable.fajrenkolkolah,
-            R.drawable.fajrenkolkolah,
-            R.drawable.fajrenkolkolah,
-
-            R.drawable.book11,
-            R.drawable.ahaddkolkolah,
-            R.drawable.ahaddkolkolah,
-            R.drawable.ahaddkolkolah,
+            "حَدْ",
+            "حَدْ",
+            "اِدْ",
+            "اِدْ",
+            "خُدْ",
+            "خُدْ",
 
     };
-    int[] kolkolaMidleImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.mashriqqkolkolah,
-            R.drawable.mashriqqkolkolah,
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.battshakolkolah,
-            R.drawable.battshakolkolah,
+    String[] kolkolaRightImage = {
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.hatobbkolkolah,
-            R.drawable.hatobbkolkolah,
+            "",
+            "فَلَقْ",
+            "فَلَقْ",
+            "فَلَقْ",
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.ajjrankolkolah,
-            R.drawable.ajjrankolkolah,
+            "",
+            "بَطْشَةً",
+            "بَطْشَةً",
+            "بَطْشَةً",
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.somadkolkolah,
-            R.drawable.somadkolkolah,
+            "",
+            "حَبْلٌ",
+            "حَبْلٌ",
+            "حَبْلٌ",
 
+            "",
+            "اَجْرًا",
+            "اَجْرًا",
+            "اَجْرًا",
 
+            "",
+            "اَحَدْ",
+            "اَحَدْ",
+            "اَحَدْ",
 
 
 
     };
-    int[] kolkolaLeftImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.ukksimukolkoah,
+    String[] kolkolaMidleImage = {
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.nuttfakolkolah,
+            "",
+            "",
+            "مَشْرِقْ",
+            "مَشْرِقْ",
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.wakobkolkolah,
+            "",
+            "",
+            "بِطْرٍ",
+            "بِطْرٍ",
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.jhazratunkolkolah,
+            "",
+            "",
+            "اِبْلِيْسَ",
+            "اِبْلِيْسَ",
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.eyalidkolkolah,
+            "",
+            "",
+            "اِجْعَلْ",
+            "اِجْعَلْ",
+
+            "",
+            "",
+            "اِدْرِيْسُ",
+            "اِدْرِيْسُ",
+
+
+    };
+    String[] kolkolaLeftImage = {
+            "",
+            "",
+            "",
+            "اُقْسِمُ",
+
+            "",
+            "",
+            "",
+            "نُطْفَةٍ",
+
+            "",
+            "",
+            "",
+            "اُبْدِئُ",
+
+            "",
+            "",
+            "",
+            "اُجْرِيْ",
+
+            "",
+            "",
+            "",
+            "خُدْرِيْ",
+
 
     };
     int [] kolkolasound={R.raw.iqqkolkolah,R.raw.falaqq,R.raw.mashriqq,R.raw.ukksimu,
@@ -205,10 +221,10 @@ public class KolkolaLearn extends Fragment {
         micBtn = view.findViewById(R.id.micBtnkolkolalearn);
         compareBttn = view.findViewById(R.id.compareBtnkolkolalearn);
         userVoiceText = view.findViewById(R.id.userVoiceText);
-        topSwitcherkolkolah =  view.findViewById(R.id.kolkolaimageSwitherTop);
-        leftSwitcherkolkolah = view.findViewById(R.id.kolkolaimageSwitherLeft);
-        middleSwitcherkolkolah = view.findViewById(R.id.kolkolaimageSwitherMiddle);
-        rightSwitcherkolkolah = view.findViewById(R.id.kolkolaimageSwitherRight);
+        topSwitcherkolkolah =  view.findViewById(R.id.kolkolatextSwitherTop);
+        leftSwitcherkolkolah = view.findViewById(R.id.kolkolatextSwitherLeft);
+        middleSwitcherkolkolah = view.findViewById(R.id.kolkolatextSwitherMiddle);
+        rightSwitcherkolkolah = view.findViewById(R.id.kolkolatextSwitherRight);
         kolkolawordpronunciationTS = view.findViewById(R.id.textSwitcherkoloklaPronunciation);
 
         kolkolaMedia = MediaPlayer.create(getContext(),kolkolasound[currenthorkot]);
@@ -230,38 +246,42 @@ public class KolkolaLearn extends Fragment {
         topSwitcherkolkolah.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                topSwitcherkolkolah.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
         rightSwitcherkolkolah.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                rightSwitcherkolkolah.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(50);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         middleSwitcherkolkolah.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                middleSwitcherkolkolah.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(50);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         leftSwitcherkolkolah.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                leftSwitcherkolkolah.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(50);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
@@ -306,10 +326,10 @@ public class KolkolaLearn extends Fragment {
                 if(position<kolkolaTopImage.length-1){
 
                     position = position+1;
-                    topSwitcherkolkolah.setBackgroundResource(kolkolaTopImage[position]);
-                    rightSwitcherkolkolah.setBackgroundResource(kolkolaRightImage[position]);
-                    middleSwitcherkolkolah.setBackgroundResource(kolkolaMidleImage[position]);
-                    leftSwitcherkolkolah.setBackgroundResource(kolkolaLeftImage[position]);
+                    topSwitcherkolkolah.setText(kolkolaTopImage[position]);
+                    rightSwitcherkolkolah.setText(kolkolaRightImage[position]);
+                    middleSwitcherkolkolah.setText(kolkolaMidleImage[position]);
+                    leftSwitcherkolkolah.setText(kolkolaLeftImage[position]);
                     kolkolawordpronunciationTS.setText(presetpronunciation[position]);
 
                     try {
@@ -334,10 +354,10 @@ public class KolkolaLearn extends Fragment {
                 if(position>0){
 
                     position = position-1;
-                    topSwitcherkolkolah.setBackgroundResource(kolkolaTopImage[position]);
-                    rightSwitcherkolkolah.setBackgroundResource(kolkolaRightImage[position]);
-                    middleSwitcherkolkolah.setBackgroundResource(kolkolaMidleImage[position]);
-                    leftSwitcherkolkolah.setBackgroundResource(kolkolaLeftImage[position]);
+                    topSwitcherkolkolah.setText(kolkolaTopImage[position]);
+                    rightSwitcherkolkolah.setText(kolkolaRightImage[position]);
+                    middleSwitcherkolkolah.setText(kolkolaMidleImage[position]);
+                    leftSwitcherkolkolah.setText(kolkolaLeftImage[position]);
                     kolkolawordpronunciationTS.setText(presetpronunciation[position]);
 
                     try {

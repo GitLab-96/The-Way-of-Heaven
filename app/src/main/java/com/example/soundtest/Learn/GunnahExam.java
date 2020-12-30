@@ -293,7 +293,7 @@ public class GunnahExam extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.seen);
+                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });

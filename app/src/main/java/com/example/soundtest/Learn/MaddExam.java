@@ -48,7 +48,7 @@ public class MaddExam extends Fragment {
     private static TextView your_marks_madd;
     private TextView MCQ;
     private TextView oral;
-    private ImageSwitcher imageSwitcherOralQuestion;
+    private TextSwitcher imageSwitcherOralQuestion;
     private TextSwitcher textSwitchermultipleExam,textSwitcherPronunciation,answerTextSwitcher;
     private Typeface typeface;
     private RadioGroup radioGroup;
@@ -76,17 +76,16 @@ public class MaddExam extends Fragment {
             "شاء কয় আলিফ মদ্দের উদাহরণ ?",
             " نوحيها কয় আলিফ মদ্দের উদাহরণ ?",
     };
-    int[] horof = {
-            R.drawable.misbahun,
-            R.drawable.maouudatu,
-            R.drawable.laaailaha,
-            R.drawable.illaaaaiblisa,
-            R.drawable.rihiim,
-            R.drawable.gafuuur,
-            R.drawable.alalarooooik,
-            R.drawable.hameeeem,
-            R.drawable.wamamindaaaabbah,
-            R.drawable.yagfirulimaiyashau,
+    String[] horof = {
+            "مِصْبَاحٌ",
+            "مَوْئُوْدَةُ",
+            "لآاِلَاهَ",
+            "اِلّااِبْلِيْسَ",
+            "رَحِيْمِ٠",
+            "غَفُوْرٌ٠",
+            "عَلى الْاَرَائِكِ",
+            "دَآبَّةٍ",
+            "مَنْ يَّشَاءُ",
 
     };
     String[] presetpronunciation = {
@@ -132,7 +131,7 @@ public class MaddExam extends Fragment {
 
         examNextBtn = view.findViewById(R.id.examNextBttn);
         examMicBtn = view.findViewById(R.id.examMicBtn);
-        imageSwitcherOralQuestion = view.findViewById(R.id.imageSwitcherOralQuestion);
+        imageSwitcherOralQuestion = view.findViewById(R.id.textSwitcherOralQuestionTS);
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
@@ -258,7 +257,7 @@ public class MaddExam extends Fragment {
                     textSwitchermultipleExam.setText(multipleQuestion[position]);
                     answerTextSwitcher.setText(presetMultipleAnswer[position]);
                     textSwitcherPronunciation.setText(presetpronunciation[position]);
-                    imageSwitcherOralQuestion.setBackgroundResource(horof[position]);
+                    imageSwitcherOralQuestion.setText(horof[position]);
                 }
             }
         });
@@ -286,10 +285,12 @@ public class MaddExam extends Fragment {
         imageSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.seen);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(50);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.CENTER);
+                textView.setText("مِصْبَاحٌ");
+                return textView;
             }
         });
 

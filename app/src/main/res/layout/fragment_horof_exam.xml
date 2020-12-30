@@ -216,12 +216,14 @@
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_weight="9"
+        android:weightSum="6"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/oralexam"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:background="#AFA7A7"
             android:textColor="#ffffff"
             android:padding="3dp"
@@ -232,7 +234,8 @@
         <TextView
             android:id="@+id/textSwitcherOralQuestion"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="5dp"
             android:gravity="center"
@@ -243,18 +246,21 @@
             android:background="#fff"
             android:padding="5dp"
             />
-<TextSwitcher
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:visibility="gone"
-    android:id="@+id/testSwitcherPronunciation"/>
-        <ImageSwitcher
-            android:id="@+id/imageSwitcherOralQuestion"
-            android:layout_width="220dp"
-            android:layout_height="120dp"
+        <TextSwitcher
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/testSwitcherPronunciation"/>
+
+        <TextSwitcher
+            android:id="@+id/textSwitcherOralQuestionhorof"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:textAlignment="center"
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
-            android:background="#fff"/>
+            android:background="#ffffff"/>
 
     </LinearLayout>
     <View

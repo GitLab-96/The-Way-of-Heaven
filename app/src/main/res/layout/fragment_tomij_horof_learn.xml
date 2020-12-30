@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="5dp"
+    android:padding="@dimen/_5sdp"
     android:background="@color/defoultColor"
     android:weightSum="19"
     tools:context=".Learn.TomijHorofLearn">
@@ -14,9 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textSize="25sp"
+        android:textSize="@dimen/_25sdp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:text="তমীযের হরফ ১২ টি ।"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:gravity="center"
             android:layout_weight="4"
             android:orientation="horizontal">
@@ -34,8 +34,8 @@
             <ImageSwitcher
 
                 android:id="@+id/TomijimageSwither"
-                android:layout_width="350dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:background="@drawable/bounarydesign"
                 android:scaleX=".8"
@@ -48,25 +48,25 @@
             android:layout_weight="1"
             android:id="@+id/tomijtextSwitcherMakhrajOne"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="0dp"
             android:gravity="center"
             android:background="#ffffff"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:padding="5dp"
-            android:textSize="30dp" />
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:textSize="@dimen/_30sdp" />
 
         <TextSwitcher
             android:layout_weight="1"
             android:id="@+id/tomijtextSwitcherMakhrajTwo"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="0dp"
             android:gravity="center"
             android:background="#ffffff"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:padding="5dp"
-            android:textSize="30dp" />
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:textSize="@dimen/_30sdp" />
 
 
     </LinearLayout>
@@ -87,28 +87,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:paddingTop="@dimen/_5sdp"
         android:layout_weight="6"
         android:weightSum="2"
         android:orientation="horizontal">
 
-        <ImageSwitcher
-            android:id="@+id/tomijImageSwitherleft"
+        <TextSwitcher
+            android:id="@+id/tomijTextSwitherleft"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="180dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/_5sdp"
             android:background="@drawable/bounarydesign"
             android:scaleX=".9"
             android:scaleY=".9"/>
 
-        <ImageSwitcher
-            android:id="@+id/tomijImageSwitherright"
+        <TextSwitcher
+            android:id="@+id/tomijTextSwitherright"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="180dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="@drawable/bounarydesign"
             android:scaleX=".9"
@@ -120,7 +120,7 @@
     <androidx.appcompat.widget.AppCompatSeekBar
         android:layout_width="match_parent"
         android:background="#FFFFFF"
-        android:layout_margin="5dp"
+        android:layout_margin="@dimen/_5sdp"
         android:layout_height="0dp"
         android:layout_weight=".5"
         android:id="@+id/tomijoutSeekBar"/>
@@ -130,16 +130,16 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:layout_weight="2"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/_10sdp"
         android:weightSum="3"
         android:orientation="horizontal">
 
         <ImageButton
             android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:padding="50dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_50sdp"
             android:layout_weight="1"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="@dimen/_30sdp"
             android:background="@drawable/ic_skip_previous_black_24dp"
             android:id="@+id/tomijpreviousBtn"/>
 
@@ -149,19 +149,19 @@
 
         <ImageButton
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:id="@+id/tomijplayBtn"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/_10sdp"
             android:background="@drawable/ic_repeat_one_black_24dp"/>
 
 
 
         <ImageButton
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="@dimen/_30sdp"
             android:background="@drawable/ic_skip_next_black_24dp"
             android:id="@+id/tomijnextBtn"/>
 
@@ -173,7 +173,7 @@
         android:layout_width="match_parent"
         android:layout_weight=".5"
         android:layout_height="0dp"
-        android:layout_margin="5dp"
+        android:layout_margin="@dimen/_5sdp"
         android:background="#FFFFFF" />
 
     <LinearLayout
@@ -181,22 +181,25 @@
         android:layout_height="0dp"
         android:gravity="center_horizontal"
         android:layout_weight="2"
+        android:weightSum="2"
         android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/tomijmicBtn"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginRight="25dp"
+            android:layout_marginRight="@dimen/_25sdp"
             android:background="@drawable/ic_mic_none_black_24dp" />
 
         <ImageButton
             android:id="@+id/tpmijcompareBtn"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="@dimen/_25sdp"
             android:background="@drawable/ic_compare_arrows_black_24dp" />
     </LinearLayout>
 

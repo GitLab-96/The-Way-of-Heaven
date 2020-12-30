@@ -24,9 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class CourseFragment extends Fragment {
 
     DatabaseReference reference;

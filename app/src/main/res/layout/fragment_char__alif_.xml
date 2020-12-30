@@ -84,7 +84,8 @@
             android:textSize="20sp"
             android:textColor="#000000"
             android:hint="Please Insert your Voice"
-            android:id="@+id/userVoiceTextCharalif"/>
+            android:id="@+id/userVoiceTextCharalif"
+            android:gravity="center_horizontal" />
 
 
     </LinearLayout>

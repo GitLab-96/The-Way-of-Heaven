@@ -72,7 +72,7 @@ public class RaFragmentExam extends Fragment {
             " । 'ر' চিকন করিয়া পড়ার উদাহরণ কোনটি ?",
     };
     int[] horof = {
-            R.drawable.amara,
+          //  R.drawable.amara,
             R.drawable.quranan,
             R.drawable.garkan,
             R.drawable.mingoiri,
@@ -284,7 +284,7 @@ public class RaFragmentExam extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.seen);
+                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });

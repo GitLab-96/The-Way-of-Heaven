@@ -32,7 +32,7 @@ import static android.app.Activity.RESULT_OK;
 
 public class Ek_alif_Fragment extends Fragment {
 
-    private ImageSwitcher topSwitchertobaye,leftSwitchertobaye,rightSwitchertobaye,middleSwitchertobaye;
+    private TextSwitcher topSwitchertobaye,leftSwitchertobaye,rightSwitchertobaye,middleSwitchertobaye;
     private TextSwitcher textSwitcherEkAlifModd;
     private ImageButton previousBtn,replayBtn,nextBtn,micButton,compareButton;
     private TextView userVoiceTextEkalif;
@@ -41,58 +41,73 @@ public class Ek_alif_Fragment extends Fragment {
     int position  = -1;
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
 
-    int[] tobayeTopImage = {
-            R.drawable.baamodd,
-            R.drawable.baamodd,
-            R.drawable.beemodd,
-            R.drawable.beemodd,
-            R.drawable.buumodd,
-            R.drawable.buumodd,
+    String[] tobayeTopImage = {
 
 
+            "بَا",
+            "بَا",
+            "بُوْ",
+            "بُوْ",
+            "بِيْ",
+            "بِيْ",
+            "آ",
+            "آ",
+            "أ",
+            "أ",
+            "أ",
+            "أ",
 
-            R.drawable.hamjahkharajobor,
-            R.drawable.hamjahkharajobor,
-            R.drawable.hamjahkharajer,
-            R.drawable.hamjahkharajer,
-            R.drawable.hamjahultapesh,
-            R.drawable.hamjahultapesh,
+
     };
 
-    int[] tobayeRightImage = {
-            R.drawable.book11,
-            R.drawable.misbahun,
-            R.drawable.misbahun,
-            R.drawable.misbahun,
+    String[] tobayeRightImage = {
+
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "أمَنَ",
+            "آوْمِنَ",
+            "اِيْمَانًا",
+            "أمَنَ",
+            "آوْمِنَ",
+            "اِيْمَانًا",
 
 
-            R.drawable.book11,
-            R.drawable.aamana,
-            R.drawable.aamana,
-            R.drawable.aamana,
-    };
-    int[] tobayeMidleImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.kabiratun,
-            R.drawable.kabiratun,
-
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.iilafi,
-            R.drawable.iilafi,
 
     };
-    int[] tobayeLeftImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.antabuua,
+    String[] tobayeMidleImage = {
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.maouudatu,
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "أمَنَ",
+            "آوْمِنَ",
+            "اِيْمَانًا",
+            "أمَنَ",
+            "آوْمِنَ",
+            "اِيْمَانًا",
+
+    };
+    String[] tobayeLeftImage = {
+
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "نُوْحِيْهَا",
+            "أمَنَ",
+            "آوْمِنَ",
+            "اِيْمَانًا",
+            "أمَنَ",
+            "آوْمِنَ",
+            "اِيْمَانًا",
     };
     String[] presetpronunciationModd = {
             "",
@@ -128,10 +143,10 @@ public class Ek_alif_Fragment extends Fragment {
         previousBtn = view.findViewById(R.id.tobayePreviousBtn);
         replayBtn = view.findViewById(R.id.tobayeRepeatBtn);
         nextBtn = view.findViewById(R.id.tobayeNextBtn);
-        topSwitchertobaye = view.findViewById(R.id.tobayeimageSwitherTop);
-        leftSwitchertobaye = view.findViewById(R.id.tobayeimageSwitherLeft);
-        middleSwitchertobaye = view.findViewById(R.id.tobayeimageSwitherMiddle);
-        rightSwitchertobaye = view.findViewById(R.id.tobayeimageSwitherRight);
+        topSwitchertobaye = view.findViewById(R.id.tobayetextSwitherTop);
+        leftSwitchertobaye = view.findViewById(R.id.tobayetextSwitherLeft);
+        middleSwitchertobaye = view.findViewById(R.id.tobayetextSwitherMiddle);
+        rightSwitchertobaye = view.findViewById(R.id.tobayetextSwitherRight);
         micButton = view.findViewById(R.id.micBtnAkAlifModd);
         compareButton = view.findViewById(R.id.compareBtnEkAlifModd);
         userVoiceTextEkalif = view.findViewById(R.id.userVoiceTextEkalif);
@@ -158,38 +173,42 @@ public class Ek_alif_Fragment extends Fragment {
         topSwitchertobaye.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                topSwitchertobaye.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
         rightSwitchertobaye.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                rightSwitchertobaye.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(50);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         middleSwitchertobaye.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                middleSwitchertobaye.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(50);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         leftSwitchertobaye.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                leftSwitchertobaye.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(50);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
@@ -237,10 +256,10 @@ public class Ek_alif_Fragment extends Fragment {
                 if(position<tobayeTopImage.length-1){
 
                     position = position+1;
-                    topSwitchertobaye.setBackgroundResource(tobayeTopImage[position]);
-                    rightSwitchertobaye.setBackgroundResource(tobayeRightImage[position]);
-                    middleSwitchertobaye.setBackgroundResource(tobayeMidleImage[position]);
-                    leftSwitchertobaye.setBackgroundResource(tobayeLeftImage[position]);
+                    topSwitchertobaye.setText(tobayeTopImage[position]);
+                    rightSwitchertobaye.setText(tobayeRightImage[position]);
+                    middleSwitchertobaye.setText(tobayeMidleImage[position]);
+                    leftSwitchertobaye.setText(tobayeLeftImage[position]);
 
                     textSwitcherEkAlifModd.setText(presetpronunciationModd[position]);
 
@@ -266,10 +285,10 @@ public class Ek_alif_Fragment extends Fragment {
                 if(position>0){
 
                     position = position-1;
-                    topSwitchertobaye.setBackgroundResource(tobayeTopImage[position]);
-                    rightSwitchertobaye.setBackgroundResource(tobayeRightImage[position]);
-                    middleSwitchertobaye.setBackgroundResource(tobayeMidleImage[position]);
-                    leftSwitchertobaye.setBackgroundResource(tobayeLeftImage[position]);
+                    topSwitchertobaye.setText(tobayeTopImage[position]);
+                    rightSwitchertobaye.setText(tobayeRightImage[position]);
+                    middleSwitchertobaye.setText(tobayeMidleImage[position]);
+                    leftSwitchertobaye.setText(tobayeLeftImage[position]);
 
                     textSwitcherEkAlifModd.setText(presetpronunciationModd[position]);
 

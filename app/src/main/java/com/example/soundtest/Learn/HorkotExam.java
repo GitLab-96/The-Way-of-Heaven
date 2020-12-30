@@ -47,7 +47,7 @@ public class HorkotExam extends Fragment {
     private static TextView your_marks_horkot;
     private TextView MCQ;
     private TextView oral;
-    private ImageSwitcher imageSwitcherOralQuestion;
+    private TextSwitcher textSwitcherOralQuestion;
     private TextSwitcher textSwitchermultipleExam,textSwitcherPronunciation,answerTextSwitcher;
     private Typeface typeface;
     private RadioGroup radioGroup;
@@ -88,18 +88,18 @@ public class HorkotExam extends Fragment {
             "(ﹻ)",
     };
 
-    int[] horof = {
-            R.drawable.basao,
-            R.drawable.dakhola,
-            R.drawable.hasada,
-            R.drawable.jaala,
-            R.drawable.jahaba,
-            R.drawable.wajada,
-            R.drawable.wahaba,
-            R.drawable.sabako,
-            R.drawable.walad,
-            R.drawable.najaa,
+    String[] horof = {
 
+            "بَسَطَ",
+            "دَخَلَ",
+            "حَسَدَ",
+            "جَعَلَ",
+            "ذَهَبَ",
+            "وَجَدَ",
+            "وَهَبَ",
+            "سَبَقَ",
+            "وَلَدَ",
+            "نَزَعَ",
     };
     String[] presetpronunciation = {
             "بسطہ",
@@ -133,7 +133,7 @@ public class HorkotExam extends Fragment {
 
         examNextBtn = view.findViewById(R.id.examNextBttn);
         examMicBtn = view.findViewById(R.id.examMicBtn);
-        imageSwitcherOralQuestion = view.findViewById(R.id.imageSwitcherOralQuestion);
+        textSwitcherOralQuestion = view.findViewById(R.id.textSwitcherOralQuestionTS);
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
@@ -262,7 +262,7 @@ public class HorkotExam extends Fragment {
                     textSwitchermultipleExam.setText(multipleQuestion[position]);
                     answerTextSwitcher.setText(presetMultipleAnswer[position]);
                     textSwitcherPronunciation.setText(presetpronunciation[position]);
-                    imageSwitcherOralQuestion.setBackgroundResource(horof[position]);
+                    textSwitcherOralQuestion.setText(horof[position]);
                 }
             }
         });
@@ -287,13 +287,15 @@ public class HorkotExam extends Fragment {
 
     private void SwitcherTask() {
 
-        imageSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
+        textSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.seen);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.CENTER);
+                textView.setText("بَسَطَ");
+                return textView;
             }
         });
 

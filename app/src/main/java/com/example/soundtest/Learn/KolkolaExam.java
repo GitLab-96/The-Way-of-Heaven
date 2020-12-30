@@ -46,7 +46,7 @@ public class KolkolaExam extends Fragment {
     private static TextView your_marks_kolkola;
     private TextView MCQ;
     private TextView oral;
-    private ImageSwitcher imageSwitcherOralQuestion;
+    private TextSwitcher textSwitcherOralQuestion;
     private TextSwitcher textSwitchermultipleExam,textSwitcherPronunciation,answerTextSwitcher;
     private Typeface typeface;
     private RadioGroup radioGroup;
@@ -86,17 +86,19 @@ public class KolkolaExam extends Fragment {
             "কল্কলা ছাড়া অন্য কোন হরফে যজম হইলে",
             "ধাক্কা দিয়া পড়া ।",
     };
-    int[] horof = {
-            R.drawable.falakkkolkolkolah,
-            R.drawable.mashriqqkolkolah,
-            R.drawable.ukksimukolkoah,
-            R.drawable.nuttfakolkolah,
-            R.drawable.battshakolkolah,
-            R.drawable.hablunkolkolah,
-            R.drawable.hatobbkolkolah,
-            R.drawable.ajjrankolkolah,
-            R.drawable.ahaddkolkolah,
-            R.drawable.somadkolkolah,
+    String[] horof = {
+            "فَلَقْ",
+            "مَشْرِقْ",
+            "اُقْسِمُ",
+            "نُطْفَةٍ",
+            "بَطْشَةً",
+            "حَبْلٌ",
+            "حَطَبْ",
+            "اَجْرًا",
+            "اَحَدْ",
+            "اَجْرًا",
+            "اَحَدْ",
+            "صَمَدْ",
 
     };
     String[] presetpronunciation = {
@@ -130,7 +132,7 @@ public class KolkolaExam extends Fragment {
 
         examNextBtn = view.findViewById(R.id.examNextBttnkolkola);
         examMicBtn = view.findViewById(R.id.examMicBtnkolkola);
-        imageSwitcherOralQuestion = view.findViewById(R.id.imageSwitcherOralQuestion);
+        textSwitcherOralQuestion = view.findViewById(R.id.textSwitcherOralQuestionTS);
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
@@ -260,7 +262,7 @@ public class KolkolaExam extends Fragment {
                     textSwitchermultipleExam.setText(multipleQuestion[position]);
                     answerTextSwitcher.setText(presetMultipleAnswer[position]);
                     textSwitcherPronunciation.setText(presetpronunciation[position]);
-                    imageSwitcherOralQuestion.setBackgroundResource(horof[position]);
+                    textSwitcherOralQuestion.setText(horof[position]);
                 }
             }
         });
@@ -285,13 +287,15 @@ public class KolkolaExam extends Fragment {
 
     private void SwitcherTask() {
 
-        imageSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
+        textSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.seen);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.CENTER);
+                textView.setText("فَلَقْ");
+                return textView;
             }
         });
 

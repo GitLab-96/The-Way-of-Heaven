@@ -3,18 +3,22 @@ package com.example.soundtest.Learn;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
 import android.speech.RecognizerIntent;
+import android.text.Layout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
@@ -43,134 +47,138 @@ public class HorofLearn extends Fragment {
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     int pausecurrentpossition;
 
-    ImageSwitcher imageSwitcher,juktoImageSwitcherright,juktoImageSwitchermiddle,juktoImageSwitcherleft;
-    TextSwitcher textSwitchermakhraz,textSwitcherHoroh;
+    TextSwitcher juktoTextSwitcherright,juktoTextSwitchermiddle,juktoTextSwitcherleft;
+    TextSwitcher textSwitchermakhraz,textSwitcherHoroh,textSwitcher;
     private int currenthorof=0;
     MediaPlayer horofmedia,goodToast,badToast;
 
-    int[] horof = {
-            R.drawable.alif,
-            R.drawable.ba,
-            R.drawable.taa,
-            R.drawable.sa,
-            R.drawable.kha,
-            R.drawable.ha,
-            R.drawable.zim,
-            R.drawable.dal,
-            R.drawable.jal,
-            R.drawable.ra,
-            R.drawable.ja,
-            R.drawable.seen,
-            R.drawable.sheen,
-            R.drawable.soad,
-            R.drawable.doad,
-            R.drawable.toa,
-            R.drawable.jowa,
-            R.drawable.ain,
-            R.drawable.gain,
-            R.drawable.fa,
-            R.drawable.kof,
-            R.drawable.kaf,
-            R.drawable.laaam,
-            R.drawable.meem,
-            R.drawable.nun,
-            R.drawable.wao,
-            R.drawable.hha,
-            R.drawable.hamjah,
-            R.drawable.ya,
+
+    String[] horof = {
+            "ا",
+            "ب",
+            "ت",
+            "ث",
+            "ج",
+            "ح",
+            "خ",
+            "د",
+            "ذ",
+            "ر",
+            "ز",
+            "س",
+            "ش",
+            "ص",
+            "ض",
+            "ط",
+            "ظ",
+            "ع",
+            "غ",
+            "ف",
+            "ق",
+            "ك",
+            "ل",
+            "م",
+            "ن",
+            "و",
+            "ه",
+            "ﺀ",
+            "ي",
     };
-    int[] juktoHorofleft = {
-            R.drawable.juktoalifend,
-            R.drawable.juktobaaend,
-            R.drawable.juktotaaend,
-            R.drawable.juktosaaend,
-            R.drawable.juktojeemend,
-            R.drawable.juktohaaend,
-            R.drawable.juktokhaaend,
-            R.drawable.juktodalend,
-            R.drawable.juktojalend,
-            R.drawable.juktoraend,
-            R.drawable.juktojhaend,
-            R.drawable.juktoseenend,
-            R.drawable.juktoshenend,
-            R.drawable.juktosowadend,
-            R.drawable.juktodowadend,
-            R.drawable.juktotowaend,
-            R.drawable.juktojowaend,
-            R.drawable.juktoainend,
-            R.drawable.juktogainend,
-            R.drawable.juktofaaend,
-            R.drawable.juktokofend,
-            R.drawable.juktokafend,
-            R.drawable.juktolamend,
-            R.drawable.juktomeemend,
-            R.drawable.juktonunend,
-            R.drawable.juktoowaoend,
-            R.drawable.juktohaaend,
-            R.drawable.juktohamjah,
-            R.drawable.juktoeyaend,
+
+
+
+    String[] juktoHorofleft = {
+            "ﺎ",
+            "ﺐ",
+            "ﺖ",
+            "ﺚ",
+            "ﺞ",
+            "ﺢ",
+            "ﺦ",
+            "ﺪ",
+            "ﺬ",
+            "ﺮ",
+            "ﺰ",
+            "ﺲ",
+            "ﺶ",
+            "ﺺ",
+            "ﺽ",
+            "ﻄ",
+            "ﻆ",
+            "ﻊ",
+            "ﻎ",
+            "ﻒ",
+            "ﻖ",
+            "ﻚ",
+            "ﻞ",
+            "ﻢ",
+            "ﻦ",
+            "ﻮ",
+            "ﻪ",
+            "ﺉ",
+            "ﻰ",
     };
-    int[] juktoHorofmiddle = {
-            R.drawable.juktoalifmiddle,
-            R.drawable.juktobaamiddle,
-            R.drawable.juktotaamiddle,
-            R.drawable.juktosaamiddle,
-            R.drawable.juktojeemmiddle,
-            R.drawable.juktohaamiddle,
-            R.drawable.juktokhaamiddle,
-            R.drawable.juktodalmiddle,
-            R.drawable.juktojalmiddle,
-            R.drawable.juktoramiddl,
-            R.drawable.juktojhamiddle,
-            R.drawable.juktoseenmiddle,
-            R.drawable.juktoshenmiddle,
-            R.drawable.juktosowadmiddle,
-            R.drawable.juktodowadmiddle,
-            R.drawable.juktotowamiddle,
-            R.drawable.juktojowamiddle,
-            R.drawable.juktoainmiddle,
-            R.drawable.juktogainmiddle,
-            R.drawable.juktofaamiddle,
-            R.drawable.juktokofmiddle,
-            R.drawable.juktokafmiddle,
-            R.drawable.juktolammiddle,
-            R.drawable.juktomeemmiddle,
-            R.drawable.juktonunmiddle,
-            R.drawable.juktoowao,
-            R.drawable.juktohamiddle,
-            R.drawable.juktohamjah,
-            R.drawable.juktoeyamiddle,
+    String[] juktoHorofmiddle = {
+            "ﺎ",
+            "ﺒ",
+            "ﺘ",
+            "ﺜ",
+            "ﺠ",
+            "ﺤ",
+            "ﺨ",
+            "ﺪ",
+            "ﺬ",
+            "ﺮ",
+            "ﺰ",
+            "ﺴ",
+            "ﺸ",
+            "ﺼ",
+            "ﻀ",
+            "ﻄ",
+            "ﻈ",
+            "ﻌ",
+            "ﻐ",
+            "ﻔ",
+            "ﻘ",
+            "ﻜ",
+            "ﻠ",
+            "ﻤ",
+            "ﻨ",
+            "ﻮ",
+            "ﻬ",
+            "ﺌ",
+            "ﻴ",
     };
-    int[] juktoHorofright = {
-            R.drawable.juktoalifstart,
-            R.drawable.juktobaastart,
-            R.drawable.juktotaastart,
-            R.drawable.juktosaastart,
-            R.drawable.juktojeemstart,
-            R.drawable.juktohaastart,
-            R.drawable.juktokhaastart,
-            R.drawable.juktodalmiddle,
-            R.drawable.juktojalstart,
-            R.drawable.juktorastart,
-            R.drawable.juktojhastart,
-            R.drawable.juktoseenstart,
-            R.drawable.juktoshenstart,
-            R.drawable.juktosowadstart,
-            R.drawable.juktodowadstart,
-            R.drawable.juktotowastart,
-            R.drawable.juktojowastart,
-            R.drawable.juktoainstart,
-            R.drawable.juktogainstart,
-            R.drawable.juktofaastart,
-            R.drawable.juktokofstart,
-            R.drawable.juktokafstart,
-            R.drawable.juktolamstart,
-            R.drawable.juktomeemstart,
-            R.drawable.juktonunstart,
-            R.drawable.juktoowao,
-            R.drawable.juktohaastart,
-            R.drawable.juktohamjah,
-            R.drawable.juktoeyastart,
+    String[] juktoHorofright = {
+            "ا",
+            "ﺑ",
+            "ﺗ",
+            "ﺛ",
+            "ﺟ",
+            "ﺣ",
+            "ﺧ",
+            "د",
+            "ذ",
+            "ر",
+            "ز",
+            "ﺳ",
+            "ﺷ",
+            "ﺻ",
+            "ﺿ",
+            "ﻃ",
+            "ﻇ",
+            "ﻋ",
+            "ﻏ",
+            "ﻓ",
+            "ﻗ",
+            "ﻛ",
+            "ﻟ",
+            "ﻣ",
+            "ﻧ",
+            "و",
+            "ﻫ",
+            "ﺋ",
+            "ﻳ",
     };
 
     int position = -1;
@@ -261,13 +269,13 @@ public class HorofLearn extends Fragment {
         nextBtn = view.findViewById(R.id.nextBtn);
         playBtn = view.findViewById(R.id.playBtn);
         micBtn = view.findViewById(R.id.micBtn);
-        imageSwitcher = view.findViewById(R.id.imageSwither);
+        textSwitcher = view.findViewById(R.id.textSwither);
         textSwitchermakhraz = view.findViewById(R.id.textSwitcherMakhraz);
         textSwitcherHoroh = view.findViewById(R.id.textSwitcherhorofPronunciation);
         userVoiceConvert = view.findViewById(R.id.userVoiceText);
-        juktoImageSwitcherleft = view.findViewById(R.id.juktoImageSwitherleft);
-        juktoImageSwitchermiddle = view.findViewById(R.id.juktoImageSwithermiddle);
-        juktoImageSwitcherright = view.findViewById(R.id.juktoImageSwitherright);
+        juktoTextSwitcherleft = view.findViewById(R.id.juktoTextSwitherleft);
+        juktoTextSwitchermiddle = view.findViewById(R.id.juktoTextSwithermiddle);
+        juktoTextSwitcherright = view.findViewById(R.id.juktoTextSwitherright);
         compareBttn = view.findViewById(R.id.compareBtn);
         handler = new Handler();
         seekBar = view.findViewById(R.id.outSeekBar);
@@ -332,44 +340,56 @@ public class HorofLearn extends Fragment {
             }
         });
 
-        imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+        textSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcher.setBackgroundResource(R.drawable.alif);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(200);
+                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setText("ا");
+                return textView;
             }
         });
 
-        juktoImageSwitcherleft.setFactory(new ViewSwitcher.ViewFactory() {
+        juktoTextSwitcherleft.setFactory(new ViewSwitcher.ViewFactory() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
             @Override
             public View makeView() {
 
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                juktoImageSwitcherleft.setBackgroundResource(R.drawable.juktoalifend);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                textView.setText("ﺎ");
+                return textView;
             }
         });
-        juktoImageSwitchermiddle.setFactory(new ViewSwitcher.ViewFactory() {
+        juktoTextSwitchermiddle.setFactory(new ViewSwitcher.ViewFactory() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
             @Override
             public View makeView() {
 
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                juktoImageSwitcherleft.setBackgroundResource(R.drawable.juktoalifmiddle);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                textView.setText("ﺎ");
+                return textView;
             }
         });
-        juktoImageSwitcherright.setFactory(new ViewSwitcher.ViewFactory() {
+        juktoTextSwitcherright.setFactory(new ViewSwitcher.ViewFactory() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
             @Override
             public View makeView() {
 
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                juktoImageSwitcherleft.setBackgroundResource(R.drawable.juktoalifstart);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                textView.setText("ا");
+                return textView;
             }
         });
 
@@ -436,12 +456,13 @@ public class HorofLearn extends Fragment {
                 if((position<horof.length-1)&& (position<makhraz.length-1)){
 
                     position = position+1;
-                    imageSwitcher.setBackgroundResource(horof[position]);
+                    textSwitcher.setText(horof[position]);
 
 
-                    juktoImageSwitcherleft.setBackgroundResource(juktoHorofleft[position]);
-                    juktoImageSwitchermiddle.setBackgroundResource(juktoHorofmiddle[position]);
-                    juktoImageSwitcherright.setBackgroundResource(juktoHorofright[position]);
+                    juktoTextSwitcherleft.setText(juktoHorofleft[position]);
+                    juktoTextSwitchermiddle.setText(juktoHorofmiddle[position]);
+                    juktoTextSwitcherright.setText(juktoHorofright[position]);
+
                     textSwitchermakhraz.setText(makhraz[position]);
                     textSwitcherHoroh.setText(presetpronunciation[position]);
                     try {
@@ -468,10 +489,11 @@ public class HorofLearn extends Fragment {
                     position = position-1;
                     textSwitchermakhraz.setText(makhraz[position]);
                     textSwitcherHoroh.setText(presetpronunciation[position]);
-                    imageSwitcher.setBackgroundResource(horof[position]);
-                    juktoImageSwitcherleft.setBackgroundResource(juktoHorofleft[position]);
-                    juktoImageSwitchermiddle.setBackgroundResource(juktoHorofmiddle[position]);
-                    juktoImageSwitcherright.setBackgroundResource(juktoHorofright[position]);
+                    textSwitcher.setText(horof[position]);
+
+                    juktoTextSwitcherleft.setText(juktoHorofleft[position]);
+                    juktoTextSwitchermiddle.setText(juktoHorofmiddle[position]);
+                    juktoTextSwitcherright.setText(juktoHorofright[position]);
 
                     try {
                         horofmedia.stop();

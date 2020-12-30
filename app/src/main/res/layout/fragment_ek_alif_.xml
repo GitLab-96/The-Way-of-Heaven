@@ -56,12 +56,12 @@
             android:layout_height="5dp"
             android:background="#999292"
             android:layout_marginTop="5dp"/>
-        <ImageSwitcher
-            android:id="@+id/tobayeimageSwitherTop"
+        <TextSwitcher
+            android:id="@+id/tobayetextSwitherTop"
             android:layout_width="400dp"
             android:layout_height="180dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:scaleX=".8"
             android:scaleY=".8" />
 
@@ -93,7 +93,8 @@
             android:textSize="20sp"
             android:textColor="#000000"
             android:hint="Please Insert your Voice"
-            android:id="@+id/userVoiceTextEkalif"/>
+            android:id="@+id/userVoiceTextEkalif"
+            android:gravity="center_horizontal" />
 
 
     </LinearLayout>
@@ -106,38 +107,38 @@
         android:layout_margin="5dp"
         android:orientation="horizontal">
 
-        <ImageSwitcher
-            android:id="@+id/tobayeimageSwitherLeft"
+        <TextSwitcher
+            android:id="@+id/tobayetextSwitherLeft"
             android:layout_width="0dp"
             android:layout_height="130dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
-        <ImageSwitcher
-            android:id="@+id/tobayeimageSwitherMiddle"
+        <TextSwitcher
+            android:id="@+id/tobayetextSwitherMiddle"
             android:layout_width="0dp"
             android:layout_height="130dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
-        <ImageSwitcher
-            android:id="@+id/tobayeimageSwitherRight"
+        <TextSwitcher
+            android:id="@+id/tobayetextSwitherRight"
             android:layout_width="0dp"
             android:layout_height="130dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
 
     </LinearLayout>

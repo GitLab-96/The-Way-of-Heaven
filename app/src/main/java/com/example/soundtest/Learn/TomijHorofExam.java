@@ -49,7 +49,7 @@ public class TomijHorofExam extends Fragment {
     private  TextView your_markstomij;
     private TextView MCQ;
     private TextView oral;
-    private ImageSwitcher imageSwitcherOralQuestion;
+    private TextSwitcher textSwitcherOralQuestion;
     private TextSwitcher textSwitchermultipleExam,textSwitcherPronunciation,answerTextSwitcher;
     private Typeface typeface;
     private RadioGroup radioGroup;
@@ -80,17 +80,19 @@ public class TomijHorofExam extends Fragment {
             "। ظ এর মাখ্রাজ কোনটি ?",
 
     };
-    int[] horof = {
-            R.drawable.ha,
-            R.drawable.hha,
-            R.drawable.kof,
-            R.drawable.kaf,
-            R.drawable.jal,
-            R.drawable.ja,
-            R.drawable.soad,
-            R.drawable.seen,
-            R.drawable.toa,
-            R.drawable.taa,
+    String[] horof = {
+
+            "ح",
+            "ه",
+            "ق",
+            "ك",
+            "ذ",
+            "ز",
+            "ص",
+            "س",
+            "ط",
+            "ت",
+
 
     };
     String[] presetpronunciation = {
@@ -134,7 +136,7 @@ public class TomijHorofExam extends Fragment {
        View view = inflater.inflate(R.layout.fragment_tomij_horof_exam, container, false);
         examNextBtn = view.findViewById(R.id.examNextBttn);
         examMicBtn = view.findViewById(R.id.examMicBtn);
-        imageSwitcherOralQuestion = view.findViewById(R.id.imageSwitcherOralQuestion);
+        textSwitcherOralQuestion = view.findViewById(R.id.textSwitcherOralQuestionTS);
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
@@ -218,7 +220,7 @@ public class TomijHorofExam extends Fragment {
 
 
                         RootRef.child("TomijExam").setValue(your_markstomij.getText().toString());
-                        Toast.makeText(getContext(), "Marks Added", Toast.LENGTH_SHORT).show();
+
                     }
 
                     @Override
@@ -269,7 +271,7 @@ public class TomijHorofExam extends Fragment {
                     textSwitchermultipleExam.setText(multipleQuestion[position]);
                     answerTextSwitcher.setText(presetMultipleAnswer[position]);
                     textSwitcherPronunciation.setText(presetpronunciation[position]);
-                    imageSwitcherOralQuestion.setBackgroundResource(horof[position]);
+                    textSwitcherOralQuestion.setText(horof[position]);
                 }
             }
         });
@@ -294,13 +296,15 @@ public class TomijHorofExam extends Fragment {
 
     private void SwitcherTask() {
 
-        imageSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
+        textSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.ha);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.CENTER);
+                textView.setText("ح");
+                return textView;
             }
         });
 
@@ -311,7 +315,7 @@ public class TomijHorofExam extends Fragment {
                 textView.setTextSize(20);
                 textView.setTextColor(getResources().getColor(R.color.colorAccent));
                 textView.setGravity(Gravity.START);
-                textView.setText("আরবি হরফ কয়টি ?");
+                textView.setText("তমীয হরফ কয়টি ? ");
                 return textView;
             }
         });

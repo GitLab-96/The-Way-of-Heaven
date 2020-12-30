@@ -46,7 +46,7 @@ public class Char_Alif_Fragment extends Fragment {
 
     int[] charAlifTopImage = {
             R.drawable.hameeeem,
-            R.drawable.aliflaaaammeeem,
+         //   R.drawable.aliflaaaammeeem,
             R.drawable.alalarooooik,
 
             R.drawable.wamamindaaaabbah,
@@ -65,8 +65,8 @@ public class Char_Alif_Fragment extends Fragment {
     };
     int[] charAlifMidleImage = {
             R.drawable.book11,
-            R.drawable.aliflaaaammeeem,
-            R.drawable.aliflaaaammeeem,
+          //  R.drawable.aliflaaaammeeem,
+          //  R.drawable.aliflaaaammeeem,
 
             R.drawable.book11,
             R.drawable.yagfirulimaiyashau,

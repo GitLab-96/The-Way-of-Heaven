@@ -34,7 +34,7 @@ import static android.app.Activity.RESULT_OK;
  */
 public class Tin_Alif_Fragment extends Fragment {
 
-    private ImageSwitcher top_Switcher_tin_alif,left_Switcher_tin_alif,right_Switcher_tin_alif,middle_Switcher_tin_alif;
+    private TextSwitcher top_Switcher_tin_alif,left_Switcher_tin_alif,right_Switcher_tin_alif,middle_Switcher_tin_alif;
     private TextSwitcher textSwitcherTinAlifModd;
     private ImageButton previousBtn,replayBtn,nextBtn,micButton,compareButton;
     private TextView userVoiceTextTinAlif;
@@ -43,45 +43,47 @@ public class Tin_Alif_Fragment extends Fragment {
     int position  = -1;
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
 
-    int[] tinAlifTopImage = {
-            R.drawable.laaailaha,
-            R.drawable.illaaaaiblisa,
-            R.drawable.maaaagna,
+    String[] tinAlifTopImage = {
+            "لآاِلَاهَ",
+            "اِلّااِبْلِيْسَ",
+            "غَفُوْرٌ٠",
 
-            R.drawable.gafuuur,
-            R.drawable.rihiim,
-            R.drawable.faqodjaaaj,
+            "رَحِيْمِ٠",
+            "فَقَدفَازْ٠",
+            "غَفُوْرٌ٠",
+
+
+    };
+
+    String[] tinAlifRightImage = {
+            "لآاِلَاهَ",
+            "اِلّااِبْلِيْسَ",
+            "غَفُوْرٌ٠",
+
+            "رَحِيْمِ٠",
+            "فَقَدفَازْ٠",
+            "غَفُوْرٌ٠",
+    };
+    String[] tinAlifMidleImage = {
+            "",
+            "اِلّااِبْلِيْسَ",
+            "غَفُوْرٌ٠",
+
+            "",
+            "فَقَدفَازْ٠",
+            "غَفُوْرٌ٠",
 
 
     };
+    String[] tinAlifLeftImage = {
+            "",
+            "",
+            "غَفُوْرٌ٠",
 
-    int[] tinAlifRightImage = {
-            R.drawable.laaailaha,
-            R.drawable.laaailaha,
-            R.drawable.laaailaha,
+            "",
+            "",
+            "غَفُوْرٌ٠",
 
-            R.drawable.gafuuur,
-            R.drawable.gafuuur,
-            R.drawable.gafuuur,
-    };
-    int[] tinAlifMidleImage = {
-            R.drawable.book11,
-            R.drawable.illaaaaiblisa,
-            R.drawable.illaaaaiblisa,
-
-            R.drawable.book11,
-            R.drawable.rihiim,
-            R.drawable.rihiim,
-
-    };
-    int[] tinAlifLeftImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.maaaagna,
-
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.faqodjaaaj,
     };
     String[] presetpronunciationModd = {
             "لا اله",
@@ -115,10 +117,10 @@ public class Tin_Alif_Fragment extends Fragment {
         previousBtn = view.findViewById(R.id.tinAlifIPreviousBtn);
         replayBtn = view.findViewById(R.id.tinAlifIRepeatBtn);
         nextBtn = view.findViewById(R.id.tinAlifINextBtn);
-        top_Switcher_tin_alif = view.findViewById(R.id.tinAlifImageSwitherTop);
-        left_Switcher_tin_alif = view.findViewById(R.id.tinAlifImageSwitherLeft);
-        middle_Switcher_tin_alif = view.findViewById(R.id.tinAlifImageSwitherMiddle);
-        right_Switcher_tin_alif = view.findViewById(R.id.tinAlifImageSwitherRight);
+        top_Switcher_tin_alif = view.findViewById(R.id.tinAlifTextSwitherTop);
+        left_Switcher_tin_alif = view.findViewById(R.id.tinAlifTextSwitherLeft);
+        middle_Switcher_tin_alif = view.findViewById(R.id.tinAlifTextSwitherMiddle);
+        right_Switcher_tin_alif = view.findViewById(R.id.tinAlifTextSwitherRight);
         micButton = view.findViewById(R.id.micBtnTinAlifModd);
         compareButton = view.findViewById(R.id.compareBtnTinAlifModd);
         userVoiceTextTinAlif = view.findViewById(R.id.userVoiceTextTinalif);
@@ -145,38 +147,42 @@ public class Tin_Alif_Fragment extends Fragment {
         top_Switcher_tin_alif.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                top_Switcher_tin_alif.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
         right_Switcher_tin_alif.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                right_Switcher_tin_alif.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(50);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         middle_Switcher_tin_alif.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                middle_Switcher_tin_alif.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(50);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         left_Switcher_tin_alif.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                left_Switcher_tin_alif.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(50);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
@@ -224,10 +230,10 @@ public class Tin_Alif_Fragment extends Fragment {
                 if(position<tinAlifTopImage.length-1){
 
                     position = position+1;
-                    top_Switcher_tin_alif.setBackgroundResource(tinAlifTopImage[position]);
-                    right_Switcher_tin_alif.setBackgroundResource(tinAlifRightImage[position]);
-                    middle_Switcher_tin_alif.setBackgroundResource(tinAlifMidleImage[position]);
-                    left_Switcher_tin_alif.setBackgroundResource(tinAlifLeftImage[position]);
+                    top_Switcher_tin_alif.setText(tinAlifTopImage[position]);
+                    right_Switcher_tin_alif.setText(tinAlifRightImage[position]);
+                    middle_Switcher_tin_alif.setText(tinAlifMidleImage[position]);
+                    left_Switcher_tin_alif.setText(tinAlifLeftImage[position]);
 
                     textSwitcherTinAlifModd.setText(presetpronunciationModd[position]);
 
@@ -252,10 +258,10 @@ public class Tin_Alif_Fragment extends Fragment {
                 if(position>0){
 
                     position = position-1;
-                    top_Switcher_tin_alif.setBackgroundResource(tinAlifTopImage[position]);
-                    right_Switcher_tin_alif.setBackgroundResource(tinAlifRightImage[position]);
-                    middle_Switcher_tin_alif.setBackgroundResource(tinAlifMidleImage[position]);
-                    left_Switcher_tin_alif.setBackgroundResource(tinAlifLeftImage[position]);
+                    top_Switcher_tin_alif.setText(tinAlifTopImage[position]);
+                    right_Switcher_tin_alif.setText(tinAlifRightImage[position]);
+                    middle_Switcher_tin_alif.setText(tinAlifMidleImage[position]);
+                    left_Switcher_tin_alif.setText(tinAlifLeftImage[position]);
 
                     textSwitcherTinAlifModd.setText(presetpronunciationModd[position]);
                     try {

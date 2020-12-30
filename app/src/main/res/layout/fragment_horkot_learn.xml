@@ -23,7 +23,8 @@
             android:textStyle="bold"
             android:textAlignment="center"
             android:layout_marginTop="20dp"
-            android:text="* এক যবর(ﹷ),এক যের (ﹻ), এক পেশ (ﹹ) কে হরকত বলে।"/>
+            android:text="* এক যবর(ﹷ),এক যের (ﹻ), এক পেশ (ﹹ) কে হরকত বলে।"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:layout_width="match_parent"
@@ -32,7 +33,8 @@
             android:textAlignment="center"
             android:padding="5dp"
             android:textStyle="bold"
-            android:text="*  হরকতের উচ্চারণ তাড়াতাড়ি করিয়া পরিতে হয়।"/>
+            android:text="*  হরকতের উচ্চারণ তাড়াতাড়ি করিয়া পরিতে হয়।"
+            android:gravity="center_horizontal" />
 
     </LinearLayout>
 
@@ -49,12 +51,12 @@
             android:orientation="vertical">
 
 
-            <ImageSwitcher
-                android:id="@+id/topImageSwitcher"
+            <TextSwitcher
+                android:id="@+id/topTextSwitcher"
                 android:layout_width="300dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:background="#000"
+                android:background="@drawable/bounarydesign"
                 android:scaleX=".8"
                 android:scaleY=".8"/>
 
@@ -116,38 +118,38 @@
         android:layout_weight="4"
         android:orientation="horizontal">
 
-        <ImageSwitcher
-            android:id="@+id/leftImageSwitcher"
+        <TextSwitcher
+            android:id="@+id/leftTextSwitcher"
             android:layout_width="0dp"
             android:layout_height="170dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
-        <ImageSwitcher
-            android:id="@+id/midleImageSwitcher"
+        <TextSwitcher
+            android:id="@+id/midleTextSwitcher"
             android:layout_width="0dp"
             android:layout_height="170dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
-        <ImageSwitcher
-            android:id="@+id/rightImageSwitcher"
+        <TextSwitcher
+            android:id="@+id/rightTextSwitcher"
             android:layout_width="0dp"
             android:layout_height="170dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
 
     </LinearLayout>

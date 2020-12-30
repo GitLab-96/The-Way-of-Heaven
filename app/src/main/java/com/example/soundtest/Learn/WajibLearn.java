@@ -31,7 +31,7 @@ import static android.app.Activity.RESULT_OK;
  * A simple {@link Fragment} subclass.
  */
 public class WajibLearn extends Fragment {
-    private ImageSwitcher topSwitcherOwajib, leftSwitcherOwajib, rightSwitcherOwajib, middleSwitcherOwajib;
+    private TextSwitcher topSwitcherOwajib, leftSwitcherOwajib, rightSwitcherOwajib, middleSwitcherOwajib;
     private TextSwitcher textSwitcherWajib;
     private ImageButton previousBtn, replayBtn, nextBtn,micBtn,compareBtn;
     MediaPlayer OwajibMedia,goodToast,badToast;
@@ -40,108 +40,53 @@ public class WajibLearn extends Fragment {
     int position = -1;
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
 
-    int[] OwajibTopImage = {
-            R.drawable.anna,
-            R.drawable.inna,
-            R.drawable.unna,
+    String[] OwajibTopImage = {
 
-            R.drawable.amma,
-            R.drawable.imma,
-            R.drawable.umma,
+            "اَنَّ", "اِنَّ", "اُنَّ",
 
-            R.drawable.innama,
-            R.drawable.falamma,
-            R.drawable.fehinna,
+            "اَمَّ", "اِمَّ","اُمَّ",
 
-            R.drawable.wajannatin,
-            R.drawable.innakum,
-            R.drawable.mujjhammilu,
-
-            R.drawable.walamma,
-            R.drawable.amma,
-            R.drawable.summa,
-
-            R.drawable.mimma,
-            R.drawable.jahannama,
-            R.drawable.ummuka,
-    };
-
-    int[] OwajibRightImage = {
-            R.drawable.anna,
-            R.drawable.anna,
-            R.drawable.anna,
-
-            R.drawable.amma,
-            R.drawable.amma,
-            R.drawable.amma,
-
-            R.drawable.innama,
-            R.drawable.innama,
-            R.drawable.innama,
-
-            R.drawable.wajannatin,
-            R.drawable.wajannatin,
-            R.drawable.wajannatin,
-
-            R.drawable.walamma,
-            R.drawable.walamma,
-            R.drawable.walamma,
-
-            R.drawable.mimma,
-            R.drawable.mimma,
-            R.drawable.mimma,
+            "اِنَّمَا", "فَلَمَّا", "فِيْهِنَّ", "وَجَنّــَاتٍ", "اِنَّكُمْ", "مُزَّمِّلُ",
 
     };
-    int[] OwajibMidleImage = {
-            R.drawable.book11,
-            R.drawable.inna,
-            R.drawable.inna,
 
-            R.drawable.book11,
-            R.drawable.imma,
-            R.drawable.imma,
+    String[] OwajibRightImage = {
 
-            R.drawable.book11,
-            R.drawable.falamma,
-            R.drawable.falamma,
+            "اَنَّ", "اَنَّ", "اَنَّ",
+            "اَمَّ", "اَمَّ", "اَمَّ",
 
-            R.drawable.book11,
-            R.drawable.innakum,
-            R.drawable.innakum,
+            "اِنَّمَا", "اِنَّمَا", "اِنَّمَا",
 
-            R.drawable.book11,
-            R.drawable.aamma,
-            R.drawable.aamma,
+            "وَجَنّــَاتٍ","وَجَنّــَاتٍ","وَجَنّــَاتٍ",
 
-            R.drawable.book11,
-            R.drawable.jahannama,
-            R.drawable.jahannama,
+            "فَلَمَّا","فَلَمَّا","فَلَمَّا",
+
+            "مِنَّا","مِنَّا","مِنَّا",
+    };
+    String[] OwajibMidleImage = {
+
+            "", "اِنَّ", "اِنَّ",
+
+            "","اِمَّ","اِمَّ",
+
+            "","فَلَمَّا","فَلَمَّا",
+
+            "","اِنَّكُمْ","اِنَّكُمْ",
+
+            "","اَمَّ","اَمَّ",
+
+            "","جَهَنَّمَ","جَهَنَّمَ",
+
 
     };
-    int[] OwajibLeftImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.unna,
+    String[] OwajibLeftImage = {
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.umma,
-
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.fehinna,
-
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.mujjhammilu,
-
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.summa,
-
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.ummuka,
+            "", "", "اُنَّ",
+            "", "", "اَمَّ",
+            "", "", "فِيْهِنَّ",
+            "", "", "مُزَّمِّلُ",
+            "", "", "ثُمَّ",
+            "", "", "اُمُّكَ",
 
     };
     int[] Owajibsound = {R.raw.anna, R.raw.inna, R.raw.unna, R.raw.amma,
@@ -188,10 +133,10 @@ public class WajibLearn extends Fragment {
         previousBtn = view.findViewById(R.id.owajibpreviousBtn);
         replayBtn = view.findViewById(R.id.owajibRepeatBtn);
         nextBtn = view.findViewById(R.id.owajibNextBtn);
-        topSwitcherOwajib =  view.findViewById(R.id.owajibimageSwither);
-        leftSwitcherOwajib = view.findViewById(R.id.owajibimageSwither2_0);
-        middleSwitcherOwajib = view.findViewById(R.id.owajibimageSwither2_1);
-        rightSwitcherOwajib = view.findViewById(R.id.owajibimageSwither2_2);
+        topSwitcherOwajib =  view.findViewById(R.id.owajibtextSwither);
+        leftSwitcherOwajib = view.findViewById(R.id.owajibtextSwither2_0);
+        middleSwitcherOwajib = view.findViewById(R.id.owajibtextSwither2_1);
+        rightSwitcherOwajib = view.findViewById(R.id.owajibtextSwither2_2);
         micBtn = view.findViewById(R.id.wajibmicBtn);
         compareBtn = view.findViewById(R.id.wajibcompareBtn);
         userVoiceConvert = view.findViewById(R.id.wajibuserVoiceText);
@@ -216,38 +161,42 @@ public class WajibLearn extends Fragment {
         topSwitcherOwajib.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT));
-                topSwitcherOwajib.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
         rightSwitcherOwajib.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT));
-                rightSwitcherOwajib.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         middleSwitcherOwajib.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT));
-                middleSwitcherOwajib.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         leftSwitcherOwajib.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT));
-                leftSwitcherOwajib.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         micBtn.setOnClickListener(new View.OnClickListener() {
@@ -294,10 +243,10 @@ public class WajibLearn extends Fragment {
                 if (position < OwajibTopImage.length - 1) {
 
                     position = position + 1;
-                    topSwitcherOwajib.setBackgroundResource(OwajibTopImage[position]);
-                    rightSwitcherOwajib.setBackgroundResource(OwajibRightImage[position]);
-                    middleSwitcherOwajib.setBackgroundResource(OwajibMidleImage[position]);
-                    leftSwitcherOwajib.setBackgroundResource(OwajibLeftImage[position]);
+                    topSwitcherOwajib.setText(OwajibTopImage[position]);
+                    rightSwitcherOwajib.setText(OwajibRightImage[position]);
+                    middleSwitcherOwajib.setText(OwajibMidleImage[position]);
+                    leftSwitcherOwajib.setText(OwajibLeftImage[position]);
                     textSwitcherWajib.setText(presetpronunciationwajib[position]);
 
                     try {
@@ -322,10 +271,10 @@ public class WajibLearn extends Fragment {
                 if (position > 0) {
 
                     position = position - 1;
-                    topSwitcherOwajib.setBackgroundResource(OwajibTopImage[position]);
-                    rightSwitcherOwajib.setBackgroundResource(OwajibRightImage[position]);
-                    middleSwitcherOwajib.setBackgroundResource(OwajibMidleImage[position]);
-                    leftSwitcherOwajib.setBackgroundResource(OwajibLeftImage[position]);
+                    topSwitcherOwajib.setText(OwajibTopImage[position]);
+                    rightSwitcherOwajib.setText(OwajibRightImage[position]);
+                    middleSwitcherOwajib.setText(OwajibMidleImage[position]);
+                    leftSwitcherOwajib.setText(OwajibLeftImage[position]);
                     textSwitcherWajib.setText(presetpronunciationwajib[position]);
                     try {
 

@@ -75,16 +75,16 @@ public class SurahExam extends Fragment {
             "সূরা ফাতেহার অপর নাম কি ?",
     };
     int[] horof = {
-            R.drawable.seen,
-            R.drawable.ba,
-            R.drawable.zim,
-            R.drawable.alif,
-            R.drawable.ain,
-            R.drawable.laaam,
-            R.drawable.kaf,
-            R.drawable.dal,
-            R.drawable.sheen,
-            R.drawable.nun,
+//            R.drawable.seen,
+//        //    R.drawable.ba,
+//            R.drawable.zim,
+//       //     R.drawable.alif,
+//            R.drawable.ain,
+//            R.drawable.laaam,
+//            R.drawable.kaf,
+//            R.drawable.dal,
+//            R.drawable.sheen,
+//            R.drawable.nun,
 
     };
     String[] presetpronunciation = {
@@ -286,7 +286,7 @@ public class SurahExam extends Fragment {
             public View makeView() {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.seen);
+                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.book11);
                 return imageView;
             }
         });

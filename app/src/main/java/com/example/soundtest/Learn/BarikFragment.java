@@ -31,7 +31,7 @@ import static android.app.Activity.RESULT_OK;
  * A simple {@link Fragment} subclass.
  */
 public class BarikFragment extends Fragment {
-    private ImageSwitcher topSwitcher_roBarik,leftSwitcher_roBarik,rightSwitcher_roBarik,middleSwitcher_roBarik;
+    private TextSwitcher topSwitcher_roBarik,leftSwitcher_roBarik,rightSwitcher_roBarik,middleSwitcher_roBarik;
     private TextSwitcher textSwitcherBarik;
     private ImageButton previousBtn,replayBtn,nextBtn,micButton,compareButtn;
    private TextView userVoiceConvertBarik;
@@ -40,35 +40,31 @@ public class BarikFragment extends Fragment {
     private int currenthorkot = 0;
     int position  = -1;
 
-    int[] roBarikTopImage = {
-            R.drawable.amrillahi,
-            R.drawable.fabassirhumbiajain,
-            R.drawable.mingoiri,
-            R.drawable.wayassirliamri,
+    String[] roBarikTopImage = {
+            "اَمٛرِ اللّٰهِ",
+            "فَبَشِّرٛهُمٛ",
+            "مِنٛ غَيٛرِ",
+            "وَيَسِّرٛلِيٛ",
+            "اَمٛرِيٛ",
     };
 
-    int[] roBarikRightImage = {
-            R.drawable.amrillahi,
-            R.drawable.amrillahi,
-            R.drawable.amrillahi,
-            R.drawable.wayassirliamri,
-
-
+    String[] roBarikRightImage = {
+            "اَمٛرِ اللّٰهِ",
+            "اَمٛرِ اللّٰهِ",
+            "اَمٛرِ اللّٰهِ",
+            "وَيَسِّرٛلِيٛ",
     };
-    int[] roBarikMiddleImage = {
-            R.drawable.book11,
-            R.drawable.fabassirhumbiajain,
-            R.drawable.fabassirhumbiajain,
-            R.drawable.wayassirliamri,
-
-
+    String[] roBarikMiddleImage = {
+            "",
+            "فَبَشِّرٛهُمٛ",
+            "فَبَشِّرٛهُمٛ",
+            "وَيَسِّرٛلِيٛ",
     };
-    int[] roBarikLeftImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.mingoiri,
-            R.drawable.wayassirliamri,
-
+    String[] roBarikLeftImage = {
+            "",
+            "",
+            "مِنٛ غَيٛرِ",
+            "وَيَسِّرٛلِيٛ",
     };
 
     String[] presetpronunciationBarik = {
@@ -100,10 +96,10 @@ public class BarikFragment extends Fragment {
         nextBtn = view.findViewById(R.id.roBarikNextBtn);
         micButton = view.findViewById(R.id.micBtnBarik);
         compareButtn = view.findViewById(R.id.compareBtnBarik);
-        topSwitcher_roBarik = view.findViewById(R.id.roBarikimageSwitherTop);
-        leftSwitcher_roBarik = view.findViewById(R.id.roBarikimageSwitherLeft);
-        middleSwitcher_roBarik = view.findViewById(R.id.roBarikimageSwitherMiddle);
-        rightSwitcher_roBarik = view.findViewById(R.id.roBarikimageSwitherRight);
+        topSwitcher_roBarik = view.findViewById(R.id.roBariktextSwitherTop);
+        leftSwitcher_roBarik = view.findViewById(R.id.roBariktextSwitherLeft);
+        middleSwitcher_roBarik = view.findViewById(R.id.roBariktextSwitherMiddle);
+        rightSwitcher_roBarik = view.findViewById(R.id.roBariktextSwitherRight);
 
         userVoiceConvertBarik = view.findViewById(R.id.userVoiceTextBarik);
         textSwitcherBarik = view.findViewById(R.id.textSwitcherBarikPronunciation);
@@ -127,38 +123,42 @@ public class BarikFragment extends Fragment {
         topSwitcher_roBarik.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                topSwitcher_roBarik.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
         rightSwitcher_roBarik.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                rightSwitcher_roBarik.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         middleSwitcher_roBarik.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                middleSwitcher_roBarik.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         leftSwitcher_roBarik.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                leftSwitcher_roBarik.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
@@ -204,10 +204,10 @@ public class BarikFragment extends Fragment {
                 if(position<roBarikTopImage.length-1){
 
                     position = position+1;
-                    topSwitcher_roBarik.setBackgroundResource(roBarikTopImage[position]);
-                    rightSwitcher_roBarik.setBackgroundResource(roBarikRightImage[position]);
-                    middleSwitcher_roBarik.setBackgroundResource(roBarikMiddleImage[position]);
-                    leftSwitcher_roBarik.setBackgroundResource(roBarikLeftImage[position]);
+                    topSwitcher_roBarik.setText(roBarikTopImage[position]);
+                    rightSwitcher_roBarik.setText(roBarikRightImage[position]);
+                    middleSwitcher_roBarik.setText(roBarikMiddleImage[position]);
+                    leftSwitcher_roBarik.setText(roBarikLeftImage[position]);
                     textSwitcherBarik.setText(presetpronunciationBarik[position]);
 
                     try {
@@ -232,10 +232,10 @@ public class BarikFragment extends Fragment {
                 if(position>0){
 
                     position = position-1;
-                    topSwitcher_roBarik.setBackgroundResource(roBarikTopImage[position]);
-                    rightSwitcher_roBarik.setBackgroundResource(roBarikRightImage[position]);
-                    middleSwitcher_roBarik.setBackgroundResource(roBarikMiddleImage[position]);
-                    leftSwitcher_roBarik.setBackgroundResource(roBarikLeftImage[position]);
+                    topSwitcher_roBarik.setText(roBarikTopImage[position]);
+                    rightSwitcher_roBarik.setText(roBarikRightImage[position]);
+                    middleSwitcher_roBarik.setText(roBarikMiddleImage[position]);
+                    leftSwitcher_roBarik.setText(roBarikLeftImage[position]);
                     textSwitcherBarik.setText(presetpronunciationBarik[position]);
                     try {
                         roBarikMedia.stop();

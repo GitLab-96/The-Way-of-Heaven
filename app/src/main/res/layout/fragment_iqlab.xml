@@ -68,13 +68,13 @@
         android:layout_height="5dp"
         android:background="#999292"
         android:layout_marginTop="5dp"/>
-    <ImageSwitcher
-        android:id="@+id/iqlabimageSwitherTop"
+    <TextSwitcher
+        android:id="@+id/iqlabtextSwitherTop"
         android:layout_width="400dp"
         android:layout_weight="5.4"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:background="#000"
+        android:background="@drawable/bounarydesign"
         android:scaleX=".8"
         android:scaleY=".8" />
     <TextSwitcher
@@ -105,7 +105,8 @@
             android:textSize="20sp"
             android:textColor="#000000"
             android:hint="Please Insert your Voice"
-            android:id="@+id/userVoiceTextIqlab"/>
+            android:id="@+id/userVoiceTextIqlab"
+            android:gravity="center_horizontal" />
 
 
     </LinearLayout>
@@ -116,38 +117,38 @@
         android:layout_weight="4"
         android:orientation="horizontal">
 
-        <ImageSwitcher
-            android:id="@+id/iqlabimageSwitherLeft"
+        <TextSwitcher
+            android:id="@+id/iqlabtextSwitherLeft"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
-        <ImageSwitcher
-            android:id="@+id/iqlabimageSwitherMiddle"
+        <TextSwitcher
+            android:id="@+id/iqlabtextSwitherMiddle"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
-        <ImageSwitcher
-            android:id="@+id/iqlabimageSwitherRight"
+        <TextSwitcher
+            android:id="@+id/iqlabtextSwitherRight"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
 
     </LinearLayout>

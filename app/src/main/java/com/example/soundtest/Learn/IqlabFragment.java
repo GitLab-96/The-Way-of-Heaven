@@ -32,7 +32,7 @@ import static android.app.Activity.RESULT_OK;
  */
 public class IqlabFragment extends Fragment {
 
-    private ImageSwitcher topSwitcheriqlab,leftSwitcheriqlab,rightSwitcheriqlab,middleSwitcheriqlab;
+    private TextSwitcher topSwitcheriqlab,leftSwitcheriqlab,rightSwitcheriqlab,middleSwitcheriqlab;
     private ImageButton previousBtn,replayBtn,nextBtn,micButtnIqlab,compareButtnIqlab;
     private TextView userVoiceTextIqlab;
     TextSwitcher textSwitcherIqlabPronunciation;
@@ -41,58 +41,56 @@ public class IqlabFragment extends Fragment {
     private int currenthorkot = 0;
     int position  = -1;
 
-    int[] iqlabTopImage = {
+    String[] iqlabTopImage = {
 
-
-            
-            R.drawable.mimmbadi,
-            R.drawable.samiumbadi,
-            R.drawable.lanasfambinnasiah,
-
-            R.drawable.hadisimbadahu,
-            R.drawable.rojumbaid,
-            R.drawable.khabirambasiran,
-
-            R.drawable.laumbajanna,
-    };
-
-    int[] iqlabRightImage = {
-            R.drawable.mimmbadi,
-            R.drawable.mimmbadi,
-            R.drawable.mimmbadi,
-
-            R.drawable.hadisimbadahu,
-            R.drawable.hadisimbadahu,
-            R.drawable.hadisimbadahu,
-
-            R.drawable.hadisimbadahu,
-
+            "مِنً بَعٛدِ",
+            "سَمِيعٌ بَصِيٛرٌ",
+            "لَنَسٛفَعٝ بِاالنَّاصِيَة",
+            "حَدِيٛثٍ بٝعٛدهٗ",
+            "رَجٛعٌ بَعِيٛدِ",
+            "خَبِيٛرَاٝ بَصِيٛرًا",
+            "لَيُنٛبَذَنّهٗ",
 
 
     };
-    int[] iqlabMidleImage = {
-            R.drawable.book11,
-            R.drawable.samiumbadi,
-            R.drawable.samiumbadi,
 
-            R.drawable.book11,
-            R.drawable.rojumbaid,
-            R.drawable.rojumbaid,
+    String[] iqlabRightImage = {
 
-            R.drawable.hadisimbadahu,
+            "مِنً بَعٛدِ",
+            "مِنً بَعٛدِ",
+            "مِنً بَعٛدِ",
 
+            "حَدِيٛثٍ بٝعٛدهٗ",
+            "حَدِيٛثٍ بٝعٛدهٗ",
+            "حَدِيٛثٍ بٝعٛدهٗ",
+
+            "حَدِيٛثٍ بٝعٛدهٗ",
 
     };
-    int[] iqlabLeftImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.lanasfambinnasiah,
+    String[] iqlabMidleImage = {
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.khabirambasiran,
+            "",
+            "سَمِيعٌ بَصِيٛرٌ",
+            "سَمِيعٌ بَصِيٛرٌ",
 
-            R.drawable.hadisimbadahu,
+
+            "",
+            "رَجٛعٌ بَعِيٛدِ",
+            "رَجٛعٌ بَعِيٛدِ",
+            "حَدِيٛثٍ بٝعٛدهٗ",
+
+    };
+    String[] iqlabLeftImage = {
+
+
+            "",
+            "",
+            "لَنَسٛفَعٝ بِاالنَّاصِيَة",
+
+            "",
+            "",
+            "خَبِيٛرَاٝ بَصِيٛرًا",
+            "حَدِيٛثٍ بٝعٛدهٗ",
     };
     String[] presetpronunciation = {
             "من بعدي",
@@ -106,7 +104,7 @@ public class IqlabFragment extends Fragment {
     };
 
     int [] iqlabsound={R.raw.mimbadi,R.raw.samiumbasira,R.raw.lanasfambinnasiati,R.raw.hadisimbadahu,
-            R.raw.rojumdaidun,R.raw.khabiranbasiran,  R.drawable.laumbajanna,
+            R.raw.rojumdaidun,R.raw.khabiranbasiran,  R.raw.laumbajanna,
     };
 
 
@@ -125,10 +123,10 @@ public class IqlabFragment extends Fragment {
         previousBtn = view.findViewById(R.id.iqlabPreviousBtn);
         replayBtn = view.findViewById(R.id.iqlabRepeatBtn);
         nextBtn = view.findViewById(R.id.iqlabNextBtn);
-        topSwitcheriqlab = view.findViewById(R.id.iqlabimageSwitherTop);
-        leftSwitcheriqlab = view.findViewById(R.id.iqlabimageSwitherLeft);
-        middleSwitcheriqlab = view.findViewById(R.id.iqlabimageSwitherMiddle);
-        rightSwitcheriqlab = view.findViewById(R.id.iqlabimageSwitherRight);
+        topSwitcheriqlab = view.findViewById(R.id.iqlabtextSwitherTop);
+        leftSwitcheriqlab = view.findViewById(R.id.iqlabtextSwitherLeft);
+        middleSwitcheriqlab = view.findViewById(R.id.iqlabtextSwitherMiddle);
+        rightSwitcheriqlab = view.findViewById(R.id.iqlabtextSwitherRight);
         micButtnIqlab = view.findViewById(R.id.micBtnIqlab);
         compareButtnIqlab = view.findViewById(R.id.compareBtnIqlab);
         userVoiceTextIqlab = view.findViewById(R.id.userVoiceTextIqlab);
@@ -154,38 +152,42 @@ public class IqlabFragment extends Fragment {
         topSwitcheriqlab.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                topSwitcheriqlab.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(20);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
         rightSwitcheriqlab.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                rightSwitcheriqlab.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(20);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         middleSwitcheriqlab.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                middleSwitcheriqlab.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(20);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         leftSwitcheriqlab.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                leftSwitcheriqlab.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(20);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
@@ -235,10 +237,10 @@ public class IqlabFragment extends Fragment {
                 if(position<iqlabTopImage.length-1){
 
                     position = position+1;
-                    topSwitcheriqlab.setBackgroundResource(iqlabTopImage[position]);
-                    rightSwitcheriqlab.setBackgroundResource(iqlabRightImage[position]);
-                    middleSwitcheriqlab.setBackgroundResource(iqlabMidleImage[position]);
-                    leftSwitcheriqlab.setBackgroundResource(iqlabLeftImage[position]);
+                    topSwitcheriqlab.setText(iqlabTopImage[position]);
+                    rightSwitcheriqlab.setText(iqlabRightImage[position]);
+                    middleSwitcheriqlab.setText(iqlabMidleImage[position]);
+                    leftSwitcheriqlab.setText(iqlabLeftImage[position]);
                     textSwitcherIqlabPronunciation.setText(presetpronunciation[position]);
                     try {
                         iqlabMedia.stop();
@@ -262,10 +264,10 @@ public class IqlabFragment extends Fragment {
                 if(position>0){
 
                     position = position-1;
-                    topSwitcheriqlab.setBackgroundResource(iqlabTopImage[position]);
-                    rightSwitcheriqlab.setBackgroundResource(iqlabRightImage[position]);
-                    middleSwitcheriqlab.setBackgroundResource(iqlabMidleImage[position]);
-                    leftSwitcheriqlab.setBackgroundResource(iqlabLeftImage[position]);
+                    topSwitcheriqlab.setText(iqlabTopImage[position]);
+                    rightSwitcheriqlab.setText(iqlabRightImage[position]);
+                    middleSwitcheriqlab.setText(iqlabMidleImage[position]);
+                    leftSwitcheriqlab.setText(iqlabLeftImage[position]);
                     textSwitcherIqlabPronunciation.setText(presetpronunciation[position]);
 
                     try {

@@ -31,7 +31,7 @@ import static android.app.Activity.RESULT_OK;
 public class IkhfaFragment extends Fragment {
 
 
-    private ImageSwitcher topSwitcheridgam,leftSwitcheridgam,rightSwitcheridgam,middleSwitcheridgam;
+    private TextSwitcher topSwitcheridgam,leftSwitcheridgam,rightSwitcheridgam,middleSwitcheridgam;
     private ImageButton previousBtn,replayBtn,nextBtn,micButtnIdgam,compareButtnIdgam;
     private TextView userVoiceTextIdgam;
     TextSwitcher textSwitcherIdgamPronunciation;
@@ -40,93 +40,70 @@ public class IkhfaFragment extends Fragment {
     private int currenthorkot = 0;
     int position  = -1;
 
-    int[] idgamTopImage = {
-            R.drawable.jannatintajri,
-            R.drawable.unsa,
-            R.drawable.minjuen,
+    String[] idgamTopImage = {
+            "جَنّٰتٍ  تَجٛرِيٛ",
+            "اُنٛثٰى",
+            "مِنٛ جُوٛعٍ",
 
-            R.drawable.mindunillahi,
-            R.drawable.naronjata,
-            R.drawable.unjhila,
+            "مِنٛ دُوٛنِ اللّٰهِ",
+            "نَارًاذَاتَ",
+            "اُنٛزِلَ",
 
-            R.drawable.minsijjilin,
-            R.drawable.minsharri,
-            R.drawable.ansolatihim,
-
-            R.drawable.andoife,
-            R.drawable.mantogo,
-            R.drawable.yanjuruna,
-
-            R.drawable.yatimanfawa,
-            R.drawable.farrotminkoswarah,
-            R.drawable.kiromankatibina,
-    };
+            "مِنٛ سِجِّيٛلٍ",
+            "مِنٛ شَرِّ",
+            "عَنٛ صَلَاتِهِمٛ",
 
 
-    int[] idgamRightImage = {
-            R.drawable.jannatintajri,
-            R.drawable.jannatintajri,
-            R.drawable.jannatintajri,
-
-            R.drawable.mindunillahi,
-            R.drawable.mindunillahi,
-            R.drawable.mindunillahi,
-
-            R.drawable.minsijjilin,
-            R.drawable.minsijjilin,
-            R.drawable.minsijjilin,
-
-            R.drawable.andoife,
-            R.drawable.andoife,
-            R.drawable.andoife,
-
-            R.drawable.yatimanfawa,
-            R.drawable.yatimanfawa,
-            R.drawable.yatimanfawa,
 
     };
-    int[] idgamMidleImage = {
-            R.drawable.book11,
-            R.drawable.unsa,
-            R.drawable.unsa,
 
-            R.drawable.book11,
-            R.drawable.naronjata,
-            R.drawable.naronjata,
 
-            R.drawable.book11,
-            R.drawable.minsharri,
-            R.drawable.minsharri,
+    String[] idgamRightImage = {
+            "جَنّٰتٍ  تَجٛرِيٛ",
+            "جَنّٰتٍ  تَجٛرِيٛ",
+            "جَنّٰتٍ  تَجٛرِيٛ",
 
-            R.drawable.book11,
-            R.drawable.mantogo,
-            R.drawable.mantogo,
 
-            R.drawable.book11,
-            R.drawable.farrotminkoswarah,
-            R.drawable.farrotminkoswarah,
+            "مِنٛ دُوٛنِ اللّٰهِ",
+            "مِنٛ دُوٛنِ اللّٰهِ",
+            "مِنٛ دُوٛنِ اللّٰهِ",
+
+
+            "مِنٛ سِجِّيٛلٍ",
+            "مِنٛ سِجِّيٛلٍ",
+            "مِنٛ سِجِّيٛلٍ",
 
     };
-    int[] idgamLeftImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.minjuen,
+    String[] idgamMidleImage = {
+            "",
+            "اُنٛثٰى",
+            "اُنٛثٰى",
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.unjhila,
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.ansolatihim,
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.yanjuruna,
+            "",
+            "نَارًاذَاتَ",
+            "نَارًاذَاتَ",
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.kiromankatibina,
+            "",
+            "مِنٛ شَرِّ",
+            "مِنٛ شَرِّ",
+
+
+    };
+    String[] idgamLeftImage = {
+            "",
+            "",
+            "مِنٛ جُوٛعٍ",
+
+            "",
+            "",
+            "اُنٛزِلَ",
+
+            "",
+            "",
+            "عَنٛ صَلَاتِهِمٛ",
+
     };
 
     String[] presetpronunciation = {
@@ -140,13 +117,7 @@ public class IkhfaFragment extends Fragment {
             "من سجيل",
             "من شر",
             "عن صلاتهم",
-            "عن ضيف",
-            "من طغى",
-            "ينظرون",
 
-            "يتيما فاوى",
-            "فررت من قسورہ",
-            "كراما كاتبين",
     };
 
     int [] idgamsound={R.raw.jannatintazri,R.raw.unsa,R.raw.minjuin,R.raw.mindunillahi,
@@ -170,10 +141,10 @@ public class IkhfaFragment extends Fragment {
         previousBtn = view.findViewById(R.id.idgamPreviousBtn);
         replayBtn = view.findViewById(R.id.idgamRepeatBtn);
         nextBtn = view.findViewById(R.id.idgamNextBtn);
-        topSwitcheridgam = view.findViewById(R.id.idgamimageSwitherTop);
-        leftSwitcheridgam = view.findViewById(R.id.idgamimageSwitherLeft);
-        middleSwitcheridgam = view.findViewById(R.id.idgamimageSwitherMiddle);
-        rightSwitcheridgam = view.findViewById(R.id.idgamimageSwitherRight);
+        topSwitcheridgam = view.findViewById(R.id.idgamtextSwitherTop);
+        leftSwitcheridgam = view.findViewById(R.id.idgamtextSwitherLeft);
+        middleSwitcheridgam = view.findViewById(R.id.idgamtextSwitherMiddle);
+        rightSwitcheridgam = view.findViewById(R.id.idgamtextSwitherRight);
         micButtnIdgam = view.findViewById(R.id.micBtnidgam);
         compareButtnIdgam = view.findViewById(R.id.compareBtnidgam);
         userVoiceTextIdgam = view.findViewById(R.id.userVoiceTextidgam);
@@ -199,38 +170,42 @@ public class IkhfaFragment extends Fragment {
         topSwitcheridgam.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                topSwitcheridgam.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
         rightSwitcheridgam.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                rightSwitcheridgam.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         middleSwitcheridgam.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                middleSwitcheridgam.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         leftSwitcheridgam.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                leftSwitcheridgam.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
@@ -280,10 +255,10 @@ public class IkhfaFragment extends Fragment {
                 if(position<idgamTopImage.length-1){
 
                     position = position+1;
-                    topSwitcheridgam.setBackgroundResource(idgamTopImage[position]);
-                    rightSwitcheridgam.setBackgroundResource(idgamRightImage[position]);
-                    middleSwitcheridgam.setBackgroundResource(idgamMidleImage[position]);
-                    leftSwitcheridgam.setBackgroundResource(idgamLeftImage[position]);
+                    topSwitcheridgam.setText(idgamTopImage[position]);
+                    rightSwitcheridgam.setText(idgamRightImage[position]);
+                    middleSwitcheridgam.setText(idgamMidleImage[position]);
+                    leftSwitcheridgam.setText(idgamLeftImage[position]);
                     textSwitcherIdgamPronunciation.setText(presetpronunciation[position]);
                     try {
                         idgamMedia.stop();
@@ -307,10 +282,10 @@ public class IkhfaFragment extends Fragment {
                 if(position>0){
 
                     position = position-1;
-                    topSwitcheridgam.setBackgroundResource(idgamTopImage[position]);
-                    rightSwitcheridgam.setBackgroundResource(idgamRightImage[position]);
-                    middleSwitcheridgam.setBackgroundResource(idgamMidleImage[position]);
-                    leftSwitcheridgam.setBackgroundResource(idgamLeftImage[position]);
+                    topSwitcheridgam.setText(idgamTopImage[position]);
+                    rightSwitcheridgam.setText(idgamRightImage[position]);
+                    middleSwitcheridgam.setText(idgamMidleImage[position]);
+                    leftSwitcheridgam.setText(idgamLeftImage[position]);
                     textSwitcherIdgamPronunciation.setText(presetpronunciation[position]);
 
                     try {

@@ -46,7 +46,7 @@ public class GunnahExam extends Fragment {
     private static TextView your_marks_gunnah;
     private TextView MCQ;
     private TextView oral;
-    private ImageSwitcher imageSwitcherOralQuestion;
+    private TextSwitcher imageSwitcherOralQuestion;
     private TextSwitcher textSwitchermultipleExam,textSwitcherPronunciation,answerTextSwitcher;
     private Typeface typeface;
     private RadioGroup radioGroup;
@@ -74,17 +74,17 @@ public class GunnahExam extends Fragment {
             "নুনে সাকিন ও তানভিনে 'ق' কিসের হরফ ?",
             "মীমে সাকিন এ 'ب' কিসের হরফ ?",
     };
-    int[] horof = {
-            R.drawable.mimmbadi,
-            R.drawable.maiyashau,
-            R.drawable.miowalin,
-            R.drawable.anamta,
-            R.drawable.jannatintajri,
-            R.drawable.mirrobbika,
-            R.drawable.alimunhakimun,
-            R.drawable.innarobbahumbihim,
-            R.drawable.fiiqulubihimmaragun,
-            R.drawable.lahumajrun,
+    String[] horof = {
+            "مِنً بَعٛدِ",
+            "مَنٛ  يَّشَاٙءُ",
+            "مِنٛ وَّالٍ",
+            "اَنٛعَمٛتَ",
+            "جَنّٰتٍ  تَجٛرِيٛ",
+            "مِنٛ رَبِّكَ",
+            "عَلِيٛمٌ حَكِيٛمٌ",
+            "اِنَّ رَبَّهُمٛ بِهِمٛ",
+            "فِيٛ قُلُوٛبِهِمٛ مَّرَضٌ",
+            "لَهُمٛ اَجٛرٌ",
 
     };
     String[] presetpronunciation = {
@@ -132,7 +132,7 @@ public class GunnahExam extends Fragment {
 
         examNextBtn = view.findViewById(R.id.examNextBttn);
         examMicBtn = view.findViewById(R.id.examMicBtn);
-        imageSwitcherOralQuestion = view.findViewById(R.id.imageSwitcherOralQuestion);
+        imageSwitcherOralQuestion = view.findViewById(R.id.textSwitcherOralQuestionTS);
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
@@ -263,7 +263,7 @@ public class GunnahExam extends Fragment {
                     textSwitchermultipleExam.setText(multipleQuestion[position]);
                     answerTextSwitcher.setText(presetMultipleAnswer[position]);
                     textSwitcherPronunciation.setText(presetpronunciation[position]);
-                    imageSwitcherOralQuestion.setBackgroundResource(horof[position]);
+                    imageSwitcherOralQuestion.setText(horof[position]);
                 }
             }
         });
@@ -291,10 +291,12 @@ public class GunnahExam extends Fragment {
         imageSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.START);
+                textView.setText("আরবি হরফ কয়টি ?");
+                return textView;
             }
         });
 

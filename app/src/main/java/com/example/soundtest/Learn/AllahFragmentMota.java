@@ -32,7 +32,7 @@ import static android.app.Activity.RESULT_OK;
  */
 public class AllahFragmentMota extends Fragment {
 
-    private ImageSwitcher topSwitchermota,leftSwitchermota,rightSwitchermota,middleSwitchermota;
+    private TextSwitcher topSwitchermota,leftSwitchermota,rightSwitchermota,middleSwitchermota;
     private ImageButton previousBtn,replayBtn,nextBtn,micButton,compareButtn;
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     TextView userVoiceConvertPur;
@@ -41,44 +41,46 @@ public class AllahFragmentMota extends Fragment {
     private int currenthorkot = 0;
     int position  = -1;
 
-    int[] motaTopImage = {
-            R.drawable.innalloha,
-            R.drawable.kolallohu,
-            R.drawable.samiallohu,
+    String[] motaTopImage = {
 
-            R.drawable.hududullohi,
-            R.drawable.uridullohu,
-
-            R.drawable.kholkullohi,
+            "اِنَّ اللّٰهَ",
+            "قَالَ اللّٰهُ",
+            "سَمِعَ اللّٰهُ",
+            "حُدُوٛدُ اللّٰهُ",
+            "يُرِيٛدُ اللّٰهُ",
+            "خَلٛقُ اللّٰهِ",
     };
 
-    int[] motaRightImage = {
-            R.drawable.innalloha,
-            R.drawable.innalloha,
-            R.drawable.innalloha,
+    String[] motaRightImage = {
+            "اِنَّ اللّٰهَ",
+            "اِنَّ اللّٰهَ",
+            "اِنَّ اللّٰهَ",
 
+            "حُدُوٛدُ اللّٰهُ",
+            "حُدُوٛدُ اللّٰهُ",
+            "حُدُوٛدُ اللّٰهُ",
 
-            R.drawable.hududullohi,
-            R.drawable.hududullohi,
-            R.drawable.hududullohi,
     };
-    int[] motaMidleImage = {
-            R.drawable.book11,
-            R.drawable.kolallohu,
-            R.drawable.kolallohu,
+    String[] motaMidleImage = {
+            "",
+            "قَالَ اللّٰهُ",
+            "قَالَ اللّٰهُ",
 
-            R.drawable.book11,
-            R.drawable.uridullohu,
-            R.drawable.uridullohu,
+
+            "",
+            "يُرِيٛدُ اللّٰهُ",
+            "يُرِيٛدُ اللّٰهُ",
+
     };
-    int[] motaLeftImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.samiallohu,
+    String[] motaLeftImage = {
+            "",
+            "",
+            "سَمِعَ اللّٰهُ",
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.kholkullohi,
+            "",
+            "",
+            "خَلٛقُ اللّٰهِ",
+
     };
 
     String[] presetpronunciation = {
@@ -139,38 +141,42 @@ public class AllahFragmentMota extends Fragment {
         topSwitchermota.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                topSwitchermota.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
         rightSwitchermota.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                rightSwitchermota.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         middleSwitchermota.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                middleSwitchermota.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         leftSwitchermota.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                leftSwitchermota.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         compareButtn.setOnClickListener(new View.OnClickListener() {
@@ -214,10 +220,10 @@ public class AllahFragmentMota extends Fragment {
                 if(position<motaTopImage.length-1){
 
                     position = position+1;
-                    topSwitchermota.setBackgroundResource(motaTopImage[position]);
-                    rightSwitchermota.setBackgroundResource(motaRightImage[position]);
-                    middleSwitchermota.setBackgroundResource(motaMidleImage[position]);
-                    leftSwitchermota.setBackgroundResource(motaLeftImage[position]);
+                    topSwitchermota.setText(motaTopImage[position]);
+                    rightSwitchermota.setText(motaRightImage[position]);
+                    middleSwitchermota.setText(motaMidleImage[position]);
+                    leftSwitchermota.setText(motaLeftImage[position]);
                     textSwitcherPur.setText(presetpronunciation[position]);
 
                     try {
@@ -242,10 +248,10 @@ public class AllahFragmentMota extends Fragment {
                 if(position>0){
 
                     position = position-1;
-                    topSwitchermota.setBackgroundResource(motaTopImage[position]);
-                    rightSwitchermota.setBackgroundResource(motaRightImage[position]);
-                    middleSwitchermota.setBackgroundResource(motaMidleImage[position]);
-                    leftSwitchermota.setBackgroundResource(motaLeftImage[position]);
+                    topSwitchermota.setText(motaTopImage[position]);
+                    rightSwitchermota.setText(motaRightImage[position]);
+                    middleSwitchermota.setText(motaMidleImage[position]);
+                    leftSwitchermota.setText(motaLeftImage[position]);
 
                     try {
                         motaMedia.stop();

@@ -43,7 +43,7 @@ public class RaFragmentExam extends Fragment {
     private TextView your_marks_ro;
     private TextView MCQ;
     private TextView oral;
-    private ImageSwitcher imageSwitcherOralQuestion;
+    private TextSwitcher textSwitcherOralQuestion;
     private TextSwitcher textSwitchermultipleExam,textSwitcherPronunciation,answerTextSwitcher;
     private Typeface typeface;
     private RadioGroup radioGroup;
@@ -71,17 +71,16 @@ public class RaFragmentExam extends Fragment {
             " । 'ر' এর উপর পেশ থাকিলে ঐ 'ر' কে কি করিয়া পড়িতে হয় ?",
             " । 'ر' চিকন করিয়া পড়ার উদাহরণ কোনটি ?",
     };
-    int[] horof = {
-          //  R.drawable.amara,
-            R.drawable.quranan,
-            R.drawable.garkan,
-            R.drawable.mingoiri,
-            R.drawable.fabassirhumbiajain,
-            R.drawable.wayassirliamri,
-            R.drawable.amrillahi,
-            R.drawable.rusulun,
-            R.drawable.mingoiri,
-            R.drawable.amrillahi,
+    String[] horof = {
+            "اَمٛرَ",
+            "قُرٛأٰنًا",
+            "غَرٛقًا",
+            "مِنٛ غَيٛرِ",
+            "فَبَشِّرٛهُمٛ",
+            "وَيَسِّرٛلِيٛ",
+            "اَمٛرِيٛ",
+            "رُسُلٌ",
+            "اَمٛرِ اللّٰهِ",
 
     };
     String[] presetpronunciation = {
@@ -128,7 +127,7 @@ public class RaFragmentExam extends Fragment {
 
         examNextBtn = view.findViewById(R.id.examNextBttn);
         examMicBtn = view.findViewById(R.id.examMicBtn);
-        imageSwitcherOralQuestion = view.findViewById(R.id.imageSwitcherOralQuestion);
+        textSwitcherOralQuestion = view.findViewById(R.id.textSwitcherOralQuestionTS);
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
@@ -254,7 +253,7 @@ public class RaFragmentExam extends Fragment {
                     textSwitchermultipleExam.setText(multipleQuestion[position]);
                     answerTextSwitcher.setText(presetMultipleAnswer[position]);
                     textSwitcherPronunciation.setText(presetpronunciation[position]);
-                    imageSwitcherOralQuestion.setBackgroundResource(horof[position]);
+                    textSwitcherOralQuestion.setText(horof[position]);
                 }
             }
         });
@@ -279,13 +278,15 @@ public class RaFragmentExam extends Fragment {
 
     private void SwitcherTask() {
 
-        imageSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
+        textSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(1500);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.START);
+                textView.setText("اَمٛرَ");
+                return textView;
             }
         });
 

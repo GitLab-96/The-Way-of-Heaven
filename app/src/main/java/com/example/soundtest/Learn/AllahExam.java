@@ -46,7 +46,7 @@ public class AllahExam extends Fragment {
     private TextView your_marks_allah;
     private TextView MCQ;
     private TextView oral;
-    private ImageSwitcher imageSwitcherOralQuestion;
+    private TextSwitcher imageSwitcherOralQuestion;
     private TextSwitcher textSwitchermultipleExam,textSwitcherPronunciation,answerTextSwitcher;
     private Typeface typeface;
     private RadioGroup radioGroup;
@@ -74,17 +74,18 @@ public class AllahExam extends Fragment {
             " কুরআন কার বাণী ?",
             " আল্লাহ শব্দ কয় ভাবে পড়া যায় ?",
     };
-    int[] horof = {
-            R.drawable.bismillahi,
-            R.drawable.dinillahi,
-            R.drawable.balillahi,
-            R.drawable.innalloha,
-            R.drawable.kolallohu,
-            R.drawable.samiallohu,
-            R.drawable.dinillahi,
-            R.drawable.balillahi,
-            R.drawable.innalloha,
-            R.drawable.kolallohu,
+    String[] horof = {
+            "بِسٛمِ اللّٰهِ",
+            "دِيٛنِ اللّٰهِ",
+            "بَلِ اللّٰهِ",
+
+            "اِنَّ اللّٰهَ",
+            "قَالَ اللّٰهُ",
+            "سَمِعَ اللّٰهُ",
+            "دِيٛنِ اللّٰهِ",
+            "بَلِ اللّٰهِ",
+            "اِنَّ اللّٰهَ",
+            "قَالَ اللّٰهُ",
 
     };
     String[] presetpronunciation = {
@@ -129,7 +130,7 @@ public class AllahExam extends Fragment {
 
         examNextBtn = view.findViewById(R.id.examNextBttn);
         examMicBtn = view.findViewById(R.id.examMicBtn);
-        imageSwitcherOralQuestion = view.findViewById(R.id.imageSwitcherOralQuestion);
+        imageSwitcherOralQuestion = view.findViewById(R.id.textSwitcherOralQuestionTS);
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
@@ -253,7 +254,7 @@ public class AllahExam extends Fragment {
                     textSwitchermultipleExam.setText(multipleQuestion[position]);
                     answerTextSwitcher.setText(presetMultipleAnswer[position]);
                     textSwitcherPronunciation.setText(presetpronunciation[position]);
-                    imageSwitcherOralQuestion.setBackgroundResource(horof[position]);
+                    imageSwitcherOralQuestion.setText(horof[position]);
                 }
             }
         });
@@ -281,10 +282,12 @@ public class AllahExam extends Fragment {
         imageSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(20);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.START);
+                textView.setText("بِسٛمِ اللّٰهِ");
+                return textView;
             }
         });
 

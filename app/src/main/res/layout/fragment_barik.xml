@@ -43,13 +43,13 @@
         android:layout_height="5dp"
         android:background="#999292"
         android:layout_marginTop="5dp"/>
-    <ImageSwitcher
-        android:id="@+id/roBarikimageSwitherTop"
+    <TextSwitcher
+        android:id="@+id/roBariktextSwitherTop"
         android:layout_width="450dp"
         android:layout_height="0dp"
         android:layout_weight="4"
         android:layout_gravity="center"
-        android:background="#000"
+        android:background="@drawable/bounarydesign"
         android:scaleX=".8"
         android:scaleY=".8" />
     <TextSwitcher
@@ -78,7 +78,8 @@
             android:textSize="20sp"
             android:textColor="#000000"
             android:hint="Please Insert your Voice"
-            android:id="@+id/userVoiceTextBarik"/>
+            android:id="@+id/userVoiceTextBarik"
+            android:gravity="center_horizontal" />
 
 
     </LinearLayout>
@@ -89,38 +90,38 @@
         android:layout_weight="2.5"
         android:orientation="horizontal">
 
-        <ImageSwitcher
-            android:id="@+id/roBarikimageSwitherLeft"
+        <TextSwitcher
+            android:id="@+id/roBariktextSwitherLeft"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
-        <ImageSwitcher
-            android:id="@+id/roBarikimageSwitherMiddle"
+        <TextSwitcher
+            android:id="@+id/roBariktextSwitherMiddle"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
-        <ImageSwitcher
-            android:id="@+id/roBarikimageSwitherRight"
+        <TextSwitcher
+            android:id="@+id/roBariktextSwitherRight"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:background="#000"
+            android:background="@drawable/bounarydesign"
             android:layout_weight="1"
             android:scaleX=".8"
             android:scaleY=".8">
-        </ImageSwitcher>
+        </TextSwitcher>
 
 
     </LinearLayout>

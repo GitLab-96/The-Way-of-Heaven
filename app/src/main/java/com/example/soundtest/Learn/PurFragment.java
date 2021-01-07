@@ -31,7 +31,7 @@ import static android.app.Activity.RESULT_OK;
  * A simple {@link Fragment} subclass.
  */
 public class PurFragment extends Fragment {
-    private ImageSwitcher topSwitcher_roPur,leftSwitcher_roPur,rightSwitcher_roPur,middleSwitcher_roPur;
+    private TextSwitcher topSwitcher_roPur,leftSwitcher_roPur,rightSwitcher_roPur,middleSwitcher_roPur;
     private TextSwitcher textSwitcherPur;
     private ImageButton previousBtn,replayBtn,nextBtn,micButton,compareButtn;
     TextView userVoiceConvertPur;
@@ -40,39 +40,36 @@ public class PurFragment extends Fragment {
     private int currenthorkot = 0;
     int position  = -1;
 
-    int[] roPurTopImage = {
+    String[] roPurTopImage = {
 
-          //  R.drawable.amara,
-            R.drawable.rusulun,
-            R.drawable.garkan,
-            R.drawable.quranan,
-
-
+            "اَمٛرَ",
+            "رُسُلٌ",
+            "غَرٛقًا",
+            "قُرٛأٰنًا",
     };
 
 
 
-    int[] roPurRightImage = {
+    String[] roPurRightImage = {
 
-//            R.drawable.amara,
-//            R.drawable.amara,
-//            R.drawable.amara,
-            R.drawable.quranan,
-
-
+            "اَمٛرَ",
+            "اَمٛرَ",
+            "اَمٛرَ",
+            "قُرٛأٰنًا",
     };
-    int[] roPurMidleImage = {
-            R.drawable.book11,
-            R.drawable.rusulun,
-            R.drawable.rusulun,
-            R.drawable.quranan,
-    };
-    int[] roPurLeftImage = {
+    String[] roPurMidleImage = {
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.garkan,
-            R.drawable.quranan,
+            "",
+            "رُسُلٌ",
+            "رُسُلٌ",
+            "قُرٛأٰنًا",
+    };
+    String[] roPurLeftImage = {
+
+            "",
+            "",
+            "غَرٛقًا",
+            "قُرٛأٰنًا",
     };
 
     String[] presetpronunciation = {
@@ -107,9 +104,9 @@ public class PurFragment extends Fragment {
         compareButtn = view.findViewById(R.id.compareBtnPur);
 
         topSwitcher_roPur = view.findViewById(R.id.roMotaimageSwitherTop);
-        leftSwitcher_roPur = view.findViewById(R.id.roMotaimageSwitherLeft);
-        middleSwitcher_roPur = view.findViewById(R.id.roMotaimageSwitherMiddle);
-        rightSwitcher_roPur = view.findViewById(R.id.roMotaimageSwitherRight);
+        leftSwitcher_roPur = view.findViewById(R.id.roMotatextSwitherLeft);
+        middleSwitcher_roPur = view.findViewById(R.id.roMotatextSwitherMiddle);
+        rightSwitcher_roPur = view.findViewById(R.id.roMotatextSwitherRight);
         userVoiceConvertPur = view.findViewById(R.id.userVoiceTextPur);
         textSwitcherPur = view.findViewById(R.id.textSwitcherPurPronunciation);
 
@@ -132,38 +129,42 @@ public class PurFragment extends Fragment {
         topSwitcher_roPur.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                topSwitcher_roPur.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
         rightSwitcher_roPur.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                rightSwitcher_roPur.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         middleSwitcher_roPur.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                middleSwitcher_roPur.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         leftSwitcher_roPur.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                leftSwitcher_roPur.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
@@ -210,10 +211,10 @@ public class PurFragment extends Fragment {
                 if(position<roPurTopImage.length-1){
 
                     position = position+1;
-                    topSwitcher_roPur.setBackgroundResource(roPurTopImage[position]);
-                    rightSwitcher_roPur.setBackgroundResource(roPurRightImage[position]);
-                    middleSwitcher_roPur.setBackgroundResource(roPurMidleImage[position]);
-                    leftSwitcher_roPur.setBackgroundResource(roPurLeftImage[position]);
+                    topSwitcher_roPur.setText(roPurTopImage[position]);
+                    rightSwitcher_roPur.setText(roPurRightImage[position]);
+                    middleSwitcher_roPur.setText(roPurMidleImage[position]);
+                    leftSwitcher_roPur.setText(roPurLeftImage[position]);
                     textSwitcherPur.setText(presetpronunciation[position]);
 
                     try {
@@ -238,10 +239,10 @@ public class PurFragment extends Fragment {
                 if(position>0){
 
                     position = position-1;
-                    topSwitcher_roPur.setBackgroundResource(roPurTopImage[position]);
-                    rightSwitcher_roPur.setBackgroundResource(roPurRightImage[position]);
-                    middleSwitcher_roPur.setBackgroundResource(roPurMidleImage[position]);
-                    leftSwitcher_roPur.setBackgroundResource(roPurLeftImage[position]);
+                    topSwitcher_roPur.setText(roPurTopImage[position]);
+                    rightSwitcher_roPur.setText(roPurRightImage[position]);
+                    middleSwitcher_roPur.setText(roPurMidleImage[position]);
+                    leftSwitcher_roPur.setText(roPurLeftImage[position]);
                     textSwitcherPur.setText(presetpronunciation[position]);
                     try {
                         roPurMedia.stop();

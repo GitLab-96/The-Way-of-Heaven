@@ -74,7 +74,7 @@ public class SurahLearn extends Fragment {
             R.drawable.alamtarokaifa,
             R.drawable.alamyajal,
             R.drawable.waarsalaalaihim,
-            R.drawable.tarmihimbihijaroh,
+         //   R.drawable.tarmihimbihijaroh,
             R.drawable.fajaalahumkaasfimmakul,
 
     };

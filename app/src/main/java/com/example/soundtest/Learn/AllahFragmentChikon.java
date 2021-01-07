@@ -32,7 +32,7 @@ import static android.app.Activity.RESULT_OK;
  */
 public class AllahFragmentChikon extends Fragment {
 
-    private ImageSwitcher topSwitchermota,leftSwitchermota,rightSwitchermota,middleSwitchermota;
+    private TextSwitcher topSwitchermota,leftSwitchermota,rightSwitchermota,middleSwitchermota;
     private ImageButton previousBtn,replayBtn,nextBtn,micButton,compareButtn;
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     TextView userVoiceConvertPur;
@@ -41,28 +41,30 @@ public class AllahFragmentChikon extends Fragment {
     private int currenthorkot = 0;
     int position  = -1;
 
-    int[] motaTopImage = {
-            R.drawable.bismillahi,
-            R.drawable.balillahi,
-            R.drawable.dinillahi,
+    String[] motaTopImage = {
+            "بِسٛمِ اللّٰهِ",
+            "دِيٛنِ اللّٰهِ",
+            "بَلِ اللّٰهِ",
+
 
     };
 
-    int[] motaRightImage = {
-            R.drawable.bismillahi,
-            R.drawable.bismillahi,
-            R.drawable.bismillahi,
+    String[] motaRightImage = {
+            "بِسٛمِ اللّٰهِ",
+            "بِسٛمِ اللّٰهِ",
+            "بِسٛمِ اللّٰهِ",
+
 
     };
-    int[] motaMidleImage = {
-            R.drawable.book11,
-            R.drawable.balillahi,
-            R.drawable.balillahi,
+    String[] motaMidleImage = {
+            "",
+            "بَلِ اللّٰهِ",
+            "بَلِ اللّٰهِ",
     };
-    int[] motaLeftImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.dinillahi,
+    String[] motaLeftImage = {
+            "",
+            "",
+            "دِيٛنِ اللّٰهِ",
     };
 
     String[] presetpronunciation = {
@@ -92,10 +94,10 @@ public class AllahFragmentChikon extends Fragment {
         micButton = view.findViewById(R.id.chikonmicBtnAllah);
         compareButtn = view.findViewById(R.id.chikoncompareBtnAllah);
 
-        topSwitchermota = view.findViewById(R.id.chikonimageSwitherTop);
-        leftSwitchermota = view.findViewById(R.id.chikonimageSwitherLeft);
-        middleSwitchermota = view.findViewById(R.id.chikonimageSwitherMiddle);
-        rightSwitchermota = view.findViewById(R.id.chikonimageSwitherRight);
+        topSwitchermota = view.findViewById(R.id.chikontextSwitherTop);
+        leftSwitchermota = view.findViewById(R.id.chikontextSwitherLeft);
+        middleSwitchermota = view.findViewById(R.id.chikontextSwitherMiddle);
+        rightSwitchermota = view.findViewById(R.id.chikontextSwitherRight);
 
 
         userVoiceConvertPur = view.findViewById(R.id.chikonuserVoiceTextAllah);
@@ -120,38 +122,42 @@ public class AllahFragmentChikon extends Fragment {
         topSwitchermota.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                topSwitchermota.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
         rightSwitchermota.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                rightSwitchermota.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         middleSwitchermota.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                middleSwitchermota.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         leftSwitchermota.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                leftSwitchermota.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         compareButtn.setOnClickListener(new View.OnClickListener() {
@@ -195,10 +201,10 @@ public class AllahFragmentChikon extends Fragment {
                 if(position<motaTopImage.length-1){
 
                     position = position+1;
-                    topSwitchermota.setBackgroundResource(motaTopImage[position]);
-                    rightSwitchermota.setBackgroundResource(motaRightImage[position]);
-                    middleSwitchermota.setBackgroundResource(motaMidleImage[position]);
-                    leftSwitchermota.setBackgroundResource(motaLeftImage[position]);
+                    topSwitchermota.setText(motaTopImage[position]);
+                    rightSwitchermota.setText(motaRightImage[position]);
+                    middleSwitchermota.setText(motaMidleImage[position]);
+                    leftSwitchermota.setText(motaLeftImage[position]);
                     textSwitcherPur.setText(presetpronunciation[position]);
 
                     try {
@@ -223,10 +229,10 @@ public class AllahFragmentChikon extends Fragment {
                 if(position>0){
 
                     position = position-1;
-                    topSwitchermota.setBackgroundResource(motaTopImage[position]);
-                    rightSwitchermota.setBackgroundResource(motaRightImage[position]);
-                    middleSwitchermota.setBackgroundResource(motaMidleImage[position]);
-                    leftSwitchermota.setBackgroundResource(motaLeftImage[position]);
+                    topSwitchermota.setText(motaTopImage[position]);
+                    rightSwitchermota.setText(motaRightImage[position]);
+                    middleSwitchermota.setText(motaMidleImage[position]);
+                    leftSwitchermota.setText(motaLeftImage[position]);
 
                     try {
                         motaMedia.stop();

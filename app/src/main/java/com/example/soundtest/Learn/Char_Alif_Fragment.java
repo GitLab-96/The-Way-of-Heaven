@@ -35,7 +35,7 @@ import static android.app.Activity.RESULT_OK;
 public class Char_Alif_Fragment extends Fragment {
 
 
-    private ImageSwitcher top_Switcher_char_alif,left_Switcher_char_alif,right_Switcher_char_alif,middle_Switcher_char_alif;
+    private TextSwitcher top_Switcher_char_alif,left_Switcher_char_alif,right_Switcher_char_alif,middle_Switcher_char_alif;
     private TextSwitcher textSwitcherCharAlifModd;
     private ImageButton previousBtn,replayBtn,nextBtn,micButton,compareButton;
     private TextView userVoiceTextCharAlif;
@@ -44,43 +44,42 @@ public class Char_Alif_Fragment extends Fragment {
     int position  = -1;
     private  static final int REQUEST_CODE_SPEECH_INPUT = 1000;
 
-    int[] charAlifTopImage = {
-            R.drawable.hameeeem,
-         //   R.drawable.aliflaaaammeeem,
-            R.drawable.alalarooooik,
-
-            R.drawable.wamamindaaaabbah,
-            R.drawable.yagfirulimaiyashau,
-
-    };
-
-    int[] charAlifRightImage = {
-            R.drawable.hameeeem,
-            R.drawable.hameeeem,
-            R.drawable.hameeeem,
-
-            R.drawable.wamamindaaaabbah,
-            R.drawable.wamamindaaaabbah,
-            R.drawable.wamamindaaaabbah,
-    };
-    int[] charAlifMidleImage = {
-            R.drawable.book11,
-          //  R.drawable.aliflaaaammeeem,
-          //  R.drawable.aliflaaaammeeem,
-
-            R.drawable.book11,
-            R.drawable.yagfirulimaiyashau,
-            R.drawable.yagfirulimaiyashau,
+    String[] charAlifTopImage = {
+            "حٰم٘",
+            "ال٘مّ٘",
+            "على الأرا٘ئِكِ",
+            "مِنٛ دَا٘بَّةٍ",
+            "مَنٛ يَّشَا٘ئُ",
 
     };
-    int[] charAlifLeftImage = {
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.alalarooooik,
 
-            R.drawable.book11,
-            R.drawable.book11,
-            R.drawable.book11,
+    String[] charAlifRightImage = {
+            "حٰم٘",
+            "حٰم٘",
+            "حٰم٘",
+
+            "مِنٛ دَا٘بَّةٍ",
+            "مِنٛ دَا٘بَّةٍ",
+            "مِنٛ دَا٘بَّةٍ",
+    };
+    String[] charAlifMidleImage = {
+            "",
+            "ال٘مّ٘",
+            "ال٘مّ٘",
+
+             "",
+            "مَنٛ يَّشَا٘ئُ",
+            "مَنٛ يَّشَا٘ئُ",
+    };
+    String[] charAlifLeftImage = {
+            "",
+            "",
+            "على الأرا٘ئِكِ",
+
+            "",
+            "",
+            "مَنٛ يَّشَا٘ئُ",
+
     };
     String[] presetpronunciationModd = {
             "حاميم",
@@ -113,10 +112,10 @@ public class Char_Alif_Fragment extends Fragment {
         previousBtn = view.findViewById(R.id.charAlifIPreviousBtn);
         replayBtn = view.findViewById(R.id.charAlifIRepeatBtn);
         nextBtn = view.findViewById(R.id.charAlifINextBtn);
-        top_Switcher_char_alif = view.findViewById(R.id.charAlifImageSwitherTop);
-        left_Switcher_char_alif = view.findViewById(R.id.charAlifImageSwitherLeft);
-        middle_Switcher_char_alif = view.findViewById(R.id.charAlifImageSwitherMiddle);
-        right_Switcher_char_alif = view.findViewById(R.id.charAlifImageSwitherRight);
+        top_Switcher_char_alif = view.findViewById(R.id.charAlifTextSwitherTop);
+        left_Switcher_char_alif = view.findViewById(R.id.charAlifTextSwitherLeft);
+        middle_Switcher_char_alif = view.findViewById(R.id.charAlifTextSwitherMiddle);
+        right_Switcher_char_alif = view.findViewById(R.id.charAlifTextSwitherRight);
         micButton = view.findViewById(R.id.micBtnCharAlifModd);
         compareButton = view.findViewById(R.id.compareBtnCharAlifModd);
         userVoiceTextCharAlif = view.findViewById(R.id.userVoiceTextCharalif);
@@ -143,38 +142,42 @@ public class Char_Alif_Fragment extends Fragment {
         top_Switcher_char_alif.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                top_Switcher_char_alif.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(150);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
         right_Switcher_char_alif.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                right_Switcher_char_alif.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         middle_Switcher_char_alif.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                middle_Switcher_char_alif.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
         left_Switcher_char_alif.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                left_Switcher_char_alif.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(100);
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         });
 
@@ -222,10 +225,10 @@ public class Char_Alif_Fragment extends Fragment {
                 if(position<charAlifTopImage.length-1){
 
                     position = position+1;
-                    top_Switcher_char_alif.setBackgroundResource(charAlifTopImage[position]);
-                    right_Switcher_char_alif.setBackgroundResource(charAlifRightImage[position]);
-                    middle_Switcher_char_alif.setBackgroundResource(charAlifMidleImage[position]);
-                    left_Switcher_char_alif.setBackgroundResource(charAlifLeftImage[position]);
+                    top_Switcher_char_alif.setText(charAlifTopImage[position]);
+                    right_Switcher_char_alif.setText(charAlifRightImage[position]);
+                    middle_Switcher_char_alif.setText(charAlifMidleImage[position]);
+                    left_Switcher_char_alif.setText(charAlifLeftImage[position]);
 
                     textSwitcherCharAlifModd.setText(presetpronunciationModd[position]);
 
@@ -251,10 +254,10 @@ public class Char_Alif_Fragment extends Fragment {
                 if(position>0){
 
                     position = position-1;
-                    top_Switcher_char_alif.setBackgroundResource(charAlifTopImage[position]);
-                    right_Switcher_char_alif.setBackgroundResource(charAlifRightImage[position]);
-                    middle_Switcher_char_alif.setBackgroundResource(charAlifMidleImage[position]);
-                    left_Switcher_char_alif.setBackgroundResource(charAlifLeftImage[position]);
+                    top_Switcher_char_alif.setText(charAlifTopImage[position]);
+                    right_Switcher_char_alif.setText(charAlifRightImage[position]);
+                    middle_Switcher_char_alif.setText(charAlifMidleImage[position]);
+                    left_Switcher_char_alif.setText(charAlifLeftImage[position]);
 
                     textSwitcherCharAlifModd.setText(presetpronunciationModd[position]);
                     try {

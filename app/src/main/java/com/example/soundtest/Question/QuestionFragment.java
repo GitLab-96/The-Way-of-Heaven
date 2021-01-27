@@ -29,9 +29,11 @@ public class QuestionFragment extends Fragment {
 
     private EditText typeQusetionET;
     private ImageView sendQuestionBttn;
+
     private TabLayout questionTabLayout;
     private ViewPager quetionviewPager;
     private QuestionAccessAdapter questionAccessAdapter;
+
     private String currentUserID;
     public FirebaseAuth mAuth;
     private DatabaseReference questionRef;

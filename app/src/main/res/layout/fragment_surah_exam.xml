@@ -238,7 +238,7 @@
             android:gravity="center"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:text="নিচের হরফ গুলির নাম বলেন ।"
+            android:text="নিচের আয়াত গুলোর উচ্চারণ  বলেন ।"
             android:textSize="18sp"
             android:background="#fff"
             android:padding="5dp"
@@ -248,10 +248,10 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             android:id="@+id/testSwitcherPronunciation"/>
-        <ImageSwitcher
-            android:id="@+id/imageSwitcherOralQuestion"
-            android:layout_width="220dp"
-            android:layout_height="120dp"
+        <TextSwitcher
+            android:id="@+id/textSwitcherOralQuestionTS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:background="#fff"/>

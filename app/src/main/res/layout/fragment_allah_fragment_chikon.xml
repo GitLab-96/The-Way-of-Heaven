@@ -62,7 +62,8 @@
             android:textSize="20sp"
             android:textColor="#000000"
             android:hint="Please Insert your Voice"
-            android:id="@+id/chikonuserVoiceTextAllah"/>
+            android:id="@+id/chikonuserVoiceTextAllah"
+            android:gravity="center_horizontal" />
 
 
     </LinearLayout>

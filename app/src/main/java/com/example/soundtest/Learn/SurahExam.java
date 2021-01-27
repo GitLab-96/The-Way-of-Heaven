@@ -46,7 +46,7 @@ public class SurahExam extends Fragment {
     private static TextView your_marks_sura;
     private TextView MCQ;
     private TextView oral;
-    private ImageSwitcher imageSwitcherOralQuestion;
+    private TextSwitcher textSwitcherOralQuestion;
     private TextSwitcher textSwitchermultipleExam,textSwitcherPronunciation,answerTextSwitcher;
     private Typeface typeface;
     private RadioGroup radioGroup;
@@ -74,30 +74,31 @@ public class SurahExam extends Fragment {
             "কুরান মাজিদের সর্ব প্রথম সূরা কোনটি ?",
             "সূরা ফাতেহার অপর নাম কি ?",
     };
-    int[] horof = {
-//            R.drawable.seen,
-//        //    R.drawable.ba,
-//            R.drawable.zim,
-//       //     R.drawable.alif,
-//            R.drawable.ain,
-//            R.drawable.laaam,
-//            R.drawable.kaf,
-//            R.drawable.dal,
-//            R.drawable.sheen,
-//            R.drawable.nun,
+    String[] horof = {
+
+            "الرَّحٛمٰنِ الرَّحِيٛمِ۞",
+            "وَاَرٛسَلَ عَلَيٛهِمٛ طَيٛرًا اَبَابِيٛل۞",
+            "وَٲٰمَنَهُمٛ مِنٛ جُوٛعٍ۞",
+            "فويل  للمصلين",
+            "ان شانئك هو الابتر",
+            "فسبح بحمد ربك واستغفر",
+            "ما اغني عنه ماله وما كسب",
+            "ومن شر النفاثات في العقد",
+            "من الجنة والناس",
+            "اذا جاء نصر الله والفتح",
 
     };
     String[] presetpronunciation = {
-            "سين",
-            "باء",
-            "جيم",
-            "الف",
-            "عين",
-            "لام",
-            "كاف",
-            "دال",
-            "شين",
-            "نون",
+            "الرحمن الرحيم",
+            "وارسل عليهم طيرا ابابيل",
+            "وامنهم من خوف",
+            "فويل  للمصلين",
+            "ان شانئك هو الابتر",
+            "فسبح بحمد ربك واستغفر",
+            "ما اغني عنه ماله وما كسب",
+            "ومن شر النفاثات في العقد",
+            "من الجنة والناس",
+            "اذا جاء نصر الله والفتح",
     };
     String[] presetMultipleAnswer = {
             "সাত টি ।",
@@ -130,7 +131,7 @@ public class SurahExam extends Fragment {
 
         examNextBtn = view.findViewById(R.id.examNextBttn);
         examMicBtn = view.findViewById(R.id.examMicBtn);
-        imageSwitcherOralQuestion = view.findViewById(R.id.imageSwitcherOralQuestion);
+        textSwitcherOralQuestion = view.findViewById(R.id.textSwitcherOralQuestionTS);
         textSwitchermultipleExam = view.findViewById(R.id.multipleQuestionSwitcer);
         textSwitcherPronunciation = view.findViewById(R.id.testSwitcherPronunciation);
         answerTextSwitcher = view.findViewById(R.id.multipleAnsTS);
@@ -256,10 +257,11 @@ public class SurahExam extends Fragment {
                     textSwitchermultipleExam.setText(multipleQuestion[position]);
                     answerTextSwitcher.setText(presetMultipleAnswer[position]);
                     textSwitcherPronunciation.setText(presetpronunciation[position]);
-                    imageSwitcherOralQuestion.setBackgroundResource(horof[position]);
+                    textSwitcherOralQuestion.setText(horof[position]);
                 }
-            }
-        });
+                   }
+        }
+        );
         examMicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -281,13 +283,15 @@ public class SurahExam extends Fragment {
 
     private void SwitcherTask() {
 
-        imageSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
+        textSwitcherOralQuestion.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView = new ImageView(getContext());
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT));
-                imageSwitcherOralQuestion.setBackgroundResource(R.drawable.book11);
-                return imageView;
+                TextView textView = new TextView(getContext());
+                textView.setTextSize(20);
+                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setGravity(Gravity.START);
+                textView.setText("الرحمن الرحيم");
+                return textView;
             }
         });
 

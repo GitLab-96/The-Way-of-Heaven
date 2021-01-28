@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
 import android.speech.RecognizerIntent;
+import android.text.Layout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -66,7 +67,7 @@ public class SurahLearn extends Fragment {
 
 
     String[] fateha = {
-
+            "بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "اَلٛحَمٛدُلِلّٰهِ رَبِّ الٛعٰلَمِيٛنَ۞",
             "الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "مَالِكِ يَوٛمِ الدِّينَ۞",
@@ -80,6 +81,7 @@ public class SurahLearn extends Fragment {
 
     };
     String[]  feel = {
+            "بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "اَلَمٛ تَرَكَيفَ فَعَلَ رَبُّكَ بِاَصٛحٰبِ الٛفِيٛلِ۞",
             "اَلَمٛ يَجٛعَلٛ كَيٛدَهُمٛ فِيٛ تَضٛلِيٛلِ۞",
             "وَاَرٛسَلَ عَلَيٛهِمٛ طَيٛرًا اَبَابِيٛل۞",
@@ -88,6 +90,7 @@ public class SurahLearn extends Fragment {
     };
 
     String[]  quraish = {
+            "بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "لِٳِيٛلٰفِ قُرَيٛشٍ۞",
             "ٳِيٛلٰفِهِمٛ رِحٛلَتَ الشِّتاٙئِ وَالصَّيٛفِ۞",
             "فَلٛيَعٛبُدُوٛ رَبَّ هٰذَالٛبَيٛتِ۞",
@@ -95,6 +98,7 @@ public class SurahLearn extends Fragment {
             "وَٲٰمَنَهُمٛ مِنٛ جُوٛعٍ۞",
     };
     String[]  maun = {
+            "بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "لِٳِيٛلٰفِ قُرَيٛشٍ۞",
             "ٳِيٛلٰفِهِمٛ رِحٛلَتَ الشِّتاٙئِ وَالصَّيٛفِ۞",
             "فَلٛيَعٛبُدُوٛ رَبَّ هٰذَالٛبَيٛتِ۞",
@@ -102,6 +106,7 @@ public class SurahLearn extends Fragment {
             "وَٲٰمَنَهُمٛ مِنٛ جُوٛعٍ۞",
     };
     String[]  kaosar = {
+            "بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "لِٳِيٛلٰفِ قُرَيٛشٍ۞",
             "ٳِيٛلٰفِهِمٛ رِحٛلَتَ الشِّتاٙئِ وَالصَّيٛفِ۞",
             "فَلٛيَعٛبُدُوٛ رَبَّ هٰذَالٛبَيٛتِ۞",
@@ -109,6 +114,7 @@ public class SurahLearn extends Fragment {
             "وَٲٰمَنَهُمٛ مِنٛ جُوٛعٍ۞",
     };
     String[]  kafirun = {
+            "بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "لِٳِيٛلٰفِ قُرَيٛشٍ۞",
             "ٳِيٛلٰفِهِمٛ رِحٛلَتَ الشِّتاٙئِ وَالصَّيٛفِ۞",
             "فَلٛيَعٛبُدُوٛ رَبَّ هٰذَالٛبَيٛتِ۞",
@@ -116,6 +122,7 @@ public class SurahLearn extends Fragment {
             "وَٲٰمَنَهُمٛ مِنٛ جُوٛعٍ۞",
     };
     String[]  nasr = {
+            "بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "لِٳِيٛلٰفِ قُرَيٛشٍ۞",
             "ٳِيٛلٰفِهِمٛ رِحٛلَتَ الشِّتاٙئِ وَالصَّيٛفِ۞",
             "فَلٛيَعٛبُدُوٛ رَبَّ هٰذَالٛبَيٛتِ۞",
@@ -123,6 +130,7 @@ public class SurahLearn extends Fragment {
             "وَٲٰمَنَهُمٛ مِنٛ جُوٛعٍ۞",
     };
     String[]  lahab = {
+            "بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "لِٳِيٛلٰفِ قُرَيٛشٍ۞",
             "ٳِيٛلٰفِهِمٛ رِحٛلَتَ الشِّتاٙئِ وَالصَّيٛفِ۞",
             "فَلٛيَعٛبُدُوٛ رَبَّ هٰذَالٛبَيٛتِ۞",
@@ -130,6 +138,7 @@ public class SurahLearn extends Fragment {
             "وَٲٰمَنَهُمٛ مِنٛ جُوٛعٍ۞",
     };
     String[]  ikhlas = {
+            "بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "لِٳِيٛلٰفِ قُرَيٛشٍ۞",
             "ٳِيٛلٰفِهِمٛ رِحٛلَتَ الشِّتاٙئِ وَالصَّيٛفِ۞",
             "فَلٛيَعٛبُدُوٛ رَبَّ هٰذَالٛبَيٛتِ۞",
@@ -137,6 +146,7 @@ public class SurahLearn extends Fragment {
             "وَٲٰمَنَهُمٛ مِنٛ جُوٛعٍ۞",
     };
     String[]  falak = {
+            "بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "لِٳِيٛلٰفِ قُرَيٛشٍ۞",
             "ٳِيٛلٰفِهِمٛ رِحٛلَتَ الشِّتاٙئِ وَالصَّيٛفِ۞",
             "فَلٛيَعٛبُدُوٛ رَبَّ هٰذَالٛبَيٛتِ۞",
@@ -144,6 +154,7 @@ public class SurahLearn extends Fragment {
             "وَٲٰمَنَهُمٛ مِنٛ جُوٛعٍ۞",
     };
     String[]  nas = {
+            "بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞",
             "لِٳِيٛلٰفِ قُرَيٛشٍ۞",
             "ٳِيٛلٰفِهِمٛ رِحٛلَتَ الشِّتاٙئِ وَالصَّيٛفِ۞",
             "فَلٛيَعٛبُدُوٛ رَبَّ هٰذَالٛبَيٛتِ۞",
@@ -271,6 +282,7 @@ public class SurahLearn extends Fragment {
 
 
     String[] fatehapronunciation = {
+            "بسم الله الرحمن الرحيم",
             "الحمد لله رب العالمين",
             "الرحمن الرحيم",
             "مالك يوم الدين",
@@ -282,6 +294,7 @@ public class SurahLearn extends Fragment {
     };
 
     String[] feelpronunciation = {
+            "بسم الله الرحمن الرحيم",
             "الم تر كيف فعل ربك باصاب الفيل",
             "الم يجعل كيدهم في تضليل",
             "وارسل عليهم طيرا ابابيل",
@@ -289,6 +302,7 @@ public class SurahLearn extends Fragment {
             "فجعلهم كعصف ماكول",
     };
     String[] quraishpronunciation = {
+            "بسم الله الرحمن الرحيم",
             "لايلاف  قريش",
             "ايلافهم رحله الشتاء والصيف",
             "فليعبدوا رب هذا البيت",
@@ -296,6 +310,7 @@ public class SurahLearn extends Fragment {
             "وامنهم من خوف",
     };
     String[] maunpronunciation = {
+            "بسم الله الرحمن الرحيم",
             "ارايت الذي يكذب باالدين",
             "فذالك الذي يدع اليتيم",
             "ولا يحض علي طعام المسكين",
@@ -305,12 +320,14 @@ public class SurahLearn extends Fragment {
             "ويمنعون الماعون",
     };
     String[] kaosarpronunciation = {
+            "بسم الله الرحمن الرحيم",
             "انا اعطيناك الكوثر",
             "فصل لربك وانحر",
             "ان شانئك هو الابتر",
 
     };
     String[] kafirunpronunciation = {
+            "بسم الله الرحمن الرحيم",
             "قل ياايها اللكافرون",
             "لا اعبد ماتعبدون",
             "ولا انتم عابدون ما اعبد",
@@ -319,12 +336,14 @@ public class SurahLearn extends Fragment {
             "لكم دينكم ولي دين",
     };
     String[] nasrpronunciation = {
+            "بسم الله الرحمن الرحيم",
             "اذا جاء نصر الله والفتح",
             "ورايت الناس يدخلون في دين الله افواجا",
             "فسبح بحمد ربك واستغفر",
             "انه كان توابا",
     };
     String[] lahabpronunciation = {
+            "بسم الله الرحمن الرحيم",
             "تبت  يدا ابي لهب وتب",
             "ما اغني عنه ماله وما كسب",
             "سيصلى نارا ذات لهب",
@@ -332,12 +351,14 @@ public class SurahLearn extends Fragment {
             "في جيدها حبل  من مسد",
     };
     String[] ikhlaspronunciation = {
+            "بسم الله الرحمن الرحيم",
             "قل هو الله احد",
             "الله الصمد",
             "لم يلد ولم يولد",
             "ولم يكن له كفوا احد",
     };
     String[] falakpronunciation = {
+            "بسم الله الرحمن الرحيم",
             "قل اعوذ برب الفلق",
             "من شر ما خلق",
             "ومن شر غاسق اذا وقب",
@@ -345,6 +366,7 @@ public class SurahLearn extends Fragment {
             "ومن شر حاسد اذا حسد",
     };
     String[] naspronunciation = {
+            "بسم الله الرحمن الرحيم",
             "قل اعوذ برب الناس",
             "ملك الناس",
             "اله الناس",
@@ -1319,7 +1341,7 @@ public class SurahLearn extends Fragment {
                 TextView textView = new TextView(getContext());
                 textView.setTextSize(50);
                 textView.setText("بِسٛمِ اللّٰهِ الرَّحٛمٰنِ الرَّحِيٛمِ۞");
-                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
                 textView.setGravity(Gravity.CENTER);
                 return textView;
             }
@@ -1331,9 +1353,9 @@ public class SurahLearn extends Fragment {
             @Override
             public View makeView() {
                 TextView textView = new TextView(getContext());
-                textView.setTextSize(20);
+                textView.setTextSize(25);
                 textView.setText("শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।");
-                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
                 textView.setGravity(Gravity.CENTER);
                 return textView;
             }

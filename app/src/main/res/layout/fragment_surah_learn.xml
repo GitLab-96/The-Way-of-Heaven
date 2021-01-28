@@ -11,7 +11,8 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="gone"
 
         android:id="@+id/suraLearnListView"/>
 
@@ -20,10 +21,10 @@
         android:id="@+id/learnlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="15"
-        android:padding="5dp"
+        android:weightSum="13.4"
+        android:padding="@dimen/_5sdp"
         android:background="@color/defoultColor"
-        android:visibility="gone"
+
         android:orientation="vertical">
 
 
@@ -32,7 +33,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:weightSum="5"
-            android:orientation="horizontal">
+           >
 
             <TextView
                 android:id="@+id/suraName"
@@ -42,15 +43,8 @@
                 android:gravity="right"
 
                 android:text="সূরা ফাতিহা"
-                android:textColor="#000000"
-                android:textSize="30sp" />
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:layout_width="0dp"
-                android:layout_weight="1.5"
-                android:layout_height="wrap_content"
-                android:id="@+id/surahSpinner"
-                android:layout_marginTop="10dp"/>
+                android:textColor="@color/blackColor"
+                android:textSize="@dimen/_30sdp" />
         </LinearLayout>
 
 
@@ -69,11 +63,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="6"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/bounarydesign"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@color/whiteColor"
+                android:textAlignment="center"
                 android:scaleX=".9"
-                android:scaleY=".8" />
+                android:scaleY=".8"
+                android:gravity="center_horizontal" />
 
 
 
@@ -92,11 +87,11 @@
                 android:layout_weight="2"
                 android:gravity="center"
                 android:background="#C2BBBB"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:padding="5dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
                 android:textSize="@dimen/_15sdp" />
 
             <TextSwitcher
@@ -104,10 +99,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:layout_margin="5dp"
-                android:background="@drawable/bounarydesign"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@color/whiteColor"
                 android:gravity="center"
-                android:padding="5dp"
+                android:padding="@dimen/_5sdp"
                 android:textSize="@dimen/_15sdp" />
 
         </LinearLayout>
@@ -117,7 +112,7 @@
             android:background="#FFFFFF"
             android:layout_height="0dp"
             android:layout_weight=".2"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/_5sdp"
             android:id="@+id/suraSeekBar"/>
 
         <LinearLayout
@@ -125,37 +120,37 @@
             android:layout_height="0dp"
             android:layout_weight="1.5"
             android:gravity="center"
+            android:weightSum="3"
             android:orientation="horizontal">
 
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="80dp"
-                android:padding="50dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:background="@drawable/ic_skip_previous_black_24dp"
                 android:id="@+id/surapreviousBtn"/>
 
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="80dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:id="@+id/surareplayBtn"
-                android:layout_margin="10dp"
                 android:background="@drawable/ic_repeat_one_black_24dp"/>
 
 
             <ImageButton
                 android:id="@+id/suranextBtn"
-                android:layout_width="100dp"
-                android:layout_height="79dp"
-                android:layout_marginLeft="30dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:background="@drawable/ic_skip_next_black_24dp" />
 
 
         </LinearLayout>
         <androidx.appcompat.widget.AppCompatSeekBar
             android:layout_width="match_parent"
-            android:background="#FFFFFF"
-            android:layout_margin="5dp"
+            android:background="@color/whiteColor"
+            android:layout_margin="@dimen/_5sdp"
             android:layout_height="0dp"
             android:layout_weight=".2"
             android:id="@+id/suraSeekBarIn"/>
@@ -164,22 +159,23 @@
             android:layout_height="0dp"
             android:layout_weight="1.5"
             android:gravity="center_horizontal"
-            android:weightSum="3"
+            android:weightSum="2"
+            android:paddingTop="@dimen/_10sdp"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/suramicBtn"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginRight="25dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:background="@drawable/ic_mic_none_black_24dp"
                 android:layout_gravity="center"/>
 
             <ImageButton
                 android:id="@+id/suracompareBtn"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="25dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:background="@drawable/ic_compare_arrows_black_24dp"
                 android:layout_gravity="center"/>
         </LinearLayout>

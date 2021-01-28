@@ -287,7 +287,7 @@ public class SurahExam extends Fragment {
             @Override
             public View makeView() {
                 TextView textView = new TextView(getContext());
-                textView.setTextSize(20);
+                textView.setTextSize(50);
                 textView.setTextColor(getResources().getColor(R.color.colorAccent));
                 textView.setGravity(Gravity.START);
                 textView.setText("الرحمن الرحيم");

@@ -2,8 +2,10 @@ package com.example.soundtest;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
      private FirebaseAuth mAuth;
      private DatabaseReference RootRef;
 
-
+    boolean exit = false;
     ProgressBar VerticalProgressBar;
 
     Handler handler = new Handler();
@@ -261,4 +263,48 @@ public class MainActivity extends AppCompatActivity {
         startActivity(loginIntent);
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Do You Exit ?");
+        builder.setMessage("Are you Sure do you want to quit ?");
+        builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+
+
+
+                exit = true;
+                getOutApp(exit);
+
+
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+
+                exit = false;
+                getOutApp(exit);
+            }
+        });
+
+        builder.create();
+        builder.show();
+    }
+
+    public void  getOutApp(boolean exit){
+        if (exit==true){
+            super.onBackPressed();
+        }
+        else {
+            Toast.makeText(this, "Thanks for Reciting the Holly Quran", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }

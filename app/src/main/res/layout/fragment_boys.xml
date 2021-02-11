@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="15"
     android:background="#7EC2C7D8"
@@ -16,37 +16,44 @@
         android:layout_weight="1"
         android:text="দুই রাকাত নামাজে ৬০ টি মাসালাহ"
         android:layout_margin="10dp"
-        android:textColor="#000"
-        android:textSize="25sp"
+        android:textColor="@color/blackColor"
+        android:background="@color/whiteColor"
+        android:textSize="20sp"
         android:padding="5dp"
         android:gravity="center"/>
 
+    <TextSwitcher
+        android:id="@+id/masalahTypeTS"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_margin="5dp"
+        android:textColor="@color/blackColor"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:background="@drawable/bounarydesign"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center"/>
+
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_gravity="center"
-        android:layout_weight="10"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_weight="8"
         android:layout_height="0dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="vertical">
-            <TextSwitcher
-                android:id="@+id/masalahTypeTS"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:textColor="#000"
-                android:textSize="20sp"
-                android:layout_gravity="center"/>
             <ImageSwitcher
                 android:id="@+id/imageSwitcher"
-                android:layout_width="300dp"
-                android:layout_height="380dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/hatuthanboys"
+                android:layout_margin="@dimen/_5sdp"
                 android:layout_gravity="center"/>
-        </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 
@@ -54,17 +61,19 @@
         android:id="@+id/textSwitcher"
         android:layout_width="match_parent"
         android:layout_weight="2"
+        android:background="@drawable/bounarydesign"
+        android:layout_margin="@dimen/_5sdp"
+        android:textAlignment="center"
         android:layout_height="0dp"
-        />
+        android:gravity="center_horizontal" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/_5sdp"
         android:gravity="center"
-
         android:weightSum="3"
         android:orientation="horizontal">
 
@@ -73,7 +82,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/_5sdp"
             android:layout_gravity="center"
             android:background="@drawable/bounarydesign"
             android:id="@+id/preBtn"
@@ -87,7 +96,7 @@
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/_5sdp"
                 android:background="@drawable/bounarydesign"
                 android:id="@+id/playBtnsalah"
                 android:visibility="invisible"
@@ -96,7 +105,7 @@
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/_5sdp"
                 android:id="@+id/pauseBtnsalah"
                 android:background="@drawable/bounarydesign"
                 android:src="@drawable/ic_pause_circle_outline_black_24dp"/>
@@ -108,7 +117,7 @@
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/_5sdp"
             android:layout_weight="1"
             android:background="@drawable/bounarydesign"
             android:id="@+id/nextBtn"

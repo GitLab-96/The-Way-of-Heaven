@@ -1,12 +1,15 @@
 package com.example.soundtest.Salah;
 
+import androidx.annotation.ColorRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import com.example.soundtest.R;
@@ -14,55 +17,52 @@ import com.example.soundtest.Salah.BoysFragment;
 import com.example.soundtest.Salah.GirlsFragment;
 
 public class SalahActivity extends AppCompatActivity {
-    String[] mode;
-    Spinner spinner;
+
+    LinearLayout boys,girls;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salah);
 
-        init();
-        ModeSelection();
+        boys = findViewById(R.id.boysLayout);
+        girls = findViewById(R.id.girlslayout);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,mode);
-        spinner.setAdapter(adapter);
-   }
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.framLayout,new BoysFragment());
+        ft.commit();
 
-   private void init() {
-        mode = getResources().getStringArray(R.array.mode);
-        spinner = findViewById(R.id.speener);
-    }
+        boys.getResources().getColor(R.color.colorAccent);
+        girls.getResources().getDrawable(R.drawable.bounarydesign);
 
-    private void ModeSelection() {
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        boys.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            public void onClick(View v) {
 
-                if(position==0){
-                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.framLayout,new BoysFragment());
-                    ft.commit();
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.framLayout,new BoysFragment());
+                ft.commit();
 
+                boys.getResources().getColor(R.color.colorAccent);
+                girls.getResources().getDrawable(R.drawable.bounarydesign);
 
-
-                }
-                else if(position==1){
-                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.framLayout,new GirlsFragment());
-                    ft.commit();
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
 
+        girls.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-    }
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.framLayout,new GirlsFragment());
+                ft.commit();
+
+                girls.getResources().getColor(R.color.colorAccent);
+                boys.getResources().getDrawable(R.drawable.bounarydesign);
+            }
+        });
 
 
+   }
 }

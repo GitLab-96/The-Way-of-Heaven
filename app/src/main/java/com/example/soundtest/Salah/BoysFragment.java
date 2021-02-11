@@ -269,6 +269,11 @@ public class BoysFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                stopBttn.getResources().getColor(R.color.colorAccent);
+                preBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                nextBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                playBttn.getResources().getDrawable(R.drawable.bounarydesign);
+
                 stopBttn.setVisibility(View.INVISIBLE);
                 playBttn.setVisibility(View.VISIBLE);
                 if (horofmedia == null){
@@ -281,6 +286,11 @@ public class BoysFragment extends Fragment {
         playBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                playBttn.getResources().getColor(R.color.colorAccent);
+                preBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                nextBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                stopBttn.getResources().getDrawable(R.drawable.bounarydesign);
 
                 stopBttn.setVisibility(View.VISIBLE);
                 playBttn.setVisibility(View.INVISIBLE);
@@ -297,6 +307,12 @@ public class BoysFragment extends Fragment {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                nextBtn.getResources().getColor(R.color.colorAccent);
+                preBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                playBttn.getResources().getDrawable(R.drawable.bounarydesign);
+                stopBttn.getResources().getDrawable(R.drawable.bounarydesign);
+
 
                 if(position<masalah.length-1){
 
@@ -315,12 +331,26 @@ public class BoysFragment extends Fragment {
 
                 }
 
+
+
+                nextBtn.getResources().getColor(R.color.colorAccent);
+                preBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                playBttn.getResources().getDrawable(R.drawable.bounarydesign);
+                stopBttn.getResources().getDrawable(R.drawable.bounarydesign);
             }
+
+
+
         });
 
         preBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                preBtn.getResources().getColor(R.color.colorAccent);
+                nextBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                playBttn.getResources().getDrawable(R.drawable.bounarydesign);
+                stopBttn.getResources().getDrawable(R.drawable.bounarydesign);
 
                 if(position>0){
 

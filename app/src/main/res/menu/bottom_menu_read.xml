@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Quran"
+        android:id="@+id/open_quran_Item"
+        android:icon="@drawable/openquran"
+        />
+    <item
+        android:title="Surah"
+        android:id="@+id/sura_Item"
+        android:icon="@drawable/sura"/>
+    <item
+        android:title="Para"
+        android:id="@+id/para_Item"
+        android:icon="@drawable/para"/>
+    <item
+        android:title="Match the verses"
+        android:id="@+id/bookmarks_Item"
+        android:icon="@drawable/quransearch"/>
+
+</menu>

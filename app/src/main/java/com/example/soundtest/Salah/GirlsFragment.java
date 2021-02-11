@@ -273,6 +273,11 @@ public class GirlsFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                pauseButtn.getResources().getColor(R.color.colorAccent);
+                preBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                nextBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                playButtn.getResources().getDrawable(R.drawable.bounarydesign);
+
                 pauseButtn.setVisibility(View.INVISIBLE);
                 playButtn.setVisibility(View.VISIBLE);
                 if (horofmedia == null){
@@ -285,6 +290,10 @@ public class GirlsFragment extends Fragment {
         playButtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                playButtn.getResources().getColor(R.color.colorAccent);
+                preBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                nextBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                pauseButtn.getResources().getDrawable(R.drawable.bounarydesign);
 
                 pauseButtn.setVisibility(View.VISIBLE);
                 playButtn.setVisibility(View.INVISIBLE);
@@ -303,6 +312,11 @@ public class GirlsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(position<masalah.length-1){
+                    nextBtn.getResources().getColor(R.color.colorAccent);
+                    preBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                    playButtn.getResources().getDrawable(R.drawable.bounarydesign);
+                    pauseButtn.getResources().getDrawable(R.drawable.bounarydesign);
+
 
                     position = position+1;
                     imageSwitcher.setBackgroundResource(imageList[position]);
@@ -325,6 +339,12 @@ public class GirlsFragment extends Fragment {
         preBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                preBtn.getResources().getColor(R.color.colorAccent);
+                nextBtn.getResources().getDrawable(R.drawable.bounarydesign);
+                playButtn.getResources().getDrawable(R.drawable.bounarydesign);
+                pauseButtn.getResources().getDrawable(R.drawable.bounarydesign);
+
                 if(position>0){
 
                     position = position-1;

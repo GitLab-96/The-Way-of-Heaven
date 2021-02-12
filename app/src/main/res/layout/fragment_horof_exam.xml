@@ -13,51 +13,51 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Practice Exam : 20"
-        android:textSize="25sp"
         android:layout_weight="1.5"
         android:gravity="center_horizontal"
-        android:textColor="#000000"/>
+        android:text="অনুশীলন : 20"
+        android:textColor="@color/blackColor"
+        android:textSize="@dimen/_20sdp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:weightSum="6"
-        android:layout_weight="1.5"
-        android:padding="5dp"
+        android:weightSum="7"
+        android:layout_weight="2"
+        android:padding="@dimen/_5sdp"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Obtain Marks :"
-            android:textSize="20sp"
-            android:textColor="#000"/>
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="প্রয়োজনীয় নাম্বার :"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/blackColor"/>
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="20sp"
+            android:textSize="@dimen/_15sdp"
             android:text="15"
-            android:textColor="#000"/>
+            android:textColor="@color/blackColor"/>
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="2"
-            android:textSize="20sp"
-            android:text="Your Marks :"
-            android:textColor="#000"/>
+            android:textSize="@dimen/_15sdp"
+            android:text="প্রাপ্ত নাম্বার :"
+            android:textColor="@color/blackColor"/>
 
         <TextView
             android:id="@+id/your_marks_horof"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="20sp"
+            android:textSize="@dimen/_15sdp"
             android:text="00"
-            android:textColor="#000"/>
+            android:textColor="@color/blackColor"/>
     </LinearLayout>
 
 
@@ -65,27 +65,31 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
+        android:weightSum="3"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/multiplechoicetest"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#AFA7A7"
-            android:textColor="#ffffff"
-            android:textSize="25sp"
-            android:padding="5dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blackColor"
+            android:textSize="@dimen/_18sdp"
             android:gravity="center_horizontal"
-            android:text="Multiple Choice Test: "/>
+            android:text="বহু নির্বাচনী প্রশ্ন"/>
         <TextSwitcher
             android:id="@+id/multipleQuestionSwitcer"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
             android:gravity="center"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:background="#fff"
-            android:padding="5dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@color/whiteColor"
+            android:padding="@dimen/_5sdp"
             />
     </LinearLayout>
 
@@ -106,80 +110,80 @@
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp">
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_5sdp">
 
 
             <RadioButton
                 android:id="@+id/option1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text=" ২৯ টি।"
-                android:padding="10dp"
+                android:padding="@dimen/_5sdp"
                 android:checked="false"/>
 
             <RadioButton
                 android:id="@+id/option2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_5sdp"
                 android:text=" ১৪ টি।"/>
             <RadioButton
 
                 android:id="@+id/option3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_5sdp"
                 android:text=" ১৫ টি।"/>
 
 
             <RadioButton
                 android:id="@+id/option4"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="৭ টি।"/>
             <RadioButton
                 android:id="@+id/option5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text=" হলকের শুরু ।"
-                android:padding="10dp"
+                android:padding="@dimen/_5sdp"
                 />
 
 
             <RadioButton
 
                 android:id="@+id/option6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_5sdp"
                 android:text="জিহ্বার গোঁড়া"/>
             <RadioButton
                 android:id="@+id/option7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_5sdp"
                 android:text="তিনটি ।"/>
 
             <RadioButton
                 android:id="@+id/option8"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="১৭ টি।"/>
             <RadioButton
                 android:id="@+id/option9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_5sdp"
                 android:text="উচ্চারণের স্থান"/>
 
             <RadioButton
                 android:id="@+id/option10"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="ফরয"/>
         </RadioGroup>
     </ScrollView>
@@ -189,10 +193,10 @@
         android:layout_width="0dp"
         android:layout_weight="2"
         android:layout_height="match_parent"
-        android:text="MCQ Answer here.."
-        android:textSize="25sp"
+        android:hint="MCQ Answer here.."
+        android:textSize="@dimen/_20sdp"
         android:gravity="center"
-        android:textColor="#000000"
+        android:textColor="@color/blackColor"
         android:id="@+id/selectedItemtextView"/>
 </LinearLayout>
 
@@ -203,7 +207,7 @@
 
     <TextSwitcher
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="@dimen/_30sdp"
         android:visibility="gone"
         android:id="@+id/multipleAnsTS"/>
 
@@ -214,8 +218,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="5dp"
-        android:layout_weight="9"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_weight="10"
         android:weightSum="6"
         android:orientation="vertical">
 
@@ -223,28 +227,28 @@
             android:id="@+id/oralexam"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#AFA7A7"
-            android:textColor="#ffffff"
-            android:padding="3dp"
-            android:textSize="25sp"
+            android:layout_weight="1.2"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/blackColor"
+            android:padding="@dimen/_3sdp"
+            android:textSize="@dimen/_18sdp"
             android:gravity="center_horizontal"
-            android:text="Oral Examination Test: "/>
+            android:text="মৌখিক অনুশীলন"/>
 
         <TextView
             android:id="@+id/textSwitcherOralQuestion"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
+            android:layout_weight="1.3"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="#000000"
+            android:textColor="@color/blackColor"
             android:text="নিচের হরফ গুলির নাম বলেন ।"
-            android:textSize="18sp"
-            android:background="#fff"
-            android:padding="5dp"
+            android:textSize="@dimen/_18sdp"
+            android:background="@color/whiteColor"
+            android:padding="@dimen/_5sdp"
             />
         <TextSwitcher
             android:layout_width="match_parent"
@@ -259,42 +263,45 @@
             android:layout_weight="4"
             android:textAlignment="center"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
-            android:background="#ffffff"/>
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/whiteColor"/>
 
     </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="#000"
-        android:layout_marginTop="10dp"/>
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/blackColor"
+        android:layout_marginTop="@dimen/_5sdp"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/userVoice"
         android:visibility="gone"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_weight="5"
+        android:weightSum="2"
         android:background="@drawable/book11"
         android:gravity="center"
         android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/examMicBtn"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
+           android:padding="@dimen/_10sdp"
             android:background="@drawable/ic_mic_none_black_24dp" />
         <ImageButton
             android:id="@+id/examNextBttn"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginLeft="80dp"
+             android:padding="@dimen/_10sdp"
             android:background="@drawable/next"
             />
     </LinearLayout>

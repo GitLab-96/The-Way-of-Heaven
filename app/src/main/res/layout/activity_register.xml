@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/book11"
     tools:context=".RegisterActivity">
 
     <ScrollView
@@ -17,35 +18,29 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:src="@drawable/book11"
-                android:id="@+id/registerImage"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:scaleType="fitCenter"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/registerImage"
+
                 android:id="@+id/registerEmail"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:hint="Email........."
+                android:textSize="@dimen/_20sdp"
                 android:inputType="textEmailAddress"
                 android:background="@drawable/bounarydesign"
-                android:padding="10dp"
+                android:padding="@dimen/_15sdp"
                 android:drawableStart="@drawable/ic_email_black_24dp"
                 android:drawableLeft="@drawable/ic_email_black_24dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="5dp"/>
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -55,16 +50,17 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:hint="Password........."
+                android:textSize="@dimen/_20sdp"
                 android:inputType="textPassword"
                 android:background="@drawable/bounarydesign"
-                android:padding="10dp"
+                android:padding="@dimen/_15sdp"
                 android:drawableStart="@drawable/ic_lock_outline_black_24dp"
                 android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
-                android:layout_margin="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"/>
 
 
 
@@ -75,15 +71,15 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/register_buttn"
                 android:layout_below="@id/registerPassword"
-                android:padding="4dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
+                android:padding="@dimen/_4sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:text="Create an Account"
                 android:textAllCaps="false"
-                android:textSize="24dp"
-                android:textColor="#000"
+                android:textSize="@dimen/_20sdp"
+                android:textColor="@color/blackColor"
                 android:background="@drawable/bounarydesign"/>
 
             <TextView
@@ -95,12 +91,13 @@
                 android:layout_alignParentLeft="true"
                 android:text="Already Have an Account ?"
                 android:textAlignment="center"
-                android:padding="10dp"
-                android:textColor="#000"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
+                android:padding="@dimen/_15sdp"
+                android:textColor="@color/blackColor"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:gravity="center" />
 
 

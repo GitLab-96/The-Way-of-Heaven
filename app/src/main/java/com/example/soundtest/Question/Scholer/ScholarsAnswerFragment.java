@@ -63,8 +63,14 @@ public class ScholarsAnswerFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
 
-                    TypeQuestionClass p = dataSnapshot1.getValue(TypeQuestionClass.class);
-                    list.add(p);
+
+                    String answer = dataSnapshot1.child("typeAnswer").getValue(String.class);
+
+
+                        TypeQuestionClass p = dataSnapshot1.getValue(TypeQuestionClass.class);
+                        list.add(p);
+
+
                 }
                 adapter = new MyAdapter(getContext(),list);
                 recyclerView.setAdapter(adapter);

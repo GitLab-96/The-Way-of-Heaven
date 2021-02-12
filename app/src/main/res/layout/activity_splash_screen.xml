@@ -20,9 +20,8 @@
         android:layout_height="wrap_content"
         android:text="Welcome To "
         android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:textSize="70dp" />
+        android:textColor="@color/blackColor"
+        android:textSize="@dimen/_50sdp" />
 
         <TextView
             android:id="@+id/way"
@@ -32,8 +31,8 @@
             android:gravity="center"
             android:textStyle="italic"
             android:layout_gravity="center"
-            android:textColor="#000"
-            android:textSize="70dp" />
+            android:textColor="@color/blackColor"
+            android:textSize="@dimen/_50sdp" />
 
         <TextView
             android:id="@+id/splashHeaven"
@@ -41,8 +40,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text=" Heaven"
-            android:textColor="#000"
-            android:textSize="70dp"
+            android:textColor="@color/blackColor"
+            android:textSize="@dimen/_50sdp"
             android:textStyle="italic" />
 
     </LinearLayout>
@@ -55,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_centerInParent="true"
-        app:SpinKit_Color="@color/colorAccent" />
+        app:SpinKit_Color="@color/appsColor" />
 
 
 </RelativeLayout>

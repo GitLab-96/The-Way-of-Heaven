@@ -299,7 +299,7 @@ public class HorofExam extends Fragment {
             public View makeView() {
                 TextView textView = new TextView(getContext());
                 textView.setTextSize(20);
-                textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                textView.setTextColor(getResources().getColor(R.color.blackColor));
                 textView.setGravity(Gravity.START);
                 textView.setText("আরবি হরফ কয়টি ?");
                 return textView;

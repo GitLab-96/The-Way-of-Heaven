@@ -66,21 +66,13 @@ public class ApnarProsnoFragment extends Fragment {
                 list.clear();
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
 
-
-
-                    TypeQuestionClass p = dataSnapshot1.getValue(TypeQuestionClass.class);
-
                     String answer = dataSnapshot1.child("typeAnswer").getValue(String.class);
 
 
-
+                    if (answer!=""){
+                        TypeQuestionClass p = dataSnapshot1.getValue(TypeQuestionClass.class);
                         list.add(p);
-
-
-
-
-
-
+                    }
 
 
                 }

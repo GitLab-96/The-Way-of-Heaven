@@ -5,21 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#7EE0E2EB"
+    android:background="@color/defoultColor"
     tools:context=".Question.ProfileFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#7E8492C7"
+        android:layout_weight="5"
+        android:layout_height="0dp"
+        android:background="@color/defoultColor"
+        android:weightSum="6"
         android:orientation="vertical"
       >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="5">
@@ -27,51 +30,59 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/get_profile_image"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
                 android:src="@drawable/book11"
-                app:civ_border_width="5dp"
-                android:layout_margin="10dp"
-                app:civ_border_color="#070707"/>
+                app:civ_border_width="@dimen/_5sdp"
+                android:layout_margin="@dimen/_10sdp"
+                app:civ_border_color="@color/blackColor"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:background="@drawable/bounarydesign"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:textSize="22sp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:textSize="@dimen/_22sdp"
                     android:textStyle="bold"
                     android:text="Your ID"/>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="12345"/>
+                    android:textAlignment="center"
+                    android:text="12345"
+                    android:gravity="center_horizontal" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="5dp"
-                    android:background="#B192E9"/>
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/blackColor"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Your Progress"
-                    android:textSize="22sp"
+                    android:text="অগ্রগতি "
+                    android:textSize="@dimen/_22sdp"
                     android:textStyle="bold"
                     android:gravity="center"/>
 
-                <androidx.core.widget.ContentLoadingProgressBar
+                <ProgressBar
+                    android:id="@+id/progressBar2"
+                    style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:background="@drawable/bounarydesign"
-                    android:layout_margin="10dp"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+                    android:layout_height="wrap_content"
+                    android:progressBackgroundTint="@color/blackColor"
+                    android:progressTint="@color/appsColor"
+                    android:minWidth="@dimen/_220sdp"
+                    android:minHeight="@dimen/_60sdp" />
 
             </LinearLayout>
 
@@ -82,75 +93,84 @@
         <TextView
             android:id="@+id/get_user_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MD Masihur Rahman"
-            android:padding="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textColor="#0C0C0C"
-            android:textSize="25sp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+
+            android:padding="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textColor="@color/blackColor"
+            android:textSize="@dimen/_20sdp"
             />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:id="@+id/get_user_phone_number"
-            android:padding="5dp"
-            android:textColor="#020202"
-            android:text="Phone Number "
-            android:textSize="20sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:padding="@dimen/_5sdp"
+            android:textColor="@color/blackColor"
+
+            android:textSize="@dimen/_18sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:id="@+id/get_user_email"
-            android:padding="5dp"
-            android:textColor="#020202"
-            android:text="shukhernahor90@gmail.com "
-            android:layout_marginBottom="10dp"
-            android:textSize="20sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:padding="@dimen/_5sdp"
+            android:textColor="@color/blackColor"
+
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:textSize="@dimen/_18sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             />
     </LinearLayout>
-
-
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_margin="5dp"
-        android:background="#ffffff"
+        android:orientation="vertical"
+        android:layout_weight="3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:padding="@dimen/_10sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/whiteColor"
         android:orientation="horizontal"
         android:weightSum="3">
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/_5sdp"
             android:background="@drawable/bounarydesign"
+            android:weightSum="5"
+
             android:layout_weight="1">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
                 android:src="@drawable/book11"
                />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_height="wrap_content"
-                android:text="প্রশ্নের উত্তর"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10"/>
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="প্রশ্নের উত্তর"
+                android:gravity="center_horizontal" />
 
         </LinearLayout>
 
@@ -160,24 +180,26 @@
             android:orientation="vertical"
             android:background="@drawable/bounarydesign"
             android:gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/_5sdp"
+            android:weightSum="5"
             android:layout_weight="1">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
                 android:src="@drawable/book11"
               />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:textAlignment="center"
                 android:layout_margin="5dp"
-                android:layout_height="wrap_content"
-                android:text="অনুত্তরিত প্রশ্ন"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"/>
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="অনুত্তরিত প্রশ্ন"
+                android:gravity="center_horizontal" />
+
 
 
 
@@ -191,25 +213,27 @@
             android:gravity="center"
             android:layout_margin="5dp"
             android:background="@drawable/bounarydesign"
+            android:weightSum="5"
             android:layout_weight="1">
 
             <ImageView
                 android:id="@+id/alemList"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
                 android:src="@drawable/book11"
                 />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_margin="5dp"
-                android:layout_height="wrap_content"
-                android:text="আলেম অনুসরণ"/>
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="আলেম অনুসরণ"
+                android:gravity="center_horizontal" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3" />
+
 
 
 
@@ -221,44 +245,54 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:weightSum="10"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/book11"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/book11"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="সংরক্ষিত পরামর্শ" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:padding="5dp"
+                android:text="সংরক্ষিত পরামর্শ" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:weightSum="10"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/book11"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:padding="@dimen/_5sdp"
+                android:text="সংরক্ষিত প্রশ্ন" />
+
+
+        </LinearLayout>
 
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/book11"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="সংরক্ষিত প্রশ্ন" />
-
-
-    </LinearLayout>
 
 
 

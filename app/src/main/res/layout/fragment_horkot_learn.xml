@@ -7,12 +7,13 @@
     android:orientation="vertical"
     android:padding="5dp"
     android:background="@color/defoultColor"
+
     tools:context=".Learn.HorkotLearn">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:padding="5dp"
         android:orientation="vertical">
         <TextView
@@ -46,16 +47,17 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
 
             <TextSwitcher
                 android:id="@+id/topTextSwitcher"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:textAlignment="center"
                 android:background="@drawable/bounarydesign"
                 android:scaleX=".8"
                 android:scaleY=".8"/>
@@ -68,40 +70,45 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:weightSum="3"
+        android:layout_margin="@dimen/_5sdp"
         android:orientation="vertical">
 
 
         <TextSwitcher
             android:id="@+id/jobor_spacificationTS"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:gravity="center"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:background="#fff"
-            android:padding="5dp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@color/whiteColor"
+            android:padding="@dimen/_5sdp"
             />
         <TextSwitcher
             android:id="@+id/jer_spacificationTS"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:gravity="center"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:background="#fff"
-            android:padding="5dp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@color/whiteColor"
+            android:padding="@dimen/_5sdp"
             />
         <TextSwitcher
             android:id="@+id/pesh_spacificationTS"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:gravity="center"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:background="#fff"
-            android:padding="5dp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@color/whiteColor"
+            android:padding="@dimen/_5sdp"
             />
 
 
@@ -112,8 +119,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"
         android:weightSum="3"
         android:layout_weight="4"
         android:orientation="horizontal">
@@ -121,7 +128,7 @@
         <TextSwitcher
             android:id="@+id/leftTextSwitcher"
             android:layout_width="0dp"
-            android:layout_height="170dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="@drawable/bounarydesign"
             android:layout_weight="1"
@@ -132,7 +139,7 @@
         <TextSwitcher
             android:id="@+id/midleTextSwitcher"
             android:layout_width="0dp"
-            android:layout_height="170dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="@drawable/bounarydesign"
             android:layout_weight="1"
@@ -143,7 +150,7 @@
         <TextSwitcher
             android:id="@+id/rightTextSwitcher"
             android:layout_width="0dp"
-            android:layout_height="170dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="@drawable/bounarydesign"
             android:layout_weight="1"
@@ -163,9 +170,10 @@
 
         <androidx.appcompat.widget.AppCompatSeekBar
             android:layout_width="match_parent"
-            android:background="#FFFFFF"
-            android:layout_margin="5dp"
+            android:background="@color/whiteColor"
+            android:layout_margin="@dimen/_5sdp"
             android:layout_height="0dp"
+            android:thumbTint="@color/blackColor"
             android:layout_weight="1"
             android:id="@+id/outSeekBar"/>
         <LinearLayout
@@ -174,12 +182,11 @@
             android:gravity="center"
             android:weightSum="3"
             android:layout_weight="3"
-            android:layout_margin="20dp"
             android:orientation="horizontal">
 
             <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/ic_skip_previous_black_24dp"
                 android:id="@+id/previousBtn"/>
@@ -188,7 +195,7 @@
 
             <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:id="@+id/replayBtn"
                 android:layout_weight="1"
                 android:background="@drawable/ic_repeat_one_black_24dp"/>
@@ -197,7 +204,7 @@
 
             <ImageButton
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/ic_skip_next_black_24dp"
                 android:id="@+id/tomijnextBtn"/>

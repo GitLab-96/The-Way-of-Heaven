@@ -34,7 +34,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:background="#ffffff"
+            android:background="@color/whiteColor"
             android:layout_marginTop="@dimen/_2sdp"
             android:layout_marginBottom="@dimen/_5sdp"
             android:padding="@dimen/_5sdp"
@@ -46,7 +46,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:background="#ffffff"
+            android:background="@color/whiteColor"
             android:layout_marginTop="@dimen/_2sdp"
             android:layout_marginBottom="@dimen/_5sdp"
             android:padding="@dimen/_5sdp"
@@ -64,12 +64,12 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#ffffff"
+            android:background="@color/whiteColor"
             android:layout_weight="8"
             android:padding="@dimen/_5sdp"
             android:textAlignment="center"
             android:textSize="@dimen/_20sdp"
-            android:textColor="#000000"
+            android:textColor="@color/blackColor"
             android:hint="Please Insert your Voice"
             android:id="@+id/userVoiceText"
             android:gravity="center_horizontal" />
@@ -122,11 +122,14 @@
     </LinearLayout>
     <androidx.appcompat.widget.AppCompatSeekBar
         android:layout_width="match_parent"
-        android:background="#FFFFFF"
+        android:background="@color/whiteColor"
         android:layout_margin="@dimen/_5sdp"
         android:layout_height="0dp"
         android:layout_weight=".5"
-        android:id="@+id/outSeekBar"/>
+        android:id="@+id/outSeekBar"
+        android:progressBackgroundTint="@color/blackColor"
+        android:progressTint="@color/appsColor"
+        android:thumbTint="@color/blackColor"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -139,10 +142,9 @@
 
         <ImageButton
             android:layout_width="0dp"
-            android:layout_height="@dimen/_80sdp"
-            android:padding="@dimen/_50sdp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             android:background="@drawable/ic_skip_previous_black_24dp"
             android:id="@+id/previousBtn"/>
 
@@ -152,7 +154,7 @@
 
         <ImageButton
             android:layout_width="0dp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:id="@+id/playBtn"
             android:layout_margin="@dimen/_10sdp"
@@ -162,9 +164,9 @@
 
         <ImageButton
             android:layout_width="0dp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:background="@drawable/ic_skip_next_black_24dp"
             android:id="@+id/nextBtn"/>
 
@@ -177,29 +179,35 @@
         android:layout_weight=".5"
         android:layout_height="0dp"
         android:layout_margin="@dimen/_5sdp"
-        android:background="#FFFFFF" />
+        android:progressBackgroundTint="@color/blackColor"
+        android:progressTint="@color/appsColor"
+        android:thumbTint="@color/blackColor"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="center_horizontal"
         android:layout_weight="2"
+        android:weightSum="2"
         android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/micBtn"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginRight="@dimen/_25sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             android:background="@drawable/ic_mic_none_black_24dp" />
 
         <ImageButton
             android:id="@+id/compareBtn"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
             android:background="@drawable/ic_compare_arrows_black_24dp" />
     </LinearLayout>
 

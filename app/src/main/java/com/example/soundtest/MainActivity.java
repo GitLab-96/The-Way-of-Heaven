@@ -87,46 +87,54 @@ public class MainActivity extends AppCompatActivity {
 
     private void ProgressingTask() {
 
-        String currentUserID=mAuth.getCurrentUser().getUid();
-        RootRef.child("Marks").child(currentUserID).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if(currentUser != null){
+            String currentUserID=currentUser.getUid();
+            RootRef.child("Marks").child(currentUserID).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                String Allah = (dataSnapshot.child("Marks").child("AllahExam").getValue(String.class));
-                int allah =Integer.parseInt(Allah);
-                String Gunnah = dataSnapshot.child("Marks").child("GunnahExam").getValue(String.class);
-                int gunnah =Integer.parseInt(Gunnah);
-                String Horkot = dataSnapshot.child("Marks").child("HorkotExam").getValue(String.class);
-                int horkot =Integer.parseInt(Horkot);
-                String Horof = dataSnapshot.child("Marks").child("HorofExam").getValue(String.class);
-                int horof =Integer.parseInt(Horof);
-                String Kolkola = dataSnapshot.child("Marks").child("KolkolaExam").getValue(String.class);
-                int kolkolah =Integer.parseInt(Kolkola);
-                String Madd = dataSnapshot.child("Marks").child("MaddExam").getValue(String.class);
-                int modd =Integer.parseInt(Madd);
-                String Ro = dataSnapshot.child("Marks").child("RoExam").getValue(String.class);
-                int ro =Integer.parseInt(Ro);
-                String Sura = dataSnapshot.child("Marks").child("SuraExam").getValue(String.class);
-                int sura =Integer.parseInt(Sura);
-                String Tomij = dataSnapshot.child("Marks").child("TomijExam").getValue(String.class);
-                int tomij =Integer.parseInt(Tomij);
-                String Wajib =dataSnapshot.child("Marks").child("WajibExam").getValue(String.class);
-                int wajib =Integer.parseInt(Wajib);
-                totalMarks = allah+gunnah+horkot+horof+kolkolah+modd+ro+sura+tomij+wajib;
+                    if(dataSnapshot.exists()){
+                        String Allah = dataSnapshot.child("Marks").child("AllahExam").getValue(String.class);
+                        int allah =Integer.parseInt(Allah);
+                        String Gunnah = dataSnapshot.child("Marks").child("GunnahExam").getValue(String.class);
+                        int gunnah =Integer.parseInt(Gunnah);
+                        String Horkot = dataSnapshot.child("Marks").child("HorkotExam").getValue(String.class);
+                        int horkot =Integer.parseInt(Horkot);
+                        String Horof = dataSnapshot.child("Marks").child("HorofExam").getValue(String.class);
+                        int horof =Integer.parseInt(Horof);
+                        String Kolkola = dataSnapshot.child("Marks").child("KolkolaExam").getValue(String.class);
+                        int kolkolah =Integer.parseInt(Kolkola);
+                        String Madd = dataSnapshot.child("Marks").child("MaddExam").getValue(String.class);
+                        int modd =Integer.parseInt(Madd);
+                        String Ro = dataSnapshot.child("Marks").child("RoExam").getValue(String.class);
+                        int ro =Integer.parseInt(Ro);
+                        String Sura = dataSnapshot.child("Marks").child("SuraExam").getValue(String.class);
+                        int sura =Integer.parseInt(Sura);
+                        String Tomij = dataSnapshot.child("Marks").child("TomijExam").getValue(String.class);
+                        int tomij =Integer.parseInt(Tomij);
+                        String Wajib =dataSnapshot.child("Marks").child("WajibExam").getValue(String.class);
+                        int wajib =Integer.parseInt(Wajib);
+                        totalMarks = allah+gunnah+horkot+horof+kolkolah+modd+ro+sura+tomij+wajib;
 
-                String TM = String.valueOf(totalMarks);
-                persentTV.setText(TM);
-                // Toast.makeText(MainActivity.this, TM, Toast.LENGTH_SHORT).show();
-            }
+                        String TM = String.valueOf(totalMarks);
+                        persentTV.setText(TM);
+                    }
+                    // Toast.makeText(MainActivity.this, TM, Toast.LENGTH_SHORT).show();
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
+        }
+
+
+
 
         // Adding colors on progress bar
-        VerticalProgressBar.getProgressDrawable().setColorFilter(Color.CYAN, PorterDuff.Mode.SRC_IN);
+        VerticalProgressBar.getProgressDrawable().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);
 
 
         new Thread(new Runnable() {
@@ -272,11 +280,10 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Do You Exit ?");
         builder.setMessage("Are you Sure do you want to quit ?");
+
         builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int i) {
-
-
 
                 exit = true;
                 getOutApp(exit);

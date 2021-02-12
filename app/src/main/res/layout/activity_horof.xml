@@ -6,35 +6,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="5dp"
+    android:padding="@dimen/_5sdp"
     android:background="@color/defoultColor"
     tools:context=".Learn.Horof">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="আরবি হরফ ২৯ টি"
-        android:padding="5dp"
-        android:textSize="30sp"
-        android:background="#ffffff"
+        android:padding="@dimen/_5sdp"
+        android:textSize="@dimen/_20sdp"
+        android:background="@color/whiteColor"
         android:gravity="center"
-        android:textColor="#000000"/>
+        android:textColor="@color/blackColor"/>
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?actionBarSize"
         android:id="@+id/appBarLayout">
 
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/horof_main_tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabIndicatorHeight="4dp"
-            android:background="#ECE6EE"
-            app:tabIndicatorColor="#F00707"
-            app:tabTextColor="#5E05F3"
-            app:tabSelectedTextColor="#D20AF3"
+            android:layout_height="match_parent"
+            app:tabIndicatorHeight="@dimen/_4sdp"
+            android:background="@color/colorPrimaryDark"
+            app:tabIndicatorColor="@color/appsColor"
+            app:tabTextColor="@color/blackColor"
+            app:tabSelectedTextColor="@color/appsColor"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
         </com.google.android.material.tabs.TabLayout>
 
@@ -44,8 +45,9 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
+        android:layout_weight="14"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:id="@+id/horofViewPager"/>
 
 </LinearLayout>

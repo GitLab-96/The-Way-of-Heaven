@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LearnActivity extends AppCompatActivity  {
     private TextView arabicHorof,tomijHorof,horkot,kolkolah,wajib,madd,gunnah,raPurBarik,allahPurBarik,surah;
-    private ImageView arabicHorofLock,tomijHorofLock,horkotLock,kolkolahLock,wajibLock,maddLock,gunnahLock,raPurBarikLock,allahPurBarikLock,surahLock;
+    private ImageView tomijHorofLock,horkotLock,kolkolahLock,wajibLock,maddLock,gunnahLock,raPurBarikLock,allahPurBarikLock,surahLock;
 
 
     TextView horofMarksTV,tomijMarksTV,horkotMarksTV,kolkolaMarksTV,wajibMarksTV,maddMarksTV,gunnahMarksTV,roMarksTV,allahMarksTV,suraMarksTV;

@@ -23,9 +23,9 @@ import org.w3c.dom.Text;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button loginButn,phoneLogin_buttn;
+    private Button loginButn;
     private EditText userEmail,userPassword;
-    private TextView NeedNewAccountLink,ForgetPasswordLink;
+    private TextView NeedNewAccountLink;
     private FirebaseAuth mAuth;
     private ProgressDialog loadingBar;
 
@@ -54,13 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        phoneLogin_buttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                startActivity(new Intent(LoginActivity.this,PhoneLoginActivity.class));
-            }
-        });
 
     }
 
@@ -104,11 +98,10 @@ public class LoginActivity extends AppCompatActivity {
 
     private void init() {
         loginButn = findViewById(R.id.login_buttn);
-        phoneLogin_buttn = findViewById(R.id.phone_login_buttn);
         userEmail = findViewById(R.id.loginEmail);
         userPassword = findViewById(R.id.loginPassword);
-        ForgetPasswordLink = findViewById(R.id.forgetPasswordLink);
         NeedNewAccountLink = findViewById(R.id.need_new_account);
+
         loadingBar = new ProgressDialog(this);
 
     }

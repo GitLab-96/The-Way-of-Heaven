@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/defoultColor"
     tools:context=".Question.ProfileFragment">
@@ -34,9 +34,8 @@
                 android:layout_weight="2"
                 android:layout_height="match_parent"
                 android:src="@drawable/book11"
-                app:civ_border_width="@dimen/_5sdp"
-                android:layout_margin="@dimen/_10sdp"
-                app:civ_border_color="@color/blackColor"/>
+                app:civ_border_width="@dimen/_1sdp"
+                app:civ_border_color="@color/colorPrimaryDark"/>
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -48,32 +47,44 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_5sdp"
-                    android:textSize="@dimen/_22sdp"
-                    android:textStyle="bold"
-                    android:text="Your ID"/>
-                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:text="12345"
-                    android:gravity="center_horizontal" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_1sdp"
-                    android:background="@color/blackColor"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="অগ্রগতি "
-                    android:textSize="@dimen/_22sdp"
+                    android:text="অগ্রগতি"
+                    android:textSize="@dimen/_20sdp"
                     android:textStyle="bold"
                     android:gravity="center"/>
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    android:background="@color/defoultColor"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/defoultColor"
+
+                        android:padding="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="00"
+
+                            android:id="@+id/progreTVId"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="%"
+
+                         />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
                 <ProgressBar
                     android:id="@+id/progressBar2"
                     style="?android:attr/progressBarStyleHorizontal"
@@ -90,43 +101,54 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/get_user_name"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:background="@drawable/bounarydesign"
+            android:layout_weight="3"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/get_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:textColor="@color/blackColor"
+                android:textSize="@dimen/_18sdp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/get_user_phone_number"
+                android:padding="@dimen/_5sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:textColor="@color/blackColor"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/get_user_email"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/blackColor"
+android:layout_margin="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                />
 
-            android:padding="@dimen/_5sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:textColor="@color/blackColor"
-            android:textSize="@dimen/_20sdp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/get_user_phone_number"
-            android:padding="@dimen/_5sdp"
-            android:textColor="@color/blackColor"
 
-            android:textSize="@dimen/_18sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/get_user_email"
-            android:padding="@dimen/_5sdp"
-            android:textColor="@color/blackColor"
+        </LinearLayout>
 
-            android:layout_marginBottom="@dimen/_10sdp"
-            android:textSize="@dimen/_18sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            />
     </LinearLayout>
 
 

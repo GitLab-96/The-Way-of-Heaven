@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:background="@drawable/bounarydesign"
+            android:background="@color/colorPrimaryDark"
             android:id="@+id/boysLayout"
             android:layout_margin="@dimen/_2sdp"
             android:orientation="horizontal">
@@ -59,7 +59,7 @@
             android:layout_weight="1"
             android:id="@+id/girlslayout"
             android:layout_height="match_parent"
-            android:background="@drawable/bounarydesign"
+            android:background="@color/colorPrimaryDark"
             android:layout_margin="@dimen/_2sdp"
             android:orientation="horizontal">
             <ImageView

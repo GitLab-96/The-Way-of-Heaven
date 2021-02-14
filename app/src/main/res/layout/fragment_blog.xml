@@ -14,7 +14,7 @@
         android:id="@+id/blog_header"
         android:textSize="40sp"
         android:padding="5dp"
-        android:background="#6CF171"
+        android:background="@color/appsColor"
         android:gravity="center"/>
 
     <androidx.cardview.widget.CardView
@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:padding="15dp"
+            android:textColor="@color/blackColor"
             android:text="কুরআন শিক্ষালয়"/>
 
     </androidx.cardview.widget.CardView>
@@ -47,6 +48,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:padding="15dp"
+            android:textColor="@color/blackColor"
             android:text="প্রতিশ্রুতি কুরআন শিক্ষালয়"/>
 
     </androidx.cardview.widget.CardView>
@@ -63,6 +65,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:padding="15dp"
+            android:textColor="@color/blackColor"
             android:text="কুরআন এর সাথে বিজ্ঞান"/>
 
     </androidx.cardview.widget.CardView>
@@ -80,6 +83,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:padding="15dp"
+            android:textColor="@color/blackColor"
             android:text="কুরআন শিক্ষা ভিডিও"/>
 
     </androidx.cardview.widget.CardView>
@@ -96,6 +100,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:padding="15dp"
+            android:textColor="@color/blackColor"
             android:text="কুরআন শিক্ষা"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
@@ -111,6 +116,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:padding="15dp"
+            android:textColor="@color/blackColor"
             android:text="কুরআন শিক্ষা"/>
 
     </androidx.cardview.widget.CardView>
@@ -127,6 +133,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:padding="15dp"
+            android:textColor="@color/blackColor"
             android:text="কুরআন শিক্ষা"/>
 
     </androidx.cardview.widget.CardView>
@@ -143,6 +150,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:padding="15dp"
+            android:textColor="@color/blackColor"
             android:text="কুরআন শিক্ষা"/>
 
     </androidx.cardview.widget.CardView>
@@ -159,6 +167,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:padding="15dp"
+            android:textColor="@color/blackColor"
             android:text="কুরআন শিক্ষা"/>
 
     </androidx.cardview.widget.CardView>

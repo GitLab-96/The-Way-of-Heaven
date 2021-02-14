@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1986E4"
+    android:background="@color/defoultColor"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -14,7 +14,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#0A2DF1"
+        android:background="@color/appsColor"
         />
 
     <TextView
@@ -6630,7 +6630,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:background="#115188"
+        android:background="@color/appsColor"
         app:itemIconTint="@color/whiteColor"
         app:itemTextColor="@color/whiteColor"
         app:menu="@menu/bottom_menu_read"

@@ -139,7 +139,7 @@ public class SettingsActivity extends AppCompatActivity {
                 setDOB.setVisibility(setDOB.VISIBLE);
                 actiovation_Date.setVisibility(actiovation_Date.VISIBLE);
                 updateButtn.setVisibility(updateButtn.VISIBLE);
-                setactivationTV.setVisibility(setactivationTV.VISIBLE);
+                setactivationTV.setVisibility(setactivationTV.INVISIBLE);
 
 
 
@@ -229,6 +229,9 @@ public class SettingsActivity extends AppCompatActivity {
                                 }
                             }
                         });
+                    }
+                    else{
+                        Toast.makeText(SettingsActivity.this, "Please fillup the ", Toast.LENGTH_SHORT).show();
                     }
 
 

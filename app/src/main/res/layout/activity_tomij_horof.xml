@@ -33,9 +33,9 @@
             android:layout_height="wrap_content"
             app:tabIndicatorHeight="4dp"
             android:background="#ECE6EE"
-            app:tabIndicatorColor="#F00707"
-            app:tabTextColor="#5E05F3"
-            app:tabSelectedTextColor="#D20AF3"
+            app:tabIndicatorColor="@color/appsColor"
+            app:tabTextColor="@color/blackColor"
+            app:tabSelectedTextColor="@color/appsColor"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
         </com.google.android.material.tabs.TabLayout>
 

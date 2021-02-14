@@ -21,12 +21,12 @@
                 android:id="@+id/question_main_tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#D272E2"
+                android:background="@color/appsColor"
                 android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-                app:tabIndicatorColor="#F00707"
+                app:tabIndicatorColor="@color/blackColor"
                 app:tabIndicatorHeight="4dp"
-                app:tabSelectedTextColor="#05F5DC"
-                app:tabTextColor="#5E05F3">
+                app:tabSelectedTextColor="@color/colorPrimaryDark"
+                app:tabTextColor="@color/whiteColor">
             </com.google.android.material.tabs.TabLayout>
 
             </HorizontalScrollView>

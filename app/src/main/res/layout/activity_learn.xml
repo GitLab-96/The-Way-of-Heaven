@@ -13,7 +13,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:id="@+id/card"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:layout_margin="@dimen/_25sdp"
         app:cardCornerRadius="@dimen/_5sdp"
         android:layout_height="0dp">
@@ -22,7 +22,6 @@
             android:id="@+id/shuciTV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:gravity="center"
             android:padding="@dimen/_5sdp"
             android:text="সূচিপত্র"
@@ -66,7 +65,7 @@
                     android:background="@drawable/book11"
                     android:gravity="center"
                     android:textColor="@color/blackColor"
-                    android:textSize="@dimen/_20sdp" />
+                    android:textSize="@dimen/_15sdp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -101,7 +100,7 @@
                 android:layout_margin="@dimen/_5sdp"
                 android:gravity="center"
                 android:textColor="@color/blackColor"
-                android:textSize="@dimen/_20sdp" />
+                android:textSize="@dimen/_15sdp" />
 
             <ImageView
                 android:id="@+id/arabicTomijHoroflock"
@@ -140,7 +139,7 @@
                 android:gravity="center"
                 android:layout_margin="@dimen/_5sdp"
                 android:textColor="@color/blackColor"
-                android:textSize="@dimen/_20sdp" />
+                android:textSize="@dimen/_15sdp" />
 
             <ImageView
                 android:id="@+id/arabicHorkotlock"
@@ -196,7 +195,7 @@
                 android:layout_margin="@dimen/_5sdp"
                 android:background="@drawable/book11"
                 android:textColor="@color/blackColor"
-                android:textSize="20sp" />
+                android:textSize="@dimen/_15sdp" />
 
             <ImageView
                 android:id="@+id/kolkolahlock"
@@ -236,7 +235,7 @@
                 android:gravity="center"
                 android:layout_margin="@dimen/_5sdp"
                 android:textColor="@color/blackColor"
-                android:textSize="@dimen/_20sdp" />
+                android:textSize="@dimen/_15sdp" />
             <ImageView
                 android:id="@+id/wajiblock"
                 android:layout_width="match_parent"
@@ -272,7 +271,7 @@
                 android:background="@drawable/book11"
                 android:layout_margin="@dimen/_5sdp"
                 android:textColor="@color/blackColor"
-                android:textSize="@dimen/_20sdp" />
+                android:textSize="@dimen/_15sdp" />
             <ImageView
                 android:id="@+id/maddlock"
                 android:layout_width="match_parent"
@@ -328,7 +327,7 @@
                 android:layout_margin="@dimen/_5sdp"
                 android:gravity="center"
                 android:textColor="@color/blackColor"
-                android:textSize="@dimen/_20sdp" />
+                android:textSize="@dimen/_15sdp" />
             <ImageView
                 android:id="@+id/gunnahlock"
                 android:layout_width="match_parent"
@@ -365,7 +364,7 @@
                 android:text="'রা' এর পুর / বারিক"
                 android:layout_margin="@dimen/_5sdp"
                 android:textColor="@color/blackColor"
-                android:textSize="@dimen/_20sdp" />
+                android:textSize="@dimen/_15sdp" />
 
             <ImageView
                 android:id="@+id/rolock"
@@ -402,7 +401,7 @@
                 android:background="@drawable/book11"
                 android:textColor="@color/blackColor"
                 android:layout_margin="@dimen/_5sdp"
-                android:textSize="@dimen/_20sdp" />
+                android:textSize="@dimen/_15sdp" />
 
 
             <ImageView
@@ -451,7 +450,7 @@
             android:background="@drawable/book11"
             android:text=" সূরা ফীল থেকে নাস পর্যন্ত"
             android:textColor="@color/blackColor"
-            android:textSize="@dimen/_20sdp" />
+            android:textSize="@dimen/_15sdp" />
 
 
         <ImageView

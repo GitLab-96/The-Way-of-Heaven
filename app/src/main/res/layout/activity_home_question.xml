@@ -31,12 +31,14 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/book11"/>
 
-            <SearchView
+            <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="9"
-                android:background="#ffffff"
-                android:id="@+id/searchView"/>
+                android:layout_height="match_parent"
+                android:text="Islamic Question and Answer"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
 
         </LinearLayout>
 
@@ -58,11 +60,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:background="#FF4081"
-        app:itemIconTint="#000000"
-        app:itemTextColor="#ffffff"
-        app:menu="@menu/bottom_menu">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        android:background="@color/appsColor"
+        app:itemIconTint="@color/whiteColor"
+        app:itemTextColor="@color/whiteColor"
+        app:menu="@menu/bottom_menu"
+        tools:ignore="RtlHardcoded"/>
 
 
 

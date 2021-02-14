@@ -40,7 +40,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * A simple {@link Fragment} subclass.
  */
 public class ProfileFragment extends Fragment {
-    private TextView userName,userPhone,userEmail;
+    private TextView userName,userPhone,userEmail,progressTV;
     private ImageView alemList;
     private CircleImageView userImage;
     private String currentUserID;
@@ -72,6 +72,7 @@ public class ProfileFragment extends Fragment {
         userName = view.findViewById(R.id.get_user_name);
         userPhone = view.findViewById(R.id.get_user_phone_number);
         userEmail = view.findViewById(R.id.get_user_email);
+        progressTV = view.findViewById(R.id.progreTVId);
         userImage = view.findViewById(R.id.get_profile_image);
         alemList = view.findViewById(R.id.alemList);
         horizontalProgressBar = view.findViewById(R.id.progressBar2);
@@ -98,33 +99,35 @@ public class ProfileFragment extends Fragment {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if(currentUser != null){
             String currentUserID=currentUser.getUid();
-            RootRef.child("Marks").child(currentUserID).addValueEventListener(new ValueEventListener() {
+            RootRef.child("Marks").child(currentUserID).child("Marks").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                     if(dataSnapshot.exists()){
-                        String Allah = dataSnapshot.child("Marks").child("AllahExam").getValue(String.class);
+                        String Allah = dataSnapshot.child("AllahExam").getValue(String.class);
                         int allah =Integer.parseInt(Allah);
-                        String Gunnah = dataSnapshot.child("Marks").child("GunnahExam").getValue(String.class);
+                        String Gunnah = dataSnapshot.child("GunnahExam").getValue(String.class);
                         int gunnah =Integer.parseInt(Gunnah);
-                        String Horkot = dataSnapshot.child("Marks").child("HorkotExam").getValue(String.class);
+                        String Horkot = dataSnapshot.child("HorkotExam").getValue(String.class);
                         int horkot =Integer.parseInt(Horkot);
-                        String Horof = dataSnapshot.child("Marks").child("HorofExam").getValue(String.class);
+                        String Horof = dataSnapshot.child("HorofExam").getValue(String.class);
                         int horof =Integer.parseInt(Horof);
-                        String Kolkola = dataSnapshot.child("Marks").child("KolkolaExam").getValue(String.class);
+                        String Kolkola = dataSnapshot.child("KolkolaExam").getValue(String.class);
                         int kolkolah =Integer.parseInt(Kolkola);
-                        String Madd = dataSnapshot.child("Marks").child("MaddExam").getValue(String.class);
+                        String Madd = dataSnapshot.child("MaddExam").getValue(String.class);
                         int modd =Integer.parseInt(Madd);
-                        String Ro = dataSnapshot.child("Marks").child("RoExam").getValue(String.class);
+                        String Ro = dataSnapshot.child("RoExam").getValue(String.class);
                         int ro =Integer.parseInt(Ro);
-                        String Sura = dataSnapshot.child("Marks").child("SuraExam").getValue(String.class);
+                        String Sura = dataSnapshot.child("SuraExam").getValue(String.class);
                         int sura =Integer.parseInt(Sura);
-                        String Tomij = dataSnapshot.child("Marks").child("TomijExam").getValue(String.class);
+                        String Tomij = dataSnapshot.child("TomijExam").getValue(String.class);
                         int tomij =Integer.parseInt(Tomij);
-                        String Wajib =dataSnapshot.child("Marks").child("WajibExam").getValue(String.class);
+                        String Wajib =dataSnapshot.child("WajibExam").getValue(String.class);
                         int wajib =Integer.parseInt(Wajib);
                         totalMarks = allah+gunnah+horkot+horof+kolkolah+modd+ro+sura+tomij+wajib;
 
+                        String TM = String.valueOf(totalMarks);
+                        progressTV.setText(TM);
 
 
                     }
@@ -157,7 +160,7 @@ public class ProfileFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            horizontalProgressBar.setProgress(totalMarks);
+                            horizontalProgressBar.setProgress(20);
 
 
                         }
@@ -189,6 +192,7 @@ public class ProfileFragment extends Fragment {
                     userName.setText(retreveUsername);
                     userPhone.setText(retreveUserPhone);
                     userEmail.setText(retreveUserEmail);
+
                     Picasso.get().load(imageDb).placeholder(R.drawable.book11).into(userImage);
                 }
 

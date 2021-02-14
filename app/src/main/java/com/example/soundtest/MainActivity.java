@@ -32,19 +32,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
-    TextView thwayTV,heavenTV,persentTV;
+    TextView thwayTV, heavenTV, persentTV;
     Typeface typeface;
-     private  ImageButton learnBtn,readBtn,salahBtn,questionBtn;
-     private FirebaseUser currentUser;
-     private FirebaseAuth mAuth;
-     private DatabaseReference RootRef;
+    private ImageButton learnBtn, readBtn, salahBtn, questionBtn;
+    private FirebaseUser currentUser;
+    private FirebaseAuth mAuth;
+    private DatabaseReference RootRef;
 
     boolean exit = false;
     ProgressBar VerticalProgressBar;
 
     Handler handler = new Handler();
 
-    int totalMarks=0;
+    int totalMarks = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,18 +54,14 @@ public class MainActivity extends AppCompatActivity {
         init();
 
 
-
-        mAuth=FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
-        RootRef= FirebaseDatabase.getInstance().getReference();
-
-
-
+        RootRef = FirebaseDatabase.getInstance().getReference();
 
 
         thwayTV = findViewById(R.id.the_way);
         heavenTV = findViewById(R.id.heaven);
-        typeface = Typeface.createFromAsset(getAssets(),"alexbrush_regular.ttf");
+        typeface = Typeface.createFromAsset(getAssets(), "alexbrush_regular.ttf");
 
         thwayTV.setTypeface(typeface);
         heavenTV.setTypeface(typeface);
@@ -77,10 +73,7 @@ public class MainActivity extends AppCompatActivity {
         SendUserMainActivityToQuestionActivity();
 
 
-      ProgressingTask();
-
-
-
+        ProgressingTask();
 
 
     }
@@ -88,34 +81,34 @@ public class MainActivity extends AppCompatActivity {
     private void ProgressingTask() {
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        if(currentUser != null){
-            String currentUserID=currentUser.getUid();
+        if (currentUser != null) {
+            String currentUserID = currentUser.getUid();
             RootRef.child("Marks").child(currentUserID).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    if(dataSnapshot.exists()){
+                    if (dataSnapshot.exists()) {
                         String Allah = dataSnapshot.child("Marks").child("AllahExam").getValue(String.class);
-                        int allah =Integer.parseInt(Allah);
+                        int allah = Integer.parseInt(Allah);
                         String Gunnah = dataSnapshot.child("Marks").child("GunnahExam").getValue(String.class);
-                        int gunnah =Integer.parseInt(Gunnah);
+                        int gunnah = Integer.parseInt(Gunnah);
                         String Horkot = dataSnapshot.child("Marks").child("HorkotExam").getValue(String.class);
-                        int horkot =Integer.parseInt(Horkot);
+                        int horkot = Integer.parseInt(Horkot);
                         String Horof = dataSnapshot.child("Marks").child("HorofExam").getValue(String.class);
-                        int horof =Integer.parseInt(Horof);
+                        int horof = Integer.parseInt(Horof);
                         String Kolkola = dataSnapshot.child("Marks").child("KolkolaExam").getValue(String.class);
-                        int kolkolah =Integer.parseInt(Kolkola);
+                        int kolkolah = Integer.parseInt(Kolkola);
                         String Madd = dataSnapshot.child("Marks").child("MaddExam").getValue(String.class);
-                        int modd =Integer.parseInt(Madd);
+                        int modd = Integer.parseInt(Madd);
                         String Ro = dataSnapshot.child("Marks").child("RoExam").getValue(String.class);
-                        int ro =Integer.parseInt(Ro);
+                        int ro = Integer.parseInt(Ro);
                         String Sura = dataSnapshot.child("Marks").child("SuraExam").getValue(String.class);
-                        int sura =Integer.parseInt(Sura);
+                        int sura = Integer.parseInt(Sura);
                         String Tomij = dataSnapshot.child("Marks").child("TomijExam").getValue(String.class);
-                        int tomij =Integer.parseInt(Tomij);
-                        String Wajib =dataSnapshot.child("Marks").child("WajibExam").getValue(String.class);
-                        int wajib =Integer.parseInt(Wajib);
-                        totalMarks = allah+gunnah+horkot+horof+kolkolah+modd+ro+sura+tomij+wajib;
+                        int tomij = Integer.parseInt(Tomij);
+                        String Wajib = dataSnapshot.child("Marks").child("WajibExam").getValue(String.class);
+                        int wajib = Integer.parseInt(Wajib);
+                        totalMarks = allah + gunnah + horkot + horof + kolkolah + modd + ro + sura + tomij + wajib;
 
                         String TM = String.valueOf(totalMarks);
                         persentTV.setText(TM);
@@ -131,8 +124,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
-
         // Adding colors on progress bar
         VerticalProgressBar.getProgressDrawable().setColorFilter(Color.BLUE, PorterDuff.Mode.SRC_IN);
 
@@ -142,8 +133,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                while(totalMarks < 200)
-                {
+                while (totalMarks < 200) {
                     // intValue++;
 
                     handler.post(new Runnable() {
@@ -155,11 +145,12 @@ public class MainActivity extends AppCompatActivity {
 
 
                         }
-                    });try {
-                    Thread.sleep(300);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                    });
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }).start();
@@ -174,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         salahBtn = findViewById(R.id.salahBtn);
         questionBtn = findViewById(R.id.questionBtn);
         persentTV = findViewById(R.id.persentTV);
-        VerticalProgressBar = (ProgressBar)findViewById(R.id.progressBar1);
+        VerticalProgressBar = (ProgressBar) findViewById(R.id.progressBar1);
     }
 
 
@@ -223,28 +214,27 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-          super.onStart();
+        super.onStart();
 
-          if(currentUser== null){
+        if (currentUser == null) {
 
-              SendUserToLoginActivity();
-          }
-          else{
+            SendUserToLoginActivity();
+        } else {
 
-              VerifyUserExistance();
-          }
+            VerifyUserExistance();
+        }
     }
 
     private void VerifyUserExistance() {
 
-        String currentUserID=mAuth.getCurrentUser().getUid();
+        String currentUserID = mAuth.getCurrentUser().getUid();
         RootRef.child("Users").child(currentUserID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                if ((dataSnapshot.child("name").exists())){
+                if ((dataSnapshot.child("name").exists())) {
 
-                }else {
+                } else {
                     SendUserToSettingsActivity();
 
                 }
@@ -257,17 +247,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     private void SendUserToSettingsActivity() {
 
-        Intent settingIntent=new Intent(MainActivity.this, SettingsActivity.class);
-        settingIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        Intent settingIntent = new Intent(MainActivity.this, SettingsActivity.class);
+        settingIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(settingIntent);
         finish();
-        }
+    }
+
     private void SendUserToLoginActivity() {
 
-        Intent loginIntent=new Intent(MainActivity.this,LoginActivity.class);
-        loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
+        loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(loginIntent);
         finish();
     }
@@ -276,10 +268,10 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
 
 
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Do You Exit ?");
         builder.setMessage("Are you Sure do you want to quit ?");
+
 
         builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
             @Override
@@ -301,15 +293,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         builder.create();
         builder.show();
+
     }
 
-    public void  getOutApp(boolean exit){
-        if (exit==true){
+    public void getOutApp(boolean exit) {
+        if (exit == true) {
             super.onBackPressed();
-        }
-        else {
+        } else {
             Toast.makeText(this, "Thanks for Reciting the Holly Quran", Toast.LENGTH_SHORT).show();
         }
     }

@@ -13,7 +13,7 @@
         android:gravity="center_horizontal"
         android:textSize="20sp"
         android:textColor="#000000"
-        android:background="#46F04D"
+        android:background="@color/appsColor"
         android:layout_marginBottom="10dp"
         android:padding="10dp"/>
     <androidx.recyclerview.widget.RecyclerView

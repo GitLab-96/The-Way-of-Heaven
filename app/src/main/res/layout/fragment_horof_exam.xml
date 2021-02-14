@@ -13,11 +13,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_weight="1.6"
         android:gravity="center_horizontal"
         android:text="অনুশীলন : 20"
         android:textColor="@color/blackColor"
-        android:textSize="@dimen/_20sdp" />
+        android:textSize="@dimen/_18sdp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -76,7 +76,7 @@
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/blackColor"
             android:textSize="@dimen/_18sdp"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:text="বহু নির্বাচনী প্রশ্ন"/>
         <TextSwitcher
             android:id="@+id/multipleQuestionSwitcer"

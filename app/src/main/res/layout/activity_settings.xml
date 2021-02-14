@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Question.SettingsActivity">
 
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#DDD3D3"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@color/colorPrimaryDark"
         android:weightSum="2"
         android:gravity="center"
         android:orientation="horizontal">
@@ -19,14 +21,14 @@
         <RelativeLayout
             android:layout_width="0dp"
            android:layout_weight="1"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/set_profile_image"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
-                android:layout_margin="30dp"
+               android:layout_marginBottom="@dimen/_5sdp"
                 android:src="@drawable/book11"
                 app:civ_border_color="#070707"
                 app:civ_border_width="5dp" />
@@ -35,8 +37,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_camera_alt_black_24dp"
-                android:layout_marginLeft="150dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginLeft="@dimen/_110sdp"
+                android:layout_marginTop="@dimen/_60sdp"
                 android:id="@+id/CameraFAB"/>
 
 
@@ -55,6 +57,8 @@
                 android:id="@+id/update_settings_buttn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bounarydesign"
+                android:padding="@dimen/_10sdp"
                 android:layout_gravity="right"
                 android:src="@drawable/ic_edit_black_24dp" />
 
@@ -64,38 +68,43 @@
                     android:layout_height="wrap_content"
                     android:text="Activation Date"
                     android:id="@+id/activationTV"
-                    android:textStyle="bold"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
+                    android:textColor="@color/blackColor"
+                    android:textSize="@dimen/_18sdp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="50dp"/>
+                    />
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Date"
-                        android:textColor="#000000"
-                        android:layout_margin="5dp"
+                        android:visibility="gone"
+                        android:textAlignment="center"
+                        android:textColor="@color/blackColor"
+                        android:layout_margin="@dimen/_5sdp"
                        android:layout_centerHorizontal="true"
-                        android:id="@+id/updateActivationDate"/>
-
-                        />
+                        android:id="@+id/updateActivationDate"
+                        android:gravity="center_horizontal" />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:text="Date"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        android:layout_margin="5dp"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textColor="@color/blackColor"
+                        android:textSize="@dimen/_16sdp"
+                        android:layout_margin="@dimen/_5sdp"
                         android:layout_centerHorizontal="true"
                         android:id="@+id/setActivationDate"/>
+                        />
+
 
                     />
-                </RelativeLayout>
+                </LinearLayout>
 
 
 
@@ -105,29 +114,30 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:id="@+id/status1"
         android:gravity="center"
-        android:layout_margin="10dp"
-        android:layout_below="@id/header"
+        android:layout_margin="@dimen/_10sdp"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Name : "
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:textColor="@color/blackColor"
+            android:textSize="@dimen/_15sdp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
 
             >
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/set_user_nameTV"
                 android:inputType="textMultiLine"
                 android:text=" User Name"
@@ -139,12 +149,11 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/set_user_nameET"
                 android:inputType="textMultiLine"
                 android:hint=" User Name"
                 android:singleLine="true"
-                android:textColor="#000000"
                 android:layout_margin="10dp"
                 android:padding="6dp"/>
 
@@ -156,7 +165,8 @@
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="0dp"
+    android:layout_weight="1"
     android:id="@+id/status2"
     android:gravity="center"
     android:layout_margin="10dp"
@@ -168,36 +178,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email : "
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
+        android:textColor="@color/blackColor"
+        android:textSize="@dimen/_15sdp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
 
         >
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/set_user_statuseTV"
             android:inputType="textMultiLine"
             android:hint=" User Email"
             android:singleLine="true"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:layout_margin="10dp"
-            android:padding="6dp"/>
+            android:textColor="@color/blackColor"
+            android:textSize="@dimen/_15sdp"
+            android:layout_margin="@dimen/_10sdp"
+       />
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/set_user_statuseET"
             android:inputType="textMultiLine"
             android:hint=" User Email"
             android:singleLine="true"
-              android:textColor="#000000"
-            android:layout_margin="10dp"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/blackColor"
+            android:layout_margin="@dimen/_10sdp"
             android:padding="6dp"/>
 
 
@@ -210,7 +220,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_below="@id/status2"
         android:id="@+id/status3"
         android:layout_margin="10dp"
@@ -221,9 +232,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Phone No : "
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:textSize="20sp"/>
+
+            android:textColor="@color/blackColor"
+            android:textSize="@dimen/_15sdp"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -261,8 +272,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_below="@id/status3"
+        android:layout_margin="@dimen/_5sdp"
         android:id="@+id/status4"
         android:gravity="center"
         android:orientation="horizontal">
@@ -270,11 +283,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Raligion : "
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_margin="10dp"
-            android:textSize="20sp"/>
+            android:text="Religion : "
+            android:textColor="@color/blackColor"
+            android:textSize="@dimen/_15sdp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -310,7 +321,8 @@
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="0dp"
+    android:layout_weight="1"
     android:layout_below="@id/status4"
     android:id="@+id/status5"
     android:layout_margin="10dp"
@@ -321,9 +333,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nationality : "
-        android:textSize="20sp"
-        android:textColor="#000000"
-        android:textStyle="bold"/>
+        android:textSize="@dimen/_15sdp"
+        android:textColor="@color/blackColor"
+       />
 
     <RelativeLayout
     android:layout_width="match_parent"
@@ -357,7 +369,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_below="@id/status5"
         android:gravity="center"
         android:id="@+id/status6"
@@ -365,9 +378,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
              android:weightSum="2"
             android:layout_margin="10dp"
+            android:gravity="center"
             android:id="@+id/gender_name"
             android:orientation="horizontal">
 
@@ -386,10 +400,10 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:textColor="#000000"
-                     android:text="Gender : "
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:textAlignment="center" />
+                     android:text="Gender: "
+                    android:textSize="@dimen/_15sdp"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -425,9 +439,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/_15sdp"
                     android:textColor="#000000"
-                    android:textStyle="bold"
                     android:text="Date of Birth : "/>
 
                 <RelativeLayout
@@ -444,6 +457,7 @@
 
                     <TextView
                         android:id="@+id/DOBET"
+                        android:visibility="gone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" Date"
@@ -475,14 +489,15 @@
             android:textAlignment="center"
             android:textColor="#000000"
             android:textStyle="bold"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:textAllCaps="false"
-            android:padding="6dp"/>
+            android:padding="6dp"
+            android:gravity="center_horizontal" />
 
 
     </RelativeLayout>
 
 
-</RelativeLayout>
+</LinearLayout>
